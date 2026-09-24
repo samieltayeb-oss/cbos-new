@@ -49,7 +49,7 @@ export default function NoticesAndNews() {
               {officialNotices.map((notice) => (
                 <div
                   key={notice.id}
-                  className="p-6 rounded-2xl bg-white border-2 border-cbos-gold/40 shadow-cbos-card hover:border-cbos-gold transition-all space-y-3"
+                  className="p-6 rounded-xl bg-white border-2 border-cbos-gold/40 shadow-cbos-card hover:border-cbos-gold transition-all space-y-3"
                 >
                   <div className="flex items-center justify-between text-xs">
                     <span className="px-2.5 py-0.5 rounded bg-cbos-gold/15 text-cbos-ink font-mono font-bold border border-cbos-gold/40">
@@ -97,7 +97,7 @@ export default function NoticesAndNews() {
               {pressNews.map((item) => (
                 <div
                   key={item.id}
-                  className="p-6 rounded-2xl bg-white border border-cbos-stone shadow-cbos-card hover:border-cbos-green transition-all space-y-3"
+                  className="p-6 rounded-xl bg-white border border-cbos-stone shadow-cbos-card hover:border-cbos-green transition-all space-y-3"
                 >
                   <div className="flex items-center justify-between text-xs">
                     <span className="px-2 py-0.5 rounded bg-cbos-green/10 text-cbos-green font-mono font-bold">

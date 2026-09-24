@@ -118,7 +118,7 @@ export default function ConsumerProtectionPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {consumerRights.map((right, idx) => (
-              <div key={idx} className="bg-white rounded-2xl p-6 border border-sand-300 shadow-sm space-y-3">
+              <div key={idx} className="bg-white rounded-xl p-6 border border-sand-300 shadow-sm space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-[#075A3A]/10 text-cbos-green-900 flex items-center justify-center font-mono font-bold text-xs">
                     0{idx + 1}
@@ -139,7 +139,7 @@ export default function ConsumerProtectionPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Procedure Steps */}
-          <div className="lg:col-span-5 bg-white rounded-2xl p-6 md:p-8 border border-sand-300 shadow-sm space-y-6">
+          <div className="lg:col-span-5 bg-white rounded-xl p-6 md:p-8 border border-sand-300 shadow-sm space-y-6">
             <h3 className="text-lg font-bold text-cbos-ink font-display border-b border-sand-200 pb-3">
               {isRtl ? 'خطوات تقديم ومتابعة الشكوى' : 'Grievance Redressal Procedure'}
             </h3>
@@ -189,7 +189,7 @@ export default function ConsumerProtectionPage() {
           </div>
 
           {/* Form */}
-          <div className="lg:col-span-7 bg-white rounded-2xl p-6 md:p-8 border border-sand-300 shadow-sm space-y-6">
+          <div className="lg:col-span-7 bg-white rounded-xl p-6 md:p-8 border border-sand-300 shadow-sm space-y-6">
             <h3 className="text-lg font-bold text-cbos-ink font-display border-b border-sand-200 pb-3">
               {isRtl ? 'نموذج تسجيل شكوى مصرفية رسمية' : 'Submit Formal Banking Grievance Form'}
             </h3>

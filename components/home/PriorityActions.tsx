@@ -69,11 +69,11 @@ export default function PriorityActions() {
               <Link
                 key={card.id}
                 href={card.href}
-                className={`group p-6 rounded-2xl bg-white border ${card.accent} shadow-cbos-card hover:shadow-cbos-elevation transition-all duration-300 flex flex-col justify-between`}
+                className={`group p-6 rounded-xl bg-white border ${card.accent} shadow-cbos-card hover:shadow-cbos-elevation transition-all duration-200 flex flex-col justify-between`}
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-xl bg-cbos-ivory-dark group-hover:bg-cbos-green group-hover:text-white transition-colors flex items-center justify-center text-cbos-green">
+                    <div className="w-10 h-10 rounded-lg bg-cbos-ivory-dark group-hover:bg-cbos-green group-hover:text-white transition-colors flex items-center justify-center text-cbos-green">
                       <IconComponent className="w-5 h-5" />
                     </div>
                     <span className="text-cbos-stone group-hover:text-cbos-gold group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all">

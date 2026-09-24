@@ -171,7 +171,7 @@ export default function TendersPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         
         {/* Controls */}
-        <div className="bg-white rounded-2xl p-5 border border-sand-300 shadow-sm mb-8 space-y-4">
+        <div className="bg-white rounded-xl p-5 border border-sand-300 shadow-sm mb-8 space-y-4">
           <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
             
             {/* Search Input */}
@@ -235,7 +235,7 @@ export default function TendersPage() {
             return (
               <div 
                 key={tender.id}
-                className="bg-white rounded-2xl p-6 md:p-8 border border-sand-300 shadow-sm hover:border-[#B99553] transition-all space-y-6"
+                className="bg-white rounded-xl p-6 md:p-8 border border-sand-300 shadow-sm hover:border-[#B99553] transition-all space-y-6"
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-sand-200 pb-4">
                   <div className="flex items-center gap-3">
@@ -301,7 +301,7 @@ export default function TendersPage() {
         </div>
 
         {/* Guidelines & Terms of Submission */}
-        <div className="mt-12 bg-[#032A1E] text-white rounded-2xl p-8 border border-cbos-green-800 space-y-6">
+        <div className="mt-12 bg-[#032A1E] text-white rounded-xl p-8 border border-cbos-green-800 space-y-6">
           <div className="flex items-center gap-3 border-b border-cbos-green-800 pb-4">
             <ShieldCheck className="w-6 h-6 text-[#B99553]" />
             <h2 className="text-lg font-bold font-display text-white">

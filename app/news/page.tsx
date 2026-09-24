@@ -80,7 +80,7 @@ export default function NewsPage() {
         
         {/* Featured Notice Banner if available */}
         {featuredNotice && (
-          <div className="bg-white border-2 border-cbos-gold/40 rounded-2xl p-6 sm:p-8 shadow-sm mb-12 relative overflow-hidden">
+          <div className="bg-white border-2 border-cbos-gold/40 rounded-xl p-6 sm:p-8 shadow-sm mb-12 relative overflow-hidden">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-sand-200">
               <div className="space-y-2">
                 <div className="flex items-center gap-2">

@@ -91,7 +91,7 @@ export default function FinancialSystemEcosystem() {
           {filtered.map((inst) => (
             <div
               key={inst.id}
-              className="p-5 rounded-2xl bg-white border border-cbos-stone hover:border-cbos-green hover:shadow-cbos-elevation transition-all flex flex-col justify-between space-y-4"
+              className="p-5 rounded-xl bg-white border border-cbos-stone hover:border-cbos-green hover:shadow-cbos-elevation transition-all flex flex-col justify-between space-y-4"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">

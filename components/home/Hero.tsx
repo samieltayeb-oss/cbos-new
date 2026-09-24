@@ -84,7 +84,7 @@ export default function Hero() {
             
             {/* Sovereign Badge with Statutory Foundation */}
             <div className="flex flex-wrap items-center gap-2.5">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#022319]/90 border border-[#B99553]/50 text-xs font-mono font-bold text-[#DDC99B] shadow-sm">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#032A1E]/90 border border-[#B99553]/50 text-xs font-mono font-bold text-[#DDC99B] shadow-sm">
                 <ShieldCheck className="w-4 h-4 text-[#B99553]" />
                 <span>{isRtl ? 'المؤسسة النقدية السيادية لجمهورية السودان' : 'Sovereign Monetary Authority of Sudan'}</span>
               </div>
@@ -134,7 +134,7 @@ export default function Hero() {
 
               <Link
                 href="/data"
-                className="px-6 py-3 rounded-lg bg-[#022319]/90 hover:bg-[#075A3A] text-white border border-[#B99553]/50 transition-all flex items-center gap-2 shadow-sm font-mono tracking-tight"
+                className="px-6 py-3 rounded-lg bg-[#032A1E]/90 hover:bg-[#075A3A] text-white border border-[#B99553]/50 transition-all flex items-center gap-2 shadow-sm font-mono tracking-tight"
               >
                 <TrendingUp className="w-4 h-4 text-[#B99553]" />
                 <span>{isRtl ? 'مؤشرات البيانات الاقتصادية' : 'View Economic Indicators'}</span>

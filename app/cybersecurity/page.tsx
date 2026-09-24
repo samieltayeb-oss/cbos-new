@@ -97,7 +97,7 @@ export default function CybersecurityPage() {
         
         {/* Core Pillars */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-2xl p-6 border border-sand-300 shadow-sm space-y-3">
+          <div className="bg-white rounded-xl p-6 border border-sand-300 shadow-sm space-y-3">
             <div className="w-10 h-10 rounded-xl bg-[#075A3A]/10 text-cbos-green-900 flex items-center justify-center">
               <Lock className="w-5 h-5" />
             </div>
@@ -111,7 +111,7 @@ export default function CybersecurityPage() {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 border border-sand-300 shadow-sm space-y-3">
+          <div className="bg-white rounded-xl p-6 border border-sand-300 shadow-sm space-y-3">
             <div className="w-10 h-10 rounded-xl bg-[#B99553]/15 text-[#B99553] flex items-center justify-center">
               <Cpu className="w-5 h-5" />
             </div>
@@ -125,7 +125,7 @@ export default function CybersecurityPage() {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 border border-sand-300 shadow-sm space-y-3">
+          <div className="bg-white rounded-xl p-6 border border-sand-300 shadow-sm space-y-3">
             <div className="w-10 h-10 rounded-xl bg-[#075A3A]/10 text-cbos-green-900 flex items-center justify-center">
               <Server className="w-5 h-5" />
             </div>
@@ -141,7 +141,7 @@ export default function CybersecurityPage() {
         </div>
 
         {/* SOC Operations Documentary Feature */}
-        <div className="bg-white rounded-2xl border border-sand-300 overflow-hidden shadow-sm grid grid-cols-1 lg:grid-cols-12">
+        <div className="bg-white rounded-xl border border-sand-300 overflow-hidden shadow-sm grid grid-cols-1 lg:grid-cols-12">
           <div className="relative h-72 sm:h-96 lg:h-auto lg:col-span-6 bg-cbos-green-950">
             <Image
               src="/images/cbos/cybersecurity/cbos-cybersecurity-operations.webp"
@@ -203,7 +203,7 @@ export default function CybersecurityPage() {
         </div>
 
         {/* Regulatory Standards */}
-        <div className="bg-white rounded-2xl p-6 md:p-8 border border-sand-300 shadow-sm space-y-6">
+        <div className="bg-white rounded-xl p-6 md:p-8 border border-sand-300 shadow-sm space-y-6">
           <div className="flex items-center justify-between border-b border-sand-200 pb-4">
             <div>
               <span className="text-xs font-bold text-cbos-green-900 uppercase tracking-widest font-mono">
@@ -238,7 +238,7 @@ export default function CybersecurityPage() {
         </div>
 
         {/* Incident Reporting Hotline */}
-        <div className="bg-[#032A1E] text-white rounded-2xl p-8 border border-cbos-green-800 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-[#032A1E] text-white rounded-xl p-8 border border-cbos-green-800 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/20 text-red-300 border border-red-500/40 text-xs font-mono font-bold">
               <AlertTriangle className="w-3.5 h-3.5" />

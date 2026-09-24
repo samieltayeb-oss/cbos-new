@@ -77,16 +77,16 @@ export default function PublicationsPreview() {
           {publications.map((pub) => (
             <div
               key={pub.id}
-              className="group bg-white rounded-2xl p-4 border border-cbos-stone shadow-cbos-card hover:shadow-cbos-elevation hover:border-cbos-gold transition-all duration-300 flex flex-col justify-between"
+              className="group bg-white rounded-xl p-4 border border-cbos-stone shadow-cbos-card hover:shadow-cbos-elevation hover:border-cbos-gold transition-all duration-200 flex flex-col justify-between"
             >
               <div className="space-y-4">
                 {/* Cover Thumbnail */}
-                <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden bg-cbos-green-dark/10 border border-cbos-stone/40">
+                <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden bg-cbos-green-dark/10 border border-cbos-stone/40">
                   <Image
                     src={pub.image}
                     alt={isRtl ? pub.title.ar : pub.title.en}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="object-cover group-hover:opacity-95 transition-opacity duration-200"
                   />
                   <div className="absolute top-2 right-2 rtl:right-auto rtl:left-2 bg-cbos-green-dark/90 text-cbos-gold px-2 py-0.5 rounded text-[10px] font-mono font-bold">
                     {pub.year}

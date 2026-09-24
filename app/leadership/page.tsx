@@ -60,7 +60,7 @@ export default function LeadershipPage() {
         
         {/* Governor's Signature Card */}
         {governor && (
-          <div className="bg-white border-2 border-cbos-gold/40 rounded-2xl p-6 sm:p-10 shadow-lg mb-16 relative overflow-hidden">
+          <div className="bg-white border-2 border-cbos-gold/40 rounded-xl p-6 sm:p-10 shadow-lg mb-16 relative overflow-hidden">
             <div className="absolute -top-12 -right-12 w-48 h-48 bg-cbos-gold/10 rounded-full blur-2xl pointer-events-none" />
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               
@@ -203,7 +203,7 @@ export default function LeadershipPage() {
 
         {/* High Sharia Supervisory Board Spotlight */}
         <div 
-          className="bg-cbos-green-950 text-white rounded-2xl p-8 sm:p-10 border border-cbos-gold/40 relative overflow-hidden"
+          className="bg-cbos-green-950 text-white rounded-xl p-8 sm:p-10 border border-cbos-gold/40 relative overflow-hidden"
           style={{ backgroundColor: '#032A1E' }}
         >
           <div className="absolute inset-0 bg-guilloche opacity-10 pointer-events-none" />

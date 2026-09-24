@@ -131,7 +131,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           
           {/* Port Sudan Primary Ops Center */}
-          <div className="bg-white border-2 border-cbos-green-800 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
+          <div className="bg-white border-2 border-cbos-green-800 rounded-xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="px-3 py-1 rounded text-xs font-mono font-bold bg-cbos-green-100 text-cbos-green-900 border border-cbos-green-300">
@@ -177,7 +177,7 @@ export default function ContactPage() {
           </div>
 
           {/* Historic Khartoum Headquarters */}
-          <div className="bg-white border border-sand-300 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
+          <div className="bg-white border border-sand-300 rounded-xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="px-3 py-1 rounded text-xs font-mono font-bold bg-sand-100 text-cbos-ink border border-sand-300">
@@ -288,7 +288,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
           {/* Official Inquiries Form */}
-          <div className="lg:col-span-7 bg-white border border-sand-300 rounded-2xl p-6 sm:p-8 shadow-sm">
+          <div className="lg:col-span-7 bg-white border border-sand-300 rounded-xl p-6 sm:p-8 shadow-sm">
             <div className="flex items-center gap-3 text-cbos-green-900 font-bold text-xl mb-4 border-b border-sand-200 pb-3">
               <Mail className="w-5 h-5 text-cbos-gold" />
               <h2>{t({ ar: 'نموذج الاستفسارات والمراسلات الرسمية', en: 'Official Inquiries & Public Correspondence' })}</h2>
@@ -409,7 +409,7 @@ export default function ContactPage() {
           <div className="lg:col-span-5 space-y-6">
             
             {/* Banking Consumer Protection Card */}
-            <div className="bg-white border border-sand-300 rounded-2xl p-6 shadow-sm">
+            <div className="bg-white border border-sand-300 rounded-xl p-6 shadow-sm">
               <div className="flex items-center gap-3 text-cbos-green-900 font-bold text-lg mb-3">
                 <UserCheck className="w-5 h-5 text-cbos-gold" />
                 <h3>{t({ ar: 'بوابة حماية عملاء الجهاز المصرفي', en: 'Banking Consumer Protection' })}</h3>
@@ -434,7 +434,7 @@ export default function ContactPage() {
 
             {/* Whistleblower Channel Card */}
             <div 
-              className="bg-cbos-green-950 text-white rounded-2xl p-6 border border-cbos-gold/30 space-y-3"
+              className="bg-cbos-green-950 text-white rounded-xl p-6 border border-cbos-gold/30 space-y-3"
               style={{ backgroundColor: '#032A1E' }}
             >
               <div className="flex items-center gap-2 text-cbos-gold text-xs font-mono uppercase tracking-wider">

@@ -117,7 +117,7 @@ export default function PaymentsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
         {/* Flagship NIPS Architecture Spotlight */}
-        <div id="nips" className="bg-white border-2 border-cbos-gold/40 rounded-2xl p-6 sm:p-10 shadow-lg mb-16 relative overflow-hidden scroll-mt-28">
+        <div id="nips" className="bg-white border-2 border-cbos-gold/40 rounded-xl p-6 sm:p-10 shadow-lg mb-16 relative overflow-hidden scroll-mt-28">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 pb-8 border-b border-sand-200">
             <div>
               <div className="flex items-center gap-2 text-cbos-gold text-xs font-mono uppercase tracking-wider mb-2">
@@ -183,7 +183,7 @@ export default function PaymentsPage() {
         </div>
 
         {/* Real-World Digital Payments Editorial Showcase */}
-        <div className="bg-white border border-sand-300 rounded-2xl overflow-hidden shadow-sm mb-16 grid grid-cols-1 lg:grid-cols-12">
+        <div className="bg-white border border-sand-300 rounded-xl overflow-hidden shadow-sm mb-16 grid grid-cols-1 lg:grid-cols-12">
           <div className="relative h-72 sm:h-96 lg:h-auto lg:col-span-6 bg-cbos-green-950">
             <Image
               src="/images/cbos/payments/sudan-digital-payments-market.webp"
@@ -292,7 +292,7 @@ export default function PaymentsPage() {
 
         {/* Regulatory FinTech Sandbox Application Strip */}
         <div 
-          className="bg-cbos-green-950 text-white rounded-2xl p-8 sm:p-10 border border-cbos-gold/40 relative overflow-hidden"
+          className="bg-cbos-green-950 text-white rounded-xl p-8 sm:p-10 border border-cbos-gold/40 relative overflow-hidden"
           style={{ backgroundColor: '#032A1E' }}
         >
           <div className="absolute inset-0 bg-guilloche opacity-10 pointer-events-none" />

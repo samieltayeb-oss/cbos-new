@@ -97,7 +97,7 @@ export default function BanknotesPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
           
           {/* Banknote Viewer */}
-          <div className="lg:col-span-8 bg-white border border-sand-300 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
+          <div className="lg:col-span-8 bg-white border border-sand-300 rounded-xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between pb-4 border-b border-sand-200 mb-6">
                 <div>
@@ -168,7 +168,7 @@ export default function BanknotesPage() {
 
           {/* Feature Inspector Panel */}
           <div 
-            className="lg:col-span-4 bg-cbos-green-950 text-white rounded-2xl p-6 sm:p-8 border border-cbos-gold/40 flex flex-col justify-between shadow-lg"
+            className="lg:col-span-4 bg-cbos-green-950 text-white rounded-xl p-6 sm:p-8 border border-cbos-gold/40 flex flex-col justify-between shadow-lg"
             style={{ backgroundColor: '#032A1E' }}
           >
             <div>

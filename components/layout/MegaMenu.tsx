@@ -19,8 +19,8 @@ export default function MegaMenu({ group, isOpen, onClose }: MegaMenuProps) {
 
   return (
     <div 
-      className="absolute top-full left-0 right-0 w-full text-white border-b-2 border-[#B99553] shadow-2xl z-40 transition-all duration-300 animate-fadeIn"
-      style={{ backgroundColor: '#0A1813' }}
+      className="absolute top-full left-0 right-0 w-full text-white border-b-2 border-[#B99553] shadow-2xl z-40 transition-all duration-200 animate-fadeIn"
+      style={{ backgroundColor: '#032A1E' }}
       onMouseLeave={onClose}
     >
       <div className="max-w-7xl mx-auto px-6 py-8">

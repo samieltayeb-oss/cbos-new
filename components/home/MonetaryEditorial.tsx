@@ -36,10 +36,10 @@ export default function MonetaryEditorial() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* Left: Governor Message & Sovereign Policy Statement (Cols 1-7) */}
-          <div className="lg:col-span-7 bg-white rounded-2xl p-6 md:p-8 border border-cbos-stone shadow-cbos-card flex flex-col justify-between space-y-6">
+          <div className="lg:col-span-7 bg-white rounded-xl p-6 md:p-8 border border-cbos-stone shadow-cbos-card flex flex-col justify-between space-y-6">
             <div className="space-y-4">
               <div className="flex items-center gap-4">
-                <div className="relative w-16 h-16 rounded-xl overflow-hidden border-2 border-cbos-gold shrink-0">
+                <div className="relative w-16 h-16 rounded-lg overflow-hidden border-2 border-cbos-gold shrink-0">
                   <Image
                     src="/images/cbos/official/governor-portrait.png"
                     alt="Governor Portrait"
@@ -85,7 +85,7 @@ export default function MonetaryEditorial() {
           </div>
 
           {/* Right: Policy Instruments & Featured Release Module (Cols 8-12) */}
-          <div className="lg:col-span-5 bg-cbos-green-dark text-cbos-ivory rounded-2xl p-6 md:p-8 border border-cbos-green shadow-xl flex flex-col justify-between space-y-6">
+          <div className="lg:col-span-5 bg-cbos-green-dark text-cbos-ivory rounded-xl p-6 md:p-8 border border-cbos-green shadow-xl flex flex-col justify-between space-y-6">
             <div className="space-y-4">
               <div className="flex items-center justify-between border-b border-cbos-green pb-3">
                 <span className="text-xs font-bold text-cbos-gold font-mono uppercase tracking-wider">

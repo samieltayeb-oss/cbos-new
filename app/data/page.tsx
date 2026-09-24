@@ -328,7 +328,7 @@ export default function DataPortalPage() {
         </div>
 
         {/* Directorate of Economic Research & Statistics Documentary Feature */}
-        <div className="bg-white rounded-2xl border border-[#D8D4C8] overflow-hidden shadow-sm mb-16 grid grid-cols-1 lg:grid-cols-12">
+        <div className="bg-white rounded-xl border border-[#D8D4C8] overflow-hidden shadow-sm mb-16 grid grid-cols-1 lg:grid-cols-12">
           <div className="relative h-72 sm:h-96 lg:h-auto lg:col-span-6 bg-cbos-green-950">
             <Image
               src="/images/cbos/research/cbos-economic-research-team.webp"

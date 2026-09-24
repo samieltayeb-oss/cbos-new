@@ -35,7 +35,7 @@ export default function DisclaimerPage() {
 
       {/* Main Content Area */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="bg-white rounded-2xl p-8 md:p-12 border border-sand-300 shadow-sm space-y-8 text-xs text-cbos-ink leading-relaxed font-sans">
+        <div className="bg-white rounded-xl p-8 md:p-12 border border-sand-300 shadow-sm space-y-8 text-xs text-cbos-ink leading-relaxed font-sans">
           
           <div className="space-y-3">
             <h2 className="text-lg font-bold text-cbos-green-900 font-display flex items-center gap-2">

@@ -269,7 +269,7 @@ function PublicationsContent() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         
         {/* Search & Filter Bar */}
-        <div className="bg-white rounded-2xl p-5 border border-sand-300 shadow-sm mb-8 space-y-4">
+        <div className="bg-white rounded-xl p-5 border border-sand-300 shadow-sm mb-8 space-y-4">
           <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
             
             {/* Search Input */}
@@ -313,7 +313,7 @@ function PublicationsContent() {
 
         {/* Publications List */}
         {filteredPublications.length === 0 ? (
-          <div className="bg-white rounded-2xl p-12 text-center border border-sand-300 space-y-3">
+          <div className="bg-white rounded-xl p-12 text-center border border-sand-300 space-y-3">
             <BookOpen className="w-12 h-12 text-sand-400 mx-auto" />
             <h3 className="font-bold text-base text-cbos-ink">
               {isRtl ? 'لم يتم العثور على إصدارات مطابقة' : 'No matching publications found'}
@@ -327,7 +327,7 @@ function PublicationsContent() {
             {filteredPublications.map((pub) => (
               <div
                 key={pub.id}
-                className="bg-white rounded-2xl p-6 border border-sand-300 shadow-sm hover:border-[#B99553] hover:shadow-md transition-all flex flex-col justify-between"
+                className="bg-white rounded-xl p-6 border border-sand-300 shadow-sm hover:border-[#B99553] hover:shadow-md transition-all flex flex-col justify-between"
               >
                 <div className="space-y-4">
                   {/* Meta Badges */}

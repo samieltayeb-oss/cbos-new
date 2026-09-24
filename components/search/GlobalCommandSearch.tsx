@@ -114,7 +114,7 @@ export default function GlobalCommandSearch({ isOpen, onClose }: { isOpen: boole
   return (
     <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-start justify-center pt-16 md:pt-24 px-4 animate-fadeIn">
       <div 
-        className="w-full max-w-2xl bg-cbos-ink border border-cbos-gold rounded-2xl shadow-2xl overflow-hidden flex flex-col"
+        className="w-full max-w-2xl bg-cbos-ink border border-cbos-gold rounded-xl shadow-2xl overflow-hidden flex flex-col"
         onClick={e => e.stopPropagation()}
       >
         

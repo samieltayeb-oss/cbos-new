@@ -208,7 +208,7 @@ export default function FinancialSystemPage() {
 
         {/* Prudential Standards Strip */}
         <div 
-          className="bg-cbos-green-950 text-white rounded-2xl p-8 sm:p-10 border border-cbos-gold/40 relative overflow-hidden"
+          className="bg-cbos-green-950 text-white rounded-xl p-8 sm:p-10 border border-cbos-gold/40 relative overflow-hidden"
           style={{ backgroundColor: '#032A1E' }}
         >
           <div className="absolute inset-0 bg-guilloche opacity-10 pointer-events-none" />

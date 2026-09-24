@@ -98,7 +98,7 @@ export default function FinancialInclusionPage() {
           {inclusionPillars.map((p, i) => {
             const Icon = p.icon;
             return (
-              <div key={i} className="bg-white rounded-2xl p-6 md:p-8 border border-sand-300 shadow-sm space-y-4">
+              <div key={i} className="bg-white rounded-xl p-6 md:p-8 border border-sand-300 shadow-sm space-y-4">
                 <div className="w-12 h-12 rounded-xl bg-[#075A3A]/10 text-cbos-green-900 flex items-center justify-center">
                   <Icon className="w-6 h-6 text-cbos-green-900" />
                 </div>
@@ -114,7 +114,7 @@ export default function FinancialInclusionPage() {
         </div>
 
         {/* Documentary Photography Feature: Rural & Agricultural Access */}
-        <div className="bg-white rounded-2xl border border-sand-300 overflow-hidden shadow-sm grid grid-cols-1 lg:grid-cols-12">
+        <div className="bg-white rounded-xl border border-sand-300 overflow-hidden shadow-sm grid grid-cols-1 lg:grid-cols-12">
           <div className="relative h-72 sm:h-96 lg:h-auto lg:col-span-6 bg-cbos-green-950">
             <Image
               src="/images/cbos/financial-inclusion/sudan-financial-inclusion-rural.webp"
@@ -176,7 +176,7 @@ export default function FinancialInclusionPage() {
         </div>
 
         {/* CTA Banner */}
-        <div className="bg-[#032A1E] text-white rounded-2xl p-8 border border-cbos-green-800 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-[#032A1E] text-white rounded-xl p-8 border border-cbos-green-800 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
             <h3 className="text-xl font-bold font-display text-white">
               {isRtl ? 'المقسم القومي للمدفوعات الفورية (NIPS)' : 'National Instant Payment System (NIPS)'}

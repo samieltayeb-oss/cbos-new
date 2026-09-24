@@ -68,7 +68,7 @@ export default function BanknotesShowcase() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           {/* Left: Banknote High-Res Canvas with Hotspots (Cols 1-7) */}
-          <div className="lg:col-span-7 bg-cbos-ink/70 rounded-2xl p-4 md:p-6 border border-cbos-gold/40 shadow-2xl relative space-y-4">
+          <div className="lg:col-span-7 bg-cbos-ink/70 rounded-xl p-4 md:p-6 border border-cbos-gold/40 shadow-xl relative space-y-4">
             
             <div className="flex items-center justify-between text-xs font-mono border-b border-cbos-ink-border pb-2 text-cbos-stone">
               <span>{isRtl ? note.title.ar : note.title.en}</span>
@@ -76,7 +76,7 @@ export default function BanknotesShowcase() {
             </div>
 
             {/* Note Canvas Container */}
-            <div className="relative w-full aspect-[16/8] rounded-xl overflow-hidden shadow-2xl border-2 border-cbos-gold/30 group">
+            <div className="relative w-full aspect-[16/8] rounded-lg overflow-hidden shadow-xl border-2 border-cbos-gold/30 group">
               <Image
                 src={note.frontImage}
                 alt={isRtl ? note.title.ar : note.title.en}
@@ -85,7 +85,7 @@ export default function BanknotesShowcase() {
                 priority
               />
 
-              {/* Hotspot Pulsing Pins */}
+              {/* Hotspot Pins */}
               {note.securityFeatures.map((feat) => {
                 const isSelected = activeFeature?.id === feat.id;
                 return (
@@ -118,10 +118,10 @@ export default function BanknotesShowcase() {
           <div className="lg:col-span-5 space-y-6">
             
             {activeFeature ? (
-              <div className="bg-cbos-ink/90 rounded-2xl p-6 border-2 border-cbos-gold/60 shadow-xl space-y-4">
+              <div className="bg-cbos-ink/90 rounded-xl p-6 border-2 border-cbos-gold/60 shadow-xl space-y-4">
                 <div className="flex items-center justify-between border-b border-cbos-ink-border pb-3">
                   <div className="flex items-center gap-2 text-cbos-gold text-xs font-mono font-bold uppercase">
-                    <Sparkles className="w-4 h-4" />
+                    <ShieldCheck className="w-4 h-4 text-cbos-gold" />
                     <span>{isRtl ? 'المواصفة التأمينية النشطة' : 'Active Security Feature'}</span>
                   </div>
                   <span className="px-2 py-0.5 rounded bg-cbos-green/40 text-[10px] text-white font-mono">

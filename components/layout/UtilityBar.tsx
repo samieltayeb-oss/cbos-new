@@ -11,7 +11,7 @@ export default function UtilityBar({ onOpenSearch }: { onOpenSearch?: () => void
   return (
     <div 
       className="text-white text-[12.5px] font-medium border-b border-[#075A3A]/60 py-2 px-4 md:px-8"
-      style={{ backgroundColor: '#022319' }}
+      style={{ backgroundColor: '#032A1E' }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
