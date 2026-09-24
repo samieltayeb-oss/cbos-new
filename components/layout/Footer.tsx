@@ -120,7 +120,15 @@ export default function Footer() {
             <span>•</span>
             <Link href="/disclaimer" className="hover:text-white transition-colors">{isRtl ? 'إخلاء المسؤولية' : 'Disclaimer'}</Link>
             <span>•</span>
-            <Link href="/accessibility" className="hover:text-white transition-colors">{isRtl ? 'إمكانية الوصول (WCAG 2.2)' : 'Accessibility (WCAG 2.2)'}</Link>
+            <a 
+              href="https://nexorayyc.io" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-[#DDC99B] hover:text-white font-medium transition-colors inline-flex items-center gap-1"
+            >
+              <span>{isRtl ? 'تم التطوير بواسطة' : 'Built by'}</span>
+              <span className="font-bold text-white hover:text-cbos-gold">NEXORA</span>
+            </a>
           </div>
         </div>
 
