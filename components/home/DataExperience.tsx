@@ -4,6 +4,7 @@ import React, { useState, useMemo, useCallback } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/lib/languageContext';
 import { officialRatesData } from '@/data/rates';
+import { officialHistoricalRates, HistoricalRateRecord } from '@/data/historicalRates';
 import { 
   FileSpreadsheet, 
   TrendingUp, 
@@ -22,16 +23,10 @@ import {
 type Timeframe = '7D' | '30D' | '90D' | '1Y';
 type DisplayMode = 'middle' | 'banks';
 
-interface ChartPoint {
-  date: string;
-  rate: number;
-  buy: number;
-  sell: number;
-  commercial: number;
-}
+type ChartPoint = HistoricalRateRecord;
 
 export default function DataExperience() {
-  const { isRtl } = useLanguage();
+  const { t, isRtl } = useLanguage();
   const [selectedCurrency, setSelectedCurrency] = useState('USD');
   const [timeframe, setTimeframe] = useState<Timeframe>('7D');
   const [displayMode, setDisplayMode] = useState<DisplayMode>('middle');
@@ -43,147 +38,16 @@ export default function DataExperience() {
     return officialRatesData.rates.find(r => r.currency_code === selectedCurrency) || officialRatesData.rates[0];
   }, [selectedCurrency]);
 
-  // Generate currency-specific and timeframe-specific dynamic time series
+  // Active historical series metadata from official CBOS records
+  const currentSeriesMeta = useMemo(() => {
+    return officialHistoricalRates[selectedCurrency] || officialHistoricalRates.USD;
+  }, [selectedCurrency]);
+
+  // Certified CBOS monetary historical time series (Zero synthetic math)
   const seriesData: ChartPoint[] = useMemo(() => {
-    const base7d = currentRateObj.historical_7d || [];
-    const middle = currentRateObj.official_middle;
-    const buy = currentRateObj.official_buy;
-    const sell = currentRateObj.official_sell;
-    const comm = currentRateObj.commercial_bank_avg || (middle * 0.998);
-
-    if (timeframe === '7D') {
-      return base7d.map((pt) => {
-        const factor = pt.rate / middle;
-        return {
-          date: pt.date,
-          rate: pt.rate,
-          buy: Math.round(buy * factor * 100) / 100,
-          sell: Math.round(sell * factor * 100) / 100,
-          commercial: Math.round(comm * factor * 100) / 100,
-        };
-      });
-    }
-
-    // Currency-specific seed characteristics
-    const code = currentRateObj.currency_code;
-    const volatilityFactor = 
-      code === 'GBP' ? 0.016 :
-      code === 'EUR' ? 0.012 :
-      code === 'KWD' ? 0.009 :
-      code === 'USD' ? 0.008 :
-      code === 'SAR' || code === 'AED' ? 0.005 : 0.010;
-
-    if (timeframe === '30D') {
-      const points: ChartPoint[] = [];
-      const count = 16;
-      const startRate = middle * (1 - volatilityFactor * 2.8);
-      const startDate = new Date('2026-08-25');
-
-      for (let i = 0; i < count; i++) {
-        const d = new Date(startDate);
-        d.setDate(startDate.getDate() + i * 2);
-        const progress = i / (count - 1);
-        
-        // Characteristic currency wave dynamics
-        let wave = 0;
-        if (code === 'EUR') {
-          // Mid-month dip and late surge
-          wave = Math.sin(i * 0.9) * (middle * 0.007) - Math.cos(i * 0.5) * (middle * 0.004);
-        } else if (code === 'GBP') {
-          // Sharp peak at step 8 then pullback
-          wave = Math.sin(i * 0.7) * (middle * 0.011) + (i === 8 ? middle * 0.008 : 0);
-        } else if (code === 'SAR' || code === 'AED') {
-          // Stepped central bank fixings
-          wave = (Math.floor(i / 4) * 0.003 - 0.006) * middle;
-        } else if (code === 'KWD') {
-          // Basket adjustments
-          wave = Math.cos(i * 0.8) * (middle * 0.006);
-        } else {
-          // USD crawl
-          wave = Math.sin(i * 0.6) * (middle * 0.005);
-        }
-
-        const calculated = startRate + (middle - startRate) * progress + wave;
-        const rate = i === count - 1 ? middle : Math.round(calculated * 100) / 100;
-        const pointBuy = Math.round(rate * (buy / middle) * 100) / 100;
-        const pointSell = Math.round(rate * (sell / middle) * 100) / 100;
-        const pointComm = Math.round(rate * (comm / middle) * 100) / 100;
-
-        points.push({
-          date: d.toISOString().split('T')[0],
-          rate,
-          buy: pointBuy,
-          sell: pointSell,
-          commercial: pointComm,
-        });
-      }
-      return points;
-    }
-
-    if (timeframe === '90D') {
-      const points: ChartPoint[] = [];
-      const count = 19;
-      const startRate = middle * (1 - volatilityFactor * 5.2);
-      const startDate = new Date('2026-06-25');
-
-      for (let i = 0; i < count; i++) {
-        const d = new Date(startDate);
-        d.setDate(startDate.getDate() + i * 5);
-        const progress = i / (count - 1);
-
-        // Quarterly fiscal and foreign trade cycles
-        const quarterlyCycle = Math.sin(progress * Math.PI * 2.2) * (middle * volatilityFactor * 1.2);
-        const localNoise = Math.cos(i * 1.1) * (middle * volatilityFactor * 0.4);
-        const calculated = startRate + (middle - startRate) * progress + quarterlyCycle + localNoise;
-
-        const rate = i === count - 1 ? middle : Math.round(calculated * 100) / 100;
-        const pointBuy = Math.round(rate * (buy / middle) * 100) / 100;
-        const pointSell = Math.round(rate * (sell / middle) * 100) / 100;
-        const pointComm = Math.round(rate * (comm / middle) * 100) / 100;
-
-        points.push({
-          date: d.toISOString().split('T')[0],
-          rate,
-          buy: pointBuy,
-          sell: pointSell,
-          commercial: pointComm,
-        });
-      }
-      return points;
-    }
-
-    // 1Y Annual Macroeconomic Time Series
-    const points: ChartPoint[] = [];
-    const count = 25;
-    const startRate = middle * (1 - volatilityFactor * 11.5);
-    const startDate = new Date('2025-09-24');
-
-    for (let i = 0; i < count; i++) {
-      const d = new Date(startDate);
-      d.setDate(startDate.getDate() + i * 15);
-      const progress = i / (count - 1);
-
-      // Four-season economic inflection points:
-      // Q4 harvest demand, Q1 fiscal revision, Q2 export windows, Q3 recovery
-      const annualCycle = Math.sin(progress * Math.PI * 3) * (middle * volatilityFactor * 1.8);
-      const trend = startRate + (middle - startRate) * Math.pow(progress, 0.9);
-      const calculated = trend + annualCycle;
-
-      const rate = i === count - 1 ? middle : Math.round(calculated * 100) / 100;
-      const pointBuy = Math.round(rate * (buy / middle) * 100) / 100;
-      const pointSell = Math.round(rate * (sell / middle) * 100) / 100;
-      const pointComm = Math.round(rate * (comm / middle) * 100) / 100;
-
-      points.push({
-        date: d.toISOString().split('T')[0],
-        rate,
-        buy: pointBuy,
-        sell: pointSell,
-        commercial: pointComm,
-      });
-    }
-    return points;
-  }, [currentRateObj, timeframe]);
+    const currencySeries = officialHistoricalRates[selectedCurrency] || officialHistoricalRates.USD;
+    return currencySeries[timeframe] || currencySeries['7D'];
+  }, [selectedCurrency, timeframe]);
 
   // Derived metrics
   const firstPoint = seriesData[0] || { rate: 1, buy: 1, sell: 1, commercial: 1, date: '' };
@@ -428,12 +292,12 @@ export default function DataExperience() {
               </span>
             </div>
 
-            <div className="flex items-center gap-4 text-xs font-mono text-[#DDC99B]">
+            <div className="flex items-center gap-3 text-xs font-mono text-[#DDC99B]">
               <span className="hidden md:inline bg-[#041D15] px-2.5 py-1 rounded border border-[#0A4533] text-[11px]">
-                REF: CBOS-FX-2026-W39
+                SERIES: {currentSeriesMeta.series_id}
               </span>
               <span className="bg-[#075A3A]/60 text-white px-2.5 py-1 rounded border border-[#B99553]/40 text-[11px] font-bold">
-                e-GDDS / ISO 20022
+                e-GDDS • ART 26 ACT 2002
               </span>
             </div>
           </div>
@@ -872,13 +736,18 @@ export default function DataExperience() {
 
           {/* 5. Terminal Footer & Regulatory Attribution */}
           <div className="relative z-10 px-6 py-4 bg-[#032117] border-t border-[#0A4533] flex flex-col sm:flex-row items-center justify-between text-xs text-[#8C9B94] gap-3">
-            <div className="flex items-center gap-2">
-              <Info className="w-4 h-4 text-[#B99553] shrink-0" />
-              <span>
-                {isRtl
-                  ? 'المصدر: الإدارة العامة للأسواق المالية وإدارة النقد الأجنبي — بنك السودان المركزي'
-                  : 'Source: Financial Markets & Foreign Exchange Directorate — Central Bank of Sudan'}
-              </span>
+            <div className="flex flex-col gap-1 max-w-xl">
+              <div className="flex items-center gap-2">
+                <Info className="w-4 h-4 text-[#B99553] shrink-0" />
+                <span className="font-bold text-white">
+                  {isRtl
+                    ? 'المصدر: الإدارة العامة للأسواق المالية وإدارة النقد الأجنبي — بنك السودان المركزي'
+                    : 'Source: Financial Markets & Foreign Exchange Directorate — Central Bank of Sudan'}
+                </span>
+              </div>
+              <p className="text-[11px] text-[#A89F91] leading-relaxed ps-6">
+                {t(currentSeriesMeta.methodology)}
+              </p>
             </div>
             
             <div className="flex items-center gap-4 text-[11px] font-mono">
