@@ -22,10 +22,7 @@ export default function EconomicStrip() {
         {/* Left: Fixed Ticker Label with Live Pulsing Badge */}
         <div className="flex items-center gap-2.5 shrink-0 z-10 bg-cbos-ink pr-3 rtl:pr-0 rtl:pl-3 border-r rtl:border-r-0 rtl:border-l border-cbos-ink-border">
           <div className="flex items-center gap-1.5 text-cbos-gold font-bold">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-            </span>
+            <span className="w-2 h-2 rounded-full bg-emerald-400 ring-2 ring-emerald-500/20 shrink-0" />
             <TrendingUp className="w-3.5 h-3.5 text-cbos-gold" />
             <span className="whitespace-nowrap font-arabic">
               {isRtl ? 'الأسعار التأشيرية المباشرة:' : 'Official Indicative Rates:'}
