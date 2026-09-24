@@ -106,12 +106,20 @@ export default function Footer() {
 
         {/* Bottom Section: Legal, Security & Copyright */}
         <div className="flex flex-col md:flex-row items-center justify-between text-xs text-cbos-stone gap-4">
-          <div className="flex items-center gap-3">
-            <ShieldCheck className="w-4 h-4 text-cbos-gold" />
-            <span>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-cbos-gold shrink-0" />
+              <span>
+                {isRtl 
+                  ? 'جميع الحقوق محفوظة © 2026 — بنك السودان المركزي | جمهورية السودان' 
+                  : 'All Rights Reserved © 2026 — Central Bank of Sudan | Republic of the Sudan'}
+              </span>
+            </div>
+            <span className="hidden sm:inline text-white/20">•</span>
+            <span className="text-[11px] text-[#A89F91] font-mono bg-[#032117] px-2 py-0.5 rounded border border-[#0A4533]">
               {isRtl 
-                ? 'جميع الحقوق محفوظة © 2026 — بنك السودان المركزي | جمهورية السودان' 
-                : 'All Rights Reserved © 2026 — Central Bank of Sudan | Republic of the Sudan'}
+                ? 'نسخة استعراض وتطوير تجريبية (Demo Preview) — الموقع الرسمي: cbos.gov.sd'
+                : 'Demo Evaluation Build — Official Portal: cbos.gov.sd'}
             </span>
           </div>
 

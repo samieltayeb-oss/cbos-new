@@ -121,7 +121,7 @@ export default function PaymentsPage() {
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 pb-8 border-b border-sand-200">
             <div>
               <div className="flex items-center gap-2 text-cbos-gold text-xs font-mono uppercase tracking-wider mb-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-emerald-500 ring-2 ring-emerald-500/20" />
                 <span>SOVEREIGN DIGITAL HIGHWAY • CDNIPS202601</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-cbos-green-950">

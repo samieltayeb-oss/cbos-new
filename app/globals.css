@@ -174,18 +174,11 @@ html[dir="rtl"] .animate-fx-ticker {
   -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
 }
 
-/* Floating Sovereign Sudanese Flag */
-@keyframes floatFlag {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-2.5px) rotate(1deg);
-  }
-}
-
-.animate-flag-float {
-  animation: floatFlag 3.2s ease-in-out infinite;
+/* Sovereign institutional motion styling */
+.transition-sovereign {
+  transition-property: color, background-color, border-color, opacity, transform;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
 

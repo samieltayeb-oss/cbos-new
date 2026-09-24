@@ -95,8 +95,8 @@ export default function BanknotesShowcase() {
                     style={{ left: `${feat.x_percent}%`, top: `${feat.y_percent}%` }}
                     className={`absolute -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full flex items-center justify-center transition-transform cursor-pointer ${
                       isSelected
-                        ? 'bg-cbos-gold text-cbos-ink scale-125 ring-4 ring-cbos-gold/50 shadow-lg'
-                        : 'bg-cbos-green/90 text-white hover:scale-110 ring-2 ring-white/60'
+                        ? 'bg-cbos-gold text-cbos-ink ring-4 ring-cbos-gold/50 shadow-md'
+                        : 'bg-cbos-green/90 text-white hover:bg-cbos-gold hover:text-cbos-ink ring-2 ring-white/60 transition-colors'
                     }`}
                     title={isRtl ? feat.name.ar : feat.name.en}
                     aria-label={isRtl ? feat.name.ar : feat.name.en}

@@ -169,7 +169,7 @@ export default function Hero() {
                   </div>
                 </div>
 
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 ring-2 ring-emerald-500/20" />
               </div>
 
               {/* 3 Metric Rows */}

@@ -138,7 +138,7 @@ export default function BanknotesPage() {
                       }`}
                       title={t(feat.name)}
                     >
-                      <span className="w-2.5 h-2.5 rounded-full bg-current animate-pulse" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-current" />
                     </button>
                   );
                 })}

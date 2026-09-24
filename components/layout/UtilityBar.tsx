@@ -18,9 +18,9 @@ export default function UtilityBar({ onOpenSearch }: { onOpenSearch?: () => void
         {/* Left / Start: Sovereign Identification */}
         <div className="flex items-center space-x-3 rtl:space-x-reverse">
           <div className="flex items-center gap-2 font-bold tracking-normal text-white">
-            {/* Floating Sovereign Sudanese Flag */}
+            {/* Sovereign Sudanese Flag */}
             <div 
-              className="animate-flag-float inline-flex items-center shadow-md rounded-[2.5px] overflow-hidden border border-white/40 filter drop-shadow hover:scale-110 transition-transform shrink-0 cursor-default"
+              className="inline-flex items-center shadow-sm rounded-[2.5px] overflow-hidden border border-white/40 shrink-0 cursor-default"
               title={isRtl ? 'علم جمهورية السودان' : 'Flag of the Republic of the Sudan'}
             >
               <svg 

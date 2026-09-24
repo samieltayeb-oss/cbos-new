@@ -159,7 +159,7 @@ export default function CybersecurityPage() {
           <div className="p-8 sm:p-10 lg:col-span-6 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2 text-cbos-green-900 text-xs font-mono uppercase tracking-wider mb-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-emerald-500 ring-2 ring-emerald-500/20" />
                 <span>{t({ ar: 'غرفة المراقبة والتحكم السيادية', en: 'Sovereign Operations & Defense' })}</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold text-cbos-ink font-display mb-3 leading-snug">
