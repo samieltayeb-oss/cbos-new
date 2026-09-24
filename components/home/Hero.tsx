@@ -51,8 +51,8 @@ export default function Hero() {
           }`} 
         />
         
-        {/* Vertical Top/Bottom Seamless Fades */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#071321]/60 via-transparent via-40% to-[#0B1A2D]" />
+        {/* Vertical Top/Bottom Seamless Fades: Softened top fade ensures the Sudanese flag is bright and prominent */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-50% to-[#0B1A2D]" />
       </div>
 
       {/* 2. Banknote Security Guilloche Pattern Overlay */}
