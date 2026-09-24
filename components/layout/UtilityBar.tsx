@@ -17,7 +17,24 @@ export default function UtilityBar({ onOpenSearch }: { onOpenSearch?: () => void
         
         {/* Left / Start: Sovereign Identification */}
         <div className="flex items-center space-x-3 rtl:space-x-reverse">
-          <div className="flex items-center gap-1.5 font-bold tracking-normal text-white">
+          <div className="flex items-center gap-2 font-bold tracking-normal text-white">
+            {/* Floating Sovereign Sudanese Flag */}
+            <div 
+              className="animate-flag-float inline-flex items-center shadow-md rounded-[2.5px] overflow-hidden border border-white/40 filter drop-shadow hover:scale-110 transition-transform shrink-0 cursor-default"
+              title={isRtl ? 'علم جمهورية السودان' : 'Flag of the Republic of the Sudan'}
+            >
+              <svg 
+                className="w-5 h-3.5 object-cover block" 
+                viewBox="0 0 600 300" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="600" height="100" fill="#D21034" />
+                <rect y="100" width="600" height="100" fill="#FFFFFF" />
+                <rect y="200" width="600" height="100" fill="#000000" />
+                <polygon points="0,0 200,150 0,300" fill="#007229" />
+              </svg>
+            </div>
             <ShieldCheck className="w-3.5 h-3.5 text-[#B99553]" />
             <span>{isRtl ? 'جمهورية السودان — بنك السودان المركزي' : 'Republic of the Sudan — Central Bank of Sudan'}</span>
           </div>
