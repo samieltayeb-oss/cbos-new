@@ -168,7 +168,7 @@ export default function Footer() {
         </div>
 
         {/* Subfooter Horizontal Bar matching cbos.gov.sd bottom line */}
-        <div className="flex flex-wrap items-center justify-between gap-4 py-4 px-5 rounded-xl bg-[#11253E] border border-[#22446D] text-xs font-mono text-[#8F9CAE]">
+        <div className="flex flex-wrap items-center justify-between gap-4 py-4 px-5 rounded-xl bg-[#11253E] border border-[#22446D] text-xs font-sans text-[#8F9CAE]">
           <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <Link href="/sitemap" className="text-white hover:text-[#2F88C2] transition-colors font-bold">
               {isRtl ? 'خارطة الموقع' : 'Sitemap'}
@@ -191,7 +191,7 @@ export default function Footer() {
             </Link>
           </div>
 
-          <div className="text-[11px] text-[#2F88C2] font-mono">
+          <div className="text-[11px] text-[#2F88C2] font-sans font-medium">
             {isRtl ? 'بوابة جمهورية السودان النقدية' : 'Republic of Sudan Monetary Portal'}
           </div>
         </div>
@@ -208,7 +208,7 @@ export default function Footer() {
               </span>
             </div>
             <span className="hidden sm:inline text-white/20">•</span>
-            <span className="text-[11px] text-[#8F9CAE] font-mono bg-[#11253E] px-2.5 py-0.5 rounded border border-[#22446D]">
+            <span className="text-[11px] text-[#8F9CAE] font-sans bg-[#11253E] px-2.5 py-0.5 rounded border border-[#22446D]">
               {isRtl 
                 ? 'نسخة استعراض وتطوير تجريبية (Demo Preview) — الموقع الرسمي: cbos.gov.sd'
                 : 'Demo Evaluation Build — Official Portal: cbos.gov.sd'}

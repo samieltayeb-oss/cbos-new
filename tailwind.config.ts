@@ -141,7 +141,7 @@ const config: Config = {
         tajawal: ['var(--font-tajawal)', 'sans-serif'],
         arabic: ['var(--font-tajawal)', 'var(--font-cairo)', 'sans-serif'],
         latin: ['var(--font-inter)', 'Segoe UI', 'Roboto', 'sans-serif'],
-        mono: ['var(--font-mono)', 'Consolas', 'Courier New', 'monospace'],
+        mono: ['var(--font-mono)', 'var(--font-tajawal)', 'Consolas', 'Courier New', 'monospace'],
       },
       fontSize: {
         'display-xl': ['clamp(2.5rem, 4.5vw, 4.75rem)', { lineHeight: '1.15', fontWeight: '800' }],
