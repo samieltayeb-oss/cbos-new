@@ -135,3 +135,42 @@ html[dir="rtl"] * {
     scroll-behavior: auto !important;
   }
 }
+
+/* Financial Live FX Marquee Ticker */
+@keyframes tickerScrollLtr {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes tickerScrollRtl {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+.animate-fx-ticker {
+  display: flex;
+  width: max-content;
+  animation: tickerScrollLtr 32s linear infinite;
+}
+
+html[dir="rtl"] .animate-fx-ticker {
+  animation: tickerScrollRtl 32s linear infinite;
+}
+
+.animate-fx-ticker:hover {
+  animation-play-state: paused;
+}
+
+.fx-ticker-mask {
+  mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+}
+

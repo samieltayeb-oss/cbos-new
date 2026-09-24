@@ -140,7 +140,7 @@ export default function AboutPage() {
           <div className="lg:col-span-8 space-y-12">
             
             {/* Legal Mandate Card */}
-            <div className="bg-white border border-sand-300 rounded-xl p-8 shadow-sm">
+            <div id="mandate" className="bg-white border border-sand-300 rounded-xl p-8 shadow-sm scroll-mt-28">
               <div className="flex items-center gap-3 text-cbos-green-800 font-bold text-2xl mb-4 border-b border-sand-200 pb-4">
                 <Scale className="w-6 h-6 text-cbos-gold" />
                 <h2>{t({ ar: 'التكليف القانوني والأهداف الاستراتيجية', en: 'Legal Mandate & Statutory Objectives' })}</h2>
@@ -217,7 +217,7 @@ export default function AboutPage() {
             </div>
 
             {/* Chronological Timeline */}
-            <div className="bg-white border border-sand-300 rounded-xl p-8 shadow-sm">
+            <div id="history" className="bg-white border border-sand-300 rounded-xl p-8 shadow-sm scroll-mt-28">
               <div className="flex items-center gap-3 text-cbos-green-800 font-bold text-2xl mb-8 border-b border-sand-200 pb-4">
                 <History className="w-6 h-6 text-cbos-gold" />
                 <h2>{t({ ar: 'مسيرة البنك عبر التاريخ (1959 - 2026)', en: 'Historical Journey (1959 - 2026)' })}</h2>

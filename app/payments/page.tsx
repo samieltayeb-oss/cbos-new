@@ -116,7 +116,7 @@ export default function PaymentsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
         {/* Flagship NIPS Architecture Spotlight */}
-        <div className="bg-white border-2 border-cbos-gold/40 rounded-2xl p-6 sm:p-10 shadow-lg mb-16 relative overflow-hidden">
+        <div id="nips" className="bg-white border-2 border-cbos-gold/40 rounded-2xl p-6 sm:p-10 shadow-lg mb-16 relative overflow-hidden scroll-mt-28">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 pb-8 border-b border-sand-200">
             <div>
               <div className="flex items-center gap-2 text-cbos-gold text-xs font-mono uppercase tracking-wider mb-2">
@@ -186,7 +186,8 @@ export default function PaymentsPage() {
           {paymentPillars.map((p) => (
             <div
               key={p.code}
-              className="bg-white border border-sand-300 rounded-xl p-8 shadow-sm hover:border-cbos-green-700 transition-all flex flex-col justify-between"
+              id={p.code.toLowerCase()}
+              className="bg-white border border-sand-300 rounded-xl p-8 shadow-sm hover:border-cbos-green-700 transition-all flex flex-col justify-between scroll-mt-28"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">

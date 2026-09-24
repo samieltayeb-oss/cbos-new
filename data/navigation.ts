@@ -8,7 +8,7 @@ export const primaryNavigation: NavGroup[] = [
     featuredDocument: {
       title: { ar: 'قانون بنك السودان المركزي وتعديلاته', en: 'Central Bank of Sudan Act & Amendments' },
       refNumber: 'LAW-1960-ACT',
-      href: '/documents/cbos-act',
+      href: '/documents?type=law',
       date: '2026'
     },
     categories: [
@@ -16,9 +16,9 @@ export const primaryNavigation: NavGroup[] = [
         title: { ar: 'المؤسسة والمهام', en: 'Institution & Mandate' },
         items: [
           { id: 'about-overview', title: { ar: 'نبذة تعريفية ورؤية البنك', en: 'Overview & Strategic Vision' }, href: '/about' },
-          { id: 'about-history', title: { ar: 'المحطات التاريخية للتأسيس', en: 'Historical Milestones' }, href: '/about/history' },
-          { id: 'about-mandate', title: { ar: 'الأهداف والمهام السيادية', en: 'Core Objectives & Powers' }, href: '/about/mandate' },
-          { id: 'about-branches', title: { ar: 'الفروع ومراكز النقد', en: 'Branches & Currency Centers' }, href: '/about/branches' },
+          { id: 'about-history', title: { ar: 'المحطات التاريخية للتأسيس', en: 'Historical Milestones' }, href: '/about#history' },
+          { id: 'about-mandate', title: { ar: 'الأهداف والمهام السيادية', en: 'Core Objectives & Powers' }, href: '/about#mandate' },
+          { id: 'about-branches', title: { ar: 'الفروع ومراكز النقد', en: 'Branches & Currency Centers' }, href: '/about' },
         ]
       },
       {
@@ -26,8 +26,8 @@ export const primaryNavigation: NavGroup[] = [
         items: [
           { id: 'gov-governor', title: { ar: 'كلمة محافظ البنك المركزي', en: 'Governor of the Central Bank' }, href: '/leadership' },
           { id: 'gov-board', title: { ar: 'مجلس الإدارة واللجان', en: 'Board of Directors & Committees' }, href: '/leadership#board' },
-          { id: 'gov-structure', title: { ar: 'الهيكل التنظيمي والإدارات', en: 'Organizational Structure' }, href: '/about/structure' },
-          { id: 'gov-sharia', title: { ar: 'الهيئة العليا للرقابة الشرعية', en: 'Higher Sharia Supervisory Board' }, href: '/about/sharia-board' },
+          { id: 'gov-structure', title: { ar: 'الهيكل التنظيمي والإدارات', en: 'Organizational Structure' }, href: '/about' },
+          { id: 'gov-sharia', title: { ar: 'الهيئة العليا للرقابة الشرعية', en: 'Higher Sharia Supervisory Board' }, href: '/about' },
         ]
       }
     ]
@@ -54,7 +54,7 @@ export const primaryNavigation: NavGroup[] = [
       {
         title: { ar: 'التقارير الدورية للسياسة', en: 'Policy Publications' },
         items: [
-          { id: 'pol-statements', title: { ar: 'بيانات لجنة السياسة النقدية', en: 'Monetary Policy Statements' }, href: '/monetary-policy#statements' },
+          { id: 'pol-statements', title: { ar: 'بيانات لجنة السياسة النقدية', en: 'Monetary Policy Statements' }, href: '/monetary-policy' },
           { id: 'pol-briefs', title: { ar: 'التحليل الاقتصادي الدوري للسيولة', en: 'Periodic Liquidity Reviews' }, href: '/publications?type=policy-brief' },
         ]
       }
@@ -83,9 +83,9 @@ export const primaryNavigation: NavGroup[] = [
       {
         title: { ar: 'الرقابة والإشراف المصرفي', en: 'Banking Supervision' },
         items: [
-          { id: 'fs-prudential', title: { ar: 'معايير كفاية رأس المال ومقررات بازل', en: 'Capital Adequacy & Basel Standards' }, href: '/financial-system/supervision' },
+          { id: 'fs-prudential', title: { ar: 'معايير كفاية رأس المال ومقررات بازل', en: 'Capital Adequacy & Basel Standards' }, href: '/financial-system' },
           { id: 'fs-consumer', title: { ar: 'حماية المستهلك المالي وحل الشكاوى', en: 'Financial Consumer Protection' }, href: '/consumer-protection' },
-          { id: 'fs-aml', title: { ar: 'مكافحة غسل الأموال وتمويل الإرهاب', en: 'AML / CFT Regulatory Framework' }, href: '/financial-system/aml-cft' },
+          { id: 'fs-aml', title: { ar: 'مكافحة غسل الأموال وتمويل الإرهاب', en: 'AML / CFT Regulatory Framework' }, href: '/financial-system' },
         ]
       }
     ]
@@ -125,7 +125,7 @@ export const primaryNavigation: NavGroup[] = [
     featuredDocument: {
       title: { ar: 'قانون تنظيم العمل المصرفي لسنة 2004 وتعديلاته', en: 'Regulation of Banking Business Act' },
       refNumber: 'LAW-2004-REV',
-      href: '/documents/banking-business-act',
+      href: '/documents?type=law',
       date: '2026'
     },
     categories: [
@@ -168,7 +168,7 @@ export const primaryNavigation: NavGroup[] = [
       {
         title: { ar: 'التنزيل والواجهات البرمجية', en: 'Exports & Datasets' },
         items: [
-          { id: 'data-download', title: { ar: 'كتالوج البيانات المفتوحة (CSV / XLSX)', en: 'Open Data Catalog (CSV/XLSX)' }, href: '/data/catalog' },
+          { id: 'data-download', title: { ar: 'كتالوج البيانات المفتوحة (CSV / XLSX)', en: 'Open Data Catalog (CSV/XLSX)' }, href: '/data' },
         ]
       }
     ]
@@ -217,8 +217,8 @@ export const primaryNavigation: NavGroup[] = [
         items: [
           { id: 'pay-nips', title: { ar: 'المقسم القومي للمدفوعات الفورية (NIPS)', en: 'National Instant Payments (NIPS)' }, href: '/payments#nips' },
           { id: 'pay-rtgs', title: { ar: 'نظام التسوية اللحظية الشاملة (RTGS)', en: 'Real-Time Gross Settlement (RTGS)' }, href: '/payments#rtgs' },
-          { id: 'pay-ecc', title: { ar: 'المقاصة الإلكترونية للشيكات (ECC)', en: 'Electronic Cheque Clearing (ECC)' }, href: '/payments#ecc' },
-          { id: 'pay-pos', title: { ar: 'شبكة نقاط البيع والصرافات الآلية', en: 'National POS & ATM Switch' }, href: '/payments#switch' },
+          { id: 'pay-ecc', title: { ar: 'المقاصة الإلكترونية للشيكات (ECC)', en: 'Electronic Cheque Clearing (ECC)' }, href: '/payments' },
+          { id: 'pay-pos', title: { ar: 'شبكة نقاط البيع والصرافات الآلية', en: 'National POS & ATM Switch' }, href: '/payments#ebs' },
         ]
       },
       {
@@ -255,7 +255,7 @@ export const primaryNavigation: NavGroup[] = [
         title: { ar: 'التوعية ومكافحة التزييف', en: 'Security Features' },
         items: [
           { id: 'cur-security', title: { ar: 'العلامات التأمينية والفحص البصري', en: 'Security Features & Verification' }, href: '/banknotes#security' },
-          { id: 'cur-exchange', title: { ar: 'ضوابط استبدال العملة التالفة والمسحوبة', en: 'Mutilated Currency Replacement' }, href: '/banknotes#rules' },
+          { id: 'cur-exchange', title: { ar: 'ضوابط استبدال العملة التالفة والمسحوبة', en: 'Mutilated Currency Replacement' }, href: '/banknotes' },
         ]
       }
     ]
