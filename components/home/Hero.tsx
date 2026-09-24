@@ -20,11 +20,11 @@ export default function Hero() {
         <div className="hidden sm:block absolute inset-0">
           <Image
             src="/images/cbos/hero/cbos-hero-master-center.webp"
-            alt={isRtl ? 'المقر السيادي لبنك السودان المركزي بالخرطوم' : 'Sovereign Headquarters of the Central Bank of Sudan in Khartoum'}
+            alt={isRtl ? 'البنية التقنية والمعمارية لمقر بنك السودان المركزي' : 'Technical & Architectural Infrastructure of CBOS Headquarters'}
             fill
             priority
             quality={95}
-            className="object-cover object-center opacity-85 lg:opacity-90 filter contrast-[1.08] saturate-[1.05]"
+            className="object-cover object-center opacity-90 lg:opacity-95 filter contrast-[1.05]"
             sizes="100vw"
           />
         </div>
@@ -33,26 +33,26 @@ export default function Hero() {
         <div className="sm:hidden absolute inset-0">
           <Image
             src="/images/cbos/hero/cbos-hero-master-center-mobile.webp"
-            alt={isRtl ? 'المقر السيادي لبنك السودان المركزي' : 'Central Bank of Sudan Sovereign Headquarters'}
+            alt={isRtl ? 'البنية المعمارية لبنك السودان المركزي' : 'CBOS Technical Architecture'}
             fill
             priority
             quality={92}
-            className="object-cover object-center opacity-80 filter contrast-[1.08]"
+            className="object-cover object-center opacity-85 filter contrast-[1.05]"
             sizes="100vw"
           />
         </div>
 
-        {/* Direction-Aware Institutional Scrim Overlay: Crisp typography on text side while letting the 8K building & Nile reflections glow */}
+        {/* Direction-Aware Institutional Scrim Overlay: Highlights the luminous architectural wireframe while keeping typography crystal clear */}
         <div 
           className={`absolute inset-0 ${
             isRtl 
-              ? 'bg-gradient-to-l from-[#0B1A2D]/95 via-[#0B1A2D]/45 via-65% to-[#0B1A2D]/30' 
-              : 'bg-gradient-to-r from-[#0B1A2D]/95 via-[#0B1A2D]/45 via-65% to-[#0B1A2D]/30'
+              ? 'bg-gradient-to-l from-[#0B1A2D]/90 via-transparent via-50% to-[#0B1A2D]/20' 
+              : 'bg-gradient-to-r from-[#0B1A2D]/90 via-transparent via-50% to-[#0B1A2D]/20'
           }`} 
         />
         
         {/* Vertical Top/Bottom Seamless Fades */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#071321]/80 via-transparent via-40% to-[#0B1A2D]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#071321]/60 via-transparent via-40% to-[#0B1A2D]" />
       </div>
 
       {/* 2. Banknote Security Guilloche Pattern Overlay */}
