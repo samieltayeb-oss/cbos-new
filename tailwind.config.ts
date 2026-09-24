@@ -136,10 +136,10 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-tajawal)', 'var(--font-inter)', 'Segoe UI', 'Tahoma', 'sans-serif'],
-        display: ['var(--font-cairo)', 'var(--font-tajawal)', 'sans-serif'],
+        display: ['var(--font-tajawal)', 'var(--font-cairo)', 'sans-serif'],
         cairo: ['var(--font-cairo)', 'sans-serif'],
         tajawal: ['var(--font-tajawal)', 'sans-serif'],
-        arabic: ['var(--font-cairo)', 'var(--font-tajawal)', 'sans-serif'],
+        arabic: ['var(--font-tajawal)', 'sans-serif'],
         latin: ['var(--font-inter)', 'Segoe UI', 'Roboto', 'sans-serif'],
         mono: ['var(--font-mono)', 'Consolas', 'Courier New', 'monospace'],
       },

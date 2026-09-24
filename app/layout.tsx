@@ -68,9 +68,9 @@ export default function RootLayout({
     <html 
       lang="ar" 
       dir="rtl" 
-      className={`scroll-smooth ${tajawal.variable} ${cairo.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      className={`scroll-smooth overflow-x-hidden ${tajawal.variable} ${cairo.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="bg-cbos-ivory text-cbos-ink antialiased selection:bg-cbos-gold selection:text-cbos-ink min-h-screen">
+      <body className="bg-cbos-ivory text-cbos-ink antialiased selection:bg-cbos-gold selection:text-cbos-ink min-h-screen overflow-x-hidden w-full">
         <LanguageProvider>
           <ShellWrapper>{children}</ShellWrapper>
         </LanguageProvider>
