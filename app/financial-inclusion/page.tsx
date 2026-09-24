@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/lib/languageContext';
 import { 
   Users, 
@@ -110,6 +111,68 @@ export default function FinancialInclusionPage() {
               </div>
             );
           })}
+        </div>
+
+        {/* Documentary Photography Feature: Rural & Agricultural Access */}
+        <div className="bg-white rounded-2xl border border-sand-300 overflow-hidden shadow-sm grid grid-cols-1 lg:grid-cols-12">
+          <div className="relative h-72 sm:h-96 lg:h-auto lg:col-span-6 bg-cbos-green-950">
+            <Image
+              src="/images/cbos/financial-inclusion/sudan-financial-inclusion-rural.webp"
+              alt={t({ ar: 'الشمول المالي والتمويل الأصغر الزراعي في مشروع الجزيرة والولايات', en: 'Agricultural financial inclusion and mobile microfinance in Sudan' })}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:hidden" />
+            <div className="absolute bottom-3 start-4 text-[11px] font-mono text-white/90 bg-black/50 px-2.5 py-1 rounded backdrop-blur-sm">
+              GEZIRA SCHEME & RURAL SECTORS • AGRICULTURAL MICROFINANCE
+            </div>
+          </div>
+
+          <div className="p-8 sm:p-10 lg:col-span-6 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 text-[#B99553] text-xs font-mono uppercase tracking-wider mb-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-600" />
+                <span>{t({ ar: 'التمكين الاقتصادي الميداني', en: 'Field Economic Empowerment' })}</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-cbos-ink font-display mb-3 leading-snug">
+                {isRtl
+                  ? 'الشمول المالي والتمكين الميداني للقطاع الزراعي والريفي'
+                  : 'Rural Financial Inclusion & Agricultural Field Empowerment'}
+              </h3>
+              <p className="text-xs sm:text-sm text-cbos-ink-muted leading-[1.8] font-sans mb-6">
+                {isRtl
+                  ? 'يقود بنك السودان المركزي مبادرات ميدانية واسعة لإتاحة صيغ التمويل الأصغر الإسلامي (كالسلم والمرابحة) والمحافظ الرقمية للمزارعين وصغار المنتجين والنساء الريفيات في مشروع الجزيرة ومختلف ولايات السودان، لربط الريف المنتج بالبنية المصرفية السيادية.'
+                  : 'CBOS champions nationwide field initiatives delivering Sharia-compliant microfinance instruments (Salam and Murabaha) and digital mobile wallets to smallholder farmers, producers, and rural women entrepreneurs across the Gezira Scheme and productive agricultural states.'}
+              </p>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4 border-t border-sand-200">
+                <div className="p-3 rounded-lg bg-sand-50 border border-sand-200">
+                  <div className="font-mono text-base font-bold text-cbos-green-950">65%</div>
+                  <div className="text-[11px] text-cbos-ink-muted leading-tight mt-0.5">
+                    {isRtl ? 'مستهدف الشمول 2028' : '2028 Inclusion Target'}
+                  </div>
+                </div>
+                <div className="p-3 rounded-lg bg-sand-50 border border-sand-200">
+                  <div className="font-mono text-base font-bold text-cbos-green-950">12%</div>
+                  <div className="text-[11px] text-cbos-ink-muted leading-tight mt-0.5">
+                    {isRtl ? 'حصة التمويل الأصغر الإلزامية' : 'Mandatory Microfinance Quota'}
+                  </div>
+                </div>
+                <div className="p-3 rounded-lg bg-sand-50 border border-sand-200 col-span-2 sm:col-span-1">
+                  <div className="font-mono text-base font-bold text-[#B99553]">NIPS / POS</div>
+                  <div className="text-[11px] text-cbos-ink-muted leading-tight mt-0.5">
+                    {isRtl ? 'شبكة الوكلاء والمدفوعات' : 'Agent & Switch Rails'}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-sand-100 flex items-center justify-between text-xs font-mono text-cbos-ink-muted">
+              <span>DOCUMENTARY ARCHIVE • SUDAN FINANCIAL INCLUSION</span>
+              <span className="text-cbos-green-800 font-bold">CBOS 2026</span>
+            </div>
+          </div>
         </div>
 
         {/* CTA Banner */}

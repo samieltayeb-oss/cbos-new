@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/lib/languageContext';
 import { 
@@ -177,6 +178,70 @@ export default function PaymentsPage() {
               <p className="text-xs text-cbos-ink-muted leading-[1.6]">
                 {t({ ar: 'إشعار فوري لطرفي المعاملة وتحديث قيود التسوية المركزية.', en: 'Instant confirmation receipt to both parties with central ledger logs.' })}
               </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Real-World Digital Payments Editorial Showcase */}
+        <div className="bg-white border border-sand-300 rounded-2xl overflow-hidden shadow-sm mb-16 grid grid-cols-1 lg:grid-cols-12">
+          <div className="relative h-72 sm:h-96 lg:h-auto lg:col-span-6 bg-cbos-green-950">
+            <Image
+              src="/images/cbos/payments/sudan-digital-payments-market.webp"
+              alt={t({ ar: 'استخدام الدفع الإلكتروني ونقاط البيع في الأسواق السودانية', en: 'Digital POS terminal and mobile payments in Sudanese marketplace' })}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:hidden" />
+            <div className="absolute bottom-3 start-4 text-[11px] font-mono text-white/90 bg-black/50 px-2.5 py-1 rounded backdrop-blur-sm">
+              OMDURMAN SOVEREIGN RETAIL RAILS • EBS & NIPS
+            </div>
+          </div>
+
+          <div className="p-8 sm:p-10 lg:col-span-6 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 text-cbos-gold text-xs font-mono uppercase tracking-wider mb-2">
+                <span className="w-2 h-2 rounded-full bg-cbos-green-600" />
+                <span>{t({ ar: 'التحول المالي الميداني', en: 'Field Financial Modernization' })}</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-cbos-green-950 mb-3 leading-snug">
+                {t({
+                  ar: 'واقع المدفوعات ونقاط البيع الإلكترونية في الأسواق السودانية',
+                  en: 'Digital Point-of-Sale & Mobile Payment Ecosystem in Sudan'
+                })}
+              </h3>
+              <p className="text-sm text-cbos-ink-muted leading-[1.8] mb-6">
+                {t({
+                  ar: 'يشهد السوق السوداني تحولاً متسارعاً نحو المدفوعات غير النقدية عبر التوسع في نشر أجهزة نقاط البيع (POS) وتطبيقات الدفع عبر الهاتف المحمول في الأسواق التجارية والمحال بمدن وولايات السودان، مدعومة بالربط المباشر مع المقسم القومي لبطاقات الدفع (EBS) والمقسم القومي للمدفوعات الفورية (NIPS).',
+                  en: 'Sudan is accelerating cashless commerce through the widespread deployment of smart POS devices and mobile QR payments across urban markets and state trading hubs, powered by real-time interbank settlement through EBS and the sovereign NIPS switch.'
+                })}
+              </p>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4 border-t border-sand-200">
+                <div className="p-3 rounded-lg bg-sand-50 border border-sand-200">
+                  <div className="font-mono text-base font-bold text-cbos-green-950">60,000+</div>
+                  <div className="text-[11px] text-cbos-ink-muted leading-tight mt-0.5">
+                    {t({ ar: 'نقطة بيع إلكترونية (POS)', en: 'Active POS Terminals' })}
+                  </div>
+                </div>
+                <div className="p-3 rounded-lg bg-sand-50 border border-sand-200">
+                  <div className="font-mono text-base font-bold text-cbos-green-950">18</div>
+                  <div className="text-[11px] text-cbos-ink-muted leading-tight mt-0.5">
+                    {t({ ar: 'ولاية مغطاة بالكامل', en: 'States Covered' })}
+                  </div>
+                </div>
+                <div className="p-3 rounded-lg bg-sand-50 border border-sand-200 col-span-2 sm:col-span-1">
+                  <div className="font-mono text-base font-bold text-cbos-gold">&lt; 10s</div>
+                  <div className="text-[11px] text-cbos-ink-muted leading-tight mt-0.5">
+                    {t({ ar: 'زمن التسوية اللحظية', en: 'Instant Settlement' })}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-sand-100 flex items-center justify-between text-xs font-mono text-cbos-ink-muted">
+              <span>DOCUMENTARY ARCHIVE • SUDAN RETAIL PAYMENTS</span>
+              <span className="text-cbos-green-800 font-bold">CBOS 2026</span>
             </div>
           </div>
         </div>

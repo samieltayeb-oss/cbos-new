@@ -120,3 +120,34 @@ cbos-new/
 * **Direction-Aware Scrims:** A custom CSS gradient (`bg-gradient-to-l / bg-gradient-to-r from-[#032A1E] via-[#032A1E]/85 via-45% to-[#032A1E]/30`) guarantees 100% WCAG AAA contrast for text while revealing the glowing landmarks on the opposite side.
 * **Guilloche Vector Integration:** Banknote security linework seamlessly overlays the landscape, bridging legal tender security with national territory.
 
+---
+
+## 6. Category 2 Editorial Documentary Suite (Inner Pages)
+**Implementation Date: 2026-09-24**  
+**Role:** Authoritative documentary photography grounding CBOS sovereign pillars in the actual reality of Sudanese commerce, agriculture, cyber operations, and economic research.
+
+### 6.1 Sudan Digital Retail Payments in Action (`/payments`)
+* **File Path:** `/public/images/cbos/payments/sudan-digital-payments-market.webp` (1920x1080) & `.jpg`
+* **Subject:** Authentic Sudanese merchant in traditional pristine white jalabiya and imma at an Omdurman spices/crafts market counter, completing a cashless transaction using a sleek electronic point-of-sale (POS) terminal, while a young Sudanese customer in casual modern attire pays via smartphone QR code.
+* **Lighting & Atmosphere:** Warm natural sunlight streaming through market arches, documentary realism, National Geographic editorial grade.
+* **Page Target:** `/payments` (Embedded in "Digital Point-of-Sale & Mobile Payment Ecosystem in Sudan" showcase).
+
+### 6.2 Rural Financial Inclusion & Agricultural Empowerment (`/financial-inclusion`)
+* **File Path:** `/public/images/cbos/financial-inclusion/sudan-financial-inclusion-rural.webp` (1920x1080) & `.jpg`
+* **Subject:** Respectful, empowering documentary photograph in the Gezira Scheme or rural Sudan. A Sudanese woman farmer in a vibrant traditional Sudanese tobe reviewing agricultural microfinance accounts on a rugged tablet with a smiling Sudanese agricultural extension officer wearing an institutional vest.
+* **Lighting & Atmosphere:** Golden hour natural light across green agricultural fields, crisp depth of field, authentic dignity and empowerment.
+* **Page Target:** `/financial-inclusion` (Embedded in "Rural Financial Inclusion & Agricultural Field Empowerment" showcase).
+
+### 6.3 CBOS-CERT Security Operations Center (`/cybersecurity`)
+* **File Path:** `/public/images/cbos/cybersecurity/cbos-cybersecurity-operations.webp` (1920x1080) & `.jpg`
+* **Subject:** High-tech sovereign Security Operations Center (SOC) inside the Central Bank of Sudan. Sudanese cybersecurity engineers (a professional Sudanese woman in a modern hijab and an analyst in business attire) monitoring large curved displays showing financial network topology, threat heatmaps, and transaction velocity.
+* **Lighting & Atmosphere:** Sophisticated ambient moody lighting with deep emerald accents, ultra-crisp editorial realism, authoritative institutional cyber defense.
+* **Page Target:** `/cybersecurity` (Embedded in "CBOS-CERT Security Operations Center & Sovereign Defense" showcase).
+
+### 6.4 Economic Research & Monetary Policy Directorate (`/data`)
+* **File Path:** `/public/images/cbos/research/cbos-economic-research-team.webp` (1920x1080) & `.jpg`
+* **Subject:** Institutional conference room and briefing suite at the Central Bank of Sudan. A diverse team of Sudanese macroeconomists, data scientists, and senior analysts reviewing monetary aggregates, gold export charts, and economic forecasts on tablets and projection screens, with panoramic floor-to-ceiling windows overlooking Khartoum and the Nile.
+* **Lighting & Atmosphere:** Premium architectural lighting, calm authoritative boardroom ambience, Bloomberg Markets/Financial Times editorial standard.
+* **Page Target:** `/data` (Embedded in "General Directorate of Economic Research & Statistics" showcase).
+
+

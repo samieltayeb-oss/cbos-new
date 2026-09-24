@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/lib/languageContext';
 import { 
   ShieldCheck, 
@@ -136,6 +137,68 @@ export default function CybersecurityPage() {
                 ? 'مراكز بيانات موزعة جغرافياً تعمل بنظام Active-Active تضمن عدم انقطاع التسويات المالية حتى في أسوأ السيناريوهات الطارئة.'
                 : 'Geographically dispersed Active-Active data centers ensuring zero transaction loss and sub-second failover.'}
             </p>
+          </div>
+        </div>
+
+        {/* SOC Operations Documentary Feature */}
+        <div className="bg-white rounded-2xl border border-sand-300 overflow-hidden shadow-sm grid grid-cols-1 lg:grid-cols-12">
+          <div className="relative h-72 sm:h-96 lg:h-auto lg:col-span-6 bg-cbos-green-950">
+            <Image
+              src="/images/cbos/cybersecurity/cbos-cybersecurity-operations.webp"
+              alt={t({ ar: 'مركز العمليات السيبرانية وغرفة التحكم الأمنية لبنك السودان المركزي', en: 'CBOS Security Operations Center (SOC) and cyber defense command' })}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:hidden" />
+            <div className="absolute bottom-3 start-4 text-[11px] font-mono text-white/90 bg-black/50 px-2.5 py-1 rounded backdrop-blur-sm">
+              CBOS-CERT CENTRAL SOC • 24/7/365 REAL-TIME TELEMETRY
+            </div>
+          </div>
+
+          <div className="p-8 sm:p-10 lg:col-span-6 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 text-cbos-green-900 text-xs font-mono uppercase tracking-wider mb-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span>{t({ ar: 'غرفة المراقبة والتحكم السيادية', en: 'Sovereign Operations & Defense' })}</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-cbos-ink font-display mb-3 leading-snug">
+                {isRtl
+                  ? 'مركز العمليات السيبرانية لبنك السودان المركزي (CBOS-CERT SOC)'
+                  : 'CBOS-CERT Security Operations Center & Sovereign Defense'}
+              </h3>
+              <p className="text-xs sm:text-sm text-cbos-ink-muted leading-[1.8] font-sans mb-6">
+                {isRtl
+                  ? 'تعمل كوادر وطنية متخصصة على مدار الساعة (24/7/365) في غرفة العمليات السيبرانية لرصد تدفقات المعاملات المالية البينية، واكتشاف الأنماط المشبوهة، وتحييد التهديدات المتقدمة لحماية استمرارية مقسمات الدفع القومية وشبكة السويفت الدولية.'
+                  : 'Operating 24/7/365, specialized Sudanese cybersecurity engineers staff the national financial SOC, monitoring real-time transaction telemetry, detecting threat anomalies, and shielding sovereign interbank settlement rails and SWIFT gateways.'}
+              </p>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4 border-t border-sand-200">
+                <div className="p-3 rounded-lg bg-sand-50 border border-sand-200">
+                  <div className="font-mono text-base font-bold text-cbos-green-950">24/7/365</div>
+                  <div className="text-[11px] text-cbos-ink-muted leading-tight mt-0.5">
+                    {isRtl ? 'جاهزية الرصد والتحكم' : 'Continuous Monitoring'}
+                  </div>
+                </div>
+                <div className="p-3 rounded-lg bg-sand-50 border border-sand-200">
+                  <div className="font-mono text-base font-bold text-cbos-green-950">&lt; 120m</div>
+                  <div className="text-[11px] text-cbos-ink-muted leading-tight mt-0.5">
+                    {isRtl ? 'الاستجابة للحوادث' : 'Incident SLA'}
+                  </div>
+                </div>
+                <div className="p-3 rounded-lg bg-sand-50 border border-sand-200 col-span-2 sm:col-span-1">
+                  <div className="font-mono text-base font-bold text-[#B99553]">ISO 27001</div>
+                  <div className="text-[11px] text-cbos-ink-muted leading-tight mt-0.5">
+                    {isRtl ? 'معيار الحوكمة والأمن' : 'Security Baseline'}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-sand-100 flex items-center justify-between text-xs font-mono text-cbos-ink-muted">
+              <span>DOCUMENTARY ARCHIVE • FINANCIAL CYBERSECURITY</span>
+              <span className="text-cbos-green-800 font-bold">CBOS 2026</span>
+            </div>
           </div>
         </div>
 

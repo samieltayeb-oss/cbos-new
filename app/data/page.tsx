@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/lib/languageContext';
 import { 
   BarChart3, 
@@ -324,6 +325,70 @@ export default function DataPortalPage() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Directorate of Economic Research & Statistics Documentary Feature */}
+        <div className="bg-white rounded-2xl border border-[#D8D4C8] overflow-hidden shadow-sm mb-16 grid grid-cols-1 lg:grid-cols-12">
+          <div className="relative h-72 sm:h-96 lg:h-auto lg:col-span-6 bg-cbos-green-950">
+            <Image
+              src="/images/cbos/research/cbos-economic-research-team.webp"
+              alt={t({ ar: 'فريق الإدارة العامة للبحوث والإحصاء ببنك السودان المركزي', en: 'CBOS Economic Research & Macroeconomic Statistics Directorate' })}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:hidden" />
+            <div className="absolute bottom-3 start-4 text-[11px] font-mono text-white/90 bg-black/50 px-2.5 py-1 rounded backdrop-blur-sm">
+              ECONOMIC RESEARCH DIRECTORATE • IMF e-GDDS COMPLIANCE
+            </div>
+          </div>
+
+          <div className="p-8 sm:p-10 lg:col-span-6 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 text-[#033E2D] text-xs font-mono uppercase tracking-wider mb-2">
+                <span className="w-2 h-2 rounded-full bg-[#B99553]" />
+                <span>{t({ ar: 'البحوث والتحليل الاقتصادي الكلي', en: 'Macroeconomic Analysis & Research' })}</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-[#10231C] font-display mb-3 leading-snug">
+                {t({
+                  ar: 'الإدارة العامة للبحوث الإحصائية والسياسات النقدية',
+                  en: 'General Directorate of Economic Research & Statistics'
+                })}
+              </h3>
+              <p className="text-xs sm:text-sm text-[#44534D] leading-[1.8] font-sans mb-6">
+                {t({
+                  ar: 'يعكف فريق الخبراء والباحثين الاقتصاديين في بنك السودان المركزي على نمذجة المتغيرات النقدية والمصرفية، وتحليل ميزان المدفوعات وتدفقات التجارة الخارجية والذهب، وتزويد متخذي القرار بسياسات وتوصيات قائمة على البيانات لضمان الاستقرار السعري والنقدي.',
+                  en: 'CBOS quantitative economists and policy researchers model monetary dynamics, analyze the balance of payments, gold flows, and trade aggregates to furnish leadership with empirical policy recommendations underpinning national price stability.'
+                })}
+              </p>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4 border-t border-[#ECE8DF]">
+                <div className="p-3 rounded-lg bg-[#FAF9F6] border border-[#D8D4C8]">
+                  <div className="font-mono text-base font-bold text-[#032A1E]">IMF e-GDDS</div>
+                  <div className="text-[11px] text-[#44534D] leading-tight mt-0.5">
+                    {t({ ar: 'المعيار الدولي للنشر', en: 'Dissemination Standard' })}
+                  </div>
+                </div>
+                <div className="p-3 rounded-lg bg-[#FAF9F6] border border-[#D8D4C8]">
+                  <div className="font-mono text-base font-bold text-[#032A1E]">100%</div>
+                  <div className="text-[11px] text-[#44534D] leading-tight mt-0.5">
+                    {t({ ar: 'تغطية القطاع المصرفي', en: 'Banking Sector Census' })}
+                  </div>
+                </div>
+                <div className="p-3 rounded-lg bg-[#FAF9F6] border border-[#D8D4C8] col-span-2 sm:col-span-1">
+                  <div className="font-mono text-base font-bold text-[#B99553]">Monthly</div>
+                  <div className="text-[11px] text-[#44534D] leading-tight mt-0.5">
+                    {t({ ar: 'تحديث المؤشرات الدورية', en: 'Periodic Bulletin' })}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-[#ECE8DF] flex items-center justify-between text-xs font-mono text-[#62736C]">
+              <span>DOCUMENTARY ARCHIVE • SUDAN MACROECONOMIC RESEARCH</span>
+              <span className="text-[#033E2D] font-bold">CBOS 2026</span>
+            </div>
+          </div>
         </div>
 
         {/* Statistical Publications & Dissemination Calendar Strip */}

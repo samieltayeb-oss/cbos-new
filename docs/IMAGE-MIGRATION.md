@@ -25,6 +25,10 @@ During Phase 1 reconnaissance, 29 visual assets were scraped directly from produ
 | `https://cbos.gov.sd/sites/default/files/stat_bulletin_cov.jpg` | `cbos-source-assets/original/publications/stat_bulletin_cov.jpg` | `/public/images/cbos/official/publication-statistical-bulletin.jpg` | Category 1 (Publication) | Verified 100% Authentic |
 | `https://cbos.gov.sd/sites/default/files/economic_studies_cov.jpg`| `cbos-source-assets/original/publications/economic_studies_cov.jpg`| `/public/images/cbos/official/publication-economic-studies.jpg` | Category 1 (Publication) | Verified 100% Authentic |
 | `https://cbos.gov.sd/misc/favicon.ico` | `cbos-source-assets/original/homepage/favicon.ico` | `/public/images/cbos/official/favicon.ico` | Category 1 (Favicon) | Verified 100% Authentic |
+| *Editorial Documentary Commission* | `cbos_digital_payments_1790236630930.jpg` | `/public/images/cbos/payments/sudan-digital-payments-market.webp` | Category 2 (Payments) | Editorial Approved 2026 |
+| *Editorial Documentary Commission* | `sudan_financial_inclusion_1790236652475.jpg` | `/public/images/cbos/financial-inclusion/sudan-financial-inclusion-rural.webp` | Category 2 (Inclusion) | Editorial Approved 2026 |
+| *Editorial Documentary Commission* | `sudan_cybersecurity_ops_1790236671844.jpg` | `/public/images/cbos/cybersecurity/cbos-cybersecurity-operations.webp` | Category 2 (Cyber) | Editorial Approved 2026 |
+| *Editorial Documentary Commission* | `cbos_economic_research_1790236698414.jpg` | `/public/images/cbos/research/cbos-economic-research-team.webp` | Category 2 (Research) | Editorial Approved 2026 |
 
 ---
 
