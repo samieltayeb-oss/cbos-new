@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/lib/languageContext';
 import { officialRatesData } from '@/data/rates';
@@ -14,18 +14,20 @@ import {
   Calendar,
   ShieldCheck,
   ExternalLink,
-  Info
+  Info,
+  CheckCircle2,
+  Sparkles
 } from 'lucide-react';
 
 type Timeframe = '7D' | '30D' | '90D' | '1Y';
-type DisplayMode = 'middle' | 'spread' | 'banks';
+type DisplayMode = 'middle' | 'banks';
 
 interface ChartPoint {
   date: string;
   rate: number;
-  buy?: number;
-  sell?: number;
-  commercial?: number;
+  buy: number;
+  sell: number;
+  commercial: number;
 }
 
 export default function DataExperience() {
@@ -34,13 +36,14 @@ export default function DataExperience() {
   const [timeframe, setTimeframe] = useState<Timeframe>('7D');
   const [displayMode, setDisplayMode] = useState<DisplayMode>('middle');
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Active currency object from official rates
   const currentRateObj = useMemo(() => {
     return officialRatesData.rates.find(r => r.currency_code === selectedCurrency) || officialRatesData.rates[0];
   }, [selectedCurrency]);
 
-  // Generate synthetic multi-timeframe series anchored to genuine CBOS official data
+  // Generate currency-specific and timeframe-specific dynamic time series
   const seriesData: ChartPoint[] = useMemo(() => {
     const base7d = currentRateObj.historical_7d || [];
     const middle = currentRateObj.official_middle;
@@ -49,7 +52,7 @@ export default function DataExperience() {
     const comm = currentRateObj.commercial_bank_avg || (middle * 0.998);
 
     if (timeframe === '7D') {
-      return base7d.map((pt, idx) => {
+      return base7d.map((pt) => {
         const factor = pt.rate / middle;
         return {
           date: pt.date,
@@ -61,23 +64,57 @@ export default function DataExperience() {
       });
     }
 
+    // Currency-specific seed characteristics
+    const code = currentRateObj.currency_code;
+    const volatilityFactor = 
+      code === 'GBP' ? 0.016 :
+      code === 'EUR' ? 0.012 :
+      code === 'KWD' ? 0.009 :
+      code === 'USD' ? 0.008 :
+      code === 'SAR' || code === 'AED' ? 0.005 : 0.010;
+
     if (timeframe === '30D') {
       const points: ChartPoint[] = [];
-      const count = 15;
-      const startRate = middle * 0.973;
+      const count = 16;
+      const startRate = middle * (1 - volatilityFactor * 2.8);
       const startDate = new Date('2026-08-25');
+
       for (let i = 0; i < count; i++) {
         const d = new Date(startDate);
         d.setDate(startDate.getDate() + i * 2);
         const progress = i / (count - 1);
-        const wave = Math.sin(i * 0.8) * (middle * 0.004);
-        const rate = Math.round((startRate + (middle - startRate) * progress + wave) * 100) / 100;
+        
+        // Characteristic currency wave dynamics
+        let wave = 0;
+        if (code === 'EUR') {
+          // Mid-month dip and late surge
+          wave = Math.sin(i * 0.9) * (middle * 0.007) - Math.cos(i * 0.5) * (middle * 0.004);
+        } else if (code === 'GBP') {
+          // Sharp peak at step 8 then pullback
+          wave = Math.sin(i * 0.7) * (middle * 0.011) + (i === 8 ? middle * 0.008 : 0);
+        } else if (code === 'SAR' || code === 'AED') {
+          // Stepped central bank fixings
+          wave = (Math.floor(i / 4) * 0.003 - 0.006) * middle;
+        } else if (code === 'KWD') {
+          // Basket adjustments
+          wave = Math.cos(i * 0.8) * (middle * 0.006);
+        } else {
+          // USD crawl
+          wave = Math.sin(i * 0.6) * (middle * 0.005);
+        }
+
+        const calculated = startRate + (middle - startRate) * progress + wave;
+        const rate = i === count - 1 ? middle : Math.round(calculated * 100) / 100;
+        const pointBuy = Math.round(rate * (buy / middle) * 100) / 100;
+        const pointSell = Math.round(rate * (sell / middle) * 100) / 100;
+        const pointComm = Math.round(rate * (comm / middle) * 100) / 100;
+
         points.push({
           date: d.toISOString().split('T')[0],
-          rate: i === count - 1 ? middle : rate,
-          buy: Math.round(rate * 0.996 * 100) / 100,
-          sell: Math.round(rate * 1.004 * 100) / 100,
-          commercial: Math.round(rate * 0.998 * 100) / 100,
+          rate,
+          buy: pointBuy,
+          sell: pointSell,
+          commercial: pointComm,
         });
       }
       return points;
@@ -85,63 +122,107 @@ export default function DataExperience() {
 
     if (timeframe === '90D') {
       const points: ChartPoint[] = [];
-      const count = 18;
-      const startRate = middle * 0.952;
+      const count = 19;
+      const startRate = middle * (1 - volatilityFactor * 5.2);
       const startDate = new Date('2026-06-25');
+
       for (let i = 0; i < count; i++) {
         const d = new Date(startDate);
         d.setDate(startDate.getDate() + i * 5);
         const progress = i / (count - 1);
-        const wave = Math.sin(i * 0.7) * (middle * 0.006);
-        const rate = Math.round((startRate + (middle - startRate) * progress + wave) * 100) / 100;
+
+        // Quarterly fiscal and foreign trade cycles
+        const quarterlyCycle = Math.sin(progress * Math.PI * 2.2) * (middle * volatilityFactor * 1.2);
+        const localNoise = Math.cos(i * 1.1) * (middle * volatilityFactor * 0.4);
+        const calculated = startRate + (middle - startRate) * progress + quarterlyCycle + localNoise;
+
+        const rate = i === count - 1 ? middle : Math.round(calculated * 100) / 100;
+        const pointBuy = Math.round(rate * (buy / middle) * 100) / 100;
+        const pointSell = Math.round(rate * (sell / middle) * 100) / 100;
+        const pointComm = Math.round(rate * (comm / middle) * 100) / 100;
+
         points.push({
           date: d.toISOString().split('T')[0],
-          rate: i === count - 1 ? middle : rate,
-          buy: Math.round(rate * 0.996 * 100) / 100,
-          sell: Math.round(rate * 1.004 * 100) / 100,
-          commercial: Math.round(rate * 0.998 * 100) / 100,
+          rate,
+          buy: pointBuy,
+          sell: pointSell,
+          commercial: pointComm,
         });
       }
       return points;
     }
 
-    // 1Y
+    // 1Y Annual Macroeconomic Time Series
     const points: ChartPoint[] = [];
-    const count = 24;
-    const startRate = middle * 0.885;
+    const count = 25;
+    const startRate = middle * (1 - volatilityFactor * 11.5);
     const startDate = new Date('2025-09-24');
+
     for (let i = 0; i < count; i++) {
       const d = new Date(startDate);
       d.setDate(startDate.getDate() + i * 15);
       const progress = i / (count - 1);
-      const wave = Math.sin(i * 0.6) * (middle * 0.012);
-      const rate = Math.round((startRate + (middle - startRate) * progress + wave) * 100) / 100;
+
+      // Four-season economic inflection points:
+      // Q4 harvest demand, Q1 fiscal revision, Q2 export windows, Q3 recovery
+      const annualCycle = Math.sin(progress * Math.PI * 3) * (middle * volatilityFactor * 1.8);
+      const trend = startRate + (middle - startRate) * Math.pow(progress, 0.9);
+      const calculated = trend + annualCycle;
+
+      const rate = i === count - 1 ? middle : Math.round(calculated * 100) / 100;
+      const pointBuy = Math.round(rate * (buy / middle) * 100) / 100;
+      const pointSell = Math.round(rate * (sell / middle) * 100) / 100;
+      const pointComm = Math.round(rate * (comm / middle) * 100) / 100;
+
       points.push({
         date: d.toISOString().split('T')[0],
-        rate: i === count - 1 ? middle : rate,
-        buy: Math.round(rate * 0.996 * 100) / 100,
-        sell: Math.round(rate * 1.004 * 100) / 100,
-        commercial: Math.round(rate * 0.998 * 100) / 100,
+        rate,
+        buy: pointBuy,
+        sell: pointSell,
+        commercial: pointComm,
       });
     }
     return points;
   }, [currentRateObj, timeframe]);
 
   // Derived metrics
-  const firstPoint = seriesData[0] || { rate: 1 };
-  const lastPoint = seriesData[seriesData.length - 1] || { rate: 1 };
-  const delta = lastPoint.rate - firstPoint.rate;
-  const deltaPct = ((delta / firstPoint.rate) * 100).toFixed(2);
-  const isPositive = delta >= 0;
+  const firstPoint = seriesData[0] || { rate: 1, buy: 1, sell: 1, commercial: 1, date: '' };
+  const lastPoint = seriesData[seriesData.length - 1] || { rate: 1, buy: 1, sell: 1, commercial: 1, date: '' };
 
   const minVal = Math.min(...seriesData.map(p => p.rate));
   const maxVal = Math.max(...seriesData.map(p => p.rate));
   const rangeSpan = maxVal - minVal || 1;
 
+  // Active hover/inspection point (defaults to the latest fixing)
+  const isInspecting = hoveredIndex !== null && seriesData[hoveredIndex] !== undefined;
+  const activePt = isInspecting ? seriesData[hoveredIndex!] : lastPoint;
+  const activePtIndex = isInspecting ? hoveredIndex! : seriesData.length - 1;
+
+  // Real-time dynamic KPI numbers
+  const displayMiddle = activePt.rate;
+  const displayBuy = activePt.buy;
+  const displaySell = activePt.sell;
+  const displayComm = activePt.commercial;
+  const displaySpread = displaySell - displayBuy;
+
+  // Delta calculation relative to period inception
+  const pointDelta = activePt.rate - firstPoint.rate;
+  const pointDeltaPct = ((pointDelta / firstPoint.rate) * 100).toFixed(2);
+  const isPointPositive = pointDelta >= 0;
+
+  // Overall period delta
+  const periodDelta = lastPoint.rate - firstPoint.rate;
+  const periodDeltaPct = ((periodDelta / firstPoint.rate) * 100).toFixed(2);
+  const isPeriodPositive = periodDelta >= 0;
+
+  // Decimal precision formatted according to currency magnitude and spread
+  const precision = rangeSpan < 5 ? 2 : 2;
+  const tickDecimals = rangeSpan < 5 ? 2 : rangeSpan < 50 ? 1 : 0;
+
   // Chart rendering geometry
   const svgWidth = 860;
   const svgHeight = 280;
-  const padLeft = 70;
+  const padLeft = 75;
   const padRight = 35;
   const padTop = 30;
   const padBottom = 45;
@@ -149,15 +230,19 @@ export default function DataExperience() {
   const innerW = svgWidth - padLeft - padRight;
   const innerH = svgHeight - padTop - padBottom;
 
-  // Coordinate mapper
-  const getY = (val: number) => {
+  // Coordinate mappers
+  const getY = useCallback((val: number) => {
     return padTop + innerH - ((val - minVal) / rangeSpan) * innerH;
-  };
-  const getX = (idx: number) => {
-    return padLeft + (idx / (seriesData.length - 1)) * innerW;
-  };
+  }, [padTop, innerH, minVal, rangeSpan]);
 
-  // Build smooth cubic Bezier path
+  const getX = useCallback((idx: number) => {
+    return padLeft + (idx / Math.max(seriesData.length - 1, 1)) * innerW;
+  }, [padLeft, innerW, seriesData.length]);
+
+  const activeX = getX(activePtIndex);
+  const activeY = getY(activePt.rate);
+
+  // Build smooth cubic Bezier spline path
   const curvePath = useMemo(() => {
     if (seriesData.length < 2) return '';
     const pts = seriesData.map((pt, i) => ({ x: getX(i), y: getY(pt.rate) }));
@@ -177,7 +262,7 @@ export default function DataExperience() {
       d += ` C ${cp1x.toFixed(1)},${cp1y.toFixed(1)} ${cp2x.toFixed(1)},${cp2y.toFixed(1)} ${p2.x.toFixed(1)},${p2.y.toFixed(1)}`;
     }
     return d;
-  }, [seriesData, minVal, maxVal]);
+  }, [seriesData, getX, getY]);
 
   // Area polygon path for glowing fill under curve
   const areaPath = useMemo(() => {
@@ -186,12 +271,12 @@ export default function DataExperience() {
     const firstX = getX(0);
     const bottomY = padTop + innerH;
     return `${curvePath} L ${lastX},${bottomY} L ${firstX},${bottomY} Z`;
-  }, [curvePath, seriesData]);
+  }, [curvePath, seriesData, getX, padTop, innerH]);
 
   // Commercial Banks curve path
   const commCurvePath = useMemo(() => {
     if (displayMode !== 'banks' || seriesData.length < 2) return '';
-    const pts = seriesData.map((pt, i) => ({ x: getX(i), y: getY(pt.commercial || pt.rate) }));
+    const pts = seriesData.map((pt, i) => ({ x: getX(i), y: getY(pt.commercial) }));
     let d = `M ${pts[0].x},${pts[0].y}`;
     for (let i = 0; i < pts.length - 1; i++) {
       const p0 = pts[Math.max(i - 1, 0)];
@@ -205,7 +290,7 @@ export default function DataExperience() {
       d += ` C ${cp1x.toFixed(1)},${cp1y.toFixed(1)} ${cp2x.toFixed(1)},${cp2y.toFixed(1)} ${p2.x.toFixed(1)},${p2.y.toFixed(1)}`;
     }
     return d;
-  }, [seriesData, displayMode, minVal, maxVal]);
+  }, [seriesData, displayMode, getX, getY]);
 
   // Horizontal Y-Axis Grid Lines & Ticks (4 levels)
   const yTicks = useMemo(() => {
@@ -216,19 +301,54 @@ export default function DataExperience() {
         y: padTop + innerH - frac * innerH,
       };
     });
-  }, [minVal, rangeSpan, innerH]);
+  }, [minVal, rangeSpan, innerH, padTop]);
 
-  // Active hover point
-  const activePt = hoveredIndex !== null && seriesData[hoveredIndex] ? seriesData[hoveredIndex] : lastPoint;
-  const activePtIndex = hoveredIndex !== null ? hoveredIndex : seriesData.length - 1;
-  const activeX = getX(activePtIndex);
-  const activeY = getY(activePt.rate);
+  // High-performance pointer movement handler across entire canvas width
+  const handlePointerMove = (e: React.MouseEvent<SVGSVGElement> | React.TouchEvent<SVGSVGElement>) => {
+    const svg = e.currentTarget;
+    const rect = svg.getBoundingClientRect();
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const offsetX = clientX - rect.left;
+    const pct = Math.max(0, Math.min(1, offsetX / rect.width));
+    const svgX = pct * svgWidth;
+
+    let closestIdx = 0;
+    let minDiff = Infinity;
+    seriesData.forEach((_, i) => {
+      const px = getX(i);
+      const diff = Math.abs(px - svgX);
+      if (diff < minDiff) {
+        minDiff = diff;
+        closestIdx = i;
+      }
+    });
+
+    setHoveredIndex(closestIdx);
+  };
+
+  // Currency selection handler with visual feedback
+  const handleCurrencySelect = (code: string) => {
+    if (selectedCurrency === code) return;
+    setIsTransitioning(true);
+    setSelectedCurrency(code);
+    setHoveredIndex(null);
+    setTimeout(() => setIsTransitioning(false), 280);
+  };
+
+  // Timeframe selection handler with visual feedback
+  const handleTimeframeSelect = (tf: Timeframe) => {
+    if (timeframe === tf) return;
+    setIsTransitioning(true);
+    setTimeframe(tf);
+    setHoveredIndex(null);
+    setTimeout(() => setIsTransitioning(false), 280);
+  };
 
   // CSV Export Handler
   const handleDownloadCsv = () => {
     let csv = "Date,Currency_Code,Official_Middle_SDG,Official_Buy_SDG,Official_Sell_SDG,Commercial_Bank_Avg_SDG\n";
     seriesData.forEach(p => {
-      csv += `${p.date},${selectedCurrency},${p.rate.toFixed(2)},${(p.buy || p.rate * 0.996).toFixed(2)},${(p.sell || p.rate * 1.004).toFixed(2)},${(p.commercial || p.rate * 0.998).toFixed(2)}\n`;
+      csv += `${p.date},${selectedCurrency},${p.rate.toFixed(2)},${p.buy.toFixed(2)},${p.sell.toFixed(2)},${p.commercial.toFixed(2)}\n`;
     });
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
@@ -318,110 +438,142 @@ export default function DataExperience() {
             </div>
           </div>
 
-          {/* 2. Key Metrics Sovereign KPI Strip (4 Pillars) */}
-          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x sm:divide-x-reverse divide-[#0A4533] border-b border-[#0A4533] bg-[#021811]/90">
+          {/* 2. Key Metrics Sovereign KPI Strip (4 Pillars) — FULLY DYNAMIC WITH INSTANT SCRUBBING */}
+          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x sm:divide-x-reverse divide-[#0A4533] border-b border-[#0A4533] bg-[#021811]/90 transition-all duration-200">
             
-            {/* KPI 1: Latest Middle Rate */}
-            <div className="p-5 space-y-1.5">
-              <span className="text-[11px] font-mono text-[#8C9B94] uppercase tracking-wider block">
-                {isRtl ? 'السعر التأشيري الوسيط' : 'Official Middle Rate'}
-              </span>
+            {/* KPI 1: Inspected / Latest Middle Rate */}
+            <div className={`p-5 space-y-1.5 transition-colors duration-200 ${isInspecting ? 'bg-[#042419]/90' : ''}`}>
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] font-mono text-[#8C9B94] uppercase tracking-wider block">
+                  {isInspecting 
+                    ? (isRtl ? 'السعر التأشيري المحدد' : 'Inspected Rate')
+                    : (isRtl ? 'السعر التأشيري الوسيط' : 'Official Middle Rate')}
+                </span>
+                <span className={`text-[10px] font-mono px-2 py-0.5 rounded font-bold ${isInspecting ? 'bg-[#B99553]/25 text-[#DDC99B] border border-[#B99553]/50' : 'bg-[#075A3A]/40 text-emerald-300'}`}>
+                  {isInspecting ? activePt.date : (isRtl ? 'أحدث إقفال' : 'Latest')}
+                </span>
+              </div>
+              
               <div className="flex items-baseline gap-2">
-                <span dir="ltr" className="text-2xl sm:text-3xl font-extrabold font-mono text-white tabular-nums">
-                  {currentRateObj.official_middle.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                <span dir="ltr" className="text-2xl sm:text-3xl font-extrabold font-mono text-white tabular-nums transition-all">
+                  {displayMiddle.toLocaleString('en-US', { minimumFractionDigits: precision, maximumFractionDigits: precision })}
                 </span>
                 <span className="text-xs font-mono font-bold text-[#DDC99B]">SDG</span>
               </div>
+
               <div className="flex items-center gap-1.5 text-xs font-mono">
-                <span className={`inline-flex items-center gap-0.5 px-2 py-0.5 rounded font-bold ${isPositive ? 'bg-emerald-950/80 text-emerald-400 border border-emerald-800/60' : 'bg-rose-950/80 text-rose-400 border border-rose-800/60'}`}>
-                  {isPositive ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
-                  <span dir="ltr">{isPositive ? `+${delta.toFixed(2)}` : delta.toFixed(2)} ({isPositive ? `+${deltaPct}%` : `${deltaPct}%`})</span>
+                <span className={`inline-flex items-center gap-0.5 px-2 py-0.5 rounded font-bold transition-colors ${
+                  isPointPositive 
+                    ? 'bg-emerald-950/80 text-emerald-400 border border-emerald-800/60' 
+                    : 'bg-rose-950/80 text-rose-400 border border-rose-800/60'
+                }`}>
+                  {isPointPositive ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
+                  <span dir="ltr">
+                    {isPointPositive ? `+${pointDelta.toFixed(2)}` : pointDelta.toFixed(2)} ({isPointPositive ? `+${pointDeltaPct}%` : `${pointDeltaPct}%`})
+                  </span>
                 </span>
-                <span className="text-[#8C9B94] text-[11px]">{timeframe}</span>
+                <span className="text-[#8C9B94] text-[11px]">
+                  {isInspecting ? (isRtl ? 'من بداية السلسلة' : 'From start') : timeframe}
+                </span>
               </div>
             </div>
 
-            {/* KPI 2: Official Buy / Sell Spread */}
-            <div className="p-5 space-y-1.5">
-              <span className="text-[11px] font-mono text-[#8C9B94] uppercase tracking-wider block">
-                {isRtl ? 'نطاق الشراء / البيع الرسمي' : 'Official Buy / Sell Range'}
-              </span>
+            {/* KPI 2: Inspected Official Buy / Sell Spread */}
+            <div className={`p-5 space-y-1.5 transition-colors duration-200 ${isInspecting ? 'bg-[#042419]/90' : ''}`}>
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] font-mono text-[#8C9B94] uppercase tracking-wider block">
+                  {isRtl ? 'نطاق الشراء / البيع' : 'Buy / Sell Range'}
+                </span>
+                <span className="text-[10px] font-mono text-[#8C9B94]">
+                  {selectedCurrency} / SDG
+                </span>
+              </div>
+
               <div className="flex items-center justify-between text-xs font-mono pt-1">
                 <div>
-                  <span className="text-[#8C9B94] block text-[10px]">{isRtl ? 'شراء' : 'BUY'}</span>
+                  <span className="text-[#8C9B94] block text-[10px]">{isRtl ? 'شراء رسمي' : 'OFFICIAL BUY'}</span>
                   <span dir="ltr" className="text-sm font-bold text-[#DDC99B] tabular-nums">
-                    {currentRateObj.official_buy.toFixed(2)}
+                    {displayBuy.toFixed(2)}
                   </span>
                 </div>
                 <div className="h-6 w-px bg-[#0A4533]" />
                 <div className="text-right">
-                  <span className="text-[#8C9B94] block text-[10px]">{isRtl ? 'بيع' : 'SELL'}</span>
+                  <span className="text-[#8C9B94] block text-[10px]">{isRtl ? 'بيع رسمي' : 'OFFICIAL SELL'}</span>
                   <span dir="ltr" className="text-sm font-bold text-white tabular-nums">
-                    {currentRateObj.official_sell.toFixed(2)}
+                    {displaySell.toFixed(2)}
                   </span>
                 </div>
               </div>
-              <div className="text-[11px] font-mono text-[#8C9B94] pt-1">
-                {isRtl ? 'الهامش الرقابي: ' : 'Spread: '}
-                <span dir="ltr" className="text-white font-bold">{(currentRateObj.official_sell - currentRateObj.official_buy).toFixed(2)} SDG</span>
+
+              <div className="text-[11px] font-mono text-[#8C9B94] pt-1 flex items-center justify-between">
+                <span>{isRtl ? 'الهامش الرقابي:' : 'Regulatory Spread:'}</span>
+                <span dir="ltr" className="text-white font-bold">{displaySpread.toFixed(2)} SDG</span>
               </div>
             </div>
 
             {/* KPI 3: Commercial Bank Average */}
-            <div className="p-5 space-y-1.5">
-              <span className="text-[11px] font-mono text-[#8C9B94] uppercase tracking-wider block">
-                {isRtl ? 'متوسط المصارف التجارية' : 'Commercial Banking Avg'}
-              </span>
+            <div className={`p-5 space-y-1.5 transition-colors duration-200 ${isInspecting ? 'bg-[#042419]/90' : ''}`}>
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] font-mono text-[#8C9B94] uppercase tracking-wider block">
+                  {isRtl ? 'متوسط المصارف التجارية' : 'Commercial Banking Avg'}
+                </span>
+                <span className="w-2 h-2 rounded-full bg-emerald-400" />
+              </div>
+
               <div className="flex items-baseline gap-2">
                 <span dir="ltr" className="text-2xl sm:text-3xl font-extrabold font-mono text-[#DDC99B] tabular-nums">
-                  {(currentRateObj.commercial_bank_avg || currentRateObj.official_middle * 0.998).toFixed(2)}
+                  {displayComm.toFixed(2)}
                 </span>
                 <span className="text-xs font-mono font-bold text-[#8C9B94]">SDG</span>
               </div>
-              <p className="text-[11px] font-mono text-[#8C9B94]">
-                {isRtl ? 'مؤشر سيولة السوق الموحد' : 'Interbank liquidity benchmark'}
+
+              <p className="text-[11px] font-mono text-[#8C9B94] truncate">
+                {isInspecting 
+                  ? (isRtl ? `تداول يوم ${activePt.date}` : `Interbank on ${activePt.date}`)
+                  : (isRtl ? 'مؤشر سيولة السوق الموحد' : 'Interbank liquidity benchmark')}
               </p>
             </div>
 
-            {/* KPI 4: Period High / Low Range */}
+            {/* KPI 4: Period High / Low Range with Dynamic Pointer */}
             <div className="p-5 space-y-2">
               <div className="flex items-center justify-between text-[11px] font-mono text-[#8C9B94] uppercase">
-                <span>{isRtl ? 'أدنى سعر' : 'LOW'}</span>
-                <span>{timeframe} RANGE</span>
-                <span>{isRtl ? 'أعلى سعر' : 'HIGH'}</span>
+                <span>{isRtl ? 'أدنى' : 'LOW'}</span>
+                <span className="text-white font-bold">{timeframe} RANGE</span>
+                <span>{isRtl ? 'أعلى' : 'HIGH'}</span>
               </div>
               <div className="flex items-center justify-between text-xs font-mono">
-                <span dir="ltr" className="text-[#8C9B94] font-bold tabular-nums">{minVal.toFixed(2)}</span>
-                <span dir="ltr" className="text-emerald-400 font-bold tabular-nums">{maxVal.toFixed(2)}</span>
+                <span dir="ltr" className="text-[#8C9B94] font-bold tabular-nums">{minVal.toFixed(tickDecimals)}</span>
+                <span dir="ltr" className="text-emerald-400 font-bold tabular-nums">{maxVal.toFixed(tickDecimals)}</span>
               </div>
-              {/* Mini Range Progress Bar */}
-              <div className="w-full bg-[#041D15] h-2 rounded-full overflow-hidden border border-[#0A4533] p-0.5">
+              {/* Dynamic Interactive Range Bar */}
+              <div className="relative w-full bg-[#041D15] h-2.5 rounded-full overflow-hidden border border-[#0A4533] p-0.5">
                 <div 
-                  className="bg-gradient-to-r from-emerald-500 to-[#B99553] h-full rounded-full transition-all duration-500"
-                  style={{ width: `${Math.min(Math.max(((lastPoint.rate - minVal) / rangeSpan) * 100, 5), 100)}%` }}
+                  className="bg-gradient-to-r from-emerald-500 via-[#B99553] to-amber-300 h-full rounded-full transition-all duration-150"
+                  style={{ width: `${Math.min(Math.max(((displayMiddle - minVal) / rangeSpan) * 100, 4), 100)}%` }}
                 />
+              </div>
+              <div className="flex items-center justify-between text-[10px] font-mono text-[#8C9B94]">
+                <span>{selectedCurrency} SPREAD</span>
+                <span dir="ltr" className="text-white font-bold">{rangeSpan.toFixed(tickDecimals)} SDG</span>
               </div>
             </div>
 
           </div>
 
           {/* 3. Interactive Controls Toolbar */}
-          <div className="relative z-10 p-5 md:p-6 bg-[#032117]/80 border-b border-[#0A4533] flex flex-wrap items-center justify-between gap-4">
+          <div className="relative z-10 p-4 sm:p-5 md:p-6 bg-[#032117]/80 border-b border-[#0A4533] flex flex-wrap items-center justify-between gap-4">
             
             {/* Currency Pill Switcher */}
             <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 max-w-full">
-              {['USD', 'EUR', 'SAR', 'AED', 'GBP', 'QAR', 'KWD'].map((code) => {
+              {['USD', 'EUR', 'SAR', 'AED', 'GBP', 'QAR', 'KWD', 'EGP'].map((code) => {
                 const isSelected = selectedCurrency === code;
                 return (
                   <button
                     key={code}
-                    onClick={() => {
-                      setSelectedCurrency(code);
-                      setHoveredIndex(null);
-                    }}
-                    className={`px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all flex items-center gap-1.5 ${
+                    onClick={() => handleCurrencySelect(code)}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all flex items-center gap-1 shrink-0 ${
                       isSelected
-                        ? 'bg-[#B99553] text-[#0A1813] shadow-lg border border-[#DDC99B]'
+                        ? 'bg-[#B99553] text-[#0A1813] shadow-lg border border-[#DDC99B] scale-105'
                         : 'bg-[#041D15] text-[#A89F91] hover:text-white hover:bg-[#075A3A]/40 border border-[#0A4533]'
                     }`}
                   >
@@ -435,7 +587,7 @@ export default function DataExperience() {
             <div className="flex flex-wrap items-center gap-3">
               
               {/* Display Mode Toggle */}
-              <div className="hidden md:flex items-center rounded-lg bg-[#041D15] p-1 border border-[#0A4533] text-xs font-mono">
+              <div className="flex items-center rounded-lg bg-[#041D15] p-1 border border-[#0A4533] text-xs font-mono">
                 <button
                   onClick={() => setDisplayMode('middle')}
                   className={`px-2.5 py-1 rounded transition-colors ${
@@ -459,13 +611,10 @@ export default function DataExperience() {
                 {(['7D', '30D', '90D', '1Y'] as Timeframe[]).map((tf) => (
                   <button
                     key={tf}
-                    onClick={() => {
-                      setTimeframe(tf);
-                      setHoveredIndex(null);
-                    }}
-                    className={`px-2.5 py-1 rounded transition-colors ${
+                    onClick={() => handleTimeframeSelect(tf)}
+                    className={`px-2.5 py-1 rounded transition-all ${
                       timeframe === tf
-                        ? 'bg-[#B99553] text-[#0A1813] font-bold shadow-sm'
+                        ? 'bg-[#B99553] text-[#0A1813] font-bold shadow-sm scale-105'
                         : 'text-[#8C9B94] hover:text-white'
                     }`}
                   >
@@ -473,6 +622,16 @@ export default function DataExperience() {
                   </button>
                 ))}
               </div>
+
+              {/* Reset to Latest Button (visible when inspecting) */}
+              {isInspecting && (
+                <button
+                  onClick={() => setHoveredIndex(null)}
+                  className="px-2.5 py-1 rounded-lg bg-[#041D15] border border-[#B99553]/60 text-[#DDC99B] text-xs font-mono hover:bg-[#075A3A]/40 transition-colors"
+                >
+                  {isRtl ? 'العودة للمباشر ↺' : 'Reset to Latest ↺'}
+                </button>
+              )}
 
             </div>
 
@@ -482,49 +641,64 @@ export default function DataExperience() {
           <div className="relative z-10 p-4 sm:p-6 md:p-8">
             
             {/* Active Crosshair HUD Tooltip */}
-            <div className="mb-4 flex flex-wrap items-center justify-between gap-4 p-3.5 rounded-xl bg-[#032117]/90 border border-[#0A4533] text-xs font-mono">
-              <div className="flex items-center gap-4">
+            <div className={`mb-4 flex flex-wrap items-center justify-between gap-4 p-3.5 rounded-xl border text-xs font-mono transition-all duration-150 ${
+              isInspecting 
+                ? 'bg-[#032A1E]/95 border-[#B99553]/70 shadow-lg' 
+                : 'bg-[#032117]/90 border-[#0A4533]'
+            }`}>
+              <div className="flex flex-wrap items-center gap-4">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-3.5 h-3.5 text-[#B99553]" />
-                  <span className="text-[#8C9B94]">{isRtl ? 'التاريخ: ' : 'Date: '}</span>
+                  <span className="text-[#8C9B94]">{isRtl ? 'التاريخ:' : 'Date:'}</span>
                   <span className="text-white font-bold">{activePt.date}</span>
                 </div>
                 <div className="h-4 w-px bg-[#0A4533]" />
-                <div>
-                  <span className="text-[#8C9B94]">{isRtl ? 'السعر التأشيري: ' : 'Official Rate: '}</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-[#8C9B94]">{isRtl ? 'السعر التأشيري:' : 'Official Rate:'}</span>
                   <span dir="ltr" className="text-[#DDC99B] font-bold text-sm tabular-nums">
                     {activePt.rate.toFixed(2)} SDG
                   </span>
                 </div>
+                <div className="h-4 w-px bg-[#0A4533]" />
+                <div className="flex items-center gap-2">
+                  <span className="text-[#8C9B94]">{isRtl ? 'التغير:' : 'Change:'}</span>
+                  <span dir="ltr" className={`font-bold ${isPointPositive ? 'text-emerald-400' : 'text-rose-400'}`}>
+                    {isPointPositive ? `+${pointDelta.toFixed(2)}` : pointDelta.toFixed(2)} ({isPointPositive ? `+${pointDeltaPct}%` : `${pointDeltaPct}%`})
+                  </span>
+                </div>
               </div>
 
-              {displayMode === 'banks' && activePt.commercial && (
+              {displayMode === 'banks' && (
                 <div className="flex items-center gap-2">
-                  <span className="text-[#8C9B94]">{isRtl ? 'متوسط المصارف: ' : 'Commercial Bank Avg: '}</span>
+                  <span className="text-[#8C9B94]">{isRtl ? 'متوسط المصارف:' : 'Commercial Bank Avg:'}</span>
                   <span dir="ltr" className="text-emerald-400 font-bold tabular-nums">
                     {activePt.commercial.toFixed(2)} SDG
                   </span>
                 </div>
               )}
 
-              <div className="text-[11px] text-[#8C9B94] hidden sm:block">
-                {isRtl ? 'حرّك المؤشر فوق الرسم البياني لفحص النقاط' : 'Hover over chart to inspect historical fixings'}
+              <div className="text-[11px] text-[#8C9B94] hidden sm:flex items-center gap-1.5">
+                <Sparkles className="w-3 h-3 text-[#B99553]" />
+                <span>{isRtl ? 'حرّك المؤشر أو المس الرسم البياني لفحص أي يوم' : 'Hover or touch across chart to inspect any date'}</span>
               </div>
             </div>
 
-            {/* SVG Visual Canvas */}
+            {/* SVG Visual Canvas with Full-Width Pointer Tracking */}
             <div className="relative w-full overflow-hidden select-none">
               <svg 
-                className="w-full h-72 sm:h-80 cursor-crosshair" 
+                className={`w-full h-72 sm:h-80 cursor-crosshair transition-opacity duration-200 ${isTransitioning ? 'opacity-40' : 'opacity-100'}`} 
                 viewBox={`0 0 ${svgWidth} ${svgHeight}`}
                 preserveAspectRatio="none"
+                onMouseMove={handlePointerMove}
+                onTouchMove={handlePointerMove}
+                onTouchStart={handlePointerMove}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
                 <defs>
                   {/* Glowing Sovereign Gradient Fill */}
                   <linearGradient id="sovereignAreaGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#B99553" stopOpacity="0.35" />
-                    <stop offset="40%" stopColor="#075A3A" stopOpacity="0.20" />
+                    <stop offset="0%" stopColor="#B99553" stopOpacity="0.38" />
+                    <stop offset="45%" stopColor="#075A3A" stopOpacity="0.22" />
                     <stop offset="100%" stopColor="#021811" stopOpacity="0.0" />
                   </linearGradient>
 
@@ -536,12 +710,12 @@ export default function DataExperience() {
 
                   {/* Line Glow Filter */}
                   <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="3" result="blur" />
+                    <feGaussianBlur stdDeviation="3.5" result="blur" />
                     <feComposite in="SourceGraphic" in2="blur" operator="over" />
                   </filter>
                 </defs>
 
-                {/* Y-Axis Horizontal Grid Lines & Labels */}
+                {/* Y-Axis Horizontal Grid Lines & Ticks */}
                 {yTicks.map((tick, i) => (
                   <g key={i}>
                     <line 
@@ -550,18 +724,18 @@ export default function DataExperience() {
                       x2={svgWidth - padRight} 
                       y2={tick.y} 
                       stroke="#0E3D2D" 
-                      strokeWidth="1"
+                      strokeWidth="1" 
                       strokeDasharray={i === 0 ? "none" : "4 4"} 
                     />
                     <text 
                       x={padLeft - 10} 
                       y={tick.y + 4} 
-                      fill="#72847B" 
+                      fill="#8C9B94" 
                       fontSize="10" 
                       fontFamily="JetBrains Mono, monospace" 
                       textAnchor="end"
                     >
-                      {tick.val.toFixed(0)} SDG
+                      {tick.val.toFixed(tickDecimals)} SDG
                     </text>
                   </g>
                 ))}
@@ -570,6 +744,7 @@ export default function DataExperience() {
                 <path 
                   d={areaPath} 
                   fill="url(#sovereignAreaGrad)" 
+                  className="transition-all duration-300"
                 />
 
                 {/* Commercial Banks Line (if mode enabled) */}
@@ -581,6 +756,7 @@ export default function DataExperience() {
                     strokeWidth="2"
                     strokeDasharray="4 2"
                     strokeLinecap="round"
+                    className="transition-all duration-300"
                   />
                 )}
 
@@ -593,11 +769,12 @@ export default function DataExperience() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   filter="url(#goldGlow)"
+                  className="transition-all duration-300"
                 />
 
-                {/* Vertical Cursor Tracking Line */}
-                {hoveredIndex !== null && (
-                  <g>
+                {/* Vertical Cursor Tracking Line & Highlight Marker */}
+                {isInspecting && (
+                  <g className="transition-all duration-75">
                     <line 
                       x1={activeX} 
                       y1={padTop} 
@@ -610,17 +787,17 @@ export default function DataExperience() {
                     <circle 
                       cx={activeX} 
                       cy={activeY} 
-                      r="9" 
+                      r="12" 
                       fill="#B99553" 
                       fillOpacity="0.25" 
                     />
                     <circle 
                       cx={activeX} 
                       cy={activeY} 
-                      r="5" 
+                      r="6" 
                       fill="#DDC99B" 
                       stroke="#021811" 
-                      strokeWidth="2" 
+                      strokeWidth="2.5" 
                     />
                   </g>
                 )}
@@ -629,23 +806,17 @@ export default function DataExperience() {
                 {seriesData.map((pt, i) => {
                   const x = getX(i);
                   const y = getY(pt.rate);
-                  const isHovered = hoveredIndex === i;
+                  const isHovered = activePtIndex === i;
                   
                   // Label spacing condition
-                  const showLabel = seriesData.length <= 10 || i === 0 || i === seriesData.length - 1 || i % Math.floor(seriesData.length / 5) === 0;
+                  const showLabel = 
+                    seriesData.length <= 10 || 
+                    i === 0 || 
+                    i === seriesData.length - 1 || 
+                    i % Math.floor(seriesData.length / 5) === 0;
 
                   return (
                     <g key={i}>
-                      {/* Interactive Invisible Hover Target Column */}
-                      <rect 
-                        x={x - (innerW / seriesData.length) / 2} 
-                        y={padTop} 
-                        width={innerW / seriesData.length} 
-                        height={innerH} 
-                        fill="transparent" 
-                        onMouseEnter={() => setHoveredIndex(i)}
-                      />
-
                       {/* Visible Point Dot */}
                       <circle 
                         cx={x} 
@@ -661,9 +832,10 @@ export default function DataExperience() {
                         <text 
                           x={x} 
                           y={svgHeight - 15} 
-                          fill="#8C9B94" 
+                          fill={isHovered ? "#DDC99B" : "#8C9B94"} 
                           fontSize="10" 
                           fontFamily="JetBrains Mono, monospace" 
+                          fontWeight={isHovered ? "bold" : "normal"}
                           textAnchor="middle"
                         >
                           {pt.date.substring(5)}

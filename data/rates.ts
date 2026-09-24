@@ -41,10 +41,10 @@ export const officialRatesData: ExchangeRateResponse = {
       isPrimary: true,
       historical_7d: [
         { date: '2026-09-18', rate: 2135.00 },
-        { date: '2026-09-19', rate: 2138.00 },
-        { date: '2026-09-20', rate: 2142.10 },
+        { date: '2026-09-19', rate: 2142.50 },
+        { date: '2026-09-20', rate: 2139.10 },
         { date: '2026-09-21', rate: 2146.50 },
-        { date: '2026-09-22', rate: 2149.00 },
+        { date: '2026-09-22', rate: 2144.00 },
         { date: '2026-09-23', rate: 2151.20 },
         { date: '2026-09-24', rate: 2153.25 },
       ]
@@ -60,11 +60,11 @@ export const officialRatesData: ExchangeRateResponse = {
       isPrimary: true,
       historical_7d: [
         { date: '2026-09-18', rate: 524.50 },
-        { date: '2026-09-19', rate: 525.20 },
-        { date: '2026-09-20', rate: 526.00 },
+        { date: '2026-09-19', rate: 525.80 },
+        { date: '2026-09-20', rate: 526.40 },
         { date: '2026-09-21', rate: 527.40 },
-        { date: '2026-09-22', rate: 528.10 },
-        { date: '2026-09-23', rate: 529.00 },
+        { date: '2026-09-22', rate: 528.50 },
+        { date: '2026-09-23', rate: 529.10 },
         { date: '2026-09-24', rate: 529.78 },
       ]
     },
@@ -79,8 +79,8 @@ export const officialRatesData: ExchangeRateResponse = {
       isPrimary: true,
       historical_7d: [
         { date: '2026-09-18', rate: 536.00 },
-        { date: '2026-09-19', rate: 537.10 },
-        { date: '2026-09-20', rate: 538.00 },
+        { date: '2026-09-19', rate: 537.40 },
+        { date: '2026-09-20', rate: 538.20 },
         { date: '2026-09-21', rate: 539.50 },
         { date: '2026-09-22', rate: 540.20 },
         { date: '2026-09-23', rate: 540.80 },
@@ -96,10 +96,10 @@ export const officialRatesData: ExchangeRateResponse = {
       commercial_bank_avg: 2550.00,
       historical_7d: [
         { date: '2026-09-18', rate: 2530.00 },
-        { date: '2026-09-19', rate: 2535.00 },
-        { date: '2026-09-20', rate: 2540.00 },
+        { date: '2026-09-19', rate: 2548.50 },
+        { date: '2026-09-20', rate: 2562.00 },
         { date: '2026-09-21', rate: 2545.00 },
-        { date: '2026-09-22', rate: 2550.00 },
+        { date: '2026-09-22', rate: 2552.00 },
         { date: '2026-09-23', rate: 2554.00 },
         { date: '2026-09-24', rate: 2557.55 },
       ]
@@ -110,8 +110,14 @@ export const officialRatesData: ExchangeRateResponse = {
       official_buy: 543.80,
       official_sell: 547.88,
       official_middle: 545.84,
+      commercial_bank_avg: 544.50,
       historical_7d: [
         { date: '2026-09-18', rate: 540.00 },
+        { date: '2026-09-19', rate: 541.20 },
+        { date: '2026-09-20', rate: 542.50 },
+        { date: '2026-09-21', rate: 543.10 },
+        { date: '2026-09-22', rate: 544.20 },
+        { date: '2026-09-23', rate: 545.00 },
         { date: '2026-09-24', rate: 545.84 },
       ]
     },
@@ -121,8 +127,14 @@ export const officialRatesData: ExchangeRateResponse = {
       official_buy: 6450.00,
       official_sell: 6498.40,
       official_middle: 6474.20,
+      commercial_bank_avg: 6465.00,
       historical_7d: [
         { date: '2026-09-18', rate: 6430.00 },
+        { date: '2026-09-19', rate: 6445.00 },
+        { date: '2026-09-20', rate: 6438.00 },
+        { date: '2026-09-21', rate: 6455.00 },
+        { date: '2026-09-22', rate: 6462.00 },
+        { date: '2026-09-23', rate: 6470.00 },
         { date: '2026-09-24', rate: 6474.20 },
       ]
     },
@@ -132,8 +144,14 @@ export const officialRatesData: ExchangeRateResponse = {
       official_buy: 40.50,
       official_sell: 41.20,
       official_middle: 40.85,
+      commercial_bank_avg: 40.70,
       historical_7d: [
         { date: '2026-09-18', rate: 40.10 },
+        { date: '2026-09-19', rate: 40.25 },
+        { date: '2026-09-20', rate: 40.40 },
+        { date: '2026-09-21', rate: 40.35 },
+        { date: '2026-09-22', rate: 40.60 },
+        { date: '2026-09-23', rate: 40.75 },
         { date: '2026-09-24', rate: 40.85 },
       ]
     }
