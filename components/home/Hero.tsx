@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import HeroVisual from './HeroVisual';
+import HeroVideo from './HeroVideo';
 import { useLanguage } from '@/lib/languageContext';
 import { ArrowLeft, ArrowRight, ShieldCheck, TrendingUp, FileText, ChevronRight, ChevronLeft, Activity } from 'lucide-react';
 
@@ -88,9 +88,9 @@ export default function Hero() {
 
             </div>
 
-            {/* End Column (RTL: Left): The Monumental Sovereign Architecture & Flowing Flag */}
+            {/* End Column (RTL: Left): The Monumental Sovereign Architecture Video & Flowing Flag */}
             <div className="lg:col-span-6 xl:col-span-6 flex items-center justify-center relative w-full">
-              <HeroVisual />
+              <HeroVideo />
             </div>
 
           </div>
