@@ -12,7 +12,20 @@ export const licensedInstitutionsData: FinancialInstitution[] = [
     establishedYear: 1913,
     swiftBic: 'BOKHSDMX',
     website: 'https://bankofkhartoum.com',
-    branchesCount: 140
+    branchesCount: 140,
+    regionalPresence: [
+      { ar: 'الخرطوم', en: 'Khartoum' },
+      { ar: 'بورتسودان', en: 'Port Sudan' },
+      { ar: 'عطبرة', en: 'Atbara' },
+      { ar: 'ود مدني', en: 'Wad Madani' },
+      { ar: 'كسلا', en: 'Kassala' },
+      { ar: 'القضارف', en: 'Gedaref' },
+      { ar: 'الأبيض', en: 'El Obeid' },
+      { ar: 'الفاشر', en: 'Al Fashir' },
+      { ar: 'نيالا', en: 'Nyala' },
+      { ar: 'دنقلا', en: 'Dongola' },
+      { ar: 'كوستي', en: 'Kosti' }
+    ]
   },
   {
     id: 'FIB-002',
@@ -25,7 +38,19 @@ export const licensedInstitutionsData: FinancialInstitution[] = [
     establishedYear: 1977,
     swiftBic: 'FIBSDSKX',
     website: 'https://fib-sd.com',
-    branchesCount: 95
+    branchesCount: 95,
+    regionalPresence: [
+      { ar: 'الخرطوم', en: 'Khartoum' },
+      { ar: 'بورتسودان', en: 'Port Sudan' },
+      { ar: 'ود مدني', en: 'Wad Madani' },
+      { ar: 'القضارف', en: 'Gedaref' },
+      { ar: 'عطبرة', en: 'Atbara' },
+      { ar: 'كسلا', en: 'Kassala' },
+      { ar: 'الأبيض', en: 'El Obeid' },
+      { ar: 'الفاشر', en: 'Al Fashir' },
+      { ar: 'نيالا', en: 'Nyala' },
+      { ar: 'دنقلا', en: 'Dongola' }
+    ]
   },
   {
     id: 'ONB-003',
@@ -38,7 +63,19 @@ export const licensedInstitutionsData: FinancialInstitution[] = [
     establishedYear: 1993,
     swiftBic: 'ONBSSD2X',
     website: 'https://onb-sd.com',
-    branchesCount: 88
+    branchesCount: 88,
+    regionalPresence: [
+      { ar: 'الخرطوم', en: 'Khartoum' },
+      { ar: 'أم درمان', en: 'Omdurman' },
+      { ar: 'بورتسودان', en: 'Port Sudan' },
+      { ar: 'عطبرة', en: 'Atbara' },
+      { ar: 'الأبيض', en: 'El Obeid' },
+      { ar: 'ود مدني', en: 'Wad Madani' },
+      { ar: 'كسلا', en: 'Kassala' },
+      { ar: 'القضارف', en: 'Gedaref' },
+      { ar: 'نيالا', en: 'Nyala' },
+      { ar: 'الفاشر', en: 'Al Fashir' }
+    ]
   },
   {
     id: 'ABS-004',
@@ -50,7 +87,19 @@ export const licensedInstitutionsData: FinancialInstitution[] = [
     headquarters: { ar: 'الخرطوم / القضارف', en: 'Khartoum / Gedaref' },
     establishedYear: 1957,
     swiftBic: 'AGBKSDXX',
-    branchesCount: 110
+    branchesCount: 110,
+    regionalPresence: [
+      { ar: 'الخرطوم', en: 'Khartoum' },
+      { ar: 'القضارف', en: 'Gedaref' },
+      { ar: 'ود مدني', en: 'Wad Madani' },
+      { ar: 'عطبرة', en: 'Atbara' },
+      { ar: 'كسلا', en: 'Kassala' },
+      { ar: 'الأبيض', en: 'El Obeid' },
+      { ar: 'نيالا', en: 'Nyala' },
+      { ar: 'الفاشر', en: 'Al Fashir' },
+      { ar: 'دنقلا', en: 'Dongola' },
+      { ar: 'كوستي', en: 'Kosti' }
+    ]
   },
   {
     id: 'IDB-005',
@@ -61,7 +110,13 @@ export const licensedInstitutionsData: FinancialInstitution[] = [
     status: 'active',
     headquarters: { ar: 'الخرطوم / بورتسودان', en: 'Khartoum / Port Sudan' },
     establishedYear: 1961,
-    branchesCount: 30
+    branchesCount: 30,
+    regionalPresence: [
+      { ar: 'الخرطوم', en: 'Khartoum' },
+      { ar: 'بورتسودان', en: 'Port Sudan' },
+      { ar: 'عطبرة', en: 'Atbara' },
+      { ar: 'ود مدني', en: 'Wad Madani' }
+    ]
   },
   {
     id: 'SFB-006',
@@ -73,7 +128,14 @@ export const licensedInstitutionsData: FinancialInstitution[] = [
     headquarters: { ar: 'الخرطوم / بورتسودان', en: 'Khartoum / Port Sudan' },
     establishedYear: 1978,
     swiftBic: 'SFBKSDXX',
-    branchesCount: 42
+    branchesCount: 42,
+    regionalPresence: [
+      { ar: 'الخرطوم', en: 'Khartoum' },
+      { ar: 'بورتسودان', en: 'Port Sudan' },
+      { ar: 'ود مدني', en: 'Wad Madani' },
+      { ar: 'عطبرة', en: 'Atbara' },
+      { ar: 'القضارف', en: 'Gedaref' }
+    ]
   },
   {
     id: 'ABK-007',
@@ -85,7 +147,14 @@ export const licensedInstitutionsData: FinancialInstitution[] = [
     headquarters: { ar: 'الخرطوم / بورتسودان', en: 'Khartoum / Port Sudan' },
     establishedYear: 1984,
     swiftBic: 'BARKSDXX',
-    branchesCount: 36
+    branchesCount: 36,
+    regionalPresence: [
+      { ar: 'الخرطوم', en: 'Khartoum' },
+      { ar: 'بورتسودان', en: 'Port Sudan' },
+      { ar: 'ود مدني', en: 'Wad Madani' },
+      { ar: 'عطبرة', en: 'Atbara' },
+      { ar: 'كسلا', en: 'Kassala' }
+    ]
   },
   {
     id: 'BNM-008',
@@ -97,7 +166,12 @@ export const licensedInstitutionsData: FinancialInstitution[] = [
     headquarters: { ar: 'الخرطوم / بورتسودان', en: 'Khartoum / Port Sudan' },
     establishedYear: 1983,
     swiftBic: 'BNMASDXX',
-    branchesCount: 22
+    branchesCount: 22,
+    regionalPresence: [
+      { ar: 'الخرطوم', en: 'Khartoum' },
+      { ar: 'بورتسودان', en: 'Port Sudan' },
+      { ar: 'ود مدني', en: 'Wad Madani' }
+    ]
   },
   {
     id: 'TDB-009',
@@ -109,7 +183,15 @@ export const licensedInstitutionsData: FinancialInstitution[] = [
     headquarters: { ar: 'الخرطوم / كسلا', en: 'Khartoum / Kassala' },
     establishedYear: 1983,
     swiftBic: 'TDMNSDXX',
-    branchesCount: 38
+    branchesCount: 38,
+    regionalPresence: [
+      { ar: 'الخرطوم', en: 'Khartoum' },
+      { ar: 'كسلا', en: 'Kassala' },
+      { ar: 'بورتسودان', en: 'Port Sudan' },
+      { ar: 'ود مدني', en: 'Wad Madani' },
+      { ar: 'القضارف', en: 'Gedaref' },
+      { ar: 'الأبيض', en: 'El Obeid' }
+    ]
   },
   {
     id: 'EBS-010',
@@ -120,7 +202,20 @@ export const licensedInstitutionsData: FinancialInstitution[] = [
     status: 'active',
     headquarters: { ar: 'بورتسودان / الخرطوم', en: 'Port Sudan / Khartoum' },
     establishedYear: 2005,
-    website: 'https://ebs-sd.com'
+    website: 'https://ebs-sd.com',
+    regionalPresence: [
+      { ar: 'الخرطوم', en: 'Khartoum' },
+      { ar: 'بورتسودان', en: 'Port Sudan' },
+      { ar: 'عطبرة', en: 'Atbara' },
+      { ar: 'ود مدني', en: 'Wad Madani' },
+      { ar: 'كسلا', en: 'Kassala' },
+      { ar: 'القضارف', en: 'Gedaref' },
+      { ar: 'الأبيض', en: 'El Obeid' },
+      { ar: 'الفاشر', en: 'Al Fashir' },
+      { ar: 'نيالا', en: 'Nyala' },
+      { ar: 'دنقلا', en: 'Dongola' },
+      { ar: 'كوستي', en: 'Kosti' }
+    ]
   },
   {
     id: 'EXC-011',
@@ -130,7 +225,13 @@ export const licensedInstitutionsData: FinancialInstitution[] = [
     typeLabel: { ar: 'شركة صرافة معتمدة', en: 'Licensed Exchange Bureau' },
     status: 'active',
     headquarters: { ar: 'بورتسودان', en: 'Port Sudan' },
-    establishedYear: 2010
+    establishedYear: 2010,
+    regionalPresence: [
+      { ar: 'بورتسودان', en: 'Port Sudan' },
+      { ar: 'عطبرة', en: 'Atbara' },
+      { ar: 'كسلا', en: 'Kassala' },
+      { ar: 'القضارف', en: 'Gedaref' }
+    ]
   },
   {
     id: 'MF-012',
@@ -141,6 +242,13 @@ export const licensedInstitutionsData: FinancialInstitution[] = [
     status: 'active',
     headquarters: { ar: 'الخرطوم / القضارف', en: 'Khartoum / Gedaref' },
     establishedYear: 2012,
-    branchesCount: 28
+    branchesCount: 28,
+    regionalPresence: [
+      { ar: 'الخرطوم', en: 'Khartoum' },
+      { ar: 'القضارف', en: 'Gedaref' },
+      { ar: 'ود مدني', en: 'Wad Madani' },
+      { ar: 'كسلا', en: 'Kassala' },
+      { ar: 'الأبيض', en: 'El Obeid' }
+    ]
   }
 ];

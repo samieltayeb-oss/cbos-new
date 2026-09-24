@@ -14,7 +14,8 @@ import {
   Search,
   Wifi,
   ExternalLink,
-  ChevronRight
+  ChevronRight,
+  ArrowDown
 } from 'lucide-react';
 
 interface CityHotspot {
@@ -179,7 +180,7 @@ const cityHotspots: CityHotspot[] = [
 ];
 
 interface Props {
-  onSelectCity?: (cityName: string) => void;
+  onSelectCity?: (city: { ar: string; en: string }) => void;
 }
 
 export default function DigitalBankingMapHero({ onSelectCity }: Props) {
@@ -187,6 +188,7 @@ export default function DigitalBankingMapHero({ onSelectCity }: Props) {
   const [selectedNode, setSelectedNode] = useState<CityHotspot>(cityHotspots[0]); // Default Khartoum
   const [hoveredNode, setHoveredNode] = useState<CityHotspot | null>(null);
   const [activeFilter, setActiveFilter] = useState<'all' | 'cbos' | 'banks'>('all');
+  const [isNavigating, setIsNavigating] = useState(false);
 
   const activeNode = hoveredNode || selectedNode;
 
@@ -264,7 +266,6 @@ export default function DigitalBankingMapHero({ onSelectCity }: Props) {
                 key={node.id}
                 onClick={() => {
                   setSelectedNode(node);
-                  if (onSelectCity) onSelectCity(node.name.ar);
                 }}
                 className={`px-3 py-1.5 rounded-lg text-xs font-arabic transition-all flex items-center gap-1.5 border ${
                   isSelected 
@@ -335,7 +336,6 @@ export default function DigitalBankingMapHero({ onSelectCity }: Props) {
                     className="absolute z-20 cursor-pointer"
                     onClick={() => {
                       setSelectedNode(node);
-                      if (onSelectCity) onSelectCity(node.name.ar);
                     }}
                     onMouseEnter={() => setHoveredNode(node)}
                     onMouseLeave={() => setHoveredNode(null)}
@@ -481,11 +481,20 @@ export default function DigitalBankingMapHero({ onSelectCity }: Props) {
               {/* Action Button */}
               {onSelectCity && (
                 <button
-                  onClick={() => onSelectCity(activeNode.name.ar)}
-                  className="mt-4 w-full py-2.5 rounded-lg bg-[#2F88C2] hover:bg-[#2574A8] text-white text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-md"
+                  onClick={() => {
+                    setIsNavigating(true);
+                    onSelectCity({ ar: activeNode.name.ar, en: activeNode.name.en });
+                    setTimeout(() => setIsNavigating(false), 1200);
+                  }}
+                  className="mt-4 w-full py-3 rounded-xl bg-[#2F88C2] hover:bg-[#2574A8] text-white text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#2F88C2]/30 active:scale-95 group cursor-pointer"
                 >
-                  <Search className="w-3.5 h-3.5" />
-                  <span>{isRtl ? `عرض مصارف ${activeNode.name.ar} في السجل` : `Filter ${activeNode.name.en} in Directory`}</span>
+                  <Search className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+                  <span className="font-arabic font-bold text-sm">
+                    {isNavigating
+                      ? (isRtl ? 'جارِ الانتقال لسجل المؤسسات...' : 'Scrolling to Directory...')
+                      : (isRtl ? `عرض مصارف ${activeNode.name.ar} في السجل` : `Filter ${activeNode.name.en} in Directory`)}
+                  </span>
+                  <ArrowDown className="w-4 h-4 animate-bounce" />
                 </button>
               )}
 

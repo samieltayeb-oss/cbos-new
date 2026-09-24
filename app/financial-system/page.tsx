@@ -14,26 +14,78 @@ import {
   CreditCard, 
   ExternalLink,
   Award,
-  Layers
+  Layers,
+  X,
+  CheckCircle2
 } from 'lucide-react';
 import DigitalBankingMapHero from '@/components/financial-system/DigitalBankingMapHero';
 
 export default function FinancialSystemPage() {
-  const { t } = useLanguage();
+  const { t, isRtl } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedType, setSelectedType] = useState<string>('all');
+  const [activeCityFilter, setActiveCityFilter] = useState<{ ar: string; en: string } | null>(null);
+
+  const normalize = (str: string) => {
+    return str
+      .toLowerCase()
+      .replace(/[أإآ]/g, 'ا')
+      .replace(/ة/g, 'ه')
+      .replace(/ى/g, 'ي')
+      .trim();
+  };
 
   const filteredInstitutions = licensedInstitutionsData.filter((inst) => {
     const matchesType = selectedType === 'all' || inst.type === selectedType;
-    const q = searchQuery.toLowerCase();
-    const matchesQuery = 
-      t(inst.name).toLowerCase().includes(q) ||
-      inst.licenseNumber.toLowerCase().includes(q) ||
-      (inst.swiftBic && inst.swiftBic.toLowerCase().includes(q)) ||
-      t(inst.headquarters).toLowerCase().includes(q);
+    if (!matchesType) return false;
 
-    return matchesType && matchesQuery;
+    if (!searchQuery.trim()) return true;
+
+    const q = normalize(searchQuery);
+
+    const nameAr = normalize(inst.name.ar);
+    const nameEn = normalize(inst.name.en);
+    const hqAr = normalize(inst.headquarters.ar);
+    const hqEn = normalize(inst.headquarters.en);
+    const lic = normalize(inst.licenseNumber);
+    const swift = inst.swiftBic ? normalize(inst.swiftBic) : '';
+
+    const matchesDirect = 
+      nameAr.includes(q) ||
+      nameEn.includes(q) ||
+      hqAr.includes(q) ||
+      hqEn.includes(q) ||
+      lic.includes(q) ||
+      swift.includes(q);
+
+    if (matchesDirect) return true;
+
+    // Check regional presence in cities and states
+    if (inst.regionalPresence && inst.regionalPresence.length > 0) {
+      return inst.regionalPresence.some((city) =>
+        normalize(city.ar).includes(q) || normalize(city.en).includes(q)
+      );
+    }
+
+    return false;
   });
+
+  const handleCitySelect = (city: { ar: string; en: string }) => {
+    setActiveCityFilter(city);
+    setSearchQuery(isRtl ? city.ar : city.en);
+    setSelectedType('all');
+    setTimeout(() => {
+      const el = document.getElementById('directory-section');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 50);
+  };
+
+  const handleClearFilter = () => {
+    setActiveCityFilter(null);
+    setSearchQuery('');
+  };
 
   const filterTabs = [
     { id: 'all', label: { ar: 'كافة المؤسسات المرخصة', en: 'All Licensed Entities' } },
@@ -47,9 +99,9 @@ export default function FinancialSystemPage() {
   return (
     <div className="bg-sand-50 min-h-screen">
       {/* Interactive Digital Sudan Banking Topology Map Hero */}
-      <DigitalBankingMapHero onSelectCity={(cityName) => setSearchQuery(cityName)} />
+      <DigitalBankingMapHero onSelectCity={handleCitySelect} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div id="directory-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 scroll-mt-6">
         
         {/* Search & Filter Bar */}
         <div className="bg-white border border-sand-300 rounded-xl p-6 shadow-sm mb-8 space-y-4">
@@ -61,13 +113,25 @@ export default function FinancialSystemPage() {
               <input
                 type="text"
                 placeholder={t({
-                  ar: 'ابحث باسم المصرف، رقم الترخيص، رمز السويفت (SWIFT)، أو المدينة...',
-                  en: 'Search by institution name, license, SWIFT BIC, or location...'
+                  ar: 'ابحث باسم المصرف، المدينة، الولاية، رقم الترخيص، أو السويفت (SWIFT)...',
+                  en: 'Search by institution name, city, state, license, or SWIFT BIC...'
                 })}
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full ps-12 pe-4 py-2.5 bg-sand-50 border border-sand-300 rounded-lg text-sm focus:outline-none focus:border-[#22446D] text-ink-base"
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  if (!e.target.value) setActiveCityFilter(null);
+                }}
+                className="w-full ps-12 pe-10 py-2.5 bg-sand-50 border border-sand-300 rounded-lg text-sm focus:outline-none focus:border-[#22446D] text-ink-base"
               />
+              {searchQuery && (
+                <button
+                  onClick={handleClearFilter}
+                  className="absolute end-3 top-3 text-cbos-ink-muted hover:text-cbos-ink"
+                  title="Clear search"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
             </div>
 
             <div className="text-xs font-mono text-ink-muted shrink-0 text-end">
@@ -75,6 +139,24 @@ export default function FinancialSystemPage() {
               <span className="font-bold text-cbos-green-950 text-sm">{filteredInstitutions.length}</span>
             </div>
           </div>
+
+          {/* Active City Filter Badge if selected */}
+          {activeCityFilter && (
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#2F88C2]/10 border border-[#2F88C2]/30 text-xs text-[#2F88C2] font-arabic">
+              <span className="font-bold">
+                {isRtl ? `عقدة الشبكة المصرفية: ${activeCityFilter.ar}` : `Active Banking Node: ${activeCityFilter.en}`}
+              </span>
+              <span className="text-cbos-ink-muted">({filteredInstitutions.length} {isRtl ? 'مؤسسات متصلة' : 'entities online'})</span>
+              <button
+                onClick={handleClearFilter}
+                className="ms-auto flex items-center gap-1 text-cbos-ink hover:text-red-600 transition-colors font-bold cursor-pointer"
+                title="Clear filter"
+              >
+                <X className="w-3.5 h-3.5" />
+                <span>{isRtl ? 'إلغاء التصفية' : 'Clear'}</span>
+              </button>
+            </div>
+          )}
 
           {/* Filter Categories */}
           <div className="flex flex-wrap gap-2 pt-2 border-t border-sand-200">
@@ -158,6 +240,16 @@ export default function FinancialSystemPage() {
                     </div>
                   )}
                 </dl>
+
+                {inst.regionalPresence && inst.regionalPresence.length > 0 && (
+                  <div className="mt-3 pt-2.5 border-t border-sand-100 flex flex-wrap items-center gap-1 text-[11px] text-cbos-ink-muted">
+                    <span className="font-semibold text-cbos-ink">{isRtl ? 'التغطية الولائية:' : 'Regional Hubs:'}</span>
+                    <span className="text-[#2F88C2] font-medium">
+                      {inst.regionalPresence.slice(0, 5).map(p => isRtl ? p.ar : p.en).join(' • ')}
+                      {inst.regionalPresence.length > 5 ? ` +${inst.regionalPresence.length - 5}` : ''}
+                    </span>
+                  </div>
+                )}
               </div>
 
               <div className="mt-6 pt-3 border-t border-sand-100 flex items-center justify-between text-xs">

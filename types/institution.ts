@@ -21,4 +21,5 @@ export interface FinancialInstitution {
   website?: string;
   phone?: string;
   branchesCount?: number;
+  regionalPresence?: BilingualString[];
 }
