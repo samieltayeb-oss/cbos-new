@@ -35,7 +35,7 @@ export default function ContactPage() {
       state: { ar: 'ولاية الخرطوم', en: 'Khartoum State' },
       role: { ar: 'المقر السيادي التاريخي', en: 'Historic Sovereign Headquarters' },
       address: { ar: 'تقاطع شارع الجامعة مع شارع القصر', en: 'Gamaa Ave & El Qasr St Intersection' },
-      phone: '+249 187 055 000',
+      phone: '+249 187 056 000 / +249 187 056 070',
       email: 'inquiries@cbos.gov.sd'
     },
     {
@@ -202,7 +202,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Phone className="w-4 h-4 text-cbos-gold shrink-0" />
-                  <span className="font-mono font-bold" dir="ltr">+249 187 055 000</span>
+                  <span className="font-mono font-bold" dir="ltr">+249 187 056 000 / +249 187 056 070</span>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Mail className="w-4 h-4 text-cbos-gold shrink-0" />

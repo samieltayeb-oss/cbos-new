@@ -15,7 +15,8 @@ import {
   ArrowDownRight,
   Layers,
   Search,
-  CheckCircle2
+  CheckCircle2,
+  ExternalLink
 } from 'lucide-react';
 
 interface MetricItem {
@@ -451,6 +452,17 @@ export default function DataPortalPage() {
                   en: 'CBOS commits to international statistical best practices, offering precise time series supporting academic research, policymaking, and sovereign investment.'
                 })}
               </p>
+              <div className="mb-6">
+                <a
+                  href="https://dsbb.imf.org/e-gdds/country/SDN/category"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#2F88C2] hover:bg-[#096E47] text-white font-bold text-xs border border-[#B99553]/40 shadow-sm transition-all group"
+                >
+                  <span>{t({ ar: 'بوابة صندوق النقد الدولي (DSBB Sudan)', en: 'IMF DSBB Dissemination Portal' })}</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-[#DDC99B] group-hover:translate-x-0.5 transition-transform" />
+                </a>
+              </div>
             </div>
 
             <div dir="ltr" className="pt-4 border-t border-[#054C36] text-xs text-[#D8D4C8] font-mono">

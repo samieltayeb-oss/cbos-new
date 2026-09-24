@@ -55,7 +55,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-[#2F88C2] shrink-0" />
-                <span dir="ltr">00249 187 056000 / +249 187 05000</span>
+                <span dir="ltr">+249 187 056000 / +249 187 056070</span>
               </div>
               <div className="pt-2">
                 <a
@@ -142,9 +142,15 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link href="/data" className="hover:text-white transition-colors">
-                  {isRtl ? 'النظام العام لنشر البيانات (e-GDDS)' : 'IMF e-GDDS Data System'}
-                </Link>
+                <a 
+                  href="https://dsbb.imf.org/e-gdds/country/SDN/category" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-white transition-colors flex items-center gap-1"
+                >
+                  <span>{isRtl ? 'النظام العام لنشر البيانات (IMF e-GDDS)' : 'IMF e-GDDS Data System'}</span>
+                  <ExternalLink className="w-3 h-3 text-[#2F88C2]" />
+                </a>
               </li>
               <li>
                 <Link href="/exchange-rates" className="hover:text-white transition-colors">

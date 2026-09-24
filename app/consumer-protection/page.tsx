@@ -96,7 +96,7 @@ export default function ConsumerProtectionPage() {
             </div>
             <div className="px-3.5 py-1.5 rounded-lg bg-[#2F88C2]/60 border border-[#B99553]/40 flex items-center gap-2">
               <span className="text-[#DDC99B]">{isRtl ? 'الرقم المجاني الموحد:' : 'Ombudsman Hotline:'}</span>
-              <span className="font-bold text-white">+249 187 05000</span>
+              <span className="font-bold text-white">1959 / +249 187 056000</span>
             </div>
           </div>
         </div>

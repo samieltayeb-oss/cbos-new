@@ -256,11 +256,11 @@ export default function CybersecurityPage() {
 
           <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
             <a
-              href="tel:+24918705000"
+              href="tel:+249187056000"
               className="px-5 py-3 rounded-xl bg-[#B99553] text-cbos-ink hover:bg-[#D4AF37] font-bold text-xs flex items-center gap-2 shadow-lg transition-all"
             >
               <PhoneCall className="w-4 h-4" />
-              <span>+249 187 05000 (Ext 404)</span>
+              <span>+249 187 056000 (Ext 404)</span>
             </a>
             <a
               href="mailto:cert@cbos.gov.sd"
