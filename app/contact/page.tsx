@@ -96,7 +96,10 @@ export default function ContactPage() {
   return (
     <div className="bg-sand-50 min-h-screen">
       {/* Header Banner */}
-      <section className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-20 border-b border-cbos-gold/30">
+      <section 
+        className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-20 border-b border-cbos-gold/30"
+        style={{ backgroundColor: '#032A1E' }}
+      >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center gap-3 text-cbos-gold text-xs font-mono uppercase tracking-wider mb-4">
@@ -106,14 +109,14 @@ export default function ContactPage() {
             <span>{t({ ar: 'المقر وشبكة الفروع وحماية المستهلك', en: 'HQ, Branches & Consumer Channel' })}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white max-w-4xl leading-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white max-w-4xl leading-[1.2] mb-4 tracking-normal">
             {t({
               ar: 'المقرات السيادية وشبكة الفروع في ولايات السودان',
               en: 'Sovereign Headquarters & Nationwide Branch Network'
             })}
           </h1>
 
-          <p className="text-sand-300 text-sm sm:text-base max-w-3xl leading-relaxed">
+          <p className="text-[#E2DDD3] text-sm sm:text-base max-w-3xl leading-[1.8] font-normal">
             {t({
               ar: 'قنوات الاتصال الرسمية ببنك السودان المركزي، وفروعه المنتشرة في ولايات السودان، وبوابة حماية عملاء الجهاز المصرفي واستقبال الشكاوى.',
               en: 'Official contact channels for the Central Bank of Sudan, its state branch network across Sudan, and the dedicated banking consumer protection portal.'
@@ -137,17 +140,17 @@ export default function ContactPage() {
                 <span className="text-xs font-mono text-emerald-600 font-bold">OPERATIONAL HQ</span>
               </div>
 
-              <h2 className="font-serif font-bold text-2xl text-cbos-green-950 mb-2">
+              <h2 className="font-bold text-2xl text-cbos-green-950 mb-2">
                 {t({ ar: 'بورتسودان — ولاية البحر الأحمر', en: 'Port Sudan — Red Sea State' })}
               </h2>
-              <p className="text-xs text-ink-muted leading-relaxed mb-6">
+              <p className="text-xs text-cbos-ink-muted leading-[1.7] mb-6">
                 {t({
                   ar: 'مقر إدارة العمليات المصرفية السيادية، مقسم المدفوعات الفورية (NIPS)، إدارة الأسواق المالية والنقد الأجنبي، ومكتب السيد المحافظ.',
                   en: 'Executing sovereign banking operations, NIPS switch oversight, foreign exchange markets, and Governor executive offices.'
                 })}
               </p>
 
-              <dl className="space-y-3 text-xs text-ink-base border-t border-sand-200 pt-4">
+              <dl className="space-y-3 text-xs text-cbos-ink border-t border-sand-200 pt-4">
                 <div className="flex items-start gap-2.5">
                   <MapPin className="w-4 h-4 text-cbos-gold shrink-0 mt-0.5" />
                   <span>{t({ ar: 'شارع الميناء الرئيسي، قرب الميناء الشمالي، بورتسودان', en: 'Port Main Avenue, North Port Area, Port Sudan' })}</span>
@@ -167,7 +170,7 @@ export default function ContactPage() {
               </dl>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-sand-100 flex items-center justify-between text-xs font-mono text-ink-muted">
+            <div className="mt-6 pt-4 border-t border-sand-100 flex items-center justify-between text-xs font-mono text-cbos-ink-muted">
               <span>PRIMARY SOVEREIGN SITE</span>
               <span className="text-cbos-gold font-bold">ACTIVE</span>
             </div>
@@ -177,23 +180,23 @@ export default function ContactPage() {
           <div className="bg-white border border-sand-300 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="px-3 py-1 rounded text-xs font-mono font-bold bg-sand-100 text-ink-base border border-sand-300">
+                <span className="px-3 py-1 rounded text-xs font-mono font-bold bg-sand-100 text-cbos-ink border border-sand-300">
                   {t({ ar: 'المقر السيادي التاريخي والمستودع القانوني', en: 'Historic Sovereign HQ & Legal Archive' })}
                 </span>
-                <span className="text-xs font-mono text-ink-muted">EST. 1960</span>
+                <span className="text-xs font-mono text-cbos-ink-muted">EST. 1960</span>
               </div>
 
-              <h2 className="font-serif font-bold text-2xl text-ink-base mb-2">
+              <h2 className="font-bold text-2xl text-cbos-ink mb-2">
                 {t({ ar: 'الخرطوم — ولاية الخرطوم', en: 'Khartoum — Khartoum State' })}
               </h2>
-              <p className="text-xs text-ink-muted leading-relaxed mb-6">
+              <p className="text-xs text-cbos-ink-muted leading-[1.7] mb-6">
                 {t({
                   ar: 'المبنى التاريخي العريق لبنك السودان المركزي الحاضن للأرشيف السيادي والمعلم المؤسسي البارز في العاصمة الوطنية.',
                   en: 'The historic flagship edifice of the Central Bank of Sudan holding sovereign legislative archives in the national capital.'
                 })}
               </p>
 
-              <dl className="space-y-3 text-xs text-ink-base border-t border-sand-200 pt-4">
+              <dl className="space-y-3 text-xs text-cbos-ink border-t border-sand-200 pt-4">
                 <div className="flex items-start gap-2.5">
                   <MapPin className="w-4 h-4 text-cbos-gold shrink-0 mt-0.5" />
                   <span>{t({ ar: 'تقاطع شارع الجامعة مع شارع القصر، ص.ب 313 الخرطوم', en: 'Gamaa Avenue & El Qasr Street Intersection, P.O. Box 313' })}</span>
@@ -213,7 +216,7 @@ export default function ContactPage() {
               </dl>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-sand-100 flex items-center justify-between text-xs font-mono text-ink-muted">
+            <div className="mt-6 pt-4 border-t border-sand-100 flex items-center justify-between text-xs font-mono text-cbos-ink-muted">
               <span>HISTORIC SOVEREIGN ARCHIVE</span>
               <span className="text-cbos-green-800 font-bold">SOVEREIGN SYMBOL</span>
             </div>
@@ -228,11 +231,11 @@ export default function ContactPage() {
               <span className="text-xs font-mono uppercase tracking-wider text-cbos-gold font-bold">
                 {t({ ar: 'الانتشار الجغرافي القومي', en: 'NATIONWIDE PRESENCE' })}
               </span>
-              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-ink-base mt-1">
+              <h2 className="text-2xl sm:text-3xl font-bold text-cbos-ink mt-1">
                 {t({ ar: 'فروع بنك السودان المركزي في الولايات', en: 'State Regional Branch Network' })}
               </h2>
             </div>
-            <span className="text-xs font-mono text-ink-muted">
+            <span className="text-xs font-mono text-cbos-ink-muted">
               {t({ ar: 'إجمالي الفروع المدرجة:', en: 'Listed Branches:' })} {branches.length}
             </span>
           </div>
@@ -245,19 +248,19 @@ export default function ContactPage() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="font-serif font-bold text-lg text-cbos-green-950">
+                    <span className="font-bold text-lg text-cbos-green-950">
                       {t(b.city)}
                     </span>
-                    <span className="text-[11px] font-mono text-ink-muted bg-sand-100 px-2 py-0.5 rounded">
+                    <span className="text-[11px] font-mono text-cbos-ink-muted bg-sand-100 px-2 py-0.5 rounded">
                       {t(b.state)}
                     </span>
                   </div>
 
-                  <p className="text-xs text-cbos-gold font-medium mb-3">
+                  <p className="text-xs text-cbos-gold font-semibold mb-3">
                     {t(b.role)}
                   </p>
 
-                  <div className="space-y-2 text-xs text-ink-muted border-t border-sand-200 pt-3">
+                  <div className="space-y-2 text-xs text-cbos-ink-muted border-t border-sand-200 pt-3">
                     <div className="flex items-start gap-1.5">
                       <MapPin className="w-3.5 h-3.5 text-cbos-green-800 shrink-0 mt-0.5" />
                       <span>{t(b.address)}</span>
@@ -273,7 +276,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="mt-4 pt-2 border-t border-sand-100 text-[10px] font-mono text-ink-muted text-end">
+                <div className="mt-4 pt-2 border-t border-sand-100 text-[10px] font-mono text-cbos-ink-muted text-end">
                   CBOS REGIONAL
                 </div>
               </div>
@@ -286,12 +289,12 @@ export default function ContactPage() {
           
           {/* Official Inquiries Form */}
           <div className="lg:col-span-7 bg-white border border-sand-300 rounded-2xl p-6 sm:p-8 shadow-sm">
-            <div className="flex items-center gap-3 text-cbos-green-900 font-serif font-bold text-xl mb-4 border-b border-sand-200 pb-3">
+            <div className="flex items-center gap-3 text-cbos-green-900 font-bold text-xl mb-4 border-b border-sand-200 pb-3">
               <Mail className="w-5 h-5 text-cbos-gold" />
               <h2>{t({ ar: 'نموذج الاستفسارات والمراسلات الرسمية', en: 'Official Inquiries & Public Correspondence' })}</h2>
             </div>
 
-            <p className="text-xs text-ink-muted leading-relaxed mb-6">
+            <p className="text-xs text-cbos-ink-muted leading-[1.7] mb-6">
               {t({
                 ar: 'يتم توجيه كافة المراسلات إلكترونياً إلى الإدارة العامة المختصة ببنك السودان المركزي، وتخضع لسجلات القيد الرسمية.',
                 en: 'All correspondence is electronically routed to the competent CBOS directorate under official institutional registry logs.'
@@ -301,10 +304,10 @@ export default function ContactPage() {
             {formSubmitted ? (
               <div className="p-8 rounded-xl bg-emerald-50 border border-emerald-200 text-center space-y-3">
                 <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
-                <h3 className="font-serif font-bold text-lg text-emerald-950">
+                <h3 className="font-bold text-lg text-emerald-950">
                   {t({ ar: 'تم استلام مراسلتكم بنجاح', en: 'Correspondence Received Successfully' })}
                 </h3>
-                <p className="text-xs text-emerald-800 max-w-md mx-auto">
+                <p className="text-xs text-emerald-800 max-w-md mx-auto leading-[1.7]">
                   {t({
                     ar: 'تم قيد طلبكم برقم تتبع رسمي وسيتم الرد عبر البريد الإلكتروني المسجل خلال أيام العمل الرسمية.',
                     en: 'Your inquiry has been logged with an official tracking code and will be responded to via registered email.'
@@ -318,47 +321,47 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono font-bold text-ink-muted uppercase mb-1">
+                    <label className="block text-xs font-mono font-bold text-cbos-ink-muted uppercase mb-1">
                       {t({ ar: 'الاسم الكامل أو اسم المؤسسة', en: 'Full Name / Institution' })} *
                     </label>
                     <input 
                       type="text" 
                       required
                       placeholder={t({ ar: 'محمد أحمد / شركة...', en: 'Name or Entity...' })}
-                      className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-xs text-ink-base focus:outline-none focus:border-cbos-green-800"
+                      className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-xs text-cbos-ink focus:outline-none focus:border-cbos-green-800 font-medium"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono font-bold text-ink-muted uppercase mb-1">
+                    <label className="block text-xs font-mono font-bold text-cbos-ink-muted uppercase mb-1">
                       {t({ ar: 'البريد الإلكتروني المعتمد', en: 'Email Address' })} *
                     </label>
                     <input 
                       type="email" 
                       required
                       placeholder="name@domain.sd"
-                      className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-xs text-ink-base focus:outline-none focus:border-cbos-green-800"
+                      className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-xs text-cbos-ink focus:outline-none focus:border-cbos-green-800 font-medium"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono font-bold text-ink-muted uppercase mb-1">
+                    <label className="block text-xs font-mono font-bold text-cbos-ink-muted uppercase mb-1">
                       {t({ ar: 'رقم الهاتف للتواصل', en: 'Contact Phone Number' })}
                     </label>
                     <input 
                       type="tel" 
                       placeholder="+249 ..."
-                      className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-xs text-ink-base focus:outline-none focus:border-cbos-green-800"
+                      className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-xs text-cbos-ink focus:outline-none focus:border-cbos-green-800 font-medium"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono font-bold text-ink-muted uppercase mb-1">
+                    <label className="block text-xs font-mono font-bold text-cbos-ink-muted uppercase mb-1">
                       {t({ ar: 'الإدارة المعنية بالمراسلة', en: 'Target Directorate' })} *
                     </label>
-                    <select className="w-full bg-sand-50 border border-sand-300 rounded-lg px-3 py-2.5 text-xs text-ink-base focus:outline-none focus:border-cbos-green-800 font-serif">
+                    <select className="w-full bg-sand-50 border border-sand-300 rounded-lg px-3 py-2.5 text-xs text-cbos-ink focus:outline-none focus:border-cbos-green-800 font-medium">
                       <option>{t({ ar: 'الإدارة العامة للرقابة المصرفية', en: 'Banking Supervision' })}</option>
                       <option>{t({ ar: 'إدارة النقد الأجنبي والأسواق المالية', en: 'FX & Financial Markets' })}</option>
                       <option>{t({ ar: 'نظم المدفوعات القومية والمقسم (NIPS)', en: 'Payment Systems (NIPS)' })}</option>
@@ -370,24 +373,24 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono font-bold text-ink-muted uppercase mb-1">
+                  <label className="block text-xs font-mono font-bold text-cbos-ink-muted uppercase mb-1">
                     {t({ ar: 'موضوع المراسلة أو الاستفسار', en: 'Subject' })} *
                   </label>
                   <input 
                     type="text" 
                     required
-                    className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-xs text-ink-base focus:outline-none focus:border-cbos-green-800"
+                    className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-xs text-cbos-ink focus:outline-none focus:border-cbos-green-800 font-medium"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono font-bold text-ink-muted uppercase mb-1">
+                  <label className="block text-xs font-mono font-bold text-cbos-ink-muted uppercase mb-1">
                     {t({ ar: 'نص الرسالة أو الاستفسار بالتفصيل', en: 'Detailed Inquiry Message' })} *
                   </label>
                   <textarea 
                     rows={4}
                     required
-                    className="w-full bg-sand-50 border border-sand-300 rounded-lg p-3 text-xs text-ink-base focus:outline-none focus:border-cbos-green-800"
+                    className="w-full bg-sand-50 border border-sand-300 rounded-lg p-3 text-xs text-cbos-ink focus:outline-none focus:border-cbos-green-800 font-medium"
                   />
                 </div>
 
@@ -407,11 +410,11 @@ export default function ContactPage() {
             
             {/* Banking Consumer Protection Card */}
             <div className="bg-white border border-sand-300 rounded-2xl p-6 shadow-sm">
-              <div className="flex items-center gap-3 text-cbos-green-900 font-serif font-bold text-lg mb-3">
+              <div className="flex items-center gap-3 text-cbos-green-900 font-bold text-lg mb-3">
                 <UserCheck className="w-5 h-5 text-cbos-gold" />
                 <h3>{t({ ar: 'بوابة حماية عملاء الجهاز المصرفي', en: 'Banking Consumer Protection' })}</h3>
               </div>
-              <p className="text-xs text-ink-muted leading-relaxed mb-4">
+              <p className="text-xs text-cbos-ink-muted leading-[1.7] mb-4">
                 {t({
                   ar: 'في حال واجهت نزاعاً مالياً أو تعسفاً مع أي من المصارف التجارية المرخصة ولم يتم حله داخلياً، يمكنك تقديم شكوى رسمية للبنك المركزي.',
                   en: 'If you encounter unresolved disputes with any licensed bank or exchange bureau, you are entitled to file a formal grievance with CBOS.'
@@ -419,32 +422,35 @@ export default function ContactPage() {
               </p>
               <div className="bg-sand-50 rounded-xl p-4 border border-sand-200 text-xs space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-ink-muted">{t({ ar: 'الخط الساخن للشكاوى:', en: 'Consumer Hotline:' })}</span>
+                  <span className="text-cbos-ink-muted">{t({ ar: 'الخط الساخن للشكاوى:', en: 'Consumer Hotline:' })}</span>
                   <span className="font-mono font-bold text-cbos-green-900">1959 ({t({ ar: 'مجاني', en: 'Toll-free' })})</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-ink-muted">{t({ ar: 'البريد المخصص للشكاوى:', en: 'Grievance Email:' })}</span>
-                  <span className="font-mono text-[11px]">complaints@cbos.gov.sd</span>
+                  <span className="text-cbos-ink-muted">{t({ ar: 'البريد المخصص للشكاوى:', en: 'Grievance Email:' })}</span>
+                  <span className="font-mono text-[11px] font-semibold">complaints@cbos.gov.sd</span>
                 </div>
               </div>
             </div>
 
             {/* Whistleblower Channel Card */}
-            <div className="bg-cbos-green-950 text-white rounded-2xl p-6 border border-cbos-gold/30 space-y-3">
+            <div 
+              className="bg-cbos-green-950 text-white rounded-2xl p-6 border border-cbos-gold/30 space-y-3"
+              style={{ backgroundColor: '#032A1E' }}
+            >
               <div className="flex items-center gap-2 text-cbos-gold text-xs font-mono uppercase tracking-wider">
                 <ShieldAlert className="w-4 h-4" />
                 <span>CONFIDENTIAL WHISTLEBLOWER</span>
               </div>
-              <h3 className="font-serif font-bold text-lg text-white">
+              <h3 className="font-bold text-lg text-white">
                 {t({ ar: 'قناة الإبلاغ السري عن التجاوزات المالية', en: 'Confidential Whistleblower Portal' })}
               </h3>
-              <p className="text-xs text-sand-300 leading-relaxed">
+              <p className="text-xs text-[#E2DDD3] leading-[1.8] font-normal">
                 {t({
                   ar: 'قناة مشفرة تتيح للعاملين في الجهاز المصرفي والجمهور الإبلاغ عن مخالفات غسل الأموال أو التجاوزات الرقابية بهوية محمية وسرية مطلقة.',
                   en: 'An encrypted channel allowing banking personnel and citizens to report money laundering or regulatory misconduct with strict whistleblower protection.'
                 })}
               </p>
-              <div className="pt-2 text-xs font-mono text-cbos-gold">
+              <div className="pt-2 text-xs font-mono text-cbos-gold font-bold">
                 whistleblower@cbos.gov.sd
               </div>
             </div>

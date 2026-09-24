@@ -103,7 +103,10 @@ export default function AboutPage() {
   return (
     <div className="bg-sand-50 min-h-screen">
       {/* Sovereign Header Banner */}
-      <section className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-24 border-b border-cbos-gold/30">
+      <section 
+        className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-24 border-b border-cbos-gold/30"
+        style={{ backgroundColor: '#032A1E' }}
+      >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center gap-3 text-cbos-gold text-xs font-mono uppercase tracking-wider mb-4">
@@ -113,14 +116,14 @@ export default function AboutPage() {
             <span>{t({ ar: 'الميثاق والمؤسسة', en: 'Mandate & Institution' })}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white max-w-4xl leading-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white max-w-4xl leading-[1.2] mb-6 tracking-normal">
             {t({
               ar: 'المؤسسة النقدية السيادية لجمهورية السودان منذ عام 1960',
               en: 'The Sovereign Monetary Authority of the Republic of Sudan Since 1960'
             })}
           </h1>
 
-          <p className="text-sand-200 text-base sm:text-lg max-w-3xl leading-relaxed">
+          <p className="text-[#E2DDD3] text-base sm:text-lg max-w-3xl leading-[1.8] font-normal">
             {t({
               ar: 'يضطلع بنك السودان المركزي بمسؤولية صيانة الاستقرار النقدي والمالي، وإصدار العملة الوطنية، وإدارة احتياطيات الدولة، والإشراف الصارم على القطاع المصرفي وفق المبادئ التمويلية المتوافقة مع الشريعة الإسلامية.',
               en: 'The Central Bank of Sudan is entrusted with safeguarding monetary and financial stability, issuing the national currency, managing sovereign reserves, and supervising the banking sector under Sharia-compliant financial frameworks.'
@@ -138,11 +141,11 @@ export default function AboutPage() {
             
             {/* Legal Mandate Card */}
             <div className="bg-white border border-sand-300 rounded-xl p-8 shadow-sm">
-              <div className="flex items-center gap-3 text-cbos-green-800 font-serif font-bold text-2xl mb-4 border-b border-sand-200 pb-4">
+              <div className="flex items-center gap-3 text-cbos-green-800 font-bold text-2xl mb-4 border-b border-sand-200 pb-4">
                 <Scale className="w-6 h-6 text-cbos-gold" />
                 <h2>{t({ ar: 'التكليف القانوني والأهداف الاستراتيجية', en: 'Legal Mandate & Statutory Objectives' })}</h2>
               </div>
-              <p className="text-ink-muted leading-relaxed mb-6">
+              <p className="text-cbos-ink-muted leading-[1.7] mb-6">
                 {t({
                   ar: 'بموجب قانون بنك السودان لسنة 2002 (المعدل)، يتمتع البنك بالشخصية الاعتبارية المستقلة والاستقلال المالي والإداري التام في ممارسة صلاحياته لتحقيق الغايات الوطنية التالية:',
                   en: 'Under the Bank of Sudan Act 2002 (as amended), the Bank operates as an autonomous legal entity with financial and administrative independence to achieve the following statutory objectives:'
@@ -178,7 +181,7 @@ export default function AboutPage() {
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-start gap-3 p-3 rounded-lg bg-sand-50 border border-sand-200">
                     <CheckCircle2 className="w-5 h-5 text-cbos-green-700 shrink-0 mt-0.5" />
-                    <span className="text-sm text-ink-base leading-relaxed">{t(item)}</span>
+                    <span className="text-sm text-cbos-ink leading-[1.7] font-medium">{t(item)}</span>
                   </div>
                 ))}
               </div>
@@ -188,10 +191,10 @@ export default function AboutPage() {
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-wider text-cbos-gold font-semibold">
+                  <span className="text-xs font-mono uppercase tracking-wider text-cbos-gold font-bold">
                     {t({ ar: 'الركائز المؤسسية', en: 'INSTITUTIONAL PILLARS' })}
                   </span>
-                  <h2 className="text-2xl font-serif font-bold text-ink-base mt-1">
+                  <h2 className="text-2xl font-bold text-cbos-ink mt-1">
                     {t({ ar: 'أركان العمل المصرفي المركزي', en: 'Core Pillars of Central Banking' })}
                   </h2>
                 </div>
@@ -205,8 +208,8 @@ export default function AboutPage() {
                       <div className="w-12 h-12 rounded-lg bg-cbos-green-50 text-cbos-green-900 flex items-center justify-center mb-4">
                         <Icon className="w-6 h-6 text-cbos-green-800" />
                       </div>
-                      <h3 className="font-serif font-bold text-lg text-ink-base mb-2">{t(pillar.title)}</h3>
-                      <p className="text-sm text-ink-muted leading-relaxed">{t(pillar.desc)}</p>
+                      <h3 className="font-bold text-lg text-cbos-ink mb-2 leading-snug">{t(pillar.title)}</h3>
+                      <p className="text-[13.5px] text-cbos-ink-muted leading-[1.7]">{t(pillar.desc)}</p>
                     </div>
                   );
                 })}
@@ -215,7 +218,7 @@ export default function AboutPage() {
 
             {/* Chronological Timeline */}
             <div className="bg-white border border-sand-300 rounded-xl p-8 shadow-sm">
-              <div className="flex items-center gap-3 text-cbos-green-800 font-serif font-bold text-2xl mb-8 border-b border-sand-200 pb-4">
+              <div className="flex items-center gap-3 text-cbos-green-800 font-bold text-2xl mb-8 border-b border-sand-200 pb-4">
                 <History className="w-6 h-6 text-cbos-gold" />
                 <h2>{t({ ar: 'مسيرة البنك عبر التاريخ (1959 - 2026)', en: 'Historical Journey (1959 - 2026)' })}</h2>
               </div>
@@ -227,8 +230,8 @@ export default function AboutPage() {
                     <span className="inline-block px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-cbos-green-900 text-white mb-1">
                       {m.year}
                     </span>
-                    <h3 className="font-serif font-bold text-lg text-ink-base mb-1">{t(m.title)}</h3>
-                    <p className="text-sm text-ink-muted leading-relaxed">{t(m.desc)}</p>
+                    <h3 className="font-bold text-lg text-cbos-ink mb-1 leading-snug">{t(m.title)}</h3>
+                    <p className="text-[13.5px] text-cbos-ink-muted leading-[1.7]">{t(m.desc)}</p>
                   </div>
                 ))}
               </div>
@@ -249,15 +252,15 @@ export default function AboutPage() {
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-cbos-green-950 via-transparent to-transparent opacity-80" />
-                <span className="absolute bottom-3 start-4 text-xs font-mono bg-cbos-gold text-ink-base font-bold px-2 py-0.5 rounded">
+                <span className="absolute bottom-3 start-4 text-xs font-mono bg-cbos-gold text-cbos-ink font-bold px-2 py-0.5 rounded">
                   {t({ ar: 'المقر السيادي', en: 'SOVEREIGN HEADQUARTERS' })}
                 </span>
               </div>
               <div className="p-6">
-                <h3 className="font-serif font-bold text-lg text-ink-base mb-2">
+                <h3 className="font-bold text-lg text-cbos-ink mb-2">
                   {t({ ar: 'المقر والمراكز التشغيلية', en: 'Headquarters & Operational Centers' })}
                 </h3>
-                <p className="text-xs text-ink-muted leading-relaxed mb-4">
+                <p className="text-xs text-cbos-ink-muted leading-[1.7] mb-4">
                   {t({
                     ar: 'يباشر البنك عملياته السيادية والتنظيمية من مركز العمليات الرئيسي في بورتسودان ومقره التاريخي في الخرطوم وفروعه المنتشرة في كافة ولايات البلاد.',
                     en: 'The Bank executes sovereign and regulatory operations from Port Sudan Primary Operations Center, historic Khartoum HQ, and state branches.'
@@ -274,8 +277,11 @@ export default function AboutPage() {
             </div>
 
             {/* Quick Fast Facts Card */}
-            <div className="bg-cbos-green-950 text-white rounded-xl p-6 border border-cbos-gold/30">
-              <h3 className="font-serif font-bold text-lg text-cbos-gold mb-4 border-b border-cbos-green-800 pb-3 flex items-center gap-2">
+            <div 
+              className="bg-cbos-green-950 text-white rounded-xl p-6 border border-cbos-gold/30"
+              style={{ backgroundColor: '#032A1E' }}
+            >
+              <h3 className="font-bold text-lg text-cbos-gold mb-4 border-b border-cbos-green-800 pb-3 flex items-center gap-2">
                 <Award className="w-5 h-5 text-cbos-gold" />
                 <span>{t({ ar: 'حقائق رئيسية', en: 'Institutional Facts' })}</span>
               </h3>
@@ -286,15 +292,15 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <dt className="text-sand-400 text-xs">{t({ ar: 'القانون المنظم', en: 'Governing Legislation' })}</dt>
-                  <dd className="font-serif text-white">{t({ ar: 'قانون بنك السودان 2002 وتعديلاته', en: 'Bank of Sudan Act 2002 & Amendments' })}</dd>
+                  <dd className="font-bold text-white">{t({ ar: 'قانون بنك السودان 2002 وتعديلاته', en: 'Bank of Sudan Act 2002 & Amendments' })}</dd>
                 </div>
                 <div>
                   <dt className="text-sand-400 text-xs">{t({ ar: 'النظام المصرفي المطبق', en: 'Banking Framework' })}</dt>
-                  <dd className="font-serif text-white">{t({ ar: 'صيرفة إسلامية كاملة 100% (AAOIFI)', en: '100% Comprehensive Islamic Banking' })}</dd>
+                  <dd className="font-bold text-white">{t({ ar: 'صيرفة إسلامية كاملة 100% (AAOIFI)', en: '100% Comprehensive Islamic Banking' })}</dd>
                 </div>
                 <div>
                   <dt className="text-sand-400 text-xs">{t({ ar: 'الهيئة الرقابية الشرعية', en: 'Sharia Governance' })}</dt>
-                  <dd className="font-serif text-white">{t({ ar: 'الهيئة العليا للرقابة الشرعية', en: 'High Sharia Supervisory Board' })}</dd>
+                  <dd className="font-bold text-white">{t({ ar: 'الهيئة العليا للرقابة الشرعية', en: 'High Sharia Supervisory Board' })}</dd>
                 </div>
                 <div>
                   <dt className="text-sand-400 text-xs">{t({ ar: 'العملة الوطنية', en: 'National Currency' })}</dt>
@@ -305,7 +311,7 @@ export default function AboutPage() {
 
             {/* Legal Documents Direct Links */}
             <div className="bg-white border border-sand-300 rounded-xl p-6 shadow-sm">
-              <h3 className="font-serif font-bold text-base text-ink-base mb-4 flex items-center gap-2">
+              <h3 className="font-bold text-base text-cbos-ink mb-4 flex items-center gap-2">
                 <FileText className="w-4 h-4 text-cbos-green-800" />
                 <span>{t({ ar: 'التشريعات الأساسية', en: 'Primary Legislation' })}</span>
               </h3>
@@ -314,28 +320,28 @@ export default function AboutPage() {
                   href="/documents"
                   className="block p-3 rounded-lg border border-sand-200 hover:border-cbos-gold hover:bg-sand-50 transition-colors"
                 >
-                  <div className="font-serif font-bold text-sm text-ink-base">
+                  <div className="font-bold text-sm text-cbos-ink">
                     {t({ ar: 'قانون بنك السودان 2002', en: 'Bank of Sudan Act 2002' })}
                   </div>
-                  <div className="text-xs text-ink-muted mt-0.5">PDF • 1.2 MB</div>
+                  <div className="text-xs text-cbos-ink-muted mt-0.5">PDF • 1.2 MB</div>
                 </Link>
                 <Link
                   href="/documents"
                   className="block p-3 rounded-lg border border-sand-200 hover:border-cbos-gold hover:bg-sand-50 transition-colors"
                 >
-                  <div className="font-serif font-bold text-sm text-ink-base">
+                  <div className="font-bold text-sm text-cbos-ink">
                     {t({ ar: 'قانون تنظيم العمل المصرفي 2004', en: 'Banking Business Act 2004' })}
                   </div>
-                  <div className="text-xs text-ink-muted mt-0.5">PDF • 950 KB</div>
+                  <div className="text-xs text-cbos-ink-muted mt-0.5">PDF • 950 KB</div>
                 </Link>
                 <Link
                   href="/documents"
                   className="block p-3 rounded-lg border border-sand-200 hover:border-cbos-gold hover:bg-sand-50 transition-colors"
                 >
-                  <div className="font-serif font-bold text-sm text-ink-base">
+                  <div className="font-bold text-sm text-cbos-ink">
                     {t({ ar: 'لائحة مكافحة غسل الأموال وتمويل الإرهاب', en: 'AML / CFT Regulations' })}
                   </div>
-                  <div className="text-xs text-ink-muted mt-0.5">PDF • 780 KB</div>
+                  <div className="text-xs text-cbos-ink-muted mt-0.5">PDF • 780 KB</div>
                 </Link>
               </div>
             </div>

@@ -84,7 +84,10 @@ export default function PaymentsPage() {
   return (
     <div className="bg-sand-50 min-h-screen">
       {/* Header Banner */}
-      <section className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-20 border-b border-cbos-gold/30">
+      <section 
+        className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-20 border-b border-cbos-gold/30"
+        style={{ backgroundColor: '#032A1E' }}
+      >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center gap-3 text-cbos-gold text-xs font-mono uppercase tracking-wider mb-4">
@@ -94,14 +97,14 @@ export default function PaymentsPage() {
             <span>{t({ ar: 'نظم الدفع القومية والتحول الرقمي', en: 'National Payment Systems & FinTech' })}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white max-w-4xl leading-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white max-w-4xl leading-[1.2] mb-4 tracking-normal">
             {t({
               ar: 'البنية التحتية القومية للمدفوعات الرقمية والتسوية اللحظية',
               en: 'National Payment Infrastructure & Sovereign Instant Rails'
             })}
           </h1>
 
-          <p className="text-sand-300 text-sm sm:text-base max-w-3xl leading-relaxed">
+          <p className="text-[#E2DDD3] text-sm sm:text-base max-w-3xl leading-[1.8] font-normal">
             {t({
               ar: 'يقود بنك السودان المركزي ثورة المدفوعات السيادية عبر نشر المقسم القومي للمدفوعات الفورية (NIPS)، وتحديث نظام التسوية الإجمالية اللحظية (RTGS)، وتمكين بيئة التقنية المالية (FinTech) لتعزيز الشمول المالي.',
               en: 'The Central Bank of Sudan is pioneering national payment modernization through the deployment of the National Instant Payment System (NIPS), RTGS upgrading, and fostering a robust FinTech ecosystem.'
@@ -120,10 +123,10 @@ export default function PaymentsPage() {
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span>SOVEREIGN DIGITAL HIGHWAY • CDNIPS202601</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-cbos-green-950">
+              <h2 className="text-2xl sm:text-3xl font-bold text-cbos-green-950">
                 {t({ ar: 'مشروع المقسم القومي للمدفوعات الفورية (NIPS)', en: 'National Instant Payment System (NIPS) Project' })}
               </h2>
-              <p className="text-sm text-ink-muted mt-2 max-w-2xl leading-relaxed">
+              <p className="text-sm text-cbos-ink-muted mt-2 max-w-2xl leading-[1.7]">
                 {t({
                   ar: 'منظومة سيادية فائقة التوافر (High-Availability Tier III/IV) تتيح تسوية المدفوعات الفورية على مدار الساعة بين كافة المصارف والمحافظ الإلكترونية عبر معيار الرسائل العالمي ISO 20022.',
                   en: 'A high-availability Tier III/IV sovereign digital platform enabling instantaneous 24/7 payments settlement across all banks and wallets using global ISO 20022 message standards.'
@@ -146,32 +149,32 @@ export default function PaymentsPage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 pt-8">
             <div className="p-4 rounded-xl bg-sand-50 border border-sand-200">
               <div className="font-mono text-xs font-bold text-cbos-gold mb-1">STEP 01</div>
-              <h4 className="font-serif font-bold text-sm text-ink-base mb-1">{t({ ar: 'بدء المعاملة اللحظية', en: 'Instant Initiation' })}</h4>
-              <p className="text-xs text-ink-muted leading-relaxed">
+              <h4 className="font-bold text-sm text-cbos-ink mb-1">{t({ ar: 'بدء المعاملة اللحظية', en: 'Instant Initiation' })}</h4>
+              <p className="text-xs text-cbos-ink-muted leading-[1.6]">
                 {t({ ar: 'تطبيق العميل أو المحفظة الإلكترونية باستخدام الهاتف أو المعرف المالي.', en: 'Customer app or wallet using mobile number, alias or account.' })}
               </p>
             </div>
 
             <div className="p-4 rounded-xl bg-sand-50 border border-sand-200">
               <div className="font-mono text-xs font-bold text-cbos-gold mb-1">STEP 02</div>
-              <h4 className="font-serif font-bold text-sm text-ink-base mb-1">{t({ ar: 'توجيه الرسائل (ISO 20022)', en: 'ISO 20022 Routing' })}</h4>
-              <p className="text-xs text-ink-muted leading-relaxed">
+              <h4 className="font-bold text-sm text-cbos-ink mb-1">{t({ ar: 'توجيه الرسائل (ISO 20022)', en: 'ISO 20022 Routing' })}</h4>
+              <p className="text-xs text-cbos-ink-muted leading-[1.6]">
                 {t({ ar: 'المقسم المركزي (NIPS Switch) يتحقق من الرصيد والضمان المسبق.', en: 'NIPS Central Switch verifies prefunded RTGS collateral balance.' })}
               </p>
             </div>
 
             <div className="p-4 rounded-xl bg-sand-50 border border-sand-200">
               <div className="font-mono text-xs font-bold text-cbos-gold mb-1">STEP 03</div>
-              <h4 className="font-serif font-bold text-sm text-ink-base mb-1">{t({ ar: 'التسوية الذرية الفورية', en: 'Atomic Settlement' })}</h4>
-              <p className="text-xs text-ink-muted leading-relaxed">
+              <h4 className="font-bold text-sm text-cbos-ink mb-1">{t({ ar: 'التسوية الذرية الفورية', en: 'Atomic Settlement' })}</h4>
+              <p className="text-xs text-cbos-ink-muted leading-[1.6]">
                 {t({ ar: 'خصم وقيد لحظي متزامن في حسابات الطرفين دون مخاطر ائتمانية.', en: 'Simultaneous bilateral debit and credit without credit exposure.' })}
               </p>
             </div>
 
             <div className="p-4 rounded-xl bg-sand-50 border border-sand-200">
               <div className="font-mono text-xs font-bold text-cbos-gold mb-1">STEP 04</div>
-              <h4 className="font-serif font-bold text-sm text-ink-base mb-1">{t({ ar: 'التأكيد النهائي (10 ثوانٍ)', en: 'Final Confirmation (<10s)' })}</h4>
-              <p className="text-xs text-ink-muted leading-relaxed">
+              <h4 className="font-bold text-sm text-cbos-ink mb-1">{t({ ar: 'التأكيد النهائي (10 ثوانٍ)', en: 'Final Confirmation (<10s)' })}</h4>
+              <p className="text-xs text-cbos-ink-muted leading-[1.6]">
                 {t({ ar: 'إشعار فوري لطرفي المعاملة وتحديث قيود التسوية المركزية.', en: 'Instant confirmation receipt to both parties with central ledger logs.' })}
               </p>
             </div>
@@ -190,22 +193,22 @@ export default function PaymentsPage() {
                   <span className="font-mono text-xs font-bold px-3 py-1 rounded bg-cbos-green-100 text-cbos-green-900 border border-cbos-green-200">
                     {p.code}
                   </span>
-                  <span className="text-xs text-cbos-gold font-serif font-bold">
+                  <span className="text-xs text-cbos-gold font-bold">
                     {t(p.status)}
                   </span>
                 </div>
 
-                <h3 className="font-serif font-bold text-2xl text-ink-base mb-3">
+                <h3 className="font-bold text-2xl text-cbos-ink mb-3 leading-snug">
                   {t(p.title)}
                 </h3>
 
-                <p className="text-xs text-ink-muted leading-relaxed mb-6">
+                <p className="text-[13.5px] text-cbos-ink-muted leading-[1.7] mb-6">
                   {t(p.desc)}
                 </p>
 
                 <div className="space-y-2 pt-4 border-t border-sand-200">
                   {p.features.map((feat, i) => (
-                    <div key={i} className="flex items-center gap-2 text-xs text-ink-base">
+                    <div key={i} className="flex items-center gap-2 text-xs text-cbos-ink font-medium">
                       <CheckCircle className="w-4 h-4 text-cbos-green-700 shrink-0" />
                       <span>{t(feat)}</span>
                     </div>
@@ -213,7 +216,7 @@ export default function PaymentsPage() {
                 </div>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-sand-100 flex items-center justify-between text-xs font-mono text-ink-muted">
+              <div className="mt-8 pt-4 border-t border-sand-100 flex items-center justify-between text-xs font-mono text-cbos-ink-muted">
                 <span>CBOS NATIONAL RAILS</span>
                 <span className="text-cbos-gold font-bold">24/7/365</span>
               </div>
@@ -222,7 +225,10 @@ export default function PaymentsPage() {
         </div>
 
         {/* Regulatory FinTech Sandbox Application Strip */}
-        <div className="bg-cbos-green-950 text-white rounded-2xl p-8 sm:p-10 border border-cbos-gold/40 relative overflow-hidden">
+        <div 
+          className="bg-cbos-green-950 text-white rounded-2xl p-8 sm:p-10 border border-cbos-gold/40 relative overflow-hidden"
+          style={{ backgroundColor: '#032A1E' }}
+        >
           <div className="absolute inset-0 bg-guilloche opacity-10 pointer-events-none" />
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="space-y-3 max-w-2xl">
@@ -230,13 +236,13 @@ export default function PaymentsPage() {
                 <Boxes className="w-4 h-4" />
                 <span>FINTECH SANDBOX COHORT 2026</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-normal">
                 {t({
                   ar: 'هل أنت شركة تقنية مالية ناشئة؟ انضم إلى المختبر التنظيمي',
                   en: 'Are You a FinTech Innovator? Apply to the Regulatory Sandbox'
                 })}
               </h2>
-              <p className="text-sand-300 text-xs sm:text-sm leading-relaxed">
+              <p className="text-[#E2DDD3] text-xs sm:text-sm leading-[1.8] font-normal">
                 {t({
                   ar: 'يوفر بنك السودان المركزي بيئة تشغيلية خاضعة للمراقبة والتوجيه لاختبار منتجات المدفوعات والتمويل الجماعي والتحويلات الرقمية قبل الحصول على الترخيص النهائي.',
                   en: 'CBOS provides a guided, controlled testing framework for innovative payment, microfinance, and remittances solutions before full commercial licensing.'
@@ -246,7 +252,7 @@ export default function PaymentsPage() {
 
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-cbos-gold text-ink-base hover:bg-cbos-gold-light font-bold text-sm transition-all shadow-md shrink-0"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-cbos-gold text-cbos-ink hover:bg-cbos-gold-light font-bold text-sm transition-all shadow-md shrink-0"
             >
               <span>{t({ ar: 'تقديم طلب الانضمام للمختبر', en: 'Apply for Sandbox Cohort' })}</span>
               <ArrowIcon className="w-4 h-4" />

@@ -51,7 +51,10 @@ export default function DocumentsPage() {
   return (
     <div className="bg-sand-50 min-h-screen">
       {/* Header Banner */}
-      <section className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-20 border-b border-cbos-gold/30">
+      <section 
+        className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-20 border-b border-cbos-gold/30"
+        style={{ backgroundColor: '#032A1E' }}
+      >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center gap-3 text-cbos-gold text-xs font-mono uppercase tracking-wider mb-4">
@@ -61,14 +64,14 @@ export default function DocumentsPage() {
             <span>{t({ ar: 'الوثائق والمنشورات الرسمية', en: 'Official Directives & Publications' })}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white max-w-4xl leading-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white max-w-4xl leading-[1.2] mb-4 tracking-normal">
             {t({
               ar: 'المستودع الرقمي للتشريعات والمنشورات الرقابية',
               en: 'Sovereign Repository of Banking Legislation & Circulars'
             })}
           </h1>
 
-          <p className="text-sand-300 text-sm sm:text-base max-w-3xl leading-relaxed">
+          <p className="text-[#E2DDD3] text-sm sm:text-base max-w-3xl leading-[1.8] font-normal">
             {t({
               ar: 'المنصة الرسمية المعتمدة للبحث والوصول إلى كافة القوانين المنظمة للعمل المصرفي، منشورات السياسة النقدية، موجهات الرقابة المصرفية، والتقارير الاقتصادية الصادرة عن بنك السودان المركزي.',
               en: 'The certified public repository to search and download all banking laws, monetary policy circulars, supervisory directives, and official economic reports published by the Central Bank of Sudan.'
@@ -105,10 +108,10 @@ export default function DocumentsPage() {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedType(cat.id)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                     selectedType === cat.id
                       ? 'bg-cbos-green-900 text-white shadow-sm'
-                      : 'bg-sand-100 text-ink-muted hover:text-ink-base hover:bg-sand-200'
+                      : 'bg-sand-100 text-cbos-ink-muted hover:text-cbos-ink hover:bg-sand-200'
                   }`}
                 >
                   {t(cat.label)}
@@ -118,13 +121,13 @@ export default function DocumentsPage() {
 
             {/* Year Selector */}
             <div className="flex items-center gap-2 shrink-0">
-              <span className="text-xs font-mono text-ink-muted uppercase">
+              <span className="text-xs font-mono text-cbos-ink-muted uppercase">
                 {t({ ar: 'سنة الإصدار:', en: 'Year:' })}
               </span>
               <select
                 value={selectedYear}
                 onChange={(e) => setSelectedYear(e.target.value)}
-                className="bg-sand-50 border border-sand-300 rounded-lg px-3 py-1.5 text-xs font-mono font-bold text-ink-base focus:outline-none focus:border-cbos-green-800"
+                className="bg-sand-50 border border-sand-300 rounded-lg px-3 py-1.5 text-xs font-mono font-bold text-cbos-ink focus:outline-none focus:border-cbos-green-800"
               >
                 {years.map(y => (
                   <option key={y} value={y}>
@@ -135,7 +138,7 @@ export default function DocumentsPage() {
             </div>
           </div>
 
-          <div className="flex items-center justify-between text-xs font-mono text-ink-muted pt-2 border-t border-sand-100">
+          <div className="flex items-center justify-between text-xs font-mono text-cbos-ink-muted pt-2 border-t border-sand-100">
             <span>
               {t({ ar: 'عدد الوثائق المطابقة:', en: 'Matching Documents:' })} {filteredDocs.length}
             </span>
@@ -148,10 +151,10 @@ export default function DocumentsPage() {
           {filteredDocs.length === 0 ? (
             <div className="bg-white border border-sand-300 rounded-xl p-12 text-center">
               <FileText className="w-12 h-12 text-sand-300 mx-auto mb-3" />
-              <h3 className="font-serif font-bold text-lg text-ink-base mb-1">
+              <h3 className="font-bold text-lg text-cbos-ink mb-1">
                 {t({ ar: 'لم يتم العثور على وثائق مطابقة', en: 'No matching documents found' })}
               </h3>
-              <p className="text-xs text-ink-muted">
+              <p className="text-xs text-cbos-ink-muted">
                 {t({ ar: 'يرجى تجربة كلمات بحث أخرى أو إزالة قيود التصفية.', en: 'Try adjusting your search query or reset the filters.' })}
               </p>
             </div>
@@ -166,7 +169,7 @@ export default function DocumentsPage() {
                     <span className="font-mono text-xs font-bold px-2.5 py-0.5 rounded bg-cbos-green-100 text-cbos-green-900 border border-cbos-green-200">
                       {doc.reference_number}
                     </span>
-                    <span className="text-xs font-serif font-semibold text-cbos-gold">
+                    <span className="text-xs font-semibold text-cbos-gold">
                       {doc.type === 'circular' && t({ ar: 'منشور دوري', en: 'Circular' })}
                       {doc.type === 'law' && t({ ar: 'قانون نافذ', en: 'Law' })}
                       {doc.type === 'regulation' && t({ ar: 'لائحة تنظيمية', en: 'Regulation' })}
@@ -174,20 +177,20 @@ export default function DocumentsPage() {
                       {doc.type === 'digest' && t({ ar: 'موجز إحصائي', en: 'Digest' })}
                       {doc.type === 'tender' && t({ ar: 'عطاء عام', en: 'Tender RFP' })}
                     </span>
-                    <span className="text-xs font-mono text-ink-muted">
+                    <span className="text-xs font-mono text-cbos-ink-muted">
                       • {doc.publication_date}
                     </span>
                   </div>
 
-                  <h3 className="font-serif font-bold text-lg sm:text-xl text-ink-base hover:text-cbos-green-900 transition-colors">
+                  <h3 className="font-bold text-lg sm:text-xl text-cbos-ink hover:text-cbos-green-900 transition-colors leading-snug">
                     {t(doc.title)}
                   </h3>
 
-                  <p className="text-xs text-ink-muted leading-relaxed line-clamp-2">
+                  <p className="text-[13.5px] text-cbos-ink-muted leading-[1.7] line-clamp-2">
                     {t(doc.summary)}
                   </p>
 
-                  <div className="flex flex-wrap items-center gap-4 text-xs text-ink-muted pt-2">
+                  <div className="flex flex-wrap items-center gap-4 text-xs text-cbos-ink-muted pt-2">
                     <div className="flex items-center gap-1.5">
                       <Building2 className="w-3.5 h-3.5 text-cbos-gold shrink-0" />
                       <span>{t(doc.department)}</span>

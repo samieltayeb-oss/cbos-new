@@ -1,60 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
+  /* Institutional Brand Palette */
   --cbos-green-950: #032A1E;
   --cbos-green-900: #033E2D;
   --cbos-green-800: #075A3A;
+  --cbos-green-700: #096E47;
+  --cbos-gold-600: #A58242;
   --cbos-gold-500: #B99553;
+  --cbos-gold-400: #CBB075;
+  --cbos-gold-300: #DDC99B;
   --cbos-ivory: #F6F4EE;
   --cbos-ink: #101713;
+  --cbos-ink-base: #10231C;
+  --cbos-ink-muted: #44534D;
   --cbos-stone: #D8D4C8;
   --cbos-sage: #DCE7DF;
   --cbos-border: #E2DDD3;
+
+  /* Typography Scale Tokens (Section 6 & 17) */
+  --text-display-xl: clamp(2.5rem, 4.5vw, 4.75rem);
+  --text-display: clamp(2.25rem, 3.5vw, 3.5rem);
+  --text-h1: clamp(1.85rem, 2.5vw, 2.75rem);
+  --text-h2: clamp(1.5rem, 2vw, 2.125rem);
+  --text-h3: clamp(1.25rem, 1.5vw, 1.625rem);
+  --text-body-lg: 1.125rem;
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-label: 0.8125rem;
+  --text-data-lg: clamp(2rem, 3vw, 2.625rem);
+
+  /* Font Weights (Section 2 & 17) */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  /* Font Family Definitions (Matching http://127.0.0.1:8080/ NIPS Core Switch) */
+  --font-arabic-body: var(--font-tajawal), 'Tajawal', var(--font-cairo), 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, sans-serif;
+  --font-arabic-heading: var(--font-cairo), 'Cairo', var(--font-tajawal), 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, sans-serif;
+  --font-arabic: var(--font-tajawal), 'Tajawal', var(--font-cairo), 'Cairo', sans-serif;
+  --font-latin: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+/* Base Body Styling */
 body {
   background-color: var(--cbos-ivory);
-  color: var(--cbos-ink);
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  color: var(--cbos-ink-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Direction-Aware Canonical Typography Rules (Matching 8080 Dashboard) */
+html[dir="rtl"],
+html[dir="rtl"] body {
+  font-family: var(--font-arabic-body);
+  text-align: right;
+  letter-spacing: normal !important;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6,
+html[dir="rtl"] .font-display,
+html[dir="rtl"] .font-heading {
+  font-family: var(--font-arabic-heading);
+}
+
+html[dir="ltr"],
+html[dir="ltr"] body {
+  font-family: var(--font-latin);
+  text-align: left;
+}
+
+/* Never allow artificial positive tracking on Arabic */
+html[dir="rtl"] * {
+  letter-spacing: normal;
+}
+
+/* Financial Tabular Lining Numerals (Section 8) */
+.tabular-nums {
+  font-variant-numeric: tabular-nums lining-nums;
+  -moz-font-feature-settings: "tnum" 1, "lnum" 1;
+  -webkit-font-feature-settings: "tnum" 1, "lnum" 1;
+  font-feature-settings: "tnum" 1, "lnum" 1;
 }
 
 /* Subtle Banknote Guilloche Pattern */
+.bg-guilloche {
+  background-image: 
+    radial-gradient(rgba(185, 149, 83, 0.15) 1px, transparent 0),
+    radial-gradient(rgba(246, 244, 238, 0.05) 1px, transparent 0);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+}
+
 .bg-guilloche-light {
   background-color: #F6F4EE;
   background-image: 
-    radial-gradient(rgba(7, 90, 58, 0.05) 1px, transparent 0),
-    radial-gradient(rgba(185, 149, 83, 0.04) 1px, transparent 0);
+    radial-gradient(rgba(7, 90, 58, 0.06) 1px, transparent 0),
+    radial-gradient(rgba(185, 149, 83, 0.05) 1px, transparent 0);
   background-size: 28px 28px;
   background-position: 0 0, 14px 14px;
 }
 
 .bg-guilloche-dark {
-  background-color: #033E2D;
+  background-color: #032A1E;
   background-image: 
-    radial-gradient(rgba(185, 149, 83, 0.12) 1px, transparent 0),
+    radial-gradient(rgba(185, 149, 83, 0.15) 1px, transparent 0),
     radial-gradient(rgba(246, 244, 238, 0.04) 1px, transparent 0);
   background-size: 32px 32px;
   background-position: 0 0, 16px 16px;
 }
 
-/* Tabular figures for financial tables */
-.tabular-nums {
-  font-variant-numeric: tabular-nums;
-}
-
-/* Focus styles for WCAG 2.2 AA */
+/* Focus styles for WCAG 2.2 AA Accessibility */
 :focus-visible {
   outline: 2px solid var(--cbos-gold-500);
   outline-offset: 2px;
 }
 
-/* Respect user's motion preference */
+/* Motion preference respect */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-duration: 0.01ms !important;

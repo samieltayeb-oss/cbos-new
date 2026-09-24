@@ -27,7 +27,10 @@ export default function LeadershipPage() {
   return (
     <div className="bg-sand-50 min-h-screen">
       {/* Header Banner */}
-      <section className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-24 border-b border-cbos-gold/30">
+      <section 
+        className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-24 border-b border-cbos-gold/30"
+        style={{ backgroundColor: '#032A1E' }}
+      >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center gap-3 text-cbos-gold text-xs font-mono uppercase tracking-wider mb-4">
@@ -37,14 +40,14 @@ export default function LeadershipPage() {
             <span>{t({ ar: 'القيادة والحوكمة المؤسسية', en: 'Leadership & Corporate Governance' })}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white max-w-4xl leading-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white max-w-4xl leading-[1.2] mb-6 tracking-normal">
             {t({
               ar: 'القيادة السيادية والحوكمة الرقابية لبنك السودان المركزي',
               en: 'Sovereign Leadership & Institutional Governance of CBOS'
             })}
           </h1>
 
-          <p className="text-sand-200 text-base sm:text-lg max-w-3xl leading-relaxed">
+          <p className="text-[#E2DDD3] text-base sm:text-lg max-w-3xl leading-[1.8] font-normal">
             {t({
               ar: 'يتولى إدارة البنك المركزي مجلس إدارة يضم نخبة من الكفاءات المالية والاقتصادية، بإشراف الهيئة العليا للرقابة الشرعية للجهاز المصرفي لضمان الامتثال التام لأحكام الشريعة الإسلامية وأعلى معايير الحوكمة الدولية.',
               en: 'The Central Bank is governed by a Board of Directors comprising eminent financial and macroeconomic leaders, guided by the High Sharia Supervisory Board to ensure strict Islamic compliance and global governance standards.'
@@ -84,13 +87,13 @@ export default function LeadershipPage() {
                   <span className="text-xs font-mono uppercase tracking-wider text-cbos-gold font-bold">
                     {t({ ar: 'البيان المؤسسي لمحافظ البنك', en: 'GOVERNOR\'S STATEMENT' })}
                   </span>
-                  <h2 className="text-2xl sm:text-3xl font-serif font-bold text-cbos-green-950 mt-1">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-cbos-green-950 mt-1">
                     {t(governor.name)}
                   </h2>
                   <p className="text-cbos-green-800 font-medium text-sm mt-1">{t(governor.role)}</p>
                 </div>
 
-                <blockquote className="text-ink-base leading-relaxed text-base italic border-s-4 border-cbos-gold ps-4 my-4">
+                <blockquote className="text-cbos-ink leading-[1.8] text-base italic border-s-4 border-cbos-gold ps-4 my-4 font-medium">
                   &ldquo;{t(governor.bio)}&rdquo;
                 </blockquote>
 
@@ -98,22 +101,22 @@ export default function LeadershipPage() {
                   <div className="flex items-center gap-3">
                     <Scale className="w-5 h-5 text-cbos-green-800 shrink-0" />
                     <div>
-                      <div className="text-xs font-bold text-ink-base">{t({ ar: 'استقرار الأسعار', en: 'Price Stability' })}</div>
-                      <div className="text-xs text-ink-muted">{t({ ar: 'الهدف الأسمى', en: 'Statutory Core' })}</div>
+                      <div className="text-xs font-bold text-cbos-ink">{t({ ar: 'استقرار الأسعار', en: 'Price Stability' })}</div>
+                      <div className="text-xs text-cbos-ink-muted">{t({ ar: 'الهدف الأسمى', en: 'Statutory Core' })}</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <ShieldCheck className="w-5 h-5 text-cbos-green-800 shrink-0" />
                     <div>
-                      <div className="text-xs font-bold text-ink-base">{t({ ar: 'الصلابة المصرفية', en: 'Systemic Resilience' })}</div>
-                      <div className="text-xs text-ink-muted">{t({ ar: 'إشراف احترازي', en: 'Prudential Supervision' })}</div>
+                      <div className="text-xs font-bold text-cbos-ink">{t({ ar: 'الصلابة المصرفية', en: 'Systemic Resilience' })}</div>
+                      <div className="text-xs text-cbos-ink-muted">{t({ ar: 'إشراف احترازي', en: 'Prudential Supervision' })}</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <Landmark className="w-5 h-5 text-cbos-green-800 shrink-0" />
                     <div>
-                      <div className="text-xs font-bold text-ink-base">{t({ ar: 'التحول الرقمي (NIPS)', en: 'Digital Rails (NIPS)' })}</div>
-                      <div className="text-xs text-ink-muted">{t({ ar: 'بنية وطنية سيادية', en: 'Sovereign Infrastructure' })}</div>
+                      <div className="text-xs font-bold text-cbos-ink">{t({ ar: 'التحول الرقمي (NIPS)', en: 'Digital Rails (NIPS)' })}</div>
+                      <div className="text-xs text-cbos-ink-muted">{t({ ar: 'بنية وطنية سيادية', en: 'Sovereign Infrastructure' })}</div>
                     </div>
                   </div>
                 </div>
@@ -135,10 +138,10 @@ export default function LeadershipPage() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
                   activeTab === tab.id
                     ? 'bg-cbos-green-900 text-white shadow-sm'
-                    : 'bg-white text-ink-muted hover:text-ink-base border border-sand-300 hover:border-sand-400'
+                    : 'bg-white text-cbos-ink-muted hover:text-cbos-ink border border-sand-300 hover:border-sand-400'
                 }`}
               >
                 {t(tab.label)}
@@ -146,7 +149,7 @@ export default function LeadershipPage() {
             ))}
           </div>
 
-          <span className="text-xs font-mono text-ink-muted">
+          <span className="text-xs font-mono text-cbos-ink-muted">
             {t({ ar: 'إجمالي الأعضاء', en: 'Total Governance Members' })}: {filteredProfiles.length + (activeTab === 'all' ? 1 : 0)}
           </span>
         </div>
@@ -179,18 +182,18 @@ export default function LeadershipPage() {
                   )}
                 </div>
 
-                <h3 className="font-serif font-bold text-lg text-ink-base mb-1">
+                <h3 className="font-bold text-lg text-cbos-ink mb-1 leading-snug">
                   {t(member.name)}
                 </h3>
                 <p className="text-xs font-semibold text-cbos-green-800 mb-4 pb-3 border-b border-sand-200">
                   {t(member.role)}
                 </p>
-                <p className="text-xs text-ink-muted leading-relaxed">
+                <p className="text-[13.5px] text-cbos-ink-muted leading-[1.7]">
                   {t(member.bio)}
                 </p>
               </div>
 
-              <div className="mt-6 pt-3 border-t border-sand-100 flex items-center justify-between text-xs text-ink-muted font-mono">
+              <div className="mt-6 pt-3 border-t border-sand-100 flex items-center justify-between text-xs text-cbos-ink-muted font-mono">
                 <span>CBOS GOVERNANCE</span>
                 <span className="text-cbos-gold font-bold">ACT 2002</span>
               </div>
@@ -199,7 +202,10 @@ export default function LeadershipPage() {
         </div>
 
         {/* High Sharia Supervisory Board Spotlight */}
-        <div className="bg-cbos-green-950 text-white rounded-2xl p-8 sm:p-10 border border-cbos-gold/40 relative overflow-hidden">
+        <div 
+          className="bg-cbos-green-950 text-white rounded-2xl p-8 sm:p-10 border border-cbos-gold/40 relative overflow-hidden"
+          style={{ backgroundColor: '#032A1E' }}
+        >
           <div className="absolute inset-0 bg-guilloche opacity-10 pointer-events-none" />
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
@@ -207,13 +213,13 @@ export default function LeadershipPage() {
                 <FileCheck2 className="w-4 h-4" />
                 <span>{t({ ar: 'المرجعية الفقهية والرقابة الشرعية', en: 'Islamic Jurisprudential Authority' })}</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-normal">
                 {t({
                   ar: 'الهيئة العليا للرقابة الشرعية للجهاز المصرفي والمؤسسات المالية',
                   en: 'High Sharia Supervisory Board for Banking & Financial Institutions'
                 })}
               </h2>
-              <p className="text-sand-300 text-sm leading-relaxed">
+              <p className="text-[#E2DDD3] text-sm leading-[1.8] font-normal">
                 {t({
                   ar: 'تعد الهيئة المرجع السيادي والنهائي في بيان الأحكام الشرعية المتصلة بالعمليات المصرفية والمالية في السودان. وتتمتع فتاواها وقراراتها بالصفة الإلزامية لكافة المصارف والمؤسسات المالية العاملة بالبلاد وفقاً لأحكام القانون.',
                   en: 'The High Board serves as the supreme sovereign authority on Islamic jurisprudence governing banking and financial transactions in Sudan. Its rulings are legally binding on all licensed banks and institutions.'
@@ -222,7 +228,7 @@ export default function LeadershipPage() {
             </div>
 
             <div className="lg:col-span-4 bg-cbos-green-900/80 border border-cbos-gold/30 rounded-xl p-5 space-y-3">
-              <h3 className="font-serif font-bold text-cbos-gold text-sm border-b border-cbos-green-800 pb-2">
+              <h3 className="font-bold text-cbos-gold text-sm border-b border-cbos-green-800 pb-2">
                 {t({ ar: 'اختصاصات الهيئة الشرعية', en: 'Statutory Jurisdictions' })}
               </h3>
               <ul className="text-xs text-sand-200 space-y-2">

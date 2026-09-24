@@ -46,7 +46,10 @@ export default function FinancialSystemPage() {
   return (
     <div className="bg-sand-50 min-h-screen">
       {/* Header Banner */}
-      <section className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-20 border-b border-cbos-gold/30">
+      <section 
+        className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-20 border-b border-cbos-gold/30"
+        style={{ backgroundColor: '#032A1E' }}
+      >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center gap-3 text-cbos-gold text-xs font-mono uppercase tracking-wider mb-4">
@@ -56,14 +59,14 @@ export default function FinancialSystemPage() {
             <span>{t({ ar: 'دليل المؤسسات المالية المرخصة', en: 'Licensed Financial Institutions Directory' })}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white max-w-4xl leading-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white max-w-4xl leading-[1.2] mb-4 tracking-normal">
             {t({
               ar: 'سجل المؤسسات المالية والمصارف المرخصة رسمياً',
               en: 'Official Register of Licensed Financial Institutions & Banks'
             })}
           </h1>
 
-          <p className="text-sand-300 text-sm sm:text-base max-w-3xl leading-relaxed">
+          <p className="text-[#E2DDD3] text-sm sm:text-base max-w-3xl leading-[1.8] font-normal">
             {t({
               ar: 'السجل السيادي المعتمد لكافة المصارف التجارية، البنوك المتخصصة، شركات الصرافة، ومشغلي شبكات الدفع الإلكتروني الخاضعة للإشراف المباشر والرقابة الاحترازية لبنك السودان المركزي.',
               en: 'The sovereign directory of all commercial banks, specialized development banks, exchange bureaus, and payment switches operating under CBOS regulatory supervision and prudential standards.'
@@ -105,10 +108,10 @@ export default function FinancialSystemPage() {
               <button
                 key={tab.id}
                 onClick={() => setSelectedType(tab.id)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                   selectedType === tab.id
                     ? 'bg-cbos-green-900 text-white shadow-sm'
-                    : 'bg-sand-100 text-ink-muted hover:text-ink-base hover:bg-sand-200'
+                    : 'bg-sand-100 text-cbos-ink-muted hover:text-cbos-ink hover:bg-sand-200'
                 }`}
               >
                 {t(tab.label)}
@@ -126,7 +129,7 @@ export default function FinancialSystemPage() {
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-[11px] font-mono font-bold px-2.5 py-1 rounded bg-sand-100 text-ink-base">
+                  <span className="text-[11px] font-mono font-bold px-2.5 py-1 rounded bg-sand-100 text-cbos-ink">
                     {inst.licenseNumber}
                   </span>
                   <span className="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full font-bold">
@@ -135,20 +138,20 @@ export default function FinancialSystemPage() {
                   </span>
                 </div>
 
-                <h3 className="font-serif font-bold text-xl text-cbos-green-950 mb-1">
+                <h3 className="font-bold text-xl text-cbos-green-950 mb-1 leading-snug">
                   {t(inst.name)}
                 </h3>
-                <p className="text-xs font-medium text-cbos-gold mb-4 pb-3 border-b border-sand-200">
+                <p className="text-xs font-semibold text-cbos-gold mb-4 pb-3 border-b border-sand-200">
                   {t(inst.typeLabel)}
                 </p>
 
-                <dl className="space-y-2 text-xs text-ink-muted">
+                <dl className="space-y-2 text-xs text-cbos-ink-muted">
                   <div className="flex items-center justify-between">
                     <dt className="flex items-center gap-1.5">
                       <MapPin className="w-3.5 h-3.5 text-cbos-green-800" />
                       <span>{t({ ar: 'المقر الرئيسي:', en: 'Headquarters:' })}</span>
                     </dt>
-                    <dd className="font-medium text-ink-base">{t(inst.headquarters)}</dd>
+                    <dd className="font-medium text-cbos-ink">{t(inst.headquarters)}</dd>
                   </div>
 
                   <div className="flex items-center justify-between">
@@ -156,7 +159,7 @@ export default function FinancialSystemPage() {
                       <Calendar className="w-3.5 h-3.5 text-cbos-green-800" />
                       <span>{t({ ar: 'سنة التأسيس:', en: 'Established:' })}</span>
                     </dt>
-                    <dd className="font-mono text-ink-base font-bold">{inst.establishedYear}</dd>
+                    <dd className="font-mono text-cbos-ink font-bold">{inst.establishedYear}</dd>
                   </div>
 
                   {inst.swiftBic && (
@@ -177,7 +180,7 @@ export default function FinancialSystemPage() {
                         <Building2 className="w-3.5 h-3.5 text-cbos-green-800" />
                         <span>{t({ ar: 'عدد الفروع:', en: 'Branches:' })}</span>
                       </dt>
-                      <dd className="font-mono text-ink-base">{inst.branchesCount} {t({ ar: 'فرعاً', en: 'branches' })}</dd>
+                      <dd className="font-mono text-cbos-ink">{inst.branchesCount} {t({ ar: 'فرعاً', en: 'branches' })}</dd>
                     </div>
                   )}
                 </dl>
@@ -189,22 +192,25 @@ export default function FinancialSystemPage() {
                     href={inst.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-cbos-green-800 hover:text-cbos-gold font-medium transition-colors"
+                    className="inline-flex items-center gap-1 text-cbos-green-800 hover:text-cbos-gold font-semibold transition-colors"
                   >
                     <span>{t({ ar: 'الموقع الإلكتروني', en: 'Visit Portal' })}</span>
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 ) : (
-                  <span className="text-ink-muted">{t({ ar: 'معتمد رسمياً', en: 'Officially Regulated' })}</span>
+                  <span className="text-cbos-ink-muted">{t({ ar: 'معتمد رسمياً', en: 'Officially Regulated' })}</span>
                 )}
-                <span className="font-mono text-[10px] text-ink-muted">CBOS REGULATED</span>
+                <span className="font-mono text-[10px] text-cbos-ink-muted">CBOS REGULATED</span>
               </div>
             </div>
           ))}
         </div>
 
         {/* Prudential Standards Strip */}
-        <div className="bg-cbos-green-950 text-white rounded-2xl p-8 sm:p-10 border border-cbos-gold/40 relative overflow-hidden">
+        <div 
+          className="bg-cbos-green-950 text-white rounded-2xl p-8 sm:p-10 border border-cbos-gold/40 relative overflow-hidden"
+          style={{ backgroundColor: '#032A1E' }}
+        >
           <div className="absolute inset-0 bg-guilloche opacity-10 pointer-events-none" />
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
@@ -213,13 +219,13 @@ export default function FinancialSystemPage() {
                 <ShieldCheck className="w-4 h-4" />
                 <span>{t({ ar: 'معايير الملاءة والرقابة الاحترازية', en: 'Prudential Supervision & Capital Norms' })}</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-normal">
                 {t({
                   ar: 'المعايير الرقابية ومحددات بازل والهيئة الإسلامية للخدمات المالية (IFSB)',
                   en: 'Supervisory Norms Aligned with Basel & IFSB Standards'
                 })}
               </h2>
-              <p className="text-sand-300 text-sm leading-relaxed">
+              <p className="text-[#E2DDD3] text-sm leading-[1.8] font-normal">
                 {t({
                   ar: 'يلتزم الجهاز المصرفي السوداني بنسبة كفاية رأس مال لا تقل عن 12%، وضوابط إدارة السيولة الصارمة، والتطبيق الكامل لمعايير المحاسبة للمؤسسات المالية الإسلامية (AAOIFI).',
                   en: 'All regulated banks maintain a minimum Capital Adequacy Ratio (CAR) of 12%, robust liquidity buffers, and full adherence to AAOIFI Islamic accounting standards.'
@@ -229,10 +235,10 @@ export default function FinancialSystemPage() {
 
             <div className="lg:col-span-4 bg-cbos-green-900/80 border border-cbos-gold/30 rounded-xl p-6 text-center space-y-2">
               <div className="text-3xl font-mono font-bold text-cbos-gold">12.0%</div>
-              <div className="font-serif font-bold text-white text-sm">
+              <div className="font-bold text-white text-sm">
                 {t({ ar: 'الحد الأدنى لكفاية رأس المال (CAR)', en: 'Minimum Capital Adequacy Ratio' })}
               </div>
-              <div className="text-xs text-sand-300 font-mono">
+              <div className="text-xs text-[#E2DDD3]/70 font-mono">
                 RISK-WEIGHTED ASSETS BENCHMARK
               </div>
             </div>
