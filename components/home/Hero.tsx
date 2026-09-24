@@ -41,23 +41,23 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Signature Headline — Comfortable Arabic Naskh Rhythm (Tajawal) */}
-              <div className="space-y-1">
-                <h1 className="text-3xl sm:text-4xl lg:text-[40px] xl:text-[44px] font-bold text-white tracking-normal leading-[1.4]">
-                  {isRtl ? (
-                    <>
-                      <span className="block">الاستقرار النقدي والمالي</span>
-                      <span className="block">نظام مصرفي صامد وموثوق</span>
-                      <span className="block text-[#DFAC46] pt-1">اقتصاد يخدم شعب السودان</span>
-                    </>
-                  ) : (
-                    <>
-                      <span className="block">Monetary & Financial Stability</span>
-                      <span className="block">A Resilient Banking System</span>
-                      <span className="block text-[#DFAC46] pt-1">An Economy Serving Sudan</span>
-                    </>
-                  )}
+              {/* Sovereign Headline Hierarchy — Disciplined Scale, Spacing & Breathing Room */}
+              <div className="space-y-4">
+                {/* Level 1: Primary Sovereign Mandate (Dominant H1) */}
+                <h1 className="text-3xl sm:text-4xl lg:text-[44px] xl:text-[48px] font-bold text-white tracking-normal leading-[1.35] font-tajawal">
+                  {isRtl ? 'الاستقرار النقدي والمالي' : 'Monetary & Financial Stability'}
                 </h1>
+
+                {/* Level 2: Institutional Purpose & National Vision (Harmonious Secondary Tier) */}
+                <div className="space-y-2.5 pt-1">
+                  <div className="text-xl sm:text-2xl lg:text-[26px] xl:text-[28px] font-medium text-[#E2E8F0] tracking-normal leading-[1.4] font-tajawal">
+                    {isRtl ? 'نظام مصرفي صامد وموثوق' : 'A Resilient & Trusted Banking System'}
+                  </div>
+                  
+                  <div className="text-xl sm:text-2xl lg:text-[26px] xl:text-[28px] font-bold text-[#DFAC46] tracking-normal leading-[1.4] font-tajawal">
+                    {isRtl ? 'اقتصاد يخدم شعب السودان' : 'An Economy Serving the People of Sudan'}
+                  </div>
+                </div>
               </div>
 
               {/* Comfortable Lead Paragraph — Generous Line-Height & Relaxed Reading Flow */}

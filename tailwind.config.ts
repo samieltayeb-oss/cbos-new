@@ -136,7 +136,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-tajawal)', 'var(--font-inter)', 'Segoe UI', 'Tahoma', 'sans-serif'],
-        display: ['var(--font-tajawal)', 'var(--font-cairo)', 'sans-serif'],
+        display: ['var(--font-tajawal)', 'Segoe UI', 'Tahoma', 'sans-serif'],
         cairo: ['var(--font-cairo)', 'sans-serif'],
         tajawal: ['var(--font-tajawal)', 'sans-serif'],
         arabic: ['var(--font-tajawal)', 'sans-serif'],
