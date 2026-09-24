@@ -14,17 +14,17 @@ export default function Hero() {
       className="relative text-white overflow-hidden border-b border-[#075A3A]/80 py-16 md:py-24"
       style={{ backgroundColor: '#032A1E' }}
     >
-      {/* 1. Sovereign Architectural Photography Hero Layer (Desktop & Mobile) */}
+      {/* 1. Sovereign Landmarks Hero Layer (Sudan & Khartoum: Nile, Meroë Pyramids, Tuti Bridge) */}
       <div className="absolute inset-0 pointer-events-none z-0">
         {/* Desktop / Tablet Landscape Hero */}
         <div className="hidden sm:block absolute inset-0">
           <Image
-            src="/images/cbos/hero/cbos-hero-building-khartoum-premium.webp"
-            alt={isRtl ? 'المقر السيادي لبنك السودان المركزي بالخرطوم' : 'Central Bank of Sudan Sovereign Headquarters Khartoum'}
+            src="/images/cbos/hero/cbos-hero-sudan-landmarks.webp"
+            alt={isRtl ? 'معالم السودان والخرطوم السيادية — النيل، أهرامات مروي، وجسر توتي' : 'Sovereign Landmarks of Sudan & Khartoum — The Nile, Meroë Pyramids, and Tuti Bridge'}
             fill
             priority
             quality={92}
-            className={`object-cover ${isRtl ? 'object-[left_center] lg:object-left' : 'object-[right_center] lg:object-right'} opacity-45 filter contrast-[1.1] saturate-[1.05]`}
+            className="object-cover object-center opacity-65 lg:opacity-75 filter contrast-[1.05] saturate-[1.1]"
             sizes="100vw"
           />
         </div>
@@ -32,12 +32,12 @@ export default function Hero() {
         {/* Mobile Portrait Crop */}
         <div className="sm:hidden absolute inset-0">
           <Image
-            src="/images/cbos/hero/cbos-hero-building-khartoum-premium-mobile.webp"
-            alt={isRtl ? 'المقر السيادي لبنك السودان المركزي' : 'Central Bank of Sudan Sovereign Headquarters'}
+            src="/images/cbos/hero/cbos-hero-sudan-landmarks-mobile.webp"
+            alt={isRtl ? 'معالم السودان السيادية' : 'Sovereign Landmarks of Sudan'}
             fill
             priority
             quality={90}
-            className="object-cover object-top opacity-35 filter contrast-[1.1]"
+            className="object-cover object-top opacity-55 filter contrast-[1.05] saturate-[1.1]"
             sizes="100vw"
           />
         </div>
@@ -46,13 +46,13 @@ export default function Hero() {
         <div 
           className={`absolute inset-0 ${
             isRtl 
-              ? 'bg-gradient-to-l from-[#032A1E] via-[#032A1E]/90 to-[#032A1E]/40' 
-              : 'bg-gradient-to-r from-[#032A1E] via-[#032A1E]/90 to-[#032A1E]/40'
+              ? 'bg-gradient-to-l from-[#032A1E] via-[#032A1E]/85 via-45% to-[#032A1E]/30' 
+              : 'bg-gradient-to-r from-[#032A1E] via-[#032A1E]/85 via-45% to-[#032A1E]/30'
           }`} 
         />
         
         {/* Vertical Top/Bottom Seamless Fades */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#021F16]/95 via-transparent to-[#032A1E]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#021F16]/90 via-transparent to-[#032A1E]" />
       </div>
 
       {/* 2. Banknote Security Guilloche Pattern Overlay */}
