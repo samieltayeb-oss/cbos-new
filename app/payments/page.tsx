@@ -86,8 +86,7 @@ export default function PaymentsPage() {
     <div className="bg-sand-50 min-h-screen">
       {/* Header Banner */}
       <section 
-        className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-20 border-b border-cbos-gold/30"
-        style={{ backgroundColor: '#0B1A2D' }}
+        className="bg-[#0B1A2D] text-white relative overflow-hidden py-16 lg:py-20 border-b border-[#22446D]"
       >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -117,7 +116,7 @@ export default function PaymentsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
         {/* Flagship NIPS Architecture Spotlight */}
-        <div id="nips" className="bg-white border-2 border-cbos-gold/40 rounded-xl p-6 sm:p-10 shadow-lg mb-16 relative overflow-hidden scroll-mt-28">
+        <div id="nips" className="bg-white border border-[#22446D]/30 border-t-2 border-t-[#2F88C2] rounded-xl p-6 sm:p-10 shadow-lg mb-16 relative overflow-hidden scroll-mt-28">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 pb-8 border-b border-sand-200">
             <div>
               <div className="flex items-center gap-2 text-cbos-gold text-xs font-mono uppercase tracking-wider mb-2">
@@ -184,7 +183,7 @@ export default function PaymentsPage() {
 
         {/* Real-World Digital Payments Editorial Showcase */}
         <div className="bg-white border border-sand-300 rounded-xl overflow-hidden shadow-sm mb-16 grid grid-cols-1 lg:grid-cols-12">
-          <div className="relative h-72 sm:h-96 lg:h-auto lg:col-span-6 bg-cbos-green-950">
+          <div className="relative h-72 sm:h-96 lg:h-auto lg:col-span-6 bg-[#0B1A2D]">
             <Image
               src="/images/cbos/payments/sudan-digital-payments-market.webp"
               alt={t({ ar: 'استخدام الدفع الإلكتروني ونقاط البيع في الأسواق السودانية', en: 'Digital POS terminal and mobile payments in Sudanese marketplace' })}
@@ -292,8 +291,7 @@ export default function PaymentsPage() {
 
         {/* Regulatory FinTech Sandbox Application Strip */}
         <div 
-          className="bg-cbos-green-950 text-white rounded-xl p-8 sm:p-10 border border-cbos-gold/40 relative overflow-hidden"
-          style={{ backgroundColor: '#0B1A2D' }}
+          className="bg-[#0B1A2D] text-white rounded-xl p-8 sm:p-10 border border-[#22446D] relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-guilloche opacity-10 pointer-events-none" />
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">

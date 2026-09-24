@@ -48,8 +48,7 @@ export default function NewsPage() {
     <div className="bg-sand-50 min-h-screen">
       {/* Header Banner */}
       <section 
-        className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-20 border-b border-cbos-gold/30"
-        style={{ backgroundColor: '#0B1A2D' }}
+        className="bg-[#0B1A2D] text-white relative overflow-hidden py-16 lg:py-20 border-b border-[#22446D]"
       >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -80,7 +79,7 @@ export default function NewsPage() {
         
         {/* Featured Notice Banner if available */}
         {featuredNotice && (
-          <div className="bg-white border-2 border-cbos-gold/40 rounded-xl p-6 sm:p-8 shadow-sm mb-12 relative overflow-hidden">
+          <div className="bg-white border border-[#22446D]/30 border-t-2 border-t-[#C58F2B] rounded-xl p-6 sm:p-8 shadow-sm mb-12 relative overflow-hidden">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-sand-200">
               <div className="space-y-2">
                 <div className="flex items-center gap-2">

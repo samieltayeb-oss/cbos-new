@@ -203,8 +203,7 @@ export default function ExchangeRatesPage() {
 
             {/* Result Display Box */}
             <div 
-              className="bg-cbos-green-950 text-white rounded-xl p-5 border border-cbos-gold/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
-              style={{ backgroundColor: '#0B1A2D' }}
+              className="bg-[#0B1A2D] text-white rounded-xl p-5 border border-[#22446D] flex flex-col sm:flex-row sm:items-center justify-between gap-4"
             >
               <div>
                 <span className="text-xs text-sand-300 font-mono">
@@ -269,7 +268,7 @@ export default function ExchangeRatesPage() {
                     return (
                       <div key={i} className="flex-1 flex flex-col items-center gap-1 group relative">
                         {/* Tooltip */}
-                        <div className="opacity-0 group-hover:opacity-100 transition-opacity absolute -top-8 bg-cbos-green-950 text-white text-[10px] font-mono px-1.5 py-0.5 rounded shadow pointer-events-none whitespace-nowrap z-20">
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity absolute -top-8 bg-[#0B1A2D] text-white text-[10px] font-mono px-1.5 py-0.5 rounded border border-[#22446D] shadow pointer-events-none whitespace-nowrap z-20">
                           {pt.rate.toFixed(2)}
                         </div>
                         <div 

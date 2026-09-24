@@ -89,15 +89,16 @@ export default function Header({ onOpenSearch }: { onOpenSearch?: () => void }) 
           <div className="flex items-center gap-2">
             <button
               onClick={onOpenSearch}
-              className="p-2 rounded-lg bg-[#162D4C] hover:bg-[#1B375C] text-[#DFAC46] hover:text-white border border-[#22446D] transition-colors"
+              className="w-10 h-10 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-lg bg-[#162D4C] hover:bg-[#1B375C] text-[#DFAC46] hover:text-white border border-[#22446D] transition-colors"
               title={isRtl ? 'البحث في الموقع' : 'Search Website'}
+              aria-label={isRtl ? 'البحث في الموقع' : 'Search Website'}
             >
               <Search className="w-4 h-4" />
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden p-2 rounded-lg bg-[#162D4C] hover:bg-[#1B375C] text-white border border-[#22446D] transition-colors"
+              className="xl:hidden w-10 h-10 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-lg bg-[#162D4C] hover:bg-[#1B375C] text-white border border-[#22446D] transition-colors"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

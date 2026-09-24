@@ -40,8 +40,7 @@ export default function BanknotesPage() {
     <div className="bg-sand-50 min-h-screen">
       {/* Header Banner */}
       <section 
-        className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-20 border-b border-cbos-gold/30"
-        style={{ backgroundColor: '#0B1A2D' }}
+        className="bg-[#0B1A2D] text-white relative overflow-hidden py-16 lg:py-20 border-b border-[#22446D]"
       >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -168,8 +167,7 @@ export default function BanknotesPage() {
 
           {/* Feature Inspector Panel */}
           <div 
-            className="lg:col-span-4 bg-cbos-green-950 text-white rounded-xl p-6 sm:p-8 border border-cbos-gold/40 flex flex-col justify-between shadow-lg"
-            style={{ backgroundColor: '#0B1A2D' }}
+            className="lg:col-span-4 bg-[#0B1A2D] text-white rounded-xl p-6 sm:p-8 border border-[#22446D] flex flex-col justify-between shadow-lg"
           >
             <div>
               <div className="flex items-center gap-2 text-cbos-gold text-xs font-mono uppercase tracking-wider mb-4 border-b border-[#22446D] pb-3">
@@ -192,7 +190,7 @@ export default function BanknotesPage() {
                   </p>
 
                   {/* Verification Guide Box */}
-                  <div className="bg-cbos-green-900/80 rounded-xl p-4 border border-cbos-gold/20 mt-4 space-y-2">
+                  <div className="bg-[#11253E] rounded-xl p-4 border border-[#22446D] mt-4 space-y-2">
                     <div className="text-xs font-mono text-cbos-gold font-bold uppercase">
                       {t({ ar: 'طريقة التحقق السريع', en: 'Authentication Method' })}
                     </div>

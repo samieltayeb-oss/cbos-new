@@ -97,8 +97,7 @@ export default function ContactPage() {
     <div className="bg-sand-50 min-h-screen">
       {/* Header Banner */}
       <section 
-        className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-20 border-b border-cbos-gold/30"
-        style={{ backgroundColor: '#0B1A2D' }}
+        className="bg-[#0B1A2D] text-white relative overflow-hidden py-16 lg:py-20 border-b border-[#22446D]"
       >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -434,8 +433,7 @@ export default function ContactPage() {
 
             {/* Whistleblower Channel Card */}
             <div 
-              className="bg-cbos-green-950 text-white rounded-xl p-6 border border-cbos-gold/30 space-y-3"
-              style={{ backgroundColor: '#0B1A2D' }}
+              className="bg-[#0B1A2D] text-white rounded-xl p-6 border border-[#22446D] space-y-3"
             >
               <div className="flex items-center gap-2 text-cbos-gold text-xs font-mono uppercase tracking-wider">
                 <ShieldAlert className="w-4 h-4" />

@@ -28,8 +28,7 @@ export default function LeadershipPage() {
     <div className="bg-sand-50 min-h-screen">
       {/* Header Banner */}
       <section 
-        className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-24 border-b border-cbos-gold/30"
-        style={{ backgroundColor: '#0B1A2D' }}
+        className="bg-[#0B1A2D] text-white relative overflow-hidden py-16 lg:py-24 border-b border-[#22446D]"
       >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -60,7 +59,7 @@ export default function LeadershipPage() {
         
         {/* Governor's Signature Card */}
         {governor && (
-          <div className="bg-white border-2 border-cbos-gold/40 rounded-xl p-6 sm:p-10 shadow-lg mb-16 relative overflow-hidden">
+          <div className="bg-white border border-[#22446D]/30 border-t-2 border-t-[#C58F2B] rounded-xl p-6 sm:p-10 shadow-lg mb-16 relative overflow-hidden">
             <div className="absolute -top-12 -right-12 w-48 h-48 bg-cbos-gold/10 rounded-full blur-2xl pointer-events-none" />
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               
@@ -203,8 +202,7 @@ export default function LeadershipPage() {
 
         {/* High Sharia Supervisory Board Spotlight */}
         <div 
-          className="bg-cbos-green-950 text-white rounded-xl p-8 sm:p-10 border border-cbos-gold/40 relative overflow-hidden"
-          style={{ backgroundColor: '#0B1A2D' }}
+          className="bg-[#0B1A2D] text-white rounded-xl p-8 sm:p-10 border border-[#22446D] relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-guilloche opacity-10 pointer-events-none" />
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -227,7 +225,7 @@ export default function LeadershipPage() {
               </p>
             </div>
 
-            <div className="lg:col-span-4 bg-cbos-green-900/80 border border-cbos-gold/30 rounded-xl p-5 space-y-3">
+            <div className="lg:col-span-4 bg-[#11253E] border border-[#22446D] rounded-xl p-5 space-y-3">
               <h3 className="font-bold text-cbos-gold text-sm border-b border-[#22446D] pb-2">
                 {t({ ar: 'اختصاصات الهيئة الشرعية', en: 'Statutory Jurisdictions' })}
               </h3>

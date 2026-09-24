@@ -142,7 +142,7 @@ export default function CybersecurityPage() {
 
         {/* SOC Operations Documentary Feature */}
         <div className="bg-white rounded-xl border border-sand-300 overflow-hidden shadow-sm grid grid-cols-1 lg:grid-cols-12">
-          <div className="relative h-72 sm:h-96 lg:h-auto lg:col-span-6 bg-cbos-green-950">
+          <div className="relative h-72 sm:h-96 lg:h-auto lg:col-span-6 bg-[#0B1A2D]">
             <Image
               src="/images/cbos/cybersecurity/cbos-cybersecurity-operations.webp"
               alt={t({ ar: 'مركز العمليات السيبرانية وغرفة التحكم الأمنية لبنك السودان المركزي', en: 'CBOS Security Operations Center (SOC) and cyber defense command' })}

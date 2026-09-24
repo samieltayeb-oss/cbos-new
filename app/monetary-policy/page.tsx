@@ -92,8 +92,7 @@ export default function MonetaryPolicyPage() {
     <div className="bg-sand-50 min-h-screen">
       {/* Header Banner */}
       <section 
-        className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-24 border-b border-cbos-gold/30"
-        style={{ backgroundColor: '#0B1A2D' }}
+        className="bg-[#0B1A2D] text-white relative overflow-hidden py-16 lg:py-24 border-b border-[#22446D]"
       >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -235,8 +234,7 @@ export default function MonetaryPolicyPage() {
 
               {/* Calculation Output Card */}
               <div 
-                className="bg-cbos-green-950 text-white rounded-xl p-5 space-y-4 mt-6"
-                style={{ backgroundColor: '#0B1A2D' }}
+                className="bg-[#0B1A2D] text-white rounded-xl p-5 space-y-4 mt-6 border border-[#22446D]"
               >
                 <div className="flex items-center justify-between border-b border-[#22446D] pb-3">
                   <span className="text-xs text-sand-300">

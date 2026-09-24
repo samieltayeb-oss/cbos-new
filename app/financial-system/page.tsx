@@ -47,8 +47,7 @@ export default function FinancialSystemPage() {
     <div className="bg-sand-50 min-h-screen">
       {/* Header Banner */}
       <section 
-        className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-20 border-b border-cbos-gold/30"
-        style={{ backgroundColor: '#0B1A2D' }}
+        className="bg-[#0B1A2D] text-white relative overflow-hidden py-16 lg:py-20 border-b border-[#22446D]"
       >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -208,8 +207,7 @@ export default function FinancialSystemPage() {
 
         {/* Prudential Standards Strip */}
         <div 
-          className="bg-cbos-green-950 text-white rounded-xl p-8 sm:p-10 border border-cbos-gold/40 relative overflow-hidden"
-          style={{ backgroundColor: '#0B1A2D' }}
+          className="bg-[#0B1A2D] text-white rounded-xl p-8 sm:p-10 border border-[#22446D] relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-guilloche opacity-10 pointer-events-none" />
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -233,7 +231,7 @@ export default function FinancialSystemPage() {
               </p>
             </div>
 
-            <div className="lg:col-span-4 bg-cbos-green-900/80 border border-cbos-gold/30 rounded-xl p-6 text-center space-y-2">
+            <div className="lg:col-span-4 bg-[#11253E] border border-[#22446D] rounded-xl p-6 text-center space-y-2">
               <div className="text-3xl font-mono font-bold text-cbos-gold">12.0%</div>
               <div className="font-bold text-white text-sm">
                 {t({ ar: 'الحد الأدنى لكفاية رأس المال (CAR)', en: 'Minimum Capital Adequacy Ratio' })}

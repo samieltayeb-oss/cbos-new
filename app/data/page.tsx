@@ -329,7 +329,7 @@ export default function DataPortalPage() {
 
         {/* Directorate of Economic Research & Statistics Documentary Feature */}
         <div className="bg-white rounded-xl border border-[#D8D4C8] overflow-hidden shadow-sm mb-16 grid grid-cols-1 lg:grid-cols-12">
-          <div className="relative h-72 sm:h-96 lg:h-auto lg:col-span-6 bg-cbos-green-950">
+          <div className="relative h-72 sm:h-96 lg:h-auto lg:col-span-6 bg-[#0B1A2D]">
             <Image
               src="/images/cbos/research/cbos-economic-research-team.webp"
               alt={t({ ar: 'فريق الإدارة العامة للبحوث والإحصاء ببنك السودان المركزي', en: 'CBOS Economic Research & Macroeconomic Statistics Directorate' })}

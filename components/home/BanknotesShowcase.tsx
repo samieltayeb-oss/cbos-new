@@ -68,7 +68,7 @@ export default function BanknotesShowcase() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           {/* Left: Banknote High-Res Canvas with Hotspots (Cols 1-7) */}
-          <div className="lg:col-span-7 bg-cbos-ink/70 rounded-xl p-4 md:p-6 border border-cbos-gold/40 shadow-xl relative space-y-4">
+          <div className="lg:col-span-7 bg-[#0B1A2D] rounded-xl p-4 md:p-6 border border-[#22446D] shadow-xl relative space-y-4">
             
             <div className="flex items-center justify-between text-xs font-mono border-b border-cbos-ink-border pb-2 text-cbos-stone">
               <span>{isRtl ? note.title.ar : note.title.en}</span>
@@ -118,7 +118,7 @@ export default function BanknotesShowcase() {
           <div className="lg:col-span-5 space-y-6">
             
             {activeFeature ? (
-              <div className="bg-[#11253E] rounded-xl p-6 border-2 border-cbos-gold/60 shadow-xl space-y-4">
+              <div className="bg-[#11253E] rounded-xl p-6 border border-[#22446D] border-t-2 border-t-[#C58F2B] shadow-xl space-y-4">
                 <div className="flex items-center justify-between border-b border-[#22446D] pb-3">
                   <div className="flex items-center gap-2 text-cbos-gold text-xs font-mono font-bold uppercase">
                     <ShieldCheck className="w-4 h-4 text-cbos-gold" />

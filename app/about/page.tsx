@@ -244,14 +244,14 @@ export default function AboutPage() {
             
             {/* Headquarters Card */}
             <div className="bg-white border border-sand-300 rounded-xl overflow-hidden shadow-sm">
-              <div className="relative h-48 w-full bg-cbos-green-950">
+              <div className="relative h-48 w-full bg-[#0B1A2D]">
                 <Image 
                   src="/images/cbos/official/cbos-headquarters.png" 
                   alt="Central Bank of Sudan HQ"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-cbos-green-950 via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1A2D] via-transparent to-transparent opacity-80" />
                 <span className="absolute bottom-3 start-4 text-xs font-mono bg-cbos-gold text-cbos-ink font-bold px-2 py-0.5 rounded">
                   {t({ ar: 'المقر السيادي', en: 'SOVEREIGN HEADQUARTERS' })}
                 </span>
@@ -278,8 +278,7 @@ export default function AboutPage() {
 
             {/* Quick Fast Facts Card */}
             <div 
-              className="bg-cbos-green-950 text-white rounded-xl p-6 border border-cbos-gold/30"
-              style={{ backgroundColor: '#0B1A2D' }}
+              className="bg-[#0B1A2D] text-white rounded-xl p-6 border border-[#22446D]"
             >
               <h3 className="font-bold text-lg text-cbos-gold mb-4 border-b border-[#22446D] pb-3 flex items-center gap-2">
                 <Award className="w-5 h-5 text-cbos-gold" />

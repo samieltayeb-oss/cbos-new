@@ -106,7 +106,8 @@ export default function UtilityBar({ onOpenSearch }: { onOpenSearch?: () => void
           {/* Language Switcher */}
           <button
             onClick={toggleLanguage}
-            className="flex items-center gap-1 px-3 py-1 rounded bg-white/15 text-white hover:bg-white hover:text-[#0B1A2D] font-bold transition-all border border-white/40 text-xs shadow-sm"
+            className="flex items-center gap-1.5 px-3 py-1 min-h-[34px] rounded bg-white/15 text-white hover:bg-white hover:text-[#0B1A2D] font-bold transition-all border border-white/40 text-xs shadow-sm"
+            aria-label={isRtl ? 'Switch to English' : 'التحويل إلى اللغة العربية'}
           >
             <Globe className="w-3.5 h-3.5" />
             <span>{isRtl ? 'English' : 'العربية'}</span>

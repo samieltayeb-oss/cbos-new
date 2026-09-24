@@ -115,7 +115,7 @@ export default function FinancialInclusionPage() {
 
         {/* Documentary Photography Feature: Rural & Agricultural Access */}
         <div className="bg-white rounded-xl border border-sand-300 overflow-hidden shadow-sm grid grid-cols-1 lg:grid-cols-12">
-          <div className="relative h-72 sm:h-96 lg:h-auto lg:col-span-6 bg-cbos-green-950">
+          <div className="relative h-72 sm:h-96 lg:h-auto lg:col-span-6 bg-[#0B1A2D]">
             <Image
               src="/images/cbos/financial-inclusion/sudan-financial-inclusion-rural.webp"
               alt={t({ ar: 'الشمول المالي والتمويل الأصغر الزراعي في مشروع الجزيرة والولايات', en: 'Agricultural financial inclusion and mobile microfinance in Sudan' })}
