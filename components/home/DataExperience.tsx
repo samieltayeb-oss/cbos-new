@@ -5,18 +5,15 @@ import Link from 'next/link';
 import { useLanguage } from '@/lib/languageContext';
 import { officialRatesData } from '@/data/rates';
 import { 
-  Download, 
   FileSpreadsheet, 
   TrendingUp, 
   TrendingDown,
   ArrowRight, 
   ArrowLeft,
   Activity,
-  Layers,
   Calendar,
   ShieldCheck,
   ExternalLink,
-  ChevronDown,
   Info
 } from 'lucide-react';
 
