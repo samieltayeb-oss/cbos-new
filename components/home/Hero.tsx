@@ -56,7 +56,7 @@ export default function Hero() {
       </div>
 
       {/* 2. Banknote Security Guilloche Pattern Overlay */}
-      <div className="absolute inset-0 pointer-events-none opacity-20 z-[1]">
+      <div className="absolute inset-0 pointer-events-none opacity-10 lg:opacity-15 z-[1]">
         <svg 
           className="w-full h-full object-cover" 
           viewBox="0 0 1440 600" 
@@ -77,23 +77,25 @@ export default function Hero() {
 
       {/* 3. Main Hero Content */}
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           
-          {/* Hero Copy (Cols 1-7) */}
-          <div className="lg:col-span-7 space-y-6">
+          {/* Hero Copy (Cols 1-7) — Spacious, Regal Typography & Generous Breathing Room */}
+          <div className="lg:col-span-7 space-y-7 md:space-y-8">
             
             {/* Sovereign Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#075A3A]/80 backdrop-blur-md border border-[#B99553]/60 text-xs font-mono font-bold text-[#DDC99B] shadow-md">
-              <ShieldCheck className="w-4 h-4 text-[#B99553]" />
-              <span>{isRtl ? 'المؤسسة النقدية السيادية لجمهورية السودان' : 'Sovereign Monetary Authority of Sudan'}</span>
+            <div>
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#075A3A]/70 backdrop-blur-md border border-[#B99553]/60 text-xs font-mono font-bold text-[#DDC99B] shadow-md">
+                <ShieldCheck className="w-4 h-4 text-[#B99553]" />
+                <span>{isRtl ? 'المؤسسة النقدية السيادية لجمهورية السودان' : 'Sovereign Monetary Authority of Sudan'}</span>
+              </div>
             </div>
 
             {/* Signature Headline */}
-            <div className="space-y-2">
-              <h2 className="text-sm md:text-base font-bold text-[#DDC99B] uppercase tracking-wider font-mono">
+            <div className="space-y-3">
+              <h2 className="text-xs sm:text-sm font-bold text-[#DDC99B] uppercase tracking-widest font-mono">
                 {isRtl ? 'بنك السودان المركزي' : 'Central Bank of Sudan'}
               </h2>
-              <h1 className="text-3xl md:text-5xl lg:text-[58px] font-extrabold text-white tracking-normal leading-[1.15] font-display drop-shadow-sm">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[48px] xl:text-[52px] font-bold text-white tracking-normal leading-[1.32] md:leading-[1.36] lg:leading-[1.38] font-arabic drop-shadow-sm">
                 {isRtl ? (
                   <>
                     الاستقرار النقدي.<br />
@@ -110,15 +112,15 @@ export default function Hero() {
               </h1>
             </div>
 
-            {/* Restrained Subtitle */}
-            <p className="text-base sm:text-lg text-[#E2DDD3] font-normal sm:font-medium max-w-2xl leading-[1.9] font-sans drop-shadow-sm">
+            {/* Restrained Subtitle with Clear Separation */}
+            <p className="text-sm sm:text-base md:text-[17px] text-[#E2DDD3] font-normal leading-[1.9] md:leading-[2.0] max-w-2xl font-arabic drop-shadow-sm">
               {isRtl
-                ? 'إدارة السياسة النقدية، حماية القوة الشرائية للجنيه السوداني، وتطوير بنية تحتية رقمية رصينة وشاملة تعزز استقرار المعاملات المصرفية وتدعم الإنتاج القومي.'
-                : 'Formulating monetary policy, safeguarding the purchasing power of the Sudanese Pound, and advancing a resilient digital financial infrastructure for national economic recovery.'}
+                ? 'صياغة السياسة النقدية وتنفيذها، حماية القوة الشرائية للجنيه السوداني، وتطوير بنية تحتية رقمية رصينة تعزز استقرار المعاملات المصرفية وتدعم مسار التعافي الاقتصادي القومي وتحفيز الإنتاج.'
+                : 'Formulating and implementing monetary policy, safeguarding the purchasing power of the Sudanese Pound, and advancing a resilient digital financial infrastructure for national economic recovery and production growth.'}
             </p>
 
             {/* Action Buttons */}
-            <div className="pt-2 flex flex-wrap items-center gap-4 text-sm font-bold">
+            <div className="pt-3 flex flex-wrap items-center gap-4 text-sm font-bold">
               <Link
                 href="/monetary-policy"
                 className="px-6 py-3.5 rounded-xl bg-[#B99553] text-[#101713] hover:bg-[#D4AF37] transition-all shadow-lg flex items-center gap-2 border border-[#B99553]"
