@@ -108,8 +108,8 @@ export default function NewsPage() {
               </div>
 
               <Link
-                href="/documents"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cbos-green-900 text-white hover:bg-cbos-green-800 text-xs font-mono font-bold transition-colors shrink-0 shadow-sm"
+                href={`/news/${featuredNotice.slug || featuredNotice.id}`}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-cbos-green-900 text-white hover:bg-cbos-green-800 text-xs font-mono font-bold transition-colors shrink-0 shadow-sm"
               >
                 <span>{t({ ar: 'التفاصيل والوثائق', en: 'View Details & Docs' })}</span>
                 <ArrowIcon className="w-3.5 h-3.5" />
@@ -185,7 +185,9 @@ export default function NewsPage() {
                 )}
 
                 <h3 className="font-bold text-xl text-cbos-green-950 mb-2 leading-snug">
-                  {t(item.title)}
+                  <Link href={`/news/${item.slug || item.id}`} className="hover:text-cbos-green-700 transition-colors">
+                    {t(item.title)}
+                  </Link>
                 </h3>
 
                 <p className="text-[13.5px] text-cbos-ink-muted leading-[1.7] mb-4">
@@ -200,10 +202,10 @@ export default function NewsPage() {
               <div className="mt-6 pt-4 border-t border-sand-100 flex items-center justify-between text-xs">
                 <span className="font-mono text-[10px] text-cbos-ink-muted">CBOS MEDIA RELATIONS</span>
                 <Link
-                  href="/documents"
+                  href={`/news/${item.slug || item.id}`}
                   className="inline-flex items-center gap-1 text-cbos-green-800 hover:text-cbos-gold font-bold transition-colors"
                 >
-                  <span>{t({ ar: 'تحميل المرفق', en: 'Download Circular/RFP' })}</span>
+                  <span>{t({ ar: 'التفاصيل والملف', en: 'View Circular & Details' })}</span>
                   <ArrowIcon className="w-3 h-3" />
                 </Link>
               </div>

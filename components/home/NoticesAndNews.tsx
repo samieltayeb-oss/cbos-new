@@ -59,7 +59,7 @@ export default function NoticesAndNews() {
                   </div>
 
                   <h3 className="text-base font-bold text-cbos-ink hover:text-cbos-green transition-colors font-display">
-                    <Link href={`/news#${notice.slug}`}>
+                    <Link href={`/news/${notice.slug || notice.id}`}>
                       {isRtl ? notice.title.ar : notice.title.en}
                     </Link>
                   </h3>
@@ -74,7 +74,7 @@ export default function NoticesAndNews() {
                       <span>{isRtl ? 'إشعار إلزامي للجهاز المصرفي' : 'Mandatory Banking Notice'}</span>
                     </span>
                     <Link
-                      href={`/news#${notice.slug}`}
+                      href={`/news/${notice.slug || notice.id}`}
                       className="font-bold text-cbos-green hover:underline flex items-center gap-1"
                     >
                       <span>{isRtl ? 'التفاصيل والملف' : 'Read Notice'}</span>
@@ -107,7 +107,7 @@ export default function NoticesAndNews() {
                   </div>
 
                   <h3 className="text-base font-bold text-cbos-ink hover:text-cbos-green transition-colors font-display">
-                    <Link href={`/news#${item.slug}`}>
+                    <Link href={`/news/${item.slug || item.id}`}>
                       {isRtl ? item.title.ar : item.title.en}
                     </Link>
                   </h3>
@@ -121,7 +121,7 @@ export default function NoticesAndNews() {
                       {isRtl ? 'الإعلام والعلاقات العامة' : 'Media & PR Directorate'}
                     </span>
                     <Link
-                      href={`/news#${item.slug}`}
+                      href={`/news/${item.slug || item.id}`}
                       className="font-bold text-cbos-green hover:underline flex items-center gap-1"
                     >
                       <span>{isRtl ? 'قراءة البيان كاملاً' : 'Read Full Statement'}</span>

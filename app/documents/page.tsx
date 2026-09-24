@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/lib/languageContext';
 import { officialDocumentsData } from '@/data/documents';
 import { CBOSDocument, DocumentType } from '@/types/document';
@@ -182,9 +183,11 @@ export default function DocumentsPage() {
                     </span>
                   </div>
 
-                  <h3 className="font-bold text-lg sm:text-xl text-cbos-ink hover:text-cbos-green-900 transition-colors leading-snug">
-                    {t(doc.title)}
-                  </h3>
+                  <Link href={`/documents/${doc.slug || doc.id}`} className="hover:underline block">
+                    <h3 className="font-bold text-lg sm:text-xl text-cbos-ink hover:text-cbos-green-900 transition-colors leading-snug">
+                      {t(doc.title)}
+                    </h3>
+                  </Link>
 
                   <p className="text-[13.5px] text-cbos-ink-muted leading-[1.7] line-clamp-2">
                     {t(doc.summary)}
@@ -214,14 +217,23 @@ export default function DocumentsPage() {
                     <div>{(doc.file_size_kb / 1024).toFixed(1)} MB</div>
                   </div>
 
-                  <a
-                    href={doc.file_url}
-                    download
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-cbos-green-900 hover:bg-cbos-green-800 text-white text-xs font-mono font-bold transition-colors shadow-sm"
-                  >
-                    <Download className="w-3.5 h-3.5" />
-                    <span>{t({ ar: 'تحميل الوثيقة', en: 'Download File' })}</span>
-                  </a>
+                  <div className="flex flex-wrap sm:flex-col gap-2">
+                    <Link
+                      href={`/documents/${doc.slug || doc.id}`}
+                      className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg border border-sand-300 bg-sand-50 hover:bg-sand-100 text-cbos-green-950 text-xs font-mono font-bold transition-colors"
+                    >
+                      <FileText className="w-3.5 h-3.5 text-cbos-gold" />
+                      <span>{t({ ar: 'عرض الوثيقة', en: 'View Dossier' })}</span>
+                    </Link>
+                    <a
+                      href={doc.file_url}
+                      download
+                      className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-lg bg-cbos-green-900 hover:bg-cbos-green-800 text-white text-xs font-mono font-bold transition-colors shadow-sm"
+                    >
+                      <Download className="w-3.5 h-3.5" />
+                      <span>{t({ ar: 'تحميل الوثيقة', en: 'Download File' })}</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             ))

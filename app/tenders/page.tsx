@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/lib/languageContext';
 import { 
   FileText, 
@@ -254,9 +255,11 @@ export default function TendersPage() {
                 </div>
 
                 <div className="space-y-3">
-                  <h3 className="text-lg md:text-xl font-bold text-cbos-ink font-display">
-                    {t(tender.title)}
-                  </h3>
+                  <Link href={`/tenders/${tender.id}`} className="hover:underline block">
+                    <h3 className="text-lg md:text-xl font-bold text-cbos-ink font-display hover:text-cbos-green-900 transition-colors">
+                      {t(tender.title)}
+                    </h3>
+                  </Link>
                   <p className="text-xs text-cbos-ink-muted leading-relaxed font-sans max-w-4xl">
                     {t(tender.description)}
                   </p>
@@ -287,13 +290,22 @@ export default function TendersPage() {
                     <span>{t(tender.targetDepartment)}</span>
                   </div>
 
-                  <a
-                    href={tender.documentUrl}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-cbos-green-900 text-white hover:bg-cbos-green-800 transition-colors font-bold text-xs shadow-sm"
-                  >
-                    <Download className="w-3.5 h-3.5 text-[#DDC99B]" />
-                    <span>{isRtl ? 'تحميل كراسة الشروط والمواصفات (PDF)' : 'Download RFP & Specs (PDF)'}</span>
-                  </a>
+                  <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 w-full sm:w-auto">
+                    <Link
+                      href={`/tenders/${tender.id}`}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-cbos-green-800/30 bg-white text-cbos-green-900 hover:bg-sand-100 transition-colors font-bold text-xs"
+                    >
+                      <FileText className="w-3.5 h-3.5 text-cbos-gold" />
+                      <span>{isRtl ? 'تفاصيل العطاء والشروط' : 'Tender Dossier & Terms'}</span>
+                    </Link>
+                    <a
+                      href={tender.documentUrl}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-cbos-green-900 text-white hover:bg-cbos-green-800 transition-colors font-bold text-xs shadow-sm"
+                    >
+                      <Download className="w-3.5 h-3.5 text-[#DDC99B]" />
+                      <span>{isRtl ? 'تحميل الكراسة (PDF)' : 'Download RFP (PDF)'}</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             );
