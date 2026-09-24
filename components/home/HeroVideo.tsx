@@ -27,14 +27,13 @@ export default function HeroVideo() {
 
       {/* ======================================================================= */}
       {/* EXPANSIVE SOVEREIGN ARCHITECTURAL VISUAL (OPEN, ATMOSPHERIC, NO BOX)   */}
-      {/* Generous negative space, wide soft atmospheric dissolve, no frame     */}
+      {/* Complete Sudanese Flag (Green triangle, red, white, black), generous   */}
+      {/* negative space, and seamless integration with sovereign navy (#071321)  */}
       {/* ======================================================================= */}
-      <div className="relative w-full max-w-[460px] sm:max-w-[560px] lg:max-w-[620px] xl:max-w-[660px] z-10 transition-transform duration-700 ease-out">
+      <div className="relative w-full max-w-[500px] sm:max-w-[600px] lg:max-w-[680px] xl:max-w-[740px] z-10 transition-transform duration-700 ease-out">
         
-        {/* Expansive Stage with Wide, Soft Atmospheric Mask (Zero Tight Window / Zero Card) */}
-        <div 
-          className="relative aspect-[16/9] w-full [mask-image:radial-gradient(ellipse_96%_90%_at_50%_50%,black_75%,rgba(0,0,0,0.65)_88%,transparent_100%)] [-webkit-mask-image:radial-gradient(ellipse_96%_90%_at_50%_50%,black_75%,rgba(0,0,0,0.65)_88%,transparent_100%)]"
-        >
+        {/* Expansive Stage — Seamless Background Dissolution (No Box, No Window, No Cutoff) */}
+        <div className="relative aspect-[16/9] w-full">
           {prefersReducedMotion ? (
             /* Static high-resolution poster frame for reduced motion preference */
             <Image
