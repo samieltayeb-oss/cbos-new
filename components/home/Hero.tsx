@@ -161,7 +161,7 @@ export default function Hero() {
                   </div>
                   <div>
                     <div className="text-sm font-bold text-white">
-                      {isRtl ? 'المقر السيادي والمؤشرات اليومية' : 'Sovereign Core & Daily Indicators'}
+                      {isRtl ? 'المؤشرات النقدية والمصرفية اليومية' : 'Daily Monetary & Banking Indicators'}
                     </div>
                     <div dir="ltr" className="text-xs text-[#DDC99B] font-mono">
                       REF: CDNIPS202601 • ISO 20022
@@ -175,17 +175,17 @@ export default function Hero() {
               {/* 3 Metric Rows */}
               <div className="space-y-3.5 text-xs font-mono">
                 <div className="p-3.5 rounded-lg bg-[#0A1813]/90 border border-[#075A3A]/60 flex items-center justify-between">
-                  <span className="text-[#D8D4C8] text-xs font-sans">{isRtl ? 'السعر التأشيري للدولار (USD)' : 'Official USD Rate'}</span>
+                  <span className="text-[#D8D4C8] text-xs font-sans">{isRtl ? 'السعر التأشيري للدولار (USD)' : 'Official Indicative USD Rate'}</span>
                   <span dir="ltr" className="font-bold text-[#DDC99B] text-sm tabular-nums">1,987.93 SDG</span>
                 </div>
 
                 <div className="p-3.5 rounded-lg bg-[#0A1813]/90 border border-[#075A3A]/60 flex items-center justify-between">
-                  <span className="text-[#D8D4C8] text-xs font-sans">{isRtl ? 'جاهزية المقسم القومي (NIPS)' : 'NIPS Switch Throughput'}</span>
+                  <span className="text-[#D8D4C8] text-xs font-sans">{isRtl ? 'جاهزية المحوّل القومي (NIPS)' : 'NIPS National Switch Status'}</span>
                   <span dir="ltr" className="font-bold text-emerald-400 text-sm tabular-nums">10,000 TPS</span>
                 </div>
 
                 <div className="p-3.5 rounded-lg bg-[#0A1813]/90 border border-[#075A3A]/60 flex items-center justify-between">
-                  <span className="text-[#D8D4C8] text-xs font-sans">{isRtl ? 'الاحتياطي الإلزامي المصرفي' : 'Statutory Cash Reserve'}</span>
+                  <span className="text-[#D8D4C8] text-xs font-sans">{isRtl ? 'الاحتياطي النقدي القانوني للمصارف' : 'Statutory Cash Reserve Ratio'}</span>
                   <span dir="ltr" className="font-bold text-white text-sm tabular-nums">18.00%</span>
                 </div>
               </div>

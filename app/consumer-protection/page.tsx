@@ -77,11 +77,11 @@ export default function ConsumerProtectionPage() {
             <Scale className="w-4 h-4 text-[#B99553]" />
             <span>{isRtl ? 'الرقابة المصرفية والحوكمة' : 'Banking Supervision & Governance'}</span>
             <span>/</span>
-            <span>{isRtl ? 'إدارة حماية المستهلك المالي' : 'Financial Consumer Protection Directorate'}</span>
+            <span>{isRtl ? 'إدارة حماية عملاء المؤسسات المالية والمصرفية' : 'Financial & Banking Client Protection Directorate'}</span>
           </div>
 
           <h1 className="text-3xl lg:text-4xl font-extrabold text-white mb-4 font-display">
-            {isRtl ? 'حماية المستهلك المالي وميثاق حقوق عملاء المصارف' : 'Financial Consumer Protection & Depositor Rights'}
+            {isRtl ? 'حماية عملاء المؤسسات المالية والمصرفية وميثاق حقوق المودعين' : 'Protection of Financial & Banking Clients & Depositor Rights'}
           </h1>
           <p className="text-base text-[#E2DDD3] max-w-3xl leading-relaxed font-sans">
             {isRtl
@@ -109,7 +109,7 @@ export default function ConsumerProtectionPage() {
         <div>
           <div className="text-center max-w-2xl mx-auto mb-8">
             <h2 className="text-2xl font-bold text-cbos-ink font-display">
-              {isRtl ? 'الحقوق الأساسية للمستهلك المالي في السودان' : 'Fundamental Rights of Financial Consumers'}
+              {isRtl ? 'الحقوق الأساسية لعملاء المؤسسات المالية والمصرفية بالسودان' : 'Fundamental Rights of Financial & Banking Clients'}
             </h2>
             <p className="text-xs text-cbos-ink-muted mt-1 font-sans">
               {isRtl ? 'مستمدة من أحكام قانون تنظيم العمل المصرفي وتعليمات الحوكمة الرقابية' : 'Established under the Regulation of Banking Business Act and CBOS Conduct Codes'}

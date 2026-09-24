@@ -84,7 +84,7 @@ export const primaryNavigation: NavGroup[] = [
         title: { ar: 'الرقابة والإشراف المصرفي', en: 'Banking Supervision' },
         items: [
           { id: 'fs-prudential', title: { ar: 'معايير كفاية رأس المال ومقررات بازل', en: 'Capital Adequacy & Basel Standards' }, href: '/financial-system' },
-          { id: 'fs-consumer', title: { ar: 'حماية المستهلك المالي وحل الشكاوى', en: 'Financial Consumer Protection' }, href: '/consumer-protection' },
+          { id: 'fs-consumer', title: { ar: 'حماية عملاء المؤسسات المالية والمصرفية', en: 'Protection of Financial & Banking Clients' }, href: '/consumer-protection' },
           { id: 'fs-aml', title: { ar: 'مكافحة غسل الأموال وتمويل الإرهاب', en: 'AML / CFT Regulatory Framework' }, href: '/financial-system' },
         ]
       }
@@ -206,7 +206,7 @@ export const primaryNavigation: NavGroup[] = [
     title: { ar: 'نظم الدفع والتقنية المالية', en: 'Payments & FinTech' },
     href: '/payments',
     featuredDocument: {
-      title: { ar: 'المقسم القومي للمدفوعات الفورية (NIPS)', en: 'National Instant Payment System (NIPS)' },
+      title: { ar: 'المحوّل القومي للمدفوعات الإلكترونية (NIPS)', en: 'National Electronic Payment Switch (NIPS)' },
       refNumber: 'NIPS-SOV-2026',
       href: '/payments#nips',
       date: 'Live'
@@ -215,7 +215,7 @@ export const primaryNavigation: NavGroup[] = [
       {
         title: { ar: 'البنية التحتية القومية للمدفوعات', en: 'National Infrastructure' },
         items: [
-          { id: 'pay-nips', title: { ar: 'المقسم القومي للمدفوعات الفورية (NIPS)', en: 'National Instant Payments (NIPS)' }, href: '/payments#nips' },
+          { id: 'pay-nips', title: { ar: 'المحوّل القومي للمدفوعات الإلكترونية (NIPS)', en: 'National Electronic Payment Switch (NIPS)' }, href: '/payments#nips' },
           { id: 'pay-rtgs', title: { ar: 'نظام التسوية اللحظية الشاملة (RTGS)', en: 'Real-Time Gross Settlement (RTGS)' }, href: '/payments#rtgs' },
           { id: 'pay-ecc', title: { ar: 'المقاصة الإلكترونية للشيكات (ECC)', en: 'Electronic Cheque Clearing (ECC)' }, href: '/payments' },
           { id: 'pay-pos', title: { ar: 'شبكة نقاط البيع والصرافات الآلية', en: 'National POS & ATM Switch' }, href: '/payments#ebs' },
