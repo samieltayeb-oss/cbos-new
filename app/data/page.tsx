@@ -1,0 +1,377 @@
+'use client';
+
+import React, { useState } from 'react';
+import { useLanguage } from '@/lib/languageContext';
+import { 
+  BarChart3, 
+  Download, 
+  Calendar, 
+  Database, 
+  FileSpreadsheet, 
+  TrendingUp, 
+  Filter, 
+  ArrowUpRight, 
+  ArrowDownRight,
+  Layers,
+  Search,
+  CheckCircle2
+} from 'lucide-react';
+
+interface MetricItem {
+  id: string;
+  code: string;
+  title: { ar: string; en: string };
+  category: 'monetary' | 'banking' | 'external' | 'real_sector';
+  categoryLabel: { ar: string; en: string };
+  value: string;
+  unit: { ar: string; en: string };
+  change: string;
+  isPositive: boolean;
+  frequency: { ar: string; en: string };
+  period: string;
+  description: { ar: string; en: string };
+}
+
+export default function DataPortalPage() {
+  const { t } = useLanguage();
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [searchQuery, setSearchQuery] = useState<string>('');
+
+  const metrics: MetricItem[] = [
+    {
+      id: 'm2',
+      code: 'M2-TOTAL',
+      title: { ar: 'السيولة المحلية الكلية (عرض النقود M2)', en: 'Broad Money Supply (M2)' },
+      category: 'monetary',
+      categoryLabel: { ar: 'القطاع النقدي', en: 'Monetary Sector' },
+      value: '14,820.5',
+      unit: { ar: 'مليار جنيه', en: 'Billion SDG' },
+      change: '+14.2%',
+      isPositive: true,
+      frequency: { ar: 'شهري', en: 'Monthly' },
+      period: 'Q3-2026',
+      description: {
+        ar: 'إجمالي النقد المتداول خارج النظام المصرفي مضافاً إليه ودائع الجمهور تحت الطلب وشبه النقود (الودائع الاستثمارية والادخارية بالعملة الوطنية والأجنبية).',
+        en: 'Currency outside banks plus transferable demand deposits and quasi-money (time, savings, and foreign currency deposits) held by the public.'
+      }
+    },
+    {
+      id: 'm1',
+      code: 'M1-NARROW',
+      title: { ar: 'عرض النقود بالمعنى الضيق (M1)', en: 'Narrow Money Supply (M1)' },
+      category: 'monetary',
+      categoryLabel: { ar: 'القطاع النقدي', en: 'Monetary Sector' },
+      value: '8,450.2',
+      unit: { ar: 'مليار جنيه', en: 'Billion SDG' },
+      change: '+11.8%',
+      isPositive: true,
+      frequency: { ar: 'شهري', en: 'Monthly' },
+      period: 'Q3-2026',
+      description: {
+        ar: 'النقد المتداول لدى الجمهور خارج المصارف مضافاً إليه الودائع الجارية الخاضعة للطلب بالعملة المحلية.',
+        en: 'Currency in circulation outside the banking sector plus transferable demand deposits held in local currency.'
+      }
+    },
+    {
+      id: 'fx_reserves',
+      code: 'OFFICIAL-RES',
+      title: { ar: 'إجمالي الأصول والاحتياطيات الرسمية', en: 'Official Sovereign Reserves' },
+      category: 'external',
+      categoryLabel: { ar: 'القطاع الخارجي', en: 'External Sector' },
+      value: '1,842.0',
+      unit: { ar: 'مليون دولار أمريكي', en: 'Million USD' },
+      change: '+6.5%',
+      isPositive: true,
+      frequency: { ar: 'شهري', en: 'Monthly' },
+      period: 'Q3-2026',
+      description: {
+        ar: 'الاحتياطيات الرسمية السيادية المودعة لدى البنك المركزي تشمل سبائك الذهب الخالص والأرصدة بالعملات الأجنبية الحرة القابلة للتحويل وحقوق السحب الخاصة (SDRs).',
+        en: 'Gross sovereign official reserve assets held by CBOS including monetary gold bullion, convertible foreign exchange balances, and SDR holdings.'
+      }
+    },
+    {
+      id: 'bank_assets',
+      code: 'BANK-ASSETS',
+      title: { ar: 'إجمالي الأصول المجمعة للجهاز المصرفي', en: 'Banking Sector Total Consolidated Assets' },
+      category: 'banking',
+      categoryLabel: { ar: 'القطاع المصرفي', en: 'Banking Sector' },
+      value: '22,410.8',
+      unit: { ar: 'مليار جنيه', en: 'Billion SDG' },
+      change: '+18.4%',
+      isPositive: true,
+      frequency: { ar: 'ربع سنوي', en: 'Quarterly' },
+      period: 'Q2-2026',
+      description: {
+        ar: 'الميزانية الموحدة لكافة المصارف التجارية والمتخصصة المرخصة العاملة في السودان متضمنة المحافظ التمويلية والأرصدة النقدية والاستثمارات في الصكوك.',
+        en: 'Consolidated balance sheet assets of all licensed commercial and specialized banks in Sudan, including credit portfolios and sukuk holdings.'
+      }
+    },
+    {
+      id: 'private_credit',
+      code: 'CREDIT-PRIV',
+      title: { ar: 'التمويل المصرفي الممنوح للقطاع الخاص', en: 'Bank Credit to Private Sector' },
+      category: 'banking',
+      categoryLabel: { ar: 'القطاع المصرفي', en: 'Banking Sector' },
+      value: '9,650.0',
+      unit: { ar: 'مليار جنيه', en: 'Billion SDG' },
+      change: '+15.1%',
+      isPositive: true,
+      frequency: { ar: 'شهري', en: 'Monthly' },
+      period: 'Q3-2026',
+      description: {
+        ar: 'إجمالي التسهيلات التمويلية بصيغ المرابحة والمضاربة والمشاركة والسلم الموجهة للمؤسسات والشركات والأنشطة الزراعية والصناعية والتجارية.',
+        en: 'Total Sharia-compliant credit facilities (Murabaha, Mudaraba, Musharaka, Salam) deployed to private agricultural, industrial, and trading enterprises.'
+      }
+    },
+    {
+      id: 'gold_exports',
+      code: 'GOLD-EXP',
+      title: { ar: 'مشتريات وصادرات الذهب الرسمية', en: 'Official Sovereign Gold Purchases & Exports' },
+      category: 'external',
+      categoryLabel: { ar: 'القطاع الخارجي', en: 'External Sector' },
+      value: '34.2',
+      unit: { ar: 'طن متري', en: 'Metric Tons' },
+      change: '+22.0%',
+      isPositive: true,
+      frequency: { ar: 'نصف سنوي', en: 'Semi-Annual' },
+      period: 'H1-2026',
+      description: {
+        ar: 'حجم الذهب المصفى المشتري عبر نوافذ البنك المركزي ومصفاة السودان للذهب والمصدر عبر القنوات النظامية الرسمية لتعزيز الاحتياطيات النقدية.',
+        en: 'Volume of refined monetary gold procured via CBOS windows and the Sudan Gold Refinery, exported officially to build sovereign foreign buffers.'
+      }
+    }
+  ];
+
+  const filteredMetrics = metrics.filter(m => {
+    const matchesCat = selectedCategory === 'all' || m.category === selectedCategory;
+    const matchesQuery = 
+      t(m.title).toLowerCase().includes(searchQuery.toLowerCase()) ||
+      m.code.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCat && matchesQuery;
+  });
+
+  const handleDownloadAllData = () => {
+    const headers = ['Code', 'Title EN', 'Title AR', 'Category', 'Value', 'Unit EN', 'Change', 'Period', 'Frequency'];
+    const rows = metrics.map(m => [
+      m.code,
+      m.title.en,
+      m.title.ar,
+      m.category,
+      m.value,
+      m.unit.en,
+      m.change,
+      m.period,
+      m.frequency.en
+    ]);
+    const csvContent = 'data:text/csv;charset=utf-8,' + [headers.join(','), ...rows.map(e => e.join(','))].join('\n');
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement('a');
+    link.setAttribute('href', encodedUri);
+    link.setAttribute('download', `cbos_sovereign_statistics_2026.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  return (
+    <div className="bg-sand-50 min-h-screen">
+      {/* Header Banner */}
+      <section className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-20 border-b border-cbos-gold/30">
+        <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex items-center gap-3 text-cbos-gold text-xs font-mono uppercase tracking-wider mb-4">
+            <Database className="w-4 h-4" />
+            <span>{t({ ar: 'بوابة البيانات والإحصاءات', en: 'Data & Statistics Portal' })}</span>
+            <span>/</span>
+            <span>{t({ ar: 'المؤشرات النقدية والاقتصادية (e-GDDS)', en: 'e-GDDS Sovereign Statistical Hub' })}</span>
+          </div>
+
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white max-w-3xl leading-tight">
+                {t({
+                  ar: 'بوابة البيانات الاقتصادية والنقدية السيادية',
+                  en: 'Sovereign Economic & Monetary Data Portal'
+                })}
+              </h1>
+              <p className="text-sand-300 text-sm sm:text-base mt-3 max-w-2xl">
+                {t({
+                  ar: 'منصة البيانات الإحصائية الرسمية لبنك السودان المركزي المعدة وفق معايير نظام نشر البيانات المعزز (e-GDDS) لصندوق النقد الدولي لضمان الشفافية المؤسسية والموثوقية التحليلية.',
+                  en: 'The official statistical repository of CBOS aligned with the IMF Enhanced General Data Dissemination System (e-GDDS) ensuring institutional transparency and sovereign credibility.'
+                })}
+              </p>
+            </div>
+
+            <button
+              onClick={handleDownloadAllData}
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-cbos-gold text-ink-base hover:bg-cbos-gold-light font-bold text-sm transition-all shadow-md shrink-0"
+            >
+              <Download className="w-4 h-4" />
+              <span>{t({ ar: 'تصدير كافة المؤشرات (CSV)', en: 'Export Full Dataset (CSV)' })}</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        {/* Filter & Search Bar */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 mb-8 bg-white border border-sand-300 p-4 rounded-xl shadow-sm">
+          {/* Categories */}
+          <div className="flex flex-wrap gap-2">
+            {[
+              { id: 'all', label: { ar: 'كافة المؤشرات', en: 'All Indicators' } },
+              { id: 'monetary', label: { ar: 'القطاع النقدي', en: 'Monetary' } },
+              { id: 'banking', label: { ar: 'القطاع المصرفي', en: 'Banking' } },
+              { id: 'external', label: { ar: 'القطاع الخارجي', en: 'External' } }
+            ].map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => setSelectedCategory(tab.id)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                  selectedCategory === tab.id
+                    ? 'bg-cbos-green-900 text-white'
+                    : 'bg-sand-100 text-ink-muted hover:text-ink-base hover:bg-sand-200'
+                }`}
+              >
+                {t(tab.label)}
+              </button>
+            ))}
+          </div>
+
+          {/* Search Box */}
+          <div className="relative">
+            <Search className="w-4 h-4 absolute start-3 top-2.5 text-ink-muted" />
+            <input
+              type="text"
+              placeholder={t({ ar: 'بحث في المؤشرات...', en: 'Search metrics...' })}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="ps-9 pe-4 py-2 text-xs bg-sand-50 border border-sand-300 rounded-lg focus:outline-none focus:border-cbos-green-800 w-full sm:w-64"
+            />
+          </div>
+        </div>
+
+        {/* Metrics Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {filteredMetrics.map((item) => (
+            <div 
+              key={item.id}
+              className="bg-white border border-sand-300 rounded-xl p-6 shadow-sm hover:border-cbos-green-700 transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-sand-100 text-ink-muted">
+                    {item.code}
+                  </span>
+                  <span className="text-xs font-serif text-cbos-green-800 font-medium">
+                    {t(item.categoryLabel)}
+                  </span>
+                </div>
+
+                <h3 className="font-serif font-bold text-lg text-ink-base mb-2">
+                  {t(item.title)}
+                </h3>
+
+                {/* Big Metric Value */}
+                <div className="bg-sand-50 rounded-lg p-4 my-4 border border-sand-200">
+                  <div className="flex items-baseline justify-between">
+                    <span className="text-2xl sm:text-3xl font-mono font-bold text-cbos-green-950">
+                      {item.value}
+                    </span>
+                    <span className="text-xs font-serif text-ink-muted">
+                      {t(item.unit)}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between mt-2 pt-2 border-t border-sand-200 text-xs">
+                    <span className="text-ink-muted font-mono">{item.period}</span>
+                    <span className="inline-flex items-center gap-1 font-mono font-bold text-emerald-600">
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                      {item.change}
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-xs text-ink-muted leading-relaxed">
+                  {t(item.description)}
+                </p>
+              </div>
+
+              <div className="mt-6 pt-3 border-t border-sand-100 flex items-center justify-between text-xs font-mono text-ink-muted">
+                <span>{t({ ar: 'التواتر:', en: 'Freq:' })} {t(item.frequency)}</span>
+                <span className="text-cbos-gold font-bold">IMF e-GDDS</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Statistical Publications & Dissemination Calendar Strip */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          <div className="lg:col-span-8 bg-white border border-sand-300 rounded-xl p-6 sm:p-8 shadow-sm">
+            <div className="flex items-center gap-3 text-cbos-green-900 font-serif font-bold text-xl mb-4 border-b border-sand-200 pb-3">
+              <Calendar className="w-5 h-5 text-cbos-gold" />
+              <h2>{t({ ar: 'تقويم نشر البيانات الإحصائية والتقارير الدورية (2026)', en: 'Statistical Release Calendar (2026)' })}</h2>
+            </div>
+
+            <div className="space-y-4">
+              {[
+                {
+                  title: { ar: 'النشرة الإحصائية الشهرية (سبتمبر 2026)', en: 'Monthly Statistical Bulletin (September 2026)' },
+                  date: '2026-10-15',
+                  coverage: { ar: 'القطاع النقدي والمصرفي وأسعار الصرف', en: 'Monetary, Banking & FX Indicators' }
+                },
+                {
+                  title: { ar: 'موجز إحصاءات التجارة الخارجية (الربع الثالث 2026)', en: 'Foreign Trade Statistical Digest (Q3 2026)' },
+                  date: '2026-11-01',
+                  coverage: { ar: 'صادرات الذهب، السلع الزراعية والمستوردات', en: 'Gold, Agricultural Exports & Strategic Imports' }
+                },
+                {
+                  title: { ar: 'التقرير السنوي لمجلس الإدارة عن العام المالي 2025', en: 'Annual Report of the Board of Directors 2025' },
+                  date: '2026-06-30',
+                  coverage: { ar: 'الحسابات الختامية والأداء الاقتصادي القومي', en: 'Audited Financials & National Macroeconomic Review' }
+                }
+              ].map((cal, idx) => (
+                <div key={idx} className="p-4 rounded-lg bg-sand-50 border border-sand-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div>
+                    <div className="font-serif font-bold text-sm text-ink-base">{t(cal.title)}</div>
+                    <div className="text-xs text-ink-muted mt-0.5">{t(cal.coverage)}</div>
+                  </div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <span className="font-mono text-xs bg-cbos-green-100 text-cbos-green-900 px-2.5 py-1 rounded font-bold">
+                      {cal.date}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="lg:col-span-4 bg-cbos-green-950 text-white rounded-xl p-6 border border-cbos-gold/30 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 text-cbos-gold text-xs font-mono uppercase tracking-wider mb-2">
+                <CheckCircle2 className="w-4 h-4" />
+                <span>e-GDDS METADATA</span>
+              </div>
+              <h3 className="font-serif font-bold text-xl text-white mb-3">
+                {t({ ar: 'المعايير الدولية للنشر الإحصائي', en: 'IMF Dissemination Standards' })}
+              </h3>
+              <p className="text-xs text-sand-300 leading-relaxed mb-6">
+                {t({
+                  ar: 'يلتزم بنك السودان المركزي بأفضل الممارسات الإحصائية الدولية لتوفير سلاسل زمنية دقيقة تدعم القرارات الاستثمارية والأبحاث الأكاديمية والسياسات العامة.',
+                  en: 'CBOS commits to international statistical best practices, offering precise time series supporting academic research, policymaking, and sovereign investment.'
+                })}
+              </p>
+            </div>
+
+            <div className="pt-4 border-t border-cbos-green-800 text-xs text-sand-400 font-mono">
+              DIRECTORATE OF ECONOMIC RESEARCH & STATISTICS
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  );
+}

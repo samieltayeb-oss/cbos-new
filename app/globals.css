@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cbos-green-950: #032A1E;
+  --cbos-green-900: #033E2D;
+  --cbos-green-800: #075A3A;
+  --cbos-gold-500: #B99553;
+  --cbos-ivory: #F6F4EE;
+  --cbos-ink: #101713;
+  --cbos-stone: #D8D4C8;
+  --cbos-sage: #DCE7DF;
+  --cbos-border: #E2DDD3;
+}
+
+body {
+  background-color: var(--cbos-ivory);
+  color: var(--cbos-ink);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle Banknote Guilloche Pattern */
+.bg-guilloche-light {
+  background-color: #F6F4EE;
+  background-image: 
+    radial-gradient(rgba(7, 90, 58, 0.05) 1px, transparent 0),
+    radial-gradient(rgba(185, 149, 83, 0.04) 1px, transparent 0);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+
+.bg-guilloche-dark {
+  background-color: #033E2D;
+  background-image: 
+    radial-gradient(rgba(185, 149, 83, 0.12) 1px, transparent 0),
+    radial-gradient(rgba(246, 244, 238, 0.04) 1px, transparent 0);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+}
+
+/* Tabular figures for financial tables */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Focus styles for WCAG 2.2 AA */
+:focus-visible {
+  outline: 2px solid var(--cbos-gold-500);
+  outline-offset: 2px;
+}
+
+/* Respect user's motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
