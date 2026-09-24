@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '@/lib/languageContext';
-import { ArrowLeft, ArrowRight, ShieldCheck, TrendingUp, FileText } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ShieldCheck, TrendingUp, FileText, Building2, ExternalLink } from 'lucide-react';
 
 export default function Hero() {
   const { isRtl } = useLanguage();
@@ -14,8 +14,49 @@ export default function Hero() {
       className="relative text-white overflow-hidden border-b border-[#075A3A]/80 py-16 md:py-24"
       style={{ backgroundColor: '#032A1E' }}
     >
-      {/* 1. Sovereign Guilloche & Nile Curves SVG Background */}
-      <div className="absolute inset-0 pointer-events-none opacity-25">
+      {/* 1. Sovereign Architectural Photography Hero Layer (Desktop & Mobile) */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        {/* Desktop / Tablet Landscape Hero */}
+        <div className="hidden sm:block absolute inset-0">
+          <Image
+            src="/images/cbos/hero/cbos-hero-building-khartoum-premium.webp"
+            alt={isRtl ? 'المقر السيادي لبنك السودان المركزي بالخرطوم' : 'Central Bank of Sudan Sovereign Headquarters Khartoum'}
+            fill
+            priority
+            quality={92}
+            className={`object-cover ${isRtl ? 'object-[left_center] lg:object-left' : 'object-[right_center] lg:object-right'} opacity-45 filter contrast-[1.1] saturate-[1.05]`}
+            sizes="100vw"
+          />
+        </div>
+
+        {/* Mobile Portrait Crop */}
+        <div className="sm:hidden absolute inset-0">
+          <Image
+            src="/images/cbos/hero/cbos-hero-building-khartoum-premium-mobile.webp"
+            alt={isRtl ? 'المقر السيادي لبنك السودان المركزي' : 'Central Bank of Sudan Sovereign Headquarters'}
+            fill
+            priority
+            quality={90}
+            className="object-cover object-top opacity-35 filter contrast-[1.1]"
+            sizes="100vw"
+          />
+        </div>
+
+        {/* Direction-Aware Institutional Scrim Overlay */}
+        <div 
+          className={`absolute inset-0 ${
+            isRtl 
+              ? 'bg-gradient-to-l from-[#032A1E] via-[#032A1E]/90 to-[#032A1E]/40' 
+              : 'bg-gradient-to-r from-[#032A1E] via-[#032A1E]/90 to-[#032A1E]/40'
+          }`} 
+        />
+        
+        {/* Vertical Top/Bottom Seamless Fades */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#021F16]/95 via-transparent to-[#032A1E]" />
+      </div>
+
+      {/* 2. Banknote Security Guilloche Pattern Overlay */}
+      <div className="absolute inset-0 pointer-events-none opacity-20 z-[1]">
         <svg 
           className="w-full h-full object-cover" 
           viewBox="0 0 1440 600" 
@@ -34,6 +75,7 @@ export default function Hero() {
         </svg>
       </div>
 
+      {/* 3. Main Hero Content */}
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
@@ -41,7 +83,7 @@ export default function Hero() {
           <div className="lg:col-span-7 space-y-6">
             
             {/* Sovereign Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#075A3A]/60 border border-[#B99553]/50 text-xs font-mono font-bold text-[#DDC99B]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#075A3A]/80 backdrop-blur-md border border-[#B99553]/60 text-xs font-mono font-bold text-[#DDC99B] shadow-md">
               <ShieldCheck className="w-4 h-4 text-[#B99553]" />
               <span>{isRtl ? 'المؤسسة النقدية السيادية لجمهورية السودان' : 'Sovereign Monetary Authority of Sudan'}</span>
             </div>
@@ -51,7 +93,7 @@ export default function Hero() {
               <h2 className="text-sm md:text-base font-bold text-[#DDC99B] uppercase tracking-wider font-mono">
                 {isRtl ? 'بنك السودان المركزي' : 'Central Bank of Sudan'}
               </h2>
-              <h1 className="text-3xl md:text-5xl lg:text-[58px] font-extrabold text-white tracking-normal leading-[1.15] font-display">
+              <h1 className="text-3xl md:text-5xl lg:text-[58px] font-extrabold text-white tracking-normal leading-[1.15] font-display drop-shadow-sm">
                 {isRtl ? (
                   <>
                     الاستقرار النقدي.<br />
@@ -69,7 +111,7 @@ export default function Hero() {
             </div>
 
             {/* Restrained Subtitle */}
-            <p className="text-base sm:text-lg text-[#E2DDD3] font-normal sm:font-medium max-w-2xl leading-[1.9] font-sans">
+            <p className="text-base sm:text-lg text-[#E2DDD3] font-normal sm:font-medium max-w-2xl leading-[1.9] font-sans drop-shadow-sm">
               {isRtl
                 ? 'إدارة السياسة النقدية، حماية القوة الشرائية للجنيه السوداني، وتطوير بنية تحتية رقمية رصينة وشاملة تعزز استقرار المعاملات المصرفية وتدعم الإنتاج القومي.'
                 : 'Formulating monetary policy, safeguarding the purchasing power of the Sudanese Pound, and advancing a resilient digital financial infrastructure for national economic recovery.'}
@@ -87,7 +129,7 @@ export default function Hero() {
 
               <Link
                 href="/data"
-                className="px-6 py-3.5 rounded-xl bg-[#075A3A]/60 hover:bg-[#075A3A] text-white border border-[#B99553]/40 transition-all flex items-center gap-2 shadow"
+                className="px-6 py-3.5 rounded-xl bg-[#075A3A]/80 hover:bg-[#075A3A] text-white border border-[#B99553]/50 backdrop-blur-md transition-all flex items-center gap-2 shadow"
               >
                 <TrendingUp className="w-4 h-4 text-[#B99553]" />
                 <span>{isRtl ? 'مؤشرات البيانات الاقتصادية' : 'View Economic Indicators'}</span>
@@ -96,14 +138,14 @@ export default function Hero() {
 
           </div>
 
-          {/* Hero Visual Card / Emblem / Key Benchmark (Cols 8-12) */}
+          {/* Hero Visual Card / Sovereign Indicator Benchmark (Cols 8-12) */}
           <div className="lg:col-span-5 relative">
             <div 
               className="relative rounded-2xl border border-[#B99553]/40 p-6 md:p-8 backdrop-blur-md shadow-2xl space-y-6"
-              style={{ backgroundColor: '#021F16' }}
+              style={{ backgroundColor: 'rgba(2, 31, 22, 0.88)' }}
             >
               
-              {/* Emblem Header */}
+              {/* Card Header */}
               <div className="flex items-center justify-between border-b border-[#075A3A]/70 pb-4">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-xl bg-[#075A3A] p-1 flex items-center justify-center border border-[#B99553]/50">
@@ -130,17 +172,17 @@ export default function Hero() {
 
               {/* 3 Metric Rows */}
               <div className="space-y-3.5 text-xs font-mono">
-                <div className="p-3.5 rounded-lg bg-[#0A1813] border border-[#075A3A]/60 flex items-center justify-between">
+                <div className="p-3.5 rounded-lg bg-[#0A1813]/90 border border-[#075A3A]/60 flex items-center justify-between">
                   <span className="text-[#D8D4C8] text-xs font-sans">{isRtl ? 'السعر التأشيري للدولار (USD)' : 'Official USD Rate'}</span>
                   <span dir="ltr" className="font-bold text-[#DDC99B] text-sm tabular-nums">1,987.93 SDG</span>
                 </div>
 
-                <div className="p-3.5 rounded-lg bg-[#0A1813] border border-[#075A3A]/60 flex items-center justify-between">
+                <div className="p-3.5 rounded-lg bg-[#0A1813]/90 border border-[#075A3A]/60 flex items-center justify-between">
                   <span className="text-[#D8D4C8] text-xs font-sans">{isRtl ? 'جاهزية المقسم القومي (NIPS)' : 'NIPS Switch Throughput'}</span>
                   <span dir="ltr" className="font-bold text-emerald-400 text-sm tabular-nums">10,000 TPS</span>
                 </div>
 
-                <div className="p-3.5 rounded-lg bg-[#0A1813] border border-[#075A3A]/60 flex items-center justify-between">
+                <div className="p-3.5 rounded-lg bg-[#0A1813]/90 border border-[#075A3A]/60 flex items-center justify-between">
                   <span className="text-[#D8D4C8] text-xs font-sans">{isRtl ? 'الاحتياطي الإلزامي المصرفي' : 'Statutory Cash Reserve'}</span>
                   <span dir="ltr" className="font-bold text-white text-sm tabular-nums">18.00%</span>
                 </div>
