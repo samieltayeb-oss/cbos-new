@@ -19,12 +19,12 @@ export default function Hero() {
         {/* Desktop / Tablet Landscape Hero */}
         <div className="hidden sm:block absolute inset-0">
           <Image
-            src="/images/cbos/hero/cbos-hero-sudan-landmarks.webp"
-            alt={isRtl ? 'معالم السودان والخرطوم السيادية — النيل، أهرامات مروي، وجسر توتي' : 'Sovereign Landmarks of Sudan & Khartoum — The Nile, Meroë Pyramids, and Tuti Bridge'}
+            src="/images/cbos/hero/cbos-hero-master-center.webp"
+            alt={isRtl ? 'المقر السيادي لبنك السودان المركزي بالخرطوم' : 'Sovereign Headquarters of the Central Bank of Sudan in Khartoum'}
             fill
             priority
-            quality={92}
-            className="object-cover object-center opacity-40 lg:opacity-45 filter contrast-[1.05]"
+            quality={95}
+            className="object-cover object-center opacity-85 lg:opacity-90 filter contrast-[1.08] saturate-[1.05]"
             sizes="100vw"
           />
         </div>
@@ -32,27 +32,27 @@ export default function Hero() {
         {/* Mobile Portrait Crop */}
         <div className="sm:hidden absolute inset-0">
           <Image
-            src="/images/cbos/hero/cbos-hero-sudan-landmarks-mobile.webp"
-            alt={isRtl ? 'معالم السودان السيادية' : 'Sovereign Landmarks of Sudan'}
+            src="/images/cbos/hero/cbos-hero-master-center-mobile.webp"
+            alt={isRtl ? 'المقر السيادي لبنك السودان المركزي' : 'Central Bank of Sudan Sovereign Headquarters'}
             fill
             priority
-            quality={90}
-            className="object-cover object-top opacity-35 filter contrast-[1.05]"
+            quality={92}
+            className="object-cover object-center opacity-80 filter contrast-[1.08]"
             sizes="100vw"
           />
         </div>
 
-        {/* Direction-Aware Institutional Scrim Overlay */}
+        {/* Direction-Aware Institutional Scrim Overlay: Preserves text contrast while keeping central building clear */}
         <div 
           className={`absolute inset-0 ${
             isRtl 
-              ? 'bg-gradient-to-l from-[#0B1A2D] via-[#0B1A2D]/95 via-50% to-[#0B1A2D]/40' 
-              : 'bg-gradient-to-r from-[#0B1A2D] via-[#0B1A2D]/95 via-50% to-[#0B1A2D]/40'
+              ? 'bg-gradient-to-l from-[#0B1A2D]/95 via-transparent via-50% to-[#0B1A2D]/60' 
+              : 'bg-gradient-to-r from-[#0B1A2D]/95 via-transparent via-50% to-[#0B1A2D]/60'
           }`} 
         />
         
         {/* Vertical Top/Bottom Seamless Fades */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#071321]/95 via-transparent to-[#0B1A2D]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#071321]/80 via-transparent via-40% to-[#0B1A2D]" />
       </div>
 
       {/* 2. Banknote Security Guilloche Pattern Overlay */}

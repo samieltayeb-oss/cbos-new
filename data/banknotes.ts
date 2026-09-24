@@ -75,47 +75,69 @@ export const officialBanknotesData: BanknoteDenomination[] = [
     id: 'sdg-1000',
     value: 1000,
     currency: 'SDG',
-    seriesYear: 2022,
+    seriesYear: 2024,
     title: {
       ar: 'فئة ألف جنيه سوداني',
       en: '1,000 Sudanese Pounds Banknote'
     },
-    dimensions: '155 × 72 mm',
+    dimensions: '158 × 70 mm',
     primaryColor: {
-      ar: 'الأزرق الفاتح والذهبي والزيتوني',
-      en: 'Cyan Blue, Muted Gold & Olive'
+      ar: 'تدرجات الأصفر والأخضر والذهبي',
+      en: 'Gold, Olive Green & Yellow'
     },
-    frontImage: '/images/cbos/official/banknote-2000-front.jpg', // Verified fallback
+    frontImage: '/images/cbos/official/banknote-1000-front.jpg',
     frontTheme: {
-      ar: 'الزراعة ومشاريع الري القومية وحصاد القمح والقطن',
-      en: 'Agriculture, National Irrigation Projects, Wheat & Cotton Harvest'
+      ar: 'الموانئ البحرية وصوامع الغلال القومية وسبائك الذهب الوطنية',
+      en: 'Port Sudan Seaport, National Grain Silos & Sovereign Gold Bullion'
     },
     backTheme: {
-      ar: 'سد مروي والمنشآت الكهرومائية والطاقة المتجددة في السودان',
-      en: 'Merowe Hydroelectric Dam & Renewable National Energy Infrastructure'
+      ar: 'مقر بنك السودان المركزي بالخرطوم والسيادة النقدية',
+      en: 'Central Bank of Sudan Headquarters & Monetary Sovereignty'
     },
     securityFeatures: [
       {
         id: 'feat-1000-wm',
-        name: { ar: 'العلامة المائية لصقر الجديان والكهرباء', en: 'Secretary Bird Watermark & Electrotype 1000' },
+        name: { ar: 'العلامة المائية لصقر الجديان والرقم 1000', en: 'Secretary Bird Watermark & Electrotype 1000' },
         description: {
           ar: 'صورة مجسمة لصقر الجديان تظهر عند النظر عبر الضوء مع أرقام دقيقة عالية التباين.',
           en: 'High-definition Secretary Bird watermark with high-contrast electrotype 1000.'
         },
-        x_percent: 24,
+        x_percent: 14,
         y_percent: 50,
         type: 'watermark'
       },
       {
         id: 'feat-1000-th',
-        name: { ar: 'شريط الأمان المغناطيسي المتغير لونياً', en: 'Color-Shifting Magnetic Thread' },
+        name: { ar: 'خيط الأمان اللامع والمتحرك بصرياً', en: 'Dynamic Windowed Holographic Security Thread' },
         description: {
-          ar: 'خيط أمان متغير بصرياً من الأخضر إلى الأزرق مع حركة ليزرية ثلاثية الأبعاد.',
-          en: 'Color-shifting magnetic thread shifting between green and blue with dynamic micro-motion.'
+          ar: 'شريط تأميني لامع ومتحرك بصرياً على الواجهة الأمامية يحمل رقم الفئة (1000) وعبارة (CBOS).',
+          en: 'Optically dynamic security thread on the front face featuring denomination 1000 and text CBOS.'
         },
-        x_percent: 52,
-        y_percent: 50,
+        x_percent: 31,
+        y_percent: 45,
         type: 'thread'
+      },
+      {
+        id: 'feat-1000-gold',
+        name: { ar: 'سبائك الذهب والنظائر المتطابقة', en: 'Gold Bullion Intaglio & See-Through Device' },
+        description: {
+          ar: 'طباعة بارزة الملمس على سبائك الذهب تكتمل بدقة متناهية عند النظر للورقة أمام مصدر ضوء.',
+          en: 'Raised intaglio gold bars aligning with complementary reverse print when backlit.'
+        },
+        x_percent: 68,
+        y_percent: 28,
+        type: 'intaglio'
+      },
+      {
+        id: 'feat-1000-silos',
+        name: { ar: 'صوامع الغلال والباخرة بالطباعة البارزة', en: 'Grain Silos & Port Sudan Maritime Vessels' },
+        description: {
+          ar: 'طباعة غائرة خشنة الملمس على صومعة الغلال والباخرة وعبارة بنك السودان المركزي وألف جنيه سوداني.',
+          en: 'Heavily tactile intaglio print on the silos, maritime transport vessel, and central typography.'
+        },
+        x_percent: 48,
+        y_percent: 55,
+        type: 'intaglio'
       }
     ]
   },

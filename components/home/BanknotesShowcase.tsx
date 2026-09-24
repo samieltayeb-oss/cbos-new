@@ -76,12 +76,12 @@ export default function BanknotesShowcase() {
             </div>
 
             {/* Note Canvas Container */}
-            <div className="relative w-full aspect-[16/8] rounded-lg overflow-hidden shadow-xl border-2 border-cbos-gold/30 group">
+            <div className="relative w-full aspect-[22/10] bg-[#071321] rounded-lg overflow-hidden shadow-2xl border-2 border-[#C58F2B]/40 group flex items-center justify-center">
               <Image
                 src={note.frontImage}
                 alt={isRtl ? note.title.ar : note.title.en}
                 fill
-                className="object-cover"
+                className="object-contain p-1.5 transition-all duration-300"
                 priority
               />
 

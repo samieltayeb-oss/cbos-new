@@ -20,6 +20,39 @@ export interface GalleryAlbum {
 
 export const officialGalleryData: GalleryAlbum[] = [
   {
+    id: 'album-eid-greetings-2026',
+    title: {
+      ar: 'محافظ البنك المركزي ونائبها الأول يتبادلان تهاني عيد الأضحى مع العاملين بالبنك وقيادات العمل المصرفي',
+      en: 'CBOS Governor & First Deputy Exchange Eid Al-Adha Greetings with Staff & Banking Executives'
+    },
+    date: '31/05/2026 - 23:45',
+    location: {
+      ar: 'المقر الرئيسي لبنك السودان المركزي',
+      en: 'CBOS Executive Hall'
+    },
+    coverImage: '/images/cbos/gallery/enhanced_eid_1_02.jpg',
+    images: [
+      '/images/cbos/gallery/enhanced_eid_1_02.jpg',
+      '/images/cbos/gallery/enhanced_eid_2_03.jpg',
+      '/images/cbos/gallery/enhanced_eid_3_04.jpg',
+      '/images/cbos/gallery/enhanced_eid_4_05.jpg',
+      '/images/cbos/gallery/enhanced_eid_6_07.jpg',
+      '/images/cbos/gallery/enhanced_eid_7_08.jpg',
+      '/images/cbos/gallery/enhanced_eid_8_09.jpg',
+      '/images/cbos/gallery/enhanced_eid_9_10.jpg',
+      '/images/cbos/gallery/enhanced_eid_10_11.jpg',
+      '/images/cbos/gallery/enhanced_eid_12_13.jpg',
+      '/images/cbos/gallery/enhanced_eid_13_14.jpg',
+      '/images/cbos/gallery/enhanced_eid_16_17.jpg',
+      '/images/cbos/gallery/enhanced_eid_17_18.jpg'
+    ],
+    category: 'official',
+    description: {
+      ar: 'تبادلت الإدارة العليا لبنك السودان المركزي التهاني المباركة بمناسبة عيد الأضحى مع أسرة العاملين بالجهاز المصرفي وممثلي البنوك التجارية العاملة، تأكيداً على أواصر التلاحم المؤسسي ودعم المسيرة الاقتصادية.',
+      en: 'Executive management convened with bank staff and leaders across commercial banking institutions on the joyous occasion of Eid Al-Adha, reaffirming solidarity and commitment to national financial resilience.'
+    }
+  },
+  {
     id: 'album-retirees-2026',
     title: {
       ar: 'وفاءٌ يُجسّد القيم المؤسسية: النائب الأول لمحافظ بنك السودان المركزي يزور متقاعدي البنك',
@@ -30,17 +63,17 @@ export const officialGalleryData: GalleryAlbum[] = [
       ar: 'بورتسودان — ولاية البحر الأحمر',
       en: 'Port Sudan — Red Sea State'
     },
-    coverImage: '/images/cbos/gallery/retiree_visit_1.jpg',
+    coverImage: '/images/cbos/gallery/enhanced_retirees_1_18032026001.jpg',
     images: [
-      '/images/cbos/gallery/retiree_visit_1.jpg',
-      '/images/cbos/gallery/retiree_visit_2.jpg',
-      '/images/cbos/gallery/retiree_visit_3.jpg',
-      '/images/cbos/gallery/retiree_visit_4.jpg'
+      '/images/cbos/gallery/enhanced_retirees_1_18032026001.jpg',
+      '/images/cbos/gallery/enhanced_retirees_2_18032026002.jpg',
+      '/images/cbos/gallery/enhanced_retirees_3_18032026003.jpg',
+      '/images/cbos/gallery/enhanced_retirees_4_18032026004.jpg'
     ],
     category: 'community',
     description: {
-      ar: 'في إطار تعزيز الروابط الإنسانية وتثمين عطاء الكوادر المصرفية التي خدمت البنك المركزي، قام النائب الأول للمحافظ بزيارة تفقدية لعدد من المتقاعدين تقديراً لمسيرتهم المهنية.',
-      en: 'As part of fostering institutional values and honoring dedicated banking personnel, the First Deputy Governor conducted a visitation program to retired staff.'
+      ar: 'في إطار تعزيز الروابط الإنسانية وتثمين عطاء الكوادر المصرفية التي خدمت البنك المركزي، قام النائب الأول للمحافظ بزيارة تفقدية لعدد من المتقاعدين تقديراً لمسيرتهم المهنية الوطنية.',
+      en: 'As part of fostering institutional values and honoring dedicated banking personnel who served the central bank, the First Deputy Governor conducted a visitation program to retired staff.'
     }
   },
   {
@@ -54,58 +87,22 @@ export const officialGalleryData: GalleryAlbum[] = [
       ar: 'الخرطوم — السودان',
       en: 'Khartoum — Sudan'
     },
-    coverImage: '/images/cbos/gallery/cbos_historic_headquarters.jpg',
+    coverImage: '/images/cbos/hero/cbos-hero-twilight-prestige.jpg',
     images: [
-      '/images/cbos/gallery/cbos_historic_headquarters.jpg',
-      '/images/cbos/hero/cbos-hero-building-khartoum-premium.jpg',
-      '/images/cbos/hero/cbos-hero-sovereign-bastion.jpg'
+      '/images/cbos/hero/cbos-hero-twilight-prestige.jpg',
+      '/images/cbos/official/cbos-headquarters.png',
+      '/images/cbos/gallery/enhanced_building_1_dsc_3597.jpg',
+      '/images/cbos/gallery/enhanced_building_3_dsc_3606.jpg',
+      '/images/cbos/gallery/enhanced_building_4_dsc_4472.jpg',
+      '/images/cbos/gallery/enhanced_building_5_dsc_4473.jpg',
+      '/images/cbos/gallery/enhanced_building_6_dsc_5647.jpg',
+      '/images/cbos/gallery/enhanced_building_7_dsc_7493.jpg',
+      '/images/cbos/gallery/enhanced_building_8_cbos_old_building_web-new.jpg'
     ],
     category: 'heritage',
     description: {
-      ar: 'معرض يوثق الصرح المعماري السيادي لبنك السودان المركزي في قلب العاصمة الخرطوم، شاهداً على أكثر من ستة عقود من حماية السيادة النقدية.',
-      en: 'Photo documentation celebrating the architectural heritage of the Central Bank of Sudan sovereign headquarters in Khartoum.'
-    }
-  },
-  {
-    id: 'album-eid-greetings-2026',
-    title: {
-      ar: 'محافظ البنك المركزي ونائبها الأول يتبادلان تهاني عيد الأضحى مع العاملين بالبنك وقيادات العمل المصرفي',
-      en: 'CBOS Governor & First Deputy Exchange Eid Al-Adha Greetings with Staff & Banking Executives'
-    },
-    date: '31/05/2026 - 23:45',
-    location: {
-      ar: 'المقر الرئيسي لبنك السودان المركزي',
-      en: 'CBOS Executive Hall'
-    },
-    coverImage: '/images/cbos/gallery/eid_greetings_2026.jpg',
-    images: [
-      '/images/cbos/gallery/eid_greetings_2026.jpg'
-    ],
-    category: 'official',
-    description: {
-      ar: 'تبادلت الإدارة العليا لبنك السودان المركزي التهاني المباركة بمناسبة عيد الأضحى مع أسرة العاملين بالجهاز المصرفي وممثلي البنوك التجارية العاملة.',
-      en: 'Executive management convened with bank staff and leaders across commercial banking institutions on the joyous occasion of Eid Al-Adha.'
-    }
-  },
-  {
-    id: 'album-comesa-governors',
-    title: {
-      ar: 'اجتماع محافظي البنوك المركزية لدول الكوميسا - الخرطوم - السودان',
-      en: 'Meeting of Governors of Central Banks of COMESA Member States — Khartoum, Sudan'
-    },
-    date: '19/09/2016 - 10:30',
-    location: {
-      ar: 'الخرطوم — السودان',
-      en: 'Khartoum — Sudan'
-    },
-    coverImage: '/images/cbos/gallery/comesa_governors_meeting.jpg',
-    images: [
-      '/images/cbos/gallery/comesa_governors_meeting.jpg'
-    ],
-    category: 'international',
-    description: {
-      ar: 'استضافة جمهورية السودان لأعمال الدورة الـ 20 لاجتماعات محافظي البنوك المركزية لدول الكوميسا، لبحث التكامل المالي الإقليمي ونظم المقاصة والتسوية.',
-      en: 'Sudan hosted the 20th Ordinary Meeting of COMESA Central Bank Governors, discussing regional financial integration and interbank settlement mechanisms.'
+      ar: 'توثيق معماري وتاريخي للصرح السيادي لبنك السودان المركزي في قلب العاصمة الخرطوم، شاهداً على أكثر من ستة عقود من حماية السيادة النقدية والاستقرار المالي.',
+      en: 'Architectural and archival photographic documentation celebrating the sovereign headquarters of the Central Bank of Sudan in Khartoum across six decades of monetary stewardship.'
     }
   },
   {
@@ -119,14 +116,48 @@ export const officialGalleryData: GalleryAlbum[] = [
       ar: 'الخرطوم — السودان',
       en: 'Khartoum — Sudan'
     },
-    coverImage: '/images/cbos/gallery/golden_jubilee_celebration.jpg',
+    coverImage: '/images/cbos/gallery/enhanced_jubilee_22_DSC06119.jpg',
     images: [
-      '/images/cbos/gallery/golden_jubilee_celebration.jpg'
+      '/images/cbos/gallery/enhanced_jubilee_22_DSC06119.jpg',
+      '/images/cbos/gallery/enhanced_jubilee_16_DSC06012.jpg',
+      '/images/cbos/gallery/enhanced_jubilee_5_DSC05939.jpg',
+      '/images/cbos/gallery/enhanced_jubilee_14_DSC06007.jpg',
+      '/images/cbos/gallery/enhanced_jubilee_2_DSC05893.jpg',
+      '/images/cbos/gallery/enhanced_jubilee_21_DSC06109.jpg',
+      '/images/cbos/gallery/enhanced_jubilee_20_DSC06075.jpg',
+      '/images/cbos/gallery/enhanced_jubilee_13_DSC05988_0.jpg',
+      '/images/cbos/gallery/enhanced_jubilee_17_DSC06027.jpg',
+      '/images/cbos/gallery/enhanced_jubilee_1_DSC05884.jpg',
+      '/images/cbos/gallery/enhanced_jubilee_18_DSC06039.jpg',
+      '/images/cbos/gallery/enhanced_jubilee_15_DSC06009.jpg',
+      '/images/cbos/gallery/enhanced_jubilee_6_DSC05941.jpg',
+      '/images/cbos/gallery/enhanced_jubilee_23_DSC06142.jpg'
     ],
     category: 'heritage',
     description: {
-      ar: 'مراسم الاحتفال بمرور خمسين عاماً على تأسيس بنك السودان المركزي وتكريم الرواد والمؤسسين الذين أرسوا دعائم السيادة المالية الوطنية.',
-      en: 'Ceremonial commemoration marking fifty years since the founding of CBOS, honoring institutional pioneers of national monetary independence.'
+      ar: 'مراسم الاحتفال بمرور خمسين عاماً على تأسيس بنك السودان المركزي وتكريم الرواد والمؤسسين الذين أرسوا دعائم السيادة المالية الوطنية والاستقلال النقدي.',
+      en: 'Ceremonial commemoration marking fifty years since the founding of CBOS, honoring institutional pioneers of national monetary independence and central banking resilience.'
+    }
+  },
+  {
+    id: 'album-comesa-governors',
+    title: {
+      ar: 'اجتماع محافظي البنوك المركزية لدول الكوميسا - الخرطوم - السودان',
+      en: 'Meeting of Governors of Central Banks of COMESA Member States — Khartoum, Sudan'
+    },
+    date: '19/09/2016 - 10:30',
+    location: {
+      ar: 'الخرطوم — السودان',
+      en: 'Khartoum — Sudan'
+    },
+    coverImage: '/images/cbos/gallery/enhanced_comesa_1_dsc08480.jpg',
+    images: [
+      '/images/cbos/gallery/enhanced_comesa_1_dsc08480.jpg'
+    ],
+    category: 'international',
+    description: {
+      ar: 'استضافة جمهورية السودان لأعمال الدورة الـ 20 لاجتماعات محافظي البنوك المركزية لدول الكوميسا، لبحث التكامل المالي الإقليمي ونظم المقاصة والتسوية البينية (REPSS).',
+      en: 'Sudan hosted the 20th Ordinary Meeting of COMESA Central Bank Governors, discussing regional financial integration, payments interconnectivity, and interbank settlement mechanisms.'
     }
   }
 ];
