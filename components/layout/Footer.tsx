@@ -57,26 +57,6 @@ export default function Footer() {
                 <Phone className="w-3.5 h-3.5 text-[#2F88C2] shrink-0" />
                 <span dir="ltr">+249 187 056000 / +249 187 056070</span>
               </div>
-              <div className="pt-2">
-                <a
-                  href="https://www.linkedin.com/company/central-bank-of-sudan/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#11253E] hover:bg-[#0077B5] text-[#8F9CAE] hover:text-white border border-[#22446D] hover:border-[#0077B5] transition-all text-xs font-mono font-medium group"
-                  title="Central Bank of Sudan on LinkedIn"
-                  aria-label="Central Bank of Sudan on LinkedIn"
-                >
-                  <svg 
-                    className="w-4 h-4 fill-[#0077B5] group-hover:fill-white transition-colors shrink-0" 
-                    viewBox="0 0 24 24" 
-                    aria-hidden="true"
-                  >
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.979 0 1.778-.773 1.778-1.729V1.73C24 .774 23.205 0 22.222 0h.003z"/>
-                  </svg>
-                  <span>{isRtl ? 'صفحة البنك الرسمية على LinkedIn' : 'Official LinkedIn Page'}</span>
-                  <ExternalLink className="w-3 h-3 opacity-60 group-hover:opacity-100" />
-                </a>
-              </div>
             </div>
           </div>
 
