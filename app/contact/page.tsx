@@ -453,6 +453,33 @@ export default function ContactPage() {
               </div>
             </div>
 
+            {/* Official Professional Network Card */}
+            <div className="bg-white border border-sand-300 rounded-xl p-5 shadow-sm flex items-center justify-between gap-4">
+              <div className="space-y-1">
+                <div className="text-[11px] font-mono text-[#0077B5] font-bold uppercase tracking-wider">
+                  {t({ ar: 'القناة المهنية الرسمية', en: 'Official Professional Network' })}
+                </div>
+                <h4 className="font-bold text-cbos-ink text-sm">
+                  {t({ ar: 'بنك السودان المركزي على LinkedIn', en: 'Central Bank of Sudan on LinkedIn' })}
+                </h4>
+                <p className="text-xs text-cbos-ink-muted">
+                  {t({ ar: 'متابعة البيانات الرسمية، الدراسات الاقتصادية، والفرص المؤسسية', en: 'Follow official press releases, macroeconomic research, and institutional updates' })}
+                </p>
+              </div>
+              <a
+                href="https://www.linkedin.com/company/central-bank-of-sudan/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 p-3 rounded-xl bg-[#0077B5] text-white hover:bg-[#005E93] transition-colors shadow-sm flex items-center justify-center"
+                title="Central Bank of Sudan on LinkedIn"
+                aria-label="Central Bank of Sudan on LinkedIn"
+              >
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.979 0 1.778-.773 1.778-1.729V1.73C24 .774 23.205 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+            </div>
+
           </div>
 
         </div>
