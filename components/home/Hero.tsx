@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import HeroVisual from './HeroVisual';
 import { useLanguage } from '@/lib/languageContext';
 import { ArrowLeft, ArrowRight, ShieldCheck, TrendingUp, FileText, ChevronRight, ChevronLeft, Activity } from 'lucide-react';
 
@@ -87,20 +88,9 @@ export default function Hero() {
 
             </div>
 
-            {/* End Column (RTL: Left): The 100% Unobstructed 3D Central Bank Building */}
-            <div className="lg:col-span-6 xl:col-span-6 flex items-center justify-center relative">
-              <div className="relative w-full max-w-[580px] lg:max-w-none aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center">
-                {/* Official 3D Sovereign Architecture — Zero cards or text covering it */}
-                <Image
-                  src="/images/cbos/hero/cbos-hero-master-center.webp"
-                  alt={isRtl ? 'المقر الرئيسي لبنك السودان المركزي' : 'Central Bank of Sudan Headquarters'}
-                  fill
-                  priority
-                  quality={95}
-                  className="object-contain object-center drop-shadow-[0_25px_60px_rgba(47,136,194,0.22)] hover:scale-[1.02] transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
+            {/* End Column (RTL: Left): The Monumental Sovereign Architecture & Flowing Flag */}
+            <div className="lg:col-span-6 xl:col-span-6 flex items-center justify-center relative w-full">
+              <HeroVisual />
             </div>
 
           </div>
