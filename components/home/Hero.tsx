@@ -42,12 +42,12 @@ export default function Hero() {
           />
         </div>
 
-        {/* Direction-Aware Institutional Scrim Overlay: Preserves text contrast while keeping central building clear */}
+        {/* Direction-Aware Institutional Scrim Overlay: Crisp typography on text side while letting the 8K building & Nile reflections glow */}
         <div 
           className={`absolute inset-0 ${
             isRtl 
-              ? 'bg-gradient-to-l from-[#0B1A2D]/95 via-transparent via-50% to-[#0B1A2D]/60' 
-              : 'bg-gradient-to-r from-[#0B1A2D]/95 via-transparent via-50% to-[#0B1A2D]/60'
+              ? 'bg-gradient-to-l from-[#0B1A2D]/95 via-[#0B1A2D]/45 via-65% to-[#0B1A2D]/30' 
+              : 'bg-gradient-to-r from-[#0B1A2D]/95 via-[#0B1A2D]/45 via-65% to-[#0B1A2D]/30'
           }`} 
         />
         
