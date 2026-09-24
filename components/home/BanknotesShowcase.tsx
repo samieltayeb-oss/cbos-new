@@ -18,21 +18,21 @@ export default function BanknotesShowcase() {
   const note = officialBanknotesData[selectedNoteIndex];
 
   return (
-    <section className="py-16 px-4 md:px-8 bg-cbos-green-dark text-cbos-ivory border-y border-cbos-green relative overflow-hidden">
+    <section className="py-16 px-4 md:px-8 bg-[#0B1A2D] text-cbos-ivory border-y border-[#22446D] relative overflow-hidden">
       
       {/* Background Guilloche Watermark Lines */}
       <div className="absolute inset-0 pointer-events-none opacity-10">
         <svg className="w-full h-full" viewBox="0 0 1000 400" fill="none">
-          <circle cx="500" cy="200" r="300" stroke="#B99553" strokeWidth="2" strokeDasharray="8 4" />
-          <circle cx="500" cy="200" r="200" stroke="#B99553" strokeWidth="1" />
-          <circle cx="500" cy="200" r="100" stroke="#075A3A" strokeWidth="2" />
+          <circle cx="500" cy="200" r="300" stroke="#C58F2B" strokeWidth="2" strokeDasharray="8 4" />
+          <circle cx="500" cy="200" r="200" stroke="#2F88C2" strokeWidth="1" />
+          <circle cx="500" cy="200" r="100" stroke="#2F88C2" strokeWidth="2" />
         </svg>
       </div>
 
       <div className="max-w-7xl mx-auto space-y-10 relative z-10">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-cbos-green pb-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#22446D] pb-4">
           <div>
             <div className="inline-flex items-center gap-1.5 text-xs font-bold text-cbos-gold font-mono uppercase tracking-widest">
               <ShieldCheck className="w-3.5 h-3.5" />
@@ -54,8 +54,8 @@ export default function BanknotesShowcase() {
                 }}
                 className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all shadow ${
                   selectedNoteIndex === idx
-                    ? 'bg-cbos-gold text-cbos-ink'
-                    : 'bg-cbos-ink/50 text-cbos-stone hover:text-white border border-cbos-green'
+                    ? 'bg-cbos-gold text-[#0B1A2D]'
+                    : 'bg-[#162D4C] text-[#8F9CAE] hover:text-white border border-[#22446D]'
                 }`}
               >
                 {b.value.toLocaleString()} SDG
@@ -95,8 +95,8 @@ export default function BanknotesShowcase() {
                     style={{ left: `${feat.x_percent}%`, top: `${feat.y_percent}%` }}
                     className={`absolute -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full flex items-center justify-center transition-transform cursor-pointer ${
                       isSelected
-                        ? 'bg-cbos-gold text-cbos-ink ring-4 ring-cbos-gold/50 shadow-md'
-                        : 'bg-cbos-green/90 text-white hover:bg-cbos-gold hover:text-cbos-ink ring-2 ring-white/60 transition-colors'
+                        ? 'bg-cbos-gold text-[#0B1A2D] ring-4 ring-cbos-gold/50 shadow-md'
+                        : 'bg-[#2F88C2] text-white hover:bg-cbos-gold hover:text-[#0B1A2D] ring-2 ring-white/60 transition-colors'
                     }`}
                     title={isRtl ? feat.name.ar : feat.name.en}
                     aria-label={isRtl ? feat.name.ar : feat.name.en}
@@ -118,13 +118,13 @@ export default function BanknotesShowcase() {
           <div className="lg:col-span-5 space-y-6">
             
             {activeFeature ? (
-              <div className="bg-cbos-ink/90 rounded-xl p-6 border-2 border-cbos-gold/60 shadow-xl space-y-4">
-                <div className="flex items-center justify-between border-b border-cbos-ink-border pb-3">
+              <div className="bg-[#11253E] rounded-xl p-6 border-2 border-cbos-gold/60 shadow-xl space-y-4">
+                <div className="flex items-center justify-between border-b border-[#22446D] pb-3">
                   <div className="flex items-center gap-2 text-cbos-gold text-xs font-mono font-bold uppercase">
                     <ShieldCheck className="w-4 h-4 text-cbos-gold" />
                     <span>{isRtl ? 'المواصفة التأمينية النشطة' : 'Active Security Feature'}</span>
                   </div>
-                  <span className="px-2 py-0.5 rounded bg-cbos-green/40 text-[10px] text-white font-mono">
+                  <span className="px-2 py-0.5 rounded bg-[#2F88C2]/30 text-white font-mono text-[10px]">
                     {activeFeature.type.toUpperCase()}
                   </span>
                 </div>
@@ -137,7 +137,7 @@ export default function BanknotesShowcase() {
                   {isRtl ? activeFeature.description.ar : activeFeature.description.en}
                 </p>
 
-                <div className="p-3 rounded-lg bg-cbos-ink-card border border-cbos-ink-border text-xs text-cbos-stone space-y-1 font-mono">
+                <div className="p-3 rounded-lg bg-[#0B1A2D] border border-[#22446D] text-xs text-[#8F9CAE] space-y-1 font-mono">
                   <div>{isRtl ? 'اللون الغالب:' : 'Dominant Color:'} <span className="text-white">{isRtl ? note.primaryColor.ar : note.primaryColor.en}</span></div>
                   <div>{isRtl ? 'الموضوع الأمامي:' : 'Front Motif:'} <span className="text-white">{isRtl ? note.frontTheme.ar : note.frontTheme.en}</span></div>
                 </div>
@@ -148,7 +148,7 @@ export default function BanknotesShowcase() {
             <div className="pt-2">
               <Link
                 href="/banknotes"
-                className="w-full py-3 px-4 rounded-xl bg-cbos-green/50 hover:bg-cbos-green text-cbos-gold hover:text-white border border-cbos-gold/40 text-xs font-bold flex items-center justify-center gap-2 transition-all shadow"
+                className="w-full py-3 px-4 rounded-xl bg-[#162D4C] hover:bg-cbos-blue text-cbos-gold hover:text-white border border-[#22446D] text-xs font-bold flex items-center justify-center gap-2 transition-all shadow"
               >
                 <span>{isRtl ? 'دليل مكافحة التزييف وكافة الفئات النقدية' : 'Full Currency Guide & Counterfeit Prevention'}</span>
                 {isRtl ? <ArrowLeft className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}

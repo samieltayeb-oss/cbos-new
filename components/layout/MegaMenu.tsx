@@ -19,8 +19,8 @@ export default function MegaMenu({ group, isOpen, onClose }: MegaMenuProps) {
 
   return (
     <div 
-      className="absolute top-full left-0 right-0 w-full text-white border-b-2 border-[#B99553] shadow-2xl z-40 transition-all duration-200 animate-fadeIn"
-      style={{ backgroundColor: '#032A1E' }}
+      className="absolute top-full left-0 right-0 w-full text-white border-b-2 border-[#2F88C2] shadow-2xl z-40 transition-all duration-200 animate-fadeIn"
+      style={{ backgroundColor: '#0B1A2D' }}
       onMouseLeave={onClose}
     >
       <div className="max-w-7xl mx-auto px-6 py-8">
@@ -31,8 +31,8 @@ export default function MegaMenu({ group, isOpen, onClose }: MegaMenuProps) {
           <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-8">
             {group.categories.map((cat, idx) => (
               <div key={idx} className="space-y-4">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-[#DDC99B] border-b border-[#273830] pb-2 flex items-center gap-1.5 font-mono">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#B99553] inline-block" />
+                <h3 className="text-xs font-bold uppercase tracking-wider text-[#2F88C2] border-b border-[#22446D] pb-2 flex items-center gap-1.5 font-mono">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2F88C2] inline-block" />
                   <span>{t(cat.title)}</span>
                 </h3>
                 
@@ -44,15 +44,15 @@ export default function MegaMenu({ group, isOpen, onClose }: MegaMenuProps) {
                         onClick={onClose}
                         className="group flex items-start gap-2.5 text-[14.5px] text-white/90 hover:text-white transition-colors"
                       >
-                        <span className="text-[#B99553] group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 transition-transform mt-1">
+                        <span className="text-[#2F88C2] group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 transition-transform mt-1">
                           {isRtl ? <ChevronLeft className="w-3.5 h-3.5" /> : <ChevronRight className="w-3.5 h-3.5" />}
                         </span>
                         <div>
-                          <div className="font-semibold text-white group-hover:text-[#DDC99B] transition-colors">
+                          <div className="font-semibold text-white group-hover:text-[#DFAC46] transition-colors">
                             {t(item.title)}
                           </div>
                           {item.description && (
-                            <div className="text-[13px] text-[#D8D4C8] mt-0.5 leading-normal">
+                            <div className="text-[13px] text-[#8F9CAE] mt-0.5 leading-normal">
                               {t(item.description)}
                             </div>
                           )}
@@ -66,15 +66,15 @@ export default function MegaMenu({ group, isOpen, onClose }: MegaMenuProps) {
           </div>
 
           {/* Featured Sovereign Document / Direct Action (Col 4) */}
-          <div className="bg-[#15231C] border border-[#273830] rounded-xl p-5 flex flex-col justify-between">
+          <div className="bg-[#162D4C] border border-[#22446D] rounded-xl p-5 flex flex-col justify-between">
             {group.featuredDocument ? (
               <div className="space-y-3">
-                <div className="flex items-center justify-between text-xs text-[#DDC99B] font-mono">
+                <div className="flex items-center justify-between text-xs text-[#DFAC46] font-mono">
                   <span className="font-bold">{isRtl ? 'وثيقة رسمية مميزة' : 'Featured Publication'}</span>
                   <span dir="ltr">{group.featuredDocument.refNumber}</span>
                 </div>
                 
-                <div className="w-8 h-8 rounded-lg bg-[#B99553]/20 flex items-center justify-center text-[#B99553]">
+                <div className="w-8 h-8 rounded-lg bg-[#2F88C2]/20 flex items-center justify-center text-[#2F88C2]">
                   <FileText className="w-4 h-4" />
                 </div>
                 
@@ -82,7 +82,7 @@ export default function MegaMenu({ group, isOpen, onClose }: MegaMenuProps) {
                   {t(group.featuredDocument.title)}
                 </h4>
                 
-                <p className="text-[13px] text-[#D8D4C8] leading-relaxed">
+                <p className="text-[13px] text-[#8F9CAE] leading-relaxed">
                   {isRtl 
                     ? 'إصدار رسمي معتمد متوفر للاطلاع المباشر والتحميل الرقمي بصيغة PDF.'
                     : 'Official institutional release available for instant reading and digital download.'}
@@ -91,7 +91,7 @@ export default function MegaMenu({ group, isOpen, onClose }: MegaMenuProps) {
                 <Link
                   href={group.featuredDocument.href}
                   onClick={onClose}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#DDC99B] hover:text-white transition-colors mt-2"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#DFAC46] hover:text-white transition-colors mt-2"
                 >
                   <span>{isRtl ? 'عرض الوثيقة الكاملة' : 'View Full Document'}</span>
                   {isRtl ? <ArrowLeft className="w-3.5 h-3.5" /> : <ArrowRight className="w-3.5 h-3.5" />}
@@ -99,10 +99,10 @@ export default function MegaMenu({ group, isOpen, onClose }: MegaMenuProps) {
               </div>
             ) : (
               <div className="space-y-3">
-                <div className="text-xs text-[#DDC99B] font-mono font-bold">
+                <div className="text-xs text-[#DFAC46] font-mono font-bold">
                   {isRtl ? 'الخدمات الإلكترونية' : 'Digital Services'}
                 </div>
-                <p className="text-[13px] text-[#D8D4C8] leading-relaxed">
+                <p className="text-[13px] text-[#8F9CAE] leading-relaxed">
                   {isRtl 
                     ? 'الوصول المباشر إلى قواعد بيانات ونظم البنك المركزي.'
                     : 'Direct access to Central Bank registries and sovereign databases.'}
@@ -110,7 +110,7 @@ export default function MegaMenu({ group, isOpen, onClose }: MegaMenuProps) {
                 <Link
                   href={group.href}
                   onClick={onClose}
-                  className="inline-flex items-center gap-1 text-xs font-bold text-[#DDC99B] hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1 text-xs font-bold text-[#DFAC46] hover:text-white transition-colors"
                 >
                   <span>{isRtl ? 'استعراض القسم بالكامل' : 'Explore All Section'}</span>
                   {isRtl ? <ArrowLeft className="w-3.5 h-3.5" /> : <ArrowRight className="w-3.5 h-3.5" />}
@@ -118,9 +118,9 @@ export default function MegaMenu({ group, isOpen, onClose }: MegaMenuProps) {
               </div>
             )}
 
-            <div className="pt-4 border-t border-[#273830] text-[11px] text-[#A8A294] font-mono flex items-center justify-between">
+            <div className="pt-4 border-t border-[#22446D] text-[11px] text-[#8F9CAE] font-mono flex items-center justify-between">
               <span>CBOS Sovereign Portal</span>
-              <span className="text-[#B99553] font-bold">2026</span>
+              <span className="text-[#2F88C2] font-bold">2026</span>
             </div>
 
           </div>

@@ -98,7 +98,7 @@ export default function ContactPage() {
       {/* Header Banner */}
       <section 
         className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-20 border-b border-cbos-gold/30"
-        style={{ backgroundColor: '#032A1E' }}
+        style={{ backgroundColor: '#0B1A2D' }}
       >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -131,7 +131,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           
           {/* Port Sudan Primary Ops Center */}
-          <div className="bg-white border-2 border-cbos-green-800 rounded-xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
+          <div className="bg-white border-2 border-[#22446D] rounded-xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="px-3 py-1 rounded text-xs font-mono font-bold bg-cbos-green-100 text-cbos-green-900 border border-cbos-green-300">
@@ -328,7 +328,7 @@ export default function ContactPage() {
                       type="text" 
                       required
                       placeholder={t({ ar: 'محمد أحمد / شركة...', en: 'Name or Entity...' })}
-                      className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-xs text-cbos-ink focus:outline-none focus:border-cbos-green-800 font-medium"
+                      className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-xs text-cbos-ink focus:outline-none focus:border-[#22446D] font-medium"
                     />
                   </div>
 
@@ -340,7 +340,7 @@ export default function ContactPage() {
                       type="email" 
                       required
                       placeholder="name@domain.sd"
-                      className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-xs text-cbos-ink focus:outline-none focus:border-cbos-green-800 font-medium"
+                      className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-xs text-cbos-ink focus:outline-none focus:border-[#22446D] font-medium"
                     />
                   </div>
                 </div>
@@ -353,7 +353,7 @@ export default function ContactPage() {
                     <input 
                       type="tel" 
                       placeholder="+249 ..."
-                      className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-xs text-cbos-ink focus:outline-none focus:border-cbos-green-800 font-medium"
+                      className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-xs text-cbos-ink focus:outline-none focus:border-[#22446D] font-medium"
                     />
                   </div>
 
@@ -361,7 +361,7 @@ export default function ContactPage() {
                     <label className="block text-xs font-mono font-bold text-cbos-ink-muted uppercase mb-1">
                       {t({ ar: 'الإدارة المعنية بالمراسلة', en: 'Target Directorate' })} *
                     </label>
-                    <select className="w-full bg-sand-50 border border-sand-300 rounded-lg px-3 py-2.5 text-xs text-cbos-ink focus:outline-none focus:border-cbos-green-800 font-medium">
+                    <select className="w-full bg-sand-50 border border-sand-300 rounded-lg px-3 py-2.5 text-xs text-cbos-ink focus:outline-none focus:border-[#22446D] font-medium">
                       <option>{t({ ar: 'الإدارة العامة للرقابة المصرفية', en: 'Banking Supervision' })}</option>
                       <option>{t({ ar: 'إدارة النقد الأجنبي والأسواق المالية', en: 'FX & Financial Markets' })}</option>
                       <option>{t({ ar: 'نظم المدفوعات القومية والمقسم (NIPS)', en: 'Payment Systems (NIPS)' })}</option>
@@ -379,7 +379,7 @@ export default function ContactPage() {
                   <input 
                     type="text" 
                     required
-                    className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-xs text-cbos-ink focus:outline-none focus:border-cbos-green-800 font-medium"
+                    className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-xs text-cbos-ink focus:outline-none focus:border-[#22446D] font-medium"
                   />
                 </div>
 
@@ -390,7 +390,7 @@ export default function ContactPage() {
                   <textarea 
                     rows={4}
                     required
-                    className="w-full bg-sand-50 border border-sand-300 rounded-lg p-3 text-xs text-cbos-ink focus:outline-none focus:border-cbos-green-800 font-medium"
+                    className="w-full bg-sand-50 border border-sand-300 rounded-lg p-3 text-xs text-cbos-ink focus:outline-none focus:border-[#22446D] font-medium"
                   />
                 </div>
 
@@ -435,7 +435,7 @@ export default function ContactPage() {
             {/* Whistleblower Channel Card */}
             <div 
               className="bg-cbos-green-950 text-white rounded-xl p-6 border border-cbos-gold/30 space-y-3"
-              style={{ backgroundColor: '#032A1E' }}
+              style={{ backgroundColor: '#0B1A2D' }}
             >
               <div className="flex items-center gap-2 text-cbos-gold text-xs font-mono uppercase tracking-wider">
                 <ShieldAlert className="w-4 h-4" />

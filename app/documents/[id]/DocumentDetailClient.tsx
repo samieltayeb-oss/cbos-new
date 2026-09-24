@@ -84,8 +84,8 @@ export default function DocumentDetailClient({ doc, related }: Props) {
       
       {/* 1. Sovereign Document Header Masthead */}
       <div 
-        className="text-white py-10 md:py-14 border-b border-[#075A3A] relative overflow-hidden"
-        style={{ backgroundColor: '#032A1E' }}
+        className="text-white py-10 md:py-14 border-b border-[#22446D] relative overflow-hidden"
+        style={{ backgroundColor: '#0B1A2D' }}
       >
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4">
           
@@ -106,13 +106,13 @@ export default function DocumentDetailClient({ doc, related }: Props) {
 
           {/* Reference & Badge Meta Strip */}
           <div className="flex flex-wrap items-center gap-3 pt-2">
-            <span className="px-3 py-1 rounded-lg bg-[#075A3A]/70 text-[#DDC99B] border border-[#B99553]/50 text-xs font-mono font-bold">
+            <span className="px-3 py-1 rounded-lg bg-[#2F88C2]/70 text-[#DDC99B] border border-[#B99553]/50 text-xs font-mono font-bold">
               {getTypeLabel(doc.type)}
             </span>
-            <span className="px-3 py-1 rounded-lg bg-black/40 text-white border border-[#0F382A] text-xs font-mono font-bold">
+            <span className="px-3 py-1 rounded-lg bg-black/40 text-white border border-[#22446D] text-xs font-mono font-bold">
               {doc.reference_number}
             </span>
-            <span className="px-2.5 py-1 rounded bg-[#041D15] text-emerald-400 border border-[#075A3A]/60 text-[11px] font-mono">
+            <span className="px-2.5 py-1 rounded bg-[#041D15] text-emerald-400 border border-[#22446D]/60 text-[11px] font-mono">
               {doc.status === 'active' ? (isRtl ? 'ساري المفعول' : 'Active / In Force') : doc.status}
             </span>
             <div className="flex items-center gap-1.5 text-xs font-mono text-[#D8D4C8] ms-auto">
@@ -162,13 +162,13 @@ export default function DocumentDetailClient({ doc, related }: Props) {
               className="px-3.5 py-1.5 rounded-lg border border-sand-300 hover:border-cbos-gold bg-sand-50 hover:bg-white text-cbos-ink transition-all flex items-center gap-1.5 font-bold"
               title="Print document"
             >
-              <Printer className="w-3.5 h-3.5 text-[#075A3A]" />
+              <Printer className="w-3.5 h-3.5 text-[#2F88C2]" />
               <span>{isRtl ? 'طباعة' : 'Print'}</span>
             </button>
 
             <button
               onClick={handleDownload}
-              className="px-4 py-1.5 rounded-lg bg-[#032A1E] text-white hover:bg-[#075A3A] transition-all flex items-center gap-1.5 font-bold border border-[#0F382A] shadow-sm"
+              className="px-4 py-1.5 rounded-lg bg-[#0B1A2D] text-white hover:bg-[#2F88C2] transition-all flex items-center gap-1.5 font-bold border border-[#22446D] shadow-sm"
               title="Download file"
             >
               <Download className="w-3.5 h-3.5 text-[#B99553]" />
@@ -187,9 +187,9 @@ export default function DocumentDetailClient({ doc, related }: Props) {
           <article className="lg:col-span-8 bg-white rounded-xl border border-sand-300 p-6 sm:p-10 md:p-12 shadow-sm space-y-8 relative overflow-hidden">
             
             {/* Print Header */}
-            <div className="hidden print:block border-b-2 border-[#032A1E] pb-6 mb-8 text-center space-y-2">
-              <div className="font-bold text-lg text-[#032A1E] font-arabic">جمهورية السودان — بنك السودان المركزي</div>
-              <div className="text-xs text-[#075A3A] font-mono">REPUBLIC OF THE SUDAN — CENTRAL BANK OF SUDAN</div>
+            <div className="hidden print:block border-b-2 border-[#22446D] pb-6 mb-8 text-center space-y-2">
+              <div className="font-bold text-lg text-[#0B1A2D] font-arabic">جمهورية السودان — بنك السودان المركزي</div>
+              <div className="text-xs text-[#2F88C2] font-mono">REPUBLIC OF THE SUDAN — CENTRAL BANK OF SUDAN</div>
               <div className="text-[11px] text-slate-500 font-mono">OFFICIAL REGULATORY & MONETARY CIRCULAR</div>
               <div className="text-xs font-mono font-bold text-slate-800 pt-2">
                 REF: {doc.reference_number} • PUBLISHED: {doc.publication_date}
@@ -208,10 +208,10 @@ export default function DocumentDetailClient({ doc, related }: Props) {
             </div>
 
             {/* Statutory Grounding Callout */}
-            <div className="p-4 rounded-lg bg-[#032A1E]/5 border border-[#075A3A]/30 flex items-start gap-3">
-              <ShieldCheck className="w-5 h-5 text-[#075A3A] shrink-0 mt-0.5" />
+            <div className="p-4 rounded-lg bg-[#0B1A2D]/5 border border-[#22446D]/30 flex items-start gap-3">
+              <ShieldCheck className="w-5 h-5 text-[#2F88C2] shrink-0 mt-0.5" />
               <div className="text-xs text-slate-700 leading-relaxed font-sans">
-                <span className="font-bold text-[#032A1E] block mb-0.5">
+                <span className="font-bold text-[#0B1A2D] block mb-0.5">
                   {isRtl ? 'السند القانوني والإلزامي:' : 'Statutory & Regulatory Grounding:'}
                 </span>
                 {isRtl
@@ -222,22 +222,22 @@ export default function DocumentDetailClient({ doc, related }: Props) {
 
             {/* Document Executive Summary */}
             <div className="space-y-4">
-              <h2 className="text-sm font-bold text-[#032A1E] font-mono uppercase tracking-wider border-b border-sand-200 pb-2">
+              <h2 className="text-sm font-bold text-[#0B1A2D] font-mono uppercase tracking-wider border-b border-sand-200 pb-2">
                 {isRtl ? 'الموجز التنفيذي ونطاق السريان' : 'Executive Directive & Operational Scope'}
               </h2>
-              <div className="p-4 sm:p-5 rounded-lg bg-sand-50 border-s-4 border-[#075A3A] text-sm md:text-base font-arabic leading-[2.1] text-slate-800">
+              <div className="p-4 sm:p-5 rounded-lg bg-sand-50 border-s-4 border-[#22446D] text-sm md:text-base font-arabic leading-[2.1] text-slate-800">
                 {isRtl ? doc.summary.ar : doc.summary.en}
               </div>
             </div>
 
             {/* Key Regulatory Articles Breakdown */}
             <div className="space-y-4">
-              <h2 className="text-sm font-bold text-[#032A1E] font-mono uppercase tracking-wider border-b border-sand-200 pb-2">
+              <h2 className="text-sm font-bold text-[#0B1A2D] font-mono uppercase tracking-wider border-b border-sand-200 pb-2">
                 {isRtl ? 'البنود والأحكام التشغيلية الرئيسية' : 'Key Operational Provisions'}
               </h2>
               <div className="space-y-4 text-xs sm:text-sm text-slate-700 font-arabic leading-[2.0]">
                 <div className="p-4 rounded-lg border border-sand-200 space-y-1.5">
-                  <div className="font-bold text-[#032A1E]">
+                  <div className="font-bold text-[#0B1A2D]">
                     {isRtl ? 'البند الأول: النطاق ومؤسسات التطبيق' : 'Article 1: Institutional Applicability'}
                   </div>
                   <p>
@@ -248,7 +248,7 @@ export default function DocumentDetailClient({ doc, related }: Props) {
                 </div>
 
                 <div className="p-4 rounded-lg border border-sand-200 space-y-1.5">
-                  <div className="font-bold text-[#032A1E]">
+                  <div className="font-bold text-[#0B1A2D]">
                     {isRtl ? 'البند الثاني: الجداول الزمنية والامتثال' : 'Article 2: Timelines & Compliance Deadlines'}
                   </div>
                   <p>
@@ -259,7 +259,7 @@ export default function DocumentDetailClient({ doc, related }: Props) {
                 </div>
 
                 <div className="p-4 rounded-lg border border-sand-200 space-y-1.5">
-                  <div className="font-bold text-[#032A1E]">
+                  <div className="font-bold text-[#0B1A2D]">
                     {isRtl ? 'البند الثالث: العقوبات والجزاءات الرقابية' : 'Article 3: Regulatory Penalties & Supervision'}
                   </div>
                   <p>
@@ -280,13 +280,13 @@ export default function DocumentDetailClient({ doc, related }: Props) {
                 <div className="text-sm font-bold text-cbos-ink font-arabic">
                   {t(doc.department)}
                 </div>
-                <div className="text-xs font-mono text-[#075A3A]">
+                <div className="text-xs font-mono text-[#2F88C2]">
                   STATUTORY REPOSITORY • {doc.id}
                 </div>
               </div>
 
               <div className="p-3 rounded-lg border border-sand-300 bg-sand-50/60 font-mono text-[11px] text-slate-600 space-y-0.5 shrink-0">
-                <div className="text-[#075A3A] font-bold">CRYPTOGRAPHIC INTEGRITY</div>
+                <div className="text-[#2F88C2] font-bold">CRYPTOGRAPHIC INTEGRITY</div>
                 <div className="text-[10px] text-slate-400">SHA-256: d9b1...7f3a</div>
               </div>
             </div>
@@ -315,7 +315,7 @@ export default function DocumentDetailClient({ doc, related }: Props) {
               <dl className="space-y-3 text-xs font-mono">
                 <div>
                   <dt className="text-slate-500">{isRtl ? 'رقم القيد الرسمي:' : 'Official Reference:'}</dt>
-                  <dd className="font-bold text-[#075A3A] pt-0.5">{doc.reference_number}</dd>
+                  <dd className="font-bold text-[#2F88C2] pt-0.5">{doc.reference_number}</dd>
                 </div>
                 <div>
                   <dt className="text-slate-500">{isRtl ? 'المعرف الرقمي:' : 'Digital Identifier:'}</dt>
@@ -341,7 +341,7 @@ export default function DocumentDetailClient({ doc, related }: Props) {
 
               <button
                 onClick={handleDownload}
-                className="w-full mt-2 py-2.5 px-3 rounded-lg bg-[#075A3A]/10 hover:bg-[#075A3A] text-[#075A3A] hover:text-white transition-all text-xs font-mono font-bold flex items-center justify-center gap-2 border border-[#075A3A]/40"
+                className="w-full mt-2 py-2.5 px-3 rounded-lg bg-[#2F88C2]/10 hover:bg-[#2F88C2] text-[#2F88C2] hover:text-white transition-all text-xs font-mono font-bold flex items-center justify-center gap-2 border border-[#22446D]/40"
               >
                 <Download className="w-4 h-4" />
                 <span>{downloadStarted ? (isRtl ? 'جار التحميل...' : 'Downloading...') : (isRtl ? 'تحميل الملف المعتمد' : 'Download File')}</span>
@@ -352,7 +352,7 @@ export default function DocumentDetailClient({ doc, related }: Props) {
             {doc.keywords && doc.keywords.length > 0 && (
               <div className="bg-white rounded-xl border border-sand-300 p-6 shadow-sm space-y-3">
                 <div className="flex items-center gap-2 text-xs font-bold text-cbos-ink font-mono uppercase border-b border-sand-200 pb-2">
-                  <Tag className="w-3.5 h-3.5 text-[#075A3A]" />
+                  <Tag className="w-3.5 h-3.5 text-[#2F88C2]" />
                   <span>{isRtl ? 'الكلمات المفتاحية' : 'Regulatory Keywords'}</span>
                 </div>
                 <div className="flex flex-wrap gap-1.5">
@@ -368,7 +368,7 @@ export default function DocumentDetailClient({ doc, related }: Props) {
             {/* Related Documents */}
             <div className="bg-white rounded-xl border border-sand-300 p-6 shadow-sm space-y-4">
               <div className="flex items-center gap-2 text-xs font-bold text-cbos-ink font-mono uppercase border-b border-sand-200 pb-2">
-                <FileText className="w-4 h-4 text-[#075A3A]" />
+                <FileText className="w-4 h-4 text-[#2F88C2]" />
                 <span>{isRtl ? 'وثائق ذات صلة' : 'Related Directives'}</span>
               </div>
 
@@ -379,7 +379,7 @@ export default function DocumentDetailClient({ doc, related }: Props) {
                     href={`/documents/${rel.slug || rel.id}`}
                     className="block p-3 rounded-lg border border-sand-200 hover:border-cbos-gold hover:bg-sand-50/50 transition-all space-y-1 group"
                   >
-                    <div className="text-[11px] font-mono text-[#075A3A] font-bold">
+                    <div className="text-[11px] font-mono text-[#2F88C2] font-bold">
                       {rel.reference_number}
                     </div>
                     <div className="text-xs font-bold text-cbos-ink group-hover:text-cbos-green-800 transition-colors font-arabic line-clamp-2">

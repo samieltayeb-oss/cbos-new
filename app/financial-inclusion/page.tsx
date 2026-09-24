@@ -57,8 +57,8 @@ export default function FinancialInclusionPage() {
     <div className="bg-sand-50 min-h-screen">
       {/* Header Banner */}
       <section 
-        className="text-white relative overflow-hidden py-16 lg:py-20 border-b border-[#075A3A]"
-        style={{ backgroundColor: '#032A1E' }}
+        className="text-white relative overflow-hidden py-16 lg:py-20 border-b border-[#22446D]"
+        style={{ backgroundColor: '#0B1A2D' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center gap-3 text-[#DDC99B] text-xs font-mono uppercase tracking-wider mb-4">
@@ -78,11 +78,11 @@ export default function FinancialInclusionPage() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4 text-xs font-mono">
-            <div className="px-3.5 py-1.5 rounded-lg bg-[#075A3A]/60 border border-[#B99553]/40 flex items-center gap-2">
+            <div className="px-3.5 py-1.5 rounded-lg bg-[#2F88C2]/60 border border-[#B99553]/40 flex items-center gap-2">
               <span className="text-[#DDC99B]">{isRtl ? 'مستهدف الشمول 2028:' : 'Inclusion Target 2028:'}</span>
               <span className="font-bold text-white">65% of Adult Population</span>
             </div>
-            <div className="px-3.5 py-1.5 rounded-lg bg-[#075A3A]/60 border border-[#B99553]/40 flex items-center gap-2">
+            <div className="px-3.5 py-1.5 rounded-lg bg-[#2F88C2]/60 border border-[#B99553]/40 flex items-center gap-2">
               <span className="text-[#DDC99B]">{isRtl ? 'الركيزة التقنية:' : 'Digital Backbone:'}</span>
               <span className="font-bold text-white">NIPS & Agent Banking</span>
             </div>
@@ -99,7 +99,7 @@ export default function FinancialInclusionPage() {
             const Icon = p.icon;
             return (
               <div key={i} className="bg-white rounded-xl p-6 md:p-8 border border-sand-300 shadow-sm space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-[#075A3A]/10 text-cbos-green-900 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-xl bg-[#2F88C2]/10 text-cbos-green-900 flex items-center justify-center">
                   <Icon className="w-6 h-6 text-cbos-green-900" />
                 </div>
                 <h3 className="font-bold text-lg text-cbos-ink font-display">
@@ -176,7 +176,7 @@ export default function FinancialInclusionPage() {
         </div>
 
         {/* CTA Banner */}
-        <div className="bg-[#032A1E] text-white rounded-xl p-8 border border-cbos-green-800 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-[#0B1A2D] text-white rounded-xl p-8 border border-[#22446D] flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
             <h3 className="text-xl font-bold font-display text-white">
               {isRtl ? 'المقسم القومي للمدفوعات الفورية (NIPS)' : 'National Instant Payment System (NIPS)'}

@@ -3,22 +3,37 @@
 @tailwind utilities;
 
 :root {
-  /* Institutional Brand Palette */
-  --cbos-green-950: #032A1E;
-  --cbos-green-900: #033E2D;
-  --cbos-green-800: #075A3A;
-  --cbos-green-700: #096E47;
-  --cbos-gold-600: #A58242;
-  --cbos-gold-500: #B99553;
-  --cbos-gold-400: #CBB075;
-  --cbos-gold-300: #DDC99B;
-  --cbos-ivory: #F6F4EE;
-  --cbos-ink: #101713;
-  --cbos-ink-base: #10231C;
-  --cbos-ink-muted: #44534D;
+  /* Institutional Brand Palette (from http://127.0.0.1:8080/ NIPS Core Platform) */
+  --cbos-blue: #2F88C2;
+  --cbos-blue-hover: #2574A8;
+  --cbos-navy-dark: #0B1A2D;
+  --cbos-navy: #11253E;
+  --cbos-card: #162D4C;
+  --cbos-card-hover: #1B375C;
+  --cbos-border: #22446D;
+  --cbos-border-light: #2D588C;
+  --cbos-gold: #C58F2B;
+  --cbos-gold-light: #DFAC46;
+  --cbos-green: #3DA66E;
+  --cbos-green-dark: #2E8055;
+  --cbos-red: #E95B4D;
+  --cbos-slate: #8F9CAE;
+
+  /* Legacy Bridge Tokens */
+  --cbos-green-950: #0B1A2D;
+  --cbos-green-900: #11253E;
+  --cbos-green-800: #162D4C;
+  --cbos-green-700: #22446D;
+  --cbos-gold-600: #B27F25;
+  --cbos-gold-500: #C58F2B;
+  --cbos-gold-400: #D4A038;
+  --cbos-gold-300: #DFAC46;
+  --cbos-ivory: #FAF9F6;
+  --cbos-ink: #0B1A2D;
+  --cbos-ink-base: #0B1A2D;
+  --cbos-ink-muted: #8F9CAE;
   --cbos-stone: #D8D4C8;
-  --cbos-sage: #DCE7DF;
-  --cbos-border: #E2DDD3;
+  --cbos-border: #22446D;
 
   /* Typography Scale Tokens (Section 6 & 17) */
   --text-display-xl: clamp(2.5rem, 4.5vw, 4.75rem);
@@ -93,31 +108,27 @@ html[dir="rtl"] * {
   font-feature-settings: "tnum" 1, "lnum" 1;
 }
 
-/* Subtle Banknote Guilloche Pattern */
+/* Subtle Banknote Guilloche Pattern (Matching 8080 NIPS Core Platform) */
+.guilloche-pattern,
 .bg-guilloche {
-  background-image: 
-    radial-gradient(rgba(185, 149, 83, 0.15) 1px, transparent 0),
-    radial-gradient(rgba(246, 244, 238, 0.05) 1px, transparent 0);
-  background-size: 32px 32px;
-  background-position: 0 0, 16px 16px;
+  background-color: #0B1A2D;
+  background-image: radial-gradient(rgba(47, 136, 194, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
 }
 
 .bg-guilloche-light {
-  background-color: #F6F4EE;
+  background-color: #FAF9F6;
   background-image: 
-    radial-gradient(rgba(7, 90, 58, 0.06) 1px, transparent 0),
-    radial-gradient(rgba(185, 149, 83, 0.05) 1px, transparent 0);
+    radial-gradient(rgba(47, 136, 194, 0.06) 1px, transparent 0),
+    radial-gradient(rgba(197, 143, 43, 0.05) 1px, transparent 0);
   background-size: 28px 28px;
   background-position: 0 0, 14px 14px;
 }
 
 .bg-guilloche-dark {
-  background-color: #032A1E;
-  background-image: 
-    radial-gradient(rgba(185, 149, 83, 0.15) 1px, transparent 0),
-    radial-gradient(rgba(246, 244, 238, 0.04) 1px, transparent 0);
-  background-size: 32px 32px;
-  background-position: 0 0, 16px 16px;
+  background-color: #0B1A2D;
+  background-image: radial-gradient(rgba(47, 136, 194, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
 }
 
 /* Focus styles for WCAG 2.2 AA Accessibility */

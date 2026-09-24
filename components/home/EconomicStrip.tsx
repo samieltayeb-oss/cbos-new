@@ -37,7 +37,7 @@ export default function EconomicStrip() {
               <Link
                 key={`${r.currency_code}-${idx}`}
                 href="/exchange-rates"
-                className="flex items-center gap-2 bg-cbos-ink-surface hover:bg-[#1C2C24] px-3 py-1 rounded-lg border border-cbos-ink-border hover:border-cbos-gold/60 transition-all shrink-0 group cursor-pointer"
+                className="flex items-center gap-2 bg-cbos-ink-surface hover:bg-[#162D4C] px-3 py-1 rounded-lg border border-cbos-ink-border hover:border-cbos-gold/60 transition-all shrink-0 group cursor-pointer"
                 title={`${t(r.currency_name)}: ${r.official_middle.toFixed(2)} SDG`}
               >
                 <div className="flex items-center gap-1">

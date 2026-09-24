@@ -11,8 +11,8 @@ export default function Hero() {
 
   return (
     <section 
-      className="relative text-white overflow-hidden border-b border-[#075A3A]/80 py-16 md:py-24"
-      style={{ backgroundColor: '#032A1E' }}
+      className="relative text-white overflow-hidden border-b border-[#22446D]/80 py-16 md:py-24"
+      style={{ backgroundColor: '#0B1A2D' }}
     >
       {/* 1. Sovereign Landmarks Hero Layer (Sudan & Khartoum: Nile, Meroë Pyramids, Tuti Bridge) */}
       <div className="absolute inset-0 pointer-events-none z-0">
@@ -46,13 +46,13 @@ export default function Hero() {
         <div 
           className={`absolute inset-0 ${
             isRtl 
-              ? 'bg-gradient-to-l from-[#032A1E] via-[#032A1E]/92 via-50% to-[#032A1E]/40' 
-              : 'bg-gradient-to-r from-[#032A1E] via-[#032A1E]/92 via-50% to-[#032A1E]/40'
+              ? 'bg-gradient-to-l from-[#0B1A2D] via-[#0B1A2D]/95 via-50% to-[#0B1A2D]/40' 
+              : 'bg-gradient-to-r from-[#0B1A2D] via-[#0B1A2D]/95 via-50% to-[#0B1A2D]/40'
           }`} 
         />
         
         {/* Vertical Top/Bottom Seamless Fades */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#021A13]/95 via-transparent to-[#032A1E]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#071321]/95 via-transparent to-[#0B1A2D]" />
       </div>
 
       {/* 2. Banknote Security Guilloche Pattern Overlay */}
@@ -64,14 +64,14 @@ export default function Hero() {
           xmlns="http://www.w3.org/2000/svg"
         >
           {/* Banknote Rosette & Guilloche Curves */}
-          <path d="M-100,300 C200,100 400,500 800,250 C1200,0 1400,450 1600,200" stroke="#B99553" strokeWidth="1.5" strokeDasharray="6 4" />
-          <path d="M-100,350 C250,150 450,550 850,300 C1250,50 1450,500 1600,250" stroke="#B99553" strokeWidth="1" strokeOpacity="0.7" />
-          <path d="M-100,400 C300,200 500,600 900,350 C1300,100 1500,550 1600,300" stroke="#075A3A" strokeWidth="2" strokeOpacity="0.8" />
+          <path d="M-100,300 C200,100 400,500 800,250 C1200,0 1400,450 1600,200" stroke="#2F88C2" strokeWidth="1.5" strokeDasharray="6 4" />
+          <path d="M-100,350 C250,150 450,550 850,300 C1250,50 1450,500 1600,250" stroke="#C58F2B" strokeWidth="1" strokeOpacity="0.7" />
+          <path d="M-100,400 C300,200 500,600 900,350 C1300,100 1500,550 1600,300" stroke="#2F88C2" strokeWidth="2" strokeOpacity="0.8" />
           
           {/* Nile Confluence Geometric Metaphor */}
-          <circle cx="1100" cy="300" r="220" stroke="#B99553" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.4" />
-          <circle cx="1100" cy="300" r="160" stroke="#B99553" strokeWidth="0.5" opacity="0.3" />
-          <circle cx="1100" cy="300" r="100" stroke="#B99553" strokeWidth="1.2" opacity="0.6" />
+          <circle cx="1100" cy="300" r="220" stroke="#2F88C2" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.4" />
+          <circle cx="1100" cy="300" r="160" stroke="#C58F2B" strokeWidth="0.5" opacity="0.3" />
+          <circle cx="1100" cy="300" r="100" stroke="#2F88C2" strokeWidth="1.2" opacity="0.6" />
         </svg>
       </div>
 
@@ -84,18 +84,18 @@ export default function Hero() {
             
             {/* Sovereign Badge with Statutory Foundation */}
             <div className="flex flex-wrap items-center gap-2.5">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#032A1E]/90 border border-[#B99553]/50 text-xs font-mono font-bold text-[#DDC99B] shadow-sm">
-                <ShieldCheck className="w-4 h-4 text-[#B99553]" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#11253E] border border-[#22446D] text-xs font-mono font-bold text-[#DFAC46] shadow-sm">
+                <ShieldCheck className="w-4 h-4 text-[#2F88C2]" />
                 <span>{isRtl ? 'المؤسسة النقدية السيادية لجمهورية السودان' : 'Sovereign Monetary Authority of Sudan'}</span>
               </div>
-              <span className="hidden sm:inline-block text-[11px] font-mono text-[#A89F91] px-2.5 py-1 rounded bg-[#032117] border border-[#0A4533]">
+              <span className="hidden sm:inline-block text-[11px] font-mono text-[#8F9CAE] px-2.5 py-1 rounded bg-[#0B1A2D] border border-[#22446D]">
                 {isRtl ? 'تأسس 1960 — قانون بنك السودان 2002' : 'EST. 1960 • BANK OF SUDAN ACT 2002'}
               </span>
             </div>
 
             {/* Signature Headline */}
             <div className="space-y-3">
-              <h2 className="text-xs sm:text-sm font-bold text-[#DDC99B] uppercase tracking-widest font-mono">
+              <h2 className="text-xs sm:text-sm font-bold text-[#2F88C2] uppercase tracking-widest font-mono">
                 {isRtl ? 'بنك السودان المركزي' : 'Central Bank of Sudan'}
               </h2>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[48px] xl:text-[52px] font-bold text-white tracking-normal leading-[1.32] md:leading-[1.36] lg:leading-[1.38] font-arabic drop-shadow-sm">
@@ -103,13 +103,13 @@ export default function Hero() {
                   <>
                     الاستقرار النقدي.<br />
                     نظام مالي أكثر قوة.<br />
-                    <span className="text-[#DDC99B]">اقتصاد يخدم السودان.</span>
+                    <span className="text-[#DFAC46]">اقتصاد يخدم السودان.</span>
                   </>
                 ) : (
                   <>
                     Monetary stability.<br />
                     A stronger financial system.<br />
-                    <span className="text-[#DDC99B]">An economy serving Sudan.</span>
+                    <span className="text-[#DFAC46]">An economy serving Sudan.</span>
                   </>
                 )}
               </h1>
@@ -126,7 +126,7 @@ export default function Hero() {
             <div className="pt-2 flex flex-wrap items-center gap-4 text-xs sm:text-sm font-bold">
               <Link
                 href="/monetary-policy"
-                className="px-6 py-3 rounded-lg bg-[#B99553] text-[#032A1E] hover:bg-[#D4AF37] transition-all shadow-md flex items-center gap-2 border border-[#DDC99B] font-mono tracking-tight"
+                className="px-6 py-3 rounded-lg bg-[#2F88C2] text-white hover:bg-[#2574A8] transition-all shadow-md flex items-center gap-2 border border-[#2F88C2] font-mono tracking-tight"
               >
                 <span>{isRtl ? 'استكشاف السياسة النقدية' : 'Explore Monetary Policy'}</span>
                 {isRtl ? <ArrowLeft className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
@@ -134,9 +134,9 @@ export default function Hero() {
 
               <Link
                 href="/data"
-                className="px-6 py-3 rounded-lg bg-[#032A1E]/90 hover:bg-[#075A3A] text-white border border-[#B99553]/50 transition-all flex items-center gap-2 shadow-sm font-mono tracking-tight"
+                className="px-6 py-3 rounded-lg bg-[#11253E] hover:bg-[#162D4C] text-white border border-[#22446D] transition-all flex items-center gap-2 shadow-sm font-mono tracking-tight"
               >
-                <TrendingUp className="w-4 h-4 text-[#B99553]" />
+                <TrendingUp className="w-4 h-4 text-[#2F88C2]" />
                 <span>{isRtl ? 'مؤشرات البيانات الاقتصادية' : 'View Economic Indicators'}</span>
               </Link>
             </div>
@@ -146,76 +146,77 @@ export default function Hero() {
           {/* Hero Visual Card / Sovereign Indicator Benchmark (Cols 8-12) */}
           <div className="lg:col-span-5 relative">
             <div 
-              className="relative rounded-xl border border-[#0F382A] border-t-2 border-t-[#B99553] p-6 md:p-7 shadow-xl space-y-5"
-              style={{ backgroundColor: '#042017' }}
+              className="relative rounded-xl border border-[#22446D] border-t-2 border-t-[#2F88C2] p-6 md:p-7 shadow-xl space-y-5"
+              style={{ backgroundColor: '#11253E' }}
             >
               
               {/* Card Header */}
-              <div className="flex items-center justify-between border-b border-[#0F382A] pb-4">
+              <div className="flex items-center justify-between border-b border-[#22446D] pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-lg bg-[#032A1E] p-1 flex items-center justify-center border border-[#B99553]/40 shrink-0">
+                  {/* Clean transparent logo (Background removed) */}
+                  <div className="w-11 h-11 flex items-center justify-center shrink-0">
                     <Image
                       src="/images/cbos/official/cbos-logo-white.png"
                       alt="CBOS Crest"
                       width={40}
                       height={40}
-                      className="object-contain"
+                      className="object-contain w-full h-full drop-shadow"
                     />
                   </div>
                   <div>
                     <div className="text-sm font-bold text-white">
                       {isRtl ? 'النشرة النقدية والمصرفية السيادية' : 'Sovereign Monetary Policy Bulletin'}
                     </div>
-                    <div dir="ltr" className="text-[11px] text-[#DDC99B] font-mono">
+                    <div dir="ltr" className="text-[11px] text-[#8F9CAE] font-mono">
                       KHARTOUM • ART 26 ACT 2002 • ISO 20022
                     </div>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-1.5" title="Fixing Status">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 ring-2 ring-emerald-500/20" />
-                  <span className="text-[10px] font-mono text-emerald-400 hidden sm:inline uppercase">FIXING</span>
+                  <span className="w-2 h-2 rounded-full bg-[#3DA66E] ring-2 ring-[#3DA66E]/20" />
+                  <span className="text-[10px] font-mono text-[#3DA66E] hidden sm:inline uppercase">FIXING</span>
                 </div>
               </div>
 
               {/* 3 Sovereign Policy Metric Rows */}
               <div className="space-y-3 text-xs font-mono">
-                <div className="p-3 rounded-lg bg-[#021811] border border-[#0F382A] flex items-center justify-between">
+                <div className="p-3 rounded-lg bg-[#0B1A2D] border border-[#22446D] flex items-center justify-between">
                   <div>
                     <span className="text-white font-sans block text-xs font-medium">
                       {isRtl ? 'السعر التأشيري الرسمي للدولار' : 'Official Indicative USD Fixing'}
                     </span>
-                    <span className="text-[10px] text-[#8C9B94]">e-GDDS Verified Benchmark</span>
+                    <span className="text-[10px] text-[#8F9CAE]">e-GDDS Verified Benchmark</span>
                   </div>
                   <div className="text-right">
-                    <span dir="ltr" className="font-bold text-[#DDC99B] text-sm tabular-nums block">1,987.93 SDG</span>
-                    <span className="text-[10px] text-emerald-400">Daily Fixing</span>
+                    <span dir="ltr" className="font-bold text-[#DFAC46] text-sm tabular-nums block">1,987.93 SDG</span>
+                    <span className="text-[10px] text-[#3DA66E]">Daily Fixing</span>
                   </div>
                 </div>
 
-                <div className="p-3 rounded-lg bg-[#021811] border border-[#0F382A] flex items-center justify-between">
+                <div className="p-3 rounded-lg bg-[#0B1A2D] border border-[#22446D] flex items-center justify-between">
                   <div>
                     <span className="text-white font-sans block text-xs font-medium">
                       {isRtl ? 'الاحتياطي النقدي القانوني للمصارف' : 'Statutory Cash Reserve Ratio (CRR)'}
                     </span>
-                    <span className="text-[10px] text-[#8C9B94]">{isRtl ? 'محدد السيولة المصرفية' : 'Banking Liquidity Mandate'}</span>
+                    <span className="text-[10px] text-[#8F9CAE]">{isRtl ? 'محدد السيولة المصرفية' : 'Banking Liquidity Mandate'}</span>
                   </div>
                   <div className="text-right">
                     <span dir="ltr" className="font-bold text-white text-sm tabular-nums block">18.00%</span>
-                    <span className="text-[10px] text-[#DDC99B]">Required</span>
+                    <span className="text-[10px] text-[#DFAC46]">Required</span>
                   </div>
                 </div>
 
-                <div className="p-3 rounded-lg bg-[#021811] border border-[#0F382A] flex items-center justify-between">
+                <div className="p-3 rounded-lg bg-[#0B1A2D] border border-[#22446D] flex items-center justify-between">
                   <div>
                     <span className="text-white font-sans block text-xs font-medium">
                       {isRtl ? 'المحوّل القومي للمدفوعات (NIPS)' : 'National Switch Rails (NIPS)'}
                     </span>
-                    <span className="text-[10px] text-[#8C9B94]">ISO 20022 Interbank Highway</span>
+                    <span className="text-[10px] text-[#8F9CAE]">ISO 20022 Interbank Highway</span>
                   </div>
                   <div className="text-right">
-                    <span dir="ltr" className="font-bold text-emerald-400 text-sm tabular-nums block">10,000 TPS</span>
-                    <span className="text-[10px] text-emerald-400">Active Rails</span>
+                    <span dir="ltr" className="font-bold text-[#3DA66E] text-sm tabular-nums block">10,000 TPS</span>
+                    <span className="text-[10px] text-[#3DA66E]">Active Rails</span>
                   </div>
                 </div>
               </div>
@@ -224,15 +225,15 @@ export default function Hero() {
               <div className="pt-1">
                 <Link
                   href="/documents"
-                  className="w-full py-2.5 px-3 rounded-lg bg-[#075A3A]/40 hover:bg-[#075A3A] text-[#DDC99B] hover:text-white transition-all text-xs font-mono font-bold flex items-center justify-center gap-2 border border-[#B99553]/40"
+                  className="w-full py-2.5 px-3 rounded-lg bg-[#162D4C] hover:bg-[#1B375C] text-[#DFAC46] hover:text-white transition-all text-xs font-mono font-bold flex items-center justify-center gap-2 border border-[#22446D]"
                 >
-                  <FileText className="w-4 h-4 text-[#B99553]" />
+                  <FileText className="w-4 h-4 text-[#2F88C2]" />
                   <span>{isRtl ? 'سجل المنشورات الرقابية وضوابط السياسة النقدية' : 'Statutory Circulars & Policy Directives'}</span>
                 </Link>
               </div>
 
               {/* Evaluation Disclaimer Notice */}
-              <div className="text-[10px] font-mono text-[#8C9B94] text-center pt-2 border-t border-[#0F382A]">
+              <div className="text-[10px] font-mono text-[#8F9CAE] text-center pt-2 border-t border-[#22446D]">
                 <span>
                   {isRtl 
                     ? '* بيانات استرشادية معتمدة لأغراض الاستعراض الرقمي — التحديث المالي المباشر'

@@ -228,8 +228,8 @@ function PublicationsContent() {
     <div className="bg-sand-50 min-h-screen">
       {/* Header Banner */}
       <section 
-        className="text-white relative overflow-hidden py-16 lg:py-20 border-b border-[#075A3A]"
-        style={{ backgroundColor: '#032A1E' }}
+        className="text-white relative overflow-hidden py-16 lg:py-20 border-b border-[#22446D]"
+        style={{ backgroundColor: '#0B1A2D' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center gap-3 text-[#DDC99B] text-xs font-mono uppercase tracking-wider mb-4">
@@ -249,15 +249,15 @@ function PublicationsContent() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4 text-xs font-mono">
-            <div className="px-3.5 py-1.5 rounded-lg bg-[#075A3A]/60 border border-[#B99553]/40 flex items-center gap-2">
+            <div className="px-3.5 py-1.5 rounded-lg bg-[#2F88C2]/60 border border-[#B99553]/40 flex items-center gap-2">
               <span className="text-[#DDC99B]">{isRtl ? 'الأرشيف المتاح:' : 'Available Archive:'}</span>
               <span className="font-bold text-white">1960 — 2026</span>
             </div>
-            <div className="px-3.5 py-1.5 rounded-lg bg-[#075A3A]/60 border border-[#B99553]/40 flex items-center gap-2">
+            <div className="px-3.5 py-1.5 rounded-lg bg-[#2F88C2]/60 border border-[#B99553]/40 flex items-center gap-2">
               <span className="text-[#DDC99B]">{isRtl ? 'المعايير المعتمدة:' : 'Reporting Standards:'}</span>
               <span className="font-bold text-white">IMF e-GDDS / AAOIFI</span>
             </div>
-            <div className="px-3.5 py-1.5 rounded-lg bg-[#075A3A]/60 border border-[#B99553]/40 flex items-center gap-2">
+            <div className="px-3.5 py-1.5 rounded-lg bg-[#2F88C2]/60 border border-[#B99553]/40 flex items-center gap-2">
               <span className="text-[#DDC99B]">{isRtl ? 'صيغة التحميل:' : 'Format:'}</span>
               <span className="font-bold text-white">PDF / Tabular Data</span>
             </div>
@@ -332,7 +332,7 @@ function PublicationsContent() {
                 <div className="space-y-4">
                   {/* Meta Badges */}
                   <div className="flex items-center justify-between">
-                    <span className="px-2.5 py-1 rounded bg-[#075A3A]/10 text-cbos-green-900 font-mono font-bold text-xs border border-cbos-green-200">
+                    <span className="px-2.5 py-1 rounded bg-[#2F88C2]/10 text-cbos-green-900 font-mono font-bold text-xs border border-cbos-green-200">
                       {pub.refNumber}
                     </span>
                     <span className="text-xs font-mono text-[#A58242] font-bold">

@@ -59,8 +59,8 @@ export default function CybersecurityPage() {
     <div className="bg-sand-50 min-h-screen">
       {/* Header Banner */}
       <section 
-        className="text-white relative overflow-hidden py-16 lg:py-20 border-b border-[#075A3A]"
-        style={{ backgroundColor: '#032A1E' }}
+        className="text-white relative overflow-hidden py-16 lg:py-20 border-b border-[#22446D]"
+        style={{ backgroundColor: '#0B1A2D' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center gap-3 text-[#DDC99B] text-xs font-mono uppercase tracking-wider mb-4">
@@ -80,11 +80,11 @@ export default function CybersecurityPage() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4 text-xs font-mono">
-            <div className="px-3.5 py-1.5 rounded-lg bg-[#075A3A]/60 border border-[#B99553]/40 flex items-center gap-2">
+            <div className="px-3.5 py-1.5 rounded-lg bg-[#2F88C2]/60 border border-[#B99553]/40 flex items-center gap-2">
               <span className="text-[#DDC99B]">{isRtl ? 'حالة التأهب السيبراني:' : 'Threat Posture:'}</span>
               <span className="font-bold text-emerald-400">DEFENSE LEVEL 1 (MONITORED)</span>
             </div>
-            <div className="px-3.5 py-1.5 rounded-lg bg-[#075A3A]/60 border border-[#B99553]/40 flex items-center gap-2">
+            <div className="px-3.5 py-1.5 rounded-lg bg-[#2F88C2]/60 border border-[#B99553]/40 flex items-center gap-2">
               <span className="text-[#DDC99B]">{isRtl ? 'غرفة طوارئ CERT:' : 'CERT Operations:'}</span>
               <span className="font-bold text-white">24/7/365 SOC Active</span>
             </div>
@@ -98,7 +98,7 @@ export default function CybersecurityPage() {
         {/* Core Pillars */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white rounded-xl p-6 border border-sand-300 shadow-sm space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-[#075A3A]/10 text-cbos-green-900 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-xl bg-[#2F88C2]/10 text-cbos-green-900 flex items-center justify-center">
               <Lock className="w-5 h-5" />
             </div>
             <h3 className="font-bold text-base text-cbos-ink font-display">
@@ -126,7 +126,7 @@ export default function CybersecurityPage() {
           </div>
 
           <div className="bg-white rounded-xl p-6 border border-sand-300 shadow-sm space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-[#075A3A]/10 text-cbos-green-900 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-xl bg-[#2F88C2]/10 text-cbos-green-900 flex items-center justify-center">
               <Server className="w-5 h-5" />
             </div>
             <h3 className="font-bold text-base text-cbos-ink font-display">
@@ -238,7 +238,7 @@ export default function CybersecurityPage() {
         </div>
 
         {/* Incident Reporting Hotline */}
-        <div className="bg-[#032A1E] text-white rounded-xl p-8 border border-cbos-green-800 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-[#0B1A2D] text-white rounded-xl p-8 border border-[#22446D] flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/20 text-red-300 border border-red-500/40 text-xs font-mono font-bold">
               <AlertTriangle className="w-3.5 h-3.5" />
@@ -264,7 +264,7 @@ export default function CybersecurityPage() {
             </a>
             <a
               href="mailto:cert@cbos.gov.sd"
-              className="px-5 py-3 rounded-xl bg-[#075A3A] hover:bg-[#096E47] text-white font-bold text-xs flex items-center gap-2 border border-[#B99553]/40 transition-all"
+              className="px-5 py-3 rounded-xl bg-[#2F88C2] hover:bg-[#096E47] text-white font-bold text-xs flex items-center gap-2 border border-[#B99553]/40 transition-all"
             >
               <Mail className="w-4 h-4 text-[#DDC99B]" />
               <span>cert@cbos.gov.sd</span>

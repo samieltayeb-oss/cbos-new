@@ -40,8 +40,8 @@ export default function NoticesAndNews() {
           
           {/* Col 1-6: Sovereign Notices & Tenders (High Priority) */}
           <div className="lg:col-span-6 space-y-4">
-            <div className="flex items-center gap-2 text-xs font-bold text-cbos-ink uppercase font-mono border-b-2 border-cbos-gold pb-2">
-              <Bell className="w-4 h-4 text-cbos-gold" />
+            <div className="flex items-center gap-2 text-xs font-bold text-cbos-ink uppercase font-mono border-b-2 border-cbos-blue pb-2">
+              <Bell className="w-4 h-4 text-cbos-blue" />
               <span>{isRtl ? 'المنشورات والتعاميم والعطاءات السيادية' : 'Sovereign Circulars & National Tenders'}</span>
             </div>
 
@@ -49,16 +49,16 @@ export default function NoticesAndNews() {
               {officialNotices.map((notice) => (
                 <div
                   key={notice.id}
-                  className="p-6 rounded-xl bg-white border-2 border-cbos-gold/40 shadow-cbos-card hover:border-cbos-gold transition-all space-y-3"
+                  className="p-6 rounded-xl bg-white border border-sand-300 shadow-sm hover:border-cbos-blue transition-all space-y-3"
                 >
                   <div className="flex items-center justify-between text-xs">
-                    <span className="px-2.5 py-0.5 rounded bg-cbos-gold/15 text-cbos-ink font-mono font-bold border border-cbos-gold/40">
+                    <span className="px-2.5 py-0.5 rounded bg-cbos-blue/10 text-cbos-blue font-mono font-bold border border-cbos-blue/20">
                       {notice.referenceNumber || 'CIRCULAR'}
                     </span>
                     <span className="text-cbos-stone-dark font-mono text-[11px]">{notice.date}</span>
                   </div>
 
-                  <h3 className="text-base font-bold text-cbos-ink hover:text-cbos-green transition-colors font-display">
+                  <h3 className="text-base font-bold text-cbos-ink hover:text-cbos-blue transition-colors font-display">
                     <Link href={`/news/${notice.slug || notice.id}`}>
                       {isRtl ? notice.title.ar : notice.title.en}
                     </Link>
@@ -69,13 +69,13 @@ export default function NoticesAndNews() {
                   </p>
 
                   <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
-                    <span className="text-[11px] text-cbos-gold font-bold flex items-center gap-1">
+                    <span className="text-[11px] text-cbos-blue font-bold flex items-center gap-1 font-mono">
                       <AlertCircle className="w-3.5 h-3.5" />
                       <span>{isRtl ? 'إشعار إلزامي للجهاز المصرفي' : 'Mandatory Banking Notice'}</span>
                     </span>
                     <Link
                       href={`/news/${notice.slug || notice.id}`}
-                      className="font-bold text-cbos-green hover:underline flex items-center gap-1"
+                      className="font-bold text-cbos-blue hover:underline flex items-center gap-1"
                     >
                       <span>{isRtl ? 'التفاصيل والملف' : 'Read Notice'}</span>
                       {isRtl ? <ArrowLeft className="w-3 h-3" /> : <ArrowRight className="w-3 h-3" />}

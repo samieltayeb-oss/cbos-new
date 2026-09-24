@@ -84,7 +84,7 @@ export default function ExchangeRatesPage() {
       {/* Sovereign High-Contrast Hero Banner */}
       <section 
         className="text-white relative overflow-hidden py-16 lg:py-24 border-b border-[#B99553]/40"
-        style={{ backgroundColor: '#032A1E' }}
+        style={{ backgroundColor: '#0B1A2D' }}
       >
         <div className="absolute inset-0 bg-guilloche opacity-20 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -174,7 +174,7 @@ export default function ExchangeRatesPage() {
                     type="number"
                     value={calcAmount}
                     onChange={(e) => setCalcAmount(Math.max(0, Number(e.target.value) || 0))}
-                    className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-base font-mono font-bold text-cbos-ink focus:outline-none focus:border-cbos-green-800"
+                    className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-base font-mono font-bold text-cbos-ink focus:outline-none focus:border-[#22446D]"
                   />
                   <span className="absolute end-3 top-2.5 text-xs font-mono font-bold text-cbos-ink-muted">
                     {calcDirection === 'FX_TO_SDG' ? calcCurrency : 'SDG'}
@@ -190,7 +190,7 @@ export default function ExchangeRatesPage() {
                 <select
                   value={calcCurrency}
                   onChange={(e) => setCalcCurrency(e.target.value)}
-                  className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-base font-bold text-cbos-ink focus:outline-none focus:border-cbos-green-800"
+                  className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-base font-bold text-cbos-ink focus:outline-none focus:border-[#22446D]"
                 >
                   {officialRatesData.rates.map(r => (
                     <option key={r.currency_code} value={r.currency_code}>
@@ -204,7 +204,7 @@ export default function ExchangeRatesPage() {
             {/* Result Display Box */}
             <div 
               className="bg-cbos-green-950 text-white rounded-xl p-5 border border-cbos-gold/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
-              style={{ backgroundColor: '#032A1E' }}
+              style={{ backgroundColor: '#0B1A2D' }}
             >
               <div>
                 <span className="text-xs text-sand-300 font-mono">
@@ -218,7 +218,7 @@ export default function ExchangeRatesPage() {
                 </div>
               </div>
 
-              <div className="text-xs text-sand-300 font-mono border-t sm:border-t-0 sm:border-s border-cbos-green-800 pt-2 sm:pt-0 sm:ps-4">
+              <div className="text-xs text-sand-300 font-mono border-t sm:border-t-0 sm:border-s border-[#22446D] pt-2 sm:pt-0 sm:ps-4">
                 <div>{t({ ar: 'السعر التأشيري المعتمد:', en: 'Applied Rate:' })}</div>
                 <div className="text-white font-bold">1 {calcCurrency} = {selectedRateItem.official_middle.toFixed(2)} SDG</div>
               </div>
@@ -317,7 +317,7 @@ export default function ExchangeRatesPage() {
                   placeholder={t({ ar: 'بحث بالعملة أو الرمز...', en: 'Search currency...' })}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="ps-9 pe-4 py-2 text-xs bg-sand-50 border border-sand-300 rounded-lg focus:outline-none focus:border-cbos-green-800 w-44 sm:w-56 text-cbos-ink"
+                  className="ps-9 pe-4 py-2 text-xs bg-sand-50 border border-sand-300 rounded-lg focus:outline-none focus:border-[#22446D] w-44 sm:w-56 text-cbos-ink"
                 />
               </div>
 

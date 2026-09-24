@@ -92,8 +92,8 @@ export default function TenderDetailClient({ tender, related }: Props) {
       
       {/* 1. Procurement Masthead */}
       <div 
-        className="text-white py-10 md:py-14 border-b border-[#075A3A] relative overflow-hidden"
-        style={{ backgroundColor: '#032A1E' }}
+        className="text-white py-10 md:py-14 border-b border-[#22446D] relative overflow-hidden"
+        style={{ backgroundColor: '#0B1A2D' }}
       >
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4">
           
@@ -115,10 +115,10 @@ export default function TenderDetailClient({ tender, related }: Props) {
           {/* Reference & Status Meta Row */}
           <div className="flex flex-wrap items-center gap-3 pt-2">
             {getStatusBadge(tender.status)}
-            <span className="px-3 py-1 rounded-lg bg-black/40 text-white border border-[#0F382A] text-xs font-mono font-bold">
+            <span className="px-3 py-1 rounded-lg bg-black/40 text-white border border-[#22446D] text-xs font-mono font-bold">
               {tender.refNumber}
             </span>
-            <span className="px-3 py-1 rounded-lg bg-[#075A3A]/70 text-[#DDC99B] border border-[#B99553]/50 text-xs font-mono">
+            <span className="px-3 py-1 rounded-lg bg-[#2F88C2]/70 text-[#DDC99B] border border-[#B99553]/50 text-xs font-mono">
               {t(tender.category)}
             </span>
           </div>
@@ -174,13 +174,13 @@ export default function TenderDetailClient({ tender, related }: Props) {
               className="px-3.5 py-1.5 rounded-lg border border-sand-300 hover:border-cbos-gold bg-sand-50 hover:bg-white text-cbos-ink transition-all flex items-center gap-1.5 font-bold"
               title="Print tender specifications"
             >
-              <Printer className="w-3.5 h-3.5 text-[#075A3A]" />
+              <Printer className="w-3.5 h-3.5 text-[#2F88C2]" />
               <span>{isRtl ? 'طباعة الكراسة' : 'Print RFP'}</span>
             </button>
 
             <button
               onClick={handleDownloadDossier}
-              className="px-4 py-1.5 rounded-lg bg-[#032A1E] text-white hover:bg-[#075A3A] transition-all flex items-center gap-1.5 font-bold border border-[#0F382A] shadow-sm"
+              className="px-4 py-1.5 rounded-lg bg-[#0B1A2D] text-white hover:bg-[#2F88C2] transition-all flex items-center gap-1.5 font-bold border border-[#22446D] shadow-sm"
               title="Download tender dossier"
             >
               <Download className="w-3.5 h-3.5 text-[#B99553]" />
@@ -199,9 +199,9 @@ export default function TenderDetailClient({ tender, related }: Props) {
           <article className="lg:col-span-8 bg-white rounded-xl border border-sand-300 p-6 sm:p-10 md:p-12 shadow-sm space-y-8 relative overflow-hidden">
             
             {/* Print Header */}
-            <div className="hidden print:block border-b-2 border-[#032A1E] pb-6 mb-8 text-center space-y-2">
-              <div className="font-bold text-lg text-[#032A1E] font-arabic">جمهورية السودان — بنك السودان المركزي</div>
-              <div className="text-xs text-[#075A3A] font-mono">REPUBLIC OF THE SUDAN — CENTRAL BANK OF SUDAN</div>
+            <div className="hidden print:block border-b-2 border-[#22446D] pb-6 mb-8 text-center space-y-2">
+              <div className="font-bold text-lg text-[#0B1A2D] font-arabic">جمهورية السودان — بنك السودان المركزي</div>
+              <div className="text-xs text-[#2F88C2] font-mono">REPUBLIC OF THE SUDAN — CENTRAL BANK OF SUDAN</div>
               <div className="text-[11px] text-slate-500 font-mono">PROCUREMENT & CONTRACTS COMMITTEE • TENDER DOSSIER</div>
               <div className="text-xs font-mono font-bold text-slate-800 pt-2">
                 REF: {tender.refNumber} • DEADLINE: {tender.closingDate}
@@ -215,7 +215,7 @@ export default function TenderDetailClient({ tender, related }: Props) {
                   <Coins className="w-4 h-4 text-[#B99553]" />
                   <span>{isRtl ? 'قيمة التأمين المبدئي (خطاب الضمان)' : 'Initial Deposit / Bid Bond'}</span>
                 </span>
-                <div className="text-lg font-bold font-mono text-[#032A1E]">
+                <div className="text-lg font-bold font-mono text-[#0B1A2D]">
                   {tender.depositAmount}
                 </div>
                 <div className="text-[10px] text-slate-500">
@@ -225,10 +225,10 @@ export default function TenderDetailClient({ tender, related }: Props) {
 
               <div className="p-4 rounded-xl bg-sand-50 border border-sand-300 space-y-1">
                 <span className="text-[11px] font-mono text-slate-500 uppercase flex items-center gap-1.5">
-                  <FileText className="w-4 h-4 text-[#075A3A]" />
+                  <FileText className="w-4 h-4 text-[#2F88C2]" />
                   <span>{isRtl ? 'رسوم كراسة الشروط والمواصفات' : 'Tender Booklet Fee'}</span>
                 </span>
-                <div className="text-lg font-bold font-mono text-[#075A3A]">
+                <div className="text-lg font-bold font-mono text-[#2F88C2]">
                   {tender.bookletFee}
                 </div>
                 <div className="text-[10px] text-slate-500">
@@ -239,7 +239,7 @@ export default function TenderDetailClient({ tender, related }: Props) {
 
             {/* Scope of Work & Description */}
             <div className="space-y-4">
-              <h2 className="text-sm font-bold text-[#032A1E] font-mono uppercase tracking-wider border-b border-sand-200 pb-2">
+              <h2 className="text-sm font-bold text-[#0B1A2D] font-mono uppercase tracking-wider border-b border-sand-200 pb-2">
                 {isRtl ? 'نطاق الأعمال والمواصفات الفنية' : 'Scope of Work & Technical Requirements'}
               </h2>
               <p className="text-sm sm:text-base text-slate-700 font-arabic leading-[2.1]">
@@ -250,7 +250,7 @@ export default function TenderDetailClient({ tender, related }: Props) {
             {/* Mandatory Eligibility Checklist */}
             {tender.eligibility && (
               <div className="space-y-4">
-                <h2 className="text-sm font-bold text-[#032A1E] font-mono uppercase tracking-wider border-b border-sand-200 pb-2">
+                <h2 className="text-sm font-bold text-[#0B1A2D] font-mono uppercase tracking-wider border-b border-sand-200 pb-2">
                   {isRtl ? 'شروط ومعايير التأهيل الإلزامية' : 'Mandatory Eligibility & Qualification Criteria'}
                 </h2>
                 <ul className="space-y-2.5">
@@ -266,7 +266,7 @@ export default function TenderDetailClient({ tender, related }: Props) {
 
             {/* Submission Instructions & Secretariat Location */}
             <div className="p-4 sm:p-5 rounded-xl bg-sand-50 border border-sand-300 space-y-3">
-              <div className="flex items-center gap-2 text-xs font-bold text-[#032A1E] font-mono uppercase">
+              <div className="flex items-center gap-2 text-xs font-bold text-[#0B1A2D] font-mono uppercase">
                 <MapPin className="w-4 h-4 text-[#B99553]" />
                 <span>{isRtl ? 'مقر تقديم العطاءات وسكرتارية اللجنة' : 'Submission Location & Secretariat'}</span>
               </div>
@@ -305,7 +305,7 @@ export default function TenderDetailClient({ tender, related }: Props) {
               <dl className="space-y-3 text-xs font-mono">
                 <div>
                   <dt className="text-slate-500">{isRtl ? 'رقم العطاء:' : 'Reference:'}</dt>
-                  <dd className="font-bold text-[#075A3A] pt-0.5">{tender.refNumber}</dd>
+                  <dd className="font-bold text-[#2F88C2] pt-0.5">{tender.refNumber}</dd>
                 </div>
                 <div>
                   <dt className="text-slate-500">{isRtl ? 'القطاع:' : 'Category:'}</dt>
@@ -327,7 +327,7 @@ export default function TenderDetailClient({ tender, related }: Props) {
 
               <button
                 onClick={handleDownloadDossier}
-                className="w-full mt-2 py-2.5 px-3 rounded-lg bg-[#075A3A] hover:bg-[#032A1E] text-white transition-all text-xs font-mono font-bold flex items-center justify-center gap-2 shadow-sm"
+                className="w-full mt-2 py-2.5 px-3 rounded-lg bg-[#2F88C2] hover:bg-[#0B1A2D] text-white transition-all text-xs font-mono font-bold flex items-center justify-center gap-2 shadow-sm"
               >
                 <Download className="w-4 h-4 text-[#B99553]" />
                 <span>{downloadStarted ? (isRtl ? 'جار التحميل...' : 'Downloading...') : (isRtl ? 'سحب كراسة الشروط' : 'Acquire RFP Booklet')}</span>
@@ -337,7 +337,7 @@ export default function TenderDetailClient({ tender, related }: Props) {
             {/* Related Tenders */}
             <div className="bg-white rounded-xl border border-sand-300 p-6 shadow-sm space-y-4">
               <div className="flex items-center gap-2 text-xs font-bold text-cbos-ink font-mono uppercase border-b border-sand-200 pb-2">
-                <FileText className="w-4 h-4 text-[#075A3A]" />
+                <FileText className="w-4 h-4 text-[#2F88C2]" />
                 <span>{isRtl ? 'عطاءات ومناقصات أخرى' : 'Other Active Tenders'}</span>
               </div>
 
@@ -348,7 +348,7 @@ export default function TenderDetailClient({ tender, related }: Props) {
                     href={`/tenders/${rel.id}`}
                     className="block p-3 rounded-lg border border-sand-200 hover:border-cbos-gold hover:bg-sand-50/50 transition-all space-y-1 group"
                   >
-                    <div className="text-[11px] font-mono text-[#075A3A] font-bold">
+                    <div className="text-[11px] font-mono text-[#2F88C2] font-bold">
                       {rel.refNumber}
                     </div>
                     <div className="text-xs font-bold text-cbos-ink group-hover:text-cbos-green-800 transition-colors font-arabic line-clamp-2">

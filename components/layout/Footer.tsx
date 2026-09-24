@@ -4,111 +4,177 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '@/lib/languageContext';
-import { ShieldCheck, Mail, Phone, MapPin, ExternalLink, Globe } from 'lucide-react';
+import { ShieldCheck, Mail, Phone, MapPin, ExternalLink, Globe, Landmark, Camera, Globe2 } from 'lucide-react';
 
 export default function Footer() {
   const { isRtl, t } = useLanguage();
 
   return (
-    <footer className="bg-cbos-ink text-cbos-ivory border-t-4 border-cbos-gold pt-14 pb-8 px-4 md:px-8">
+    <footer className="bg-[#0B1A2D] text-slate-100 border-t-2 border-[#2F88C2] pt-14 pb-8 px-4 md:px-8">
       <div className="max-w-7xl mx-auto space-y-12">
         
         {/* Top Section: Brand, Address & Mandate */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-10 border-b border-cbos-ink-border">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-10 border-b border-[#22446D]">
           
           {/* Col 1 & 2: Institutional Brand & Mandate */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-cbos-green-dark border border-cbos-gold/50 p-1 flex items-center justify-center">
+              <div className="w-12 h-12 flex items-center justify-center shrink-0">
                 <Image
                   src="/images/cbos/official/cbos-logo-white.png"
                   alt="CBOS"
                   width={48}
                   height={48}
-                  className="object-contain"
+                  className="object-contain w-full h-full drop-shadow"
                 />
               </div>
               <div>
                 <div className="text-base font-black text-white font-display">
                   {isRtl ? 'بنك السودان المركزي' : 'Central Bank of Sudan'}
                 </div>
-                <div className="text-xs text-cbos-gold font-mono">
+                <div className="text-xs text-[#2F88C2] font-mono">
                   Sovereign Central Monetary Authority
                 </div>
               </div>
             </div>
 
-            <p className="text-xs text-cbos-stone leading-relaxed">
+            <p className="text-xs text-[#8F9CAE] leading-relaxed">
               {isRtl
                 ? 'المؤسسة النقدية السيادية لجمهورية السودان المنوط بها قانوناً إصدار العملة الوطنية، وتحقيق الاستقرار النقدي، ومراقبة الجهاز المصرفي وتنظيم أنظمة المدفوعات القومية.'
                 : 'The sovereign monetary authority of the Republic of the Sudan, legally mandated to issue the national currency, ensure monetary stability, supervise the banking system, and operate national payment switches.'}
             </p>
 
-            <div className="text-xs text-cbos-stone space-y-1.5 font-sans">
+            <div className="text-xs text-[#8F9CAE] space-y-1.5 font-sans">
               <div className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-cbos-gold shrink-0" />
-                <span>{isRtl ? 'المقر الإداري المؤقت: بورتسودان — المقر التاريخي: الخرطوم، شارع الجامعة' : 'Interim HQ: Port Sudan — Historical HQ: Gama\'a Avenue, Khartoum'}</span>
+                <MapPin className="w-3.5 h-3.5 text-[#2F88C2] shrink-0" />
+                <span>{isRtl ? 'الخرطوم — ص. ب. 313 — جمهورية السودان (المقر الإداري الحالي: بورتسودان)' : 'Khartoum — P.O. Box 313 — Republic of the Sudan (Interim Admin HQ: Port Sudan)'}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-cbos-gold shrink-0" />
+                <Mail className="w-3.5 h-3.5 text-[#2F88C2] shrink-0" />
                 <span>info@cbos.gov.sd</span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-cbos-gold shrink-0" />
-                <span>+249 187 05000</span>
+                <Phone className="w-3.5 h-3.5 text-[#2F88C2] shrink-0" />
+                <span dir="ltr">00249 187 056000 / +249 187 05000</span>
               </div>
             </div>
           </div>
 
-          {/* Col 3: Policy & Regulation */}
+          {/* Col 3: عن بنك السودان (Matching cbos.gov.sd) */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-cbos-gold border-b border-cbos-ink-border pb-1.5">
-              {isRtl ? 'السياسات والتشريعات' : 'Policy & Laws'}
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#2F88C2] font-mono border-b border-[#22446D] pb-1.5">
+              {isRtl ? 'عن بنك السودان' : 'About CBOS'}
             </h4>
-            <ul className="space-y-2 text-xs text-cbos-ivory/80">
-              <li><Link href="/monetary-policy" className="hover:text-cbos-gold transition-colors">{isRtl ? 'السياسة النقدية والمصرفية' : 'Monetary Policy'}</Link></li>
-              <li><Link href="/documents?type=law" className="hover:text-cbos-gold transition-colors">{isRtl ? 'قوانين البنك المركزي' : 'Primary Banking Acts'}</Link></li>
-              <li><Link href="/documents?type=circular" className="hover:text-cbos-gold transition-colors">{isRtl ? 'المنشورات والتعاميم الرقابية' : 'Regulatory Circulars'}</Link></li>
-              <li><Link href="/exchange-rates" className="hover:text-cbos-gold transition-colors">{isRtl ? 'أسعار الصرف الرسمية' : 'Official Exchange Rates'}</Link></li>
-              <li><Link href="/financial-system" className="hover:text-cbos-gold transition-colors">{isRtl ? 'المصارف والمؤسسات المرخصة' : 'Licensed Institutions'}</Link></li>
+            <ul className="space-y-2 text-xs text-[#8F9CAE]">
+              <li><Link href="/about" className="hover:text-white transition-colors">{isRtl ? 'الهيكل الإداري والتنظيمي' : 'Administrative Structure'}</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">{isRtl ? 'فروع بنك السودان المركزي' : 'CBOS Branch Network'}</Link></li>
+              <li><Link href="/leadership" className="hover:text-white transition-colors">{isRtl ? 'محافظو بنك السودان المركزي' : 'Former Governors'}</Link></li>
+              <li><Link href="/documents?type=regulation" className="hover:text-white transition-colors">{isRtl ? 'لائحة تنظيم عمل المراجعة الداخلية' : 'Internal Audit Regulations'}</Link></li>
+              <li><Link href="/gallery" className="hover:text-[#DFAC46] text-white/90 font-medium transition-colors flex items-center gap-1"><span>{isRtl ? 'معرض صور' : 'Photo Gallery'}</span></Link></li>
+              <li><Link href="/publications" className="hover:text-white transition-colors">{isRtl ? 'مكتبة بنك السودان المركزي' : 'CBOS Research Library'}</Link></li>
+              <li><Link href="/correspondents" className="hover:text-[#DFAC46] text-white/90 font-medium transition-colors flex items-center gap-1"><span>{isRtl ? 'المراسلين' : 'Correspondent Banks'}</span></Link></li>
             </ul>
           </div>
 
-          {/* Col 4: Data & Publications */}
+          {/* Col 4: الجهاز المصرفي والمالي (Matching cbos.gov.sd) */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-cbos-gold border-b border-cbos-ink-border pb-1.5">
-              {isRtl ? 'البيانات والإصدارات' : 'Data & Research'}
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#2F88C2] font-mono border-b border-[#22446D] pb-1.5">
+              {isRtl ? 'الجهاز المصرفي والمالي' : 'Banking & Financial System'}
             </h4>
-            <ul className="space-y-2 text-xs text-cbos-ivory/80">
-              <li><Link href="/publications?type=annual-report" className="hover:text-cbos-gold transition-colors">{isRtl ? 'التقارير السنوية' : 'Annual Reports Archive'}</Link></li>
-              <li><Link href="/publications?type=bulletin" className="hover:text-cbos-gold transition-colors">{isRtl ? 'النشرة الاقتصادية والمالية' : 'Economic Bulletins'}</Link></li>
-              <li><Link href="/publications?type=digest" className="hover:text-cbos-gold transition-colors">{isRtl ? 'إحصاءات التجارة الخارجية' : 'Foreign Trade Digest'}</Link></li>
-              <li><Link href="/data" className="hover:text-cbos-gold transition-colors">{isRtl ? 'بوابة البيانات المفتوحة (e-GDDS)' : 'Open Data Portal (GDDS)'}</Link></li>
-              <li><Link href="/banknotes" className="hover:text-cbos-gold transition-colors">{isRtl ? 'العلامات التأمينية للعملة' : 'Banknote Security Guide'}</Link></li>
+            <ul className="space-y-2 text-xs text-[#8F9CAE]">
+              <li><Link href="/financial-system" className="hover:text-white transition-colors">{isRtl ? 'هيكل الجهاز المصرفي بالسودان' : 'Banking Sector Structure'}</Link></li>
+              <li><Link href="/financial-system?type=commercial_bank" className="hover:text-white transition-colors">{isRtl ? 'البنوك العاملة بالسودان' : 'Operating Commercial Banks'}</Link></li>
+              <li><Link href="/financial-system" className="hover:text-white transition-colors">{isRtl ? 'التوزيع الجغرافي للجهاز المصرفي' : 'Geographic Distribution'}</Link></li>
+              <li><Link href="/financial-system?type=exchange_bureau" className="hover:text-white transition-colors">{isRtl ? 'شركات الصرافة العاملة بالسودان' : 'Foreign Exchange Bureaus'}</Link></li>
+              <li><Link href="/financial-system?type=specialized_bank" className="hover:text-white transition-colors">{isRtl ? 'المؤسسات المالية المتخصصة' : 'Specialized Financial Institutions'}</Link></li>
+              <li><Link href="/payments" className="hover:text-white transition-colors">{isRtl ? 'المقسم القومي NIPS' : 'National Payment Switch'}</Link></li>
+              <li><Link href="/consumer-protection" className="hover:text-white transition-colors">{isRtl ? 'حماية المستهلك المالي' : 'Consumer Protection'}</Link></li>
             </ul>
           </div>
 
-          {/* Col 5: Strategic Systems & Tenders */}
+          {/* Col 5: روابط مهمة (Matching cbos.gov.sd) */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-cbos-gold border-b border-cbos-ink-border pb-1.5">
-              {isRtl ? 'المدفوعات والمناقصات' : 'Payments & Tenders'}
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#2F88C2] font-mono border-b border-[#22446D] pb-1.5">
+              {isRtl ? 'روابط مهمة' : 'Important Links'}
             </h4>
-            <ul className="space-y-2 text-xs text-cbos-ivory/80">
-              <li><Link href="/payments" className="hover:text-cbos-gold transition-colors">{isRtl ? 'المقسم القومي NIPS' : 'National Instant Payments (NIPS)'}</Link></li>
-              <li><Link href="/payments#rtgs" className="hover:text-cbos-gold transition-colors">{isRtl ? 'نظام التسوية اللحظية RTGS' : 'RTGS Settlement System'}</Link></li>
-              <li><Link href="/tenders" className="hover:text-cbos-gold transition-colors">{isRtl ? 'المناقصات والعطاءات' : 'Procurement & Tenders'}</Link></li>
-              <li><Link href="/cybersecurity" className="hover:text-cbos-gold transition-colors">{isRtl ? 'الأمن السيبراني المالي' : 'Financial Cybersecurity'}</Link></li>
-              <li><Link href="/consumer-protection" className="hover:text-cbos-gold transition-colors">{isRtl ? 'حماية المستهلك المالي' : 'Consumer Protection'}</Link></li>
+            <ul className="space-y-2 text-xs text-[#8F9CAE]">
+              <li>
+                <a href="https://mfu.gov.sd/ar" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
+                  <span>{isRtl ? 'موقع التمويل الأصغر' : 'Microfinance Unit'}</span>
+                  <ExternalLink className="w-3 h-3 text-[#2F88C2]" />
+                </a>
+              </li>
+              <li>
+                <a href="http://www.hssb.gov.sd/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
+                  <span>{isRtl ? 'موقع الرقابة الشرعية' : 'High Sharia Supervisory Board'}</span>
+                  <ExternalLink className="w-3 h-3 text-[#2F88C2]" />
+                </a>
+              </li>
+              <li>
+                <Link href="/financial-inclusion" className="hover:text-white transition-colors">
+                  {isRtl ? 'وكالة ضمان التمويل الأصغر (تيسير)' : 'Microfinance Guarantee Agency'}
+                </Link>
+              </li>
+              <li>
+                <a href="http://www.imf.org/external/country/SDN/index.htm" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
+                  <span>{isRtl ? 'السودان وصندوق النقد الدولي' : 'Sudan & IMF Relations'}</span>
+                  <ExternalLink className="w-3 h-3 text-[#2F88C2]" />
+                </a>
+              </li>
+              <li>
+                <Link href="/data" className="hover:text-white transition-colors">
+                  {isRtl ? 'النظام العام لنشر البيانات (e-GDDS)' : 'IMF e-GDDS Data System'}
+                </Link>
+              </li>
+              <li>
+                <Link href="/exchange-rates" className="hover:text-white transition-colors">
+                  {isRtl ? 'أسعار الصرف اليومية الرسمية' : 'Daily FX Benchmark'}
+                </Link>
+              </li>
+              <li>
+                <Link href="/banknotes" className="hover:text-white transition-colors">
+                  {isRtl ? 'العلامات التأمينية للبنكنوت' : 'Banknote Architecture'}
+                </Link>
+              </li>
             </ul>
           </div>
 
         </div>
 
-        {/* Bottom Section: Legal, Security & Copyright */}
-        <div className="flex flex-col md:flex-row items-center justify-between text-xs text-cbos-stone gap-4">
+        {/* Subfooter Horizontal Bar matching cbos.gov.sd bottom line */}
+        <div className="flex flex-wrap items-center justify-between gap-4 py-4 px-5 rounded-xl bg-[#11253E] border border-[#22446D] text-xs font-mono text-[#8F9CAE]">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+            <Link href="/sitemap" className="text-white hover:text-[#2F88C2] transition-colors font-bold">
+              {isRtl ? 'خارطة الموقع' : 'Sitemap'}
+            </Link>
+            <span>•</span>
+            <Link href="/disclaimer" className="hover:text-white transition-colors">
+              {isRtl ? 'حقوق النشر وحدود المسؤولية' : 'Copyright & Disclaimer'}
+            </Link>
+            <span>•</span>
+            <Link href="/tenders" className="hover:text-white transition-colors">
+              {isRtl ? 'عطاءات ومناقصات' : 'Tenders & Procurement'}
+            </Link>
+            <span>•</span>
+            <Link href="/financial-system" className="hover:text-white transition-colors">
+              {isRtl ? 'مواقع مهمة' : 'Key Portals'}
+            </Link>
+            <span>•</span>
+            <Link href="/about" className="hover:text-white transition-colors">
+              {isRtl ? 'علاقات دولية' : 'International Relations'}
+            </Link>
+          </div>
+
+          <div className="text-[11px] text-[#2F88C2] font-mono">
+            {isRtl ? 'بوابة جمهورية السودان النقدية' : 'Republic of Sudan Monetary Portal'}
+          </div>
+        </div>
+
+        {/* Bottom Legal & Demo Notice */}
+        <div className="flex flex-col md:flex-row items-center justify-between text-xs text-[#8F9CAE] gap-4">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-cbos-gold shrink-0" />
+              <ShieldCheck className="w-4 h-4 text-[#2F88C2] shrink-0" />
               <span>
                 {isRtl 
                   ? 'جميع الحقوق محفوظة © 2026 — بنك السودان المركزي | جمهورية السودان' 
@@ -116,7 +182,7 @@ export default function Footer() {
               </span>
             </div>
             <span className="hidden sm:inline text-white/20">•</span>
-            <span className="text-[11px] text-[#A89F91] font-mono bg-[#032117] px-2 py-0.5 rounded border border-[#0A4533]">
+            <span className="text-[11px] text-[#8F9CAE] font-mono bg-[#11253E] px-2.5 py-0.5 rounded border border-[#22446D]">
               {isRtl 
                 ? 'نسخة استعراض وتطوير تجريبية (Demo Preview) — الموقع الرسمي: cbos.gov.sd'
                 : 'Demo Evaluation Build — Official Portal: cbos.gov.sd'}
@@ -132,10 +198,10 @@ export default function Footer() {
               href="https://nexorayyc.io" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-[#DDC99B] hover:text-white font-medium transition-colors inline-flex items-center gap-1"
+              className="text-[#DFAC46] hover:text-white font-medium transition-colors inline-flex items-center gap-1"
             >
               <span>{isRtl ? 'تم التطوير بواسطة' : 'Built by'}</span>
-              <span className="font-bold text-white hover:text-cbos-gold">NEXORA</span>
+              <span className="font-bold text-white hover:text-white">NEXORA</span>
             </a>
           </div>
         </div>

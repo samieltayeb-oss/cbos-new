@@ -56,7 +56,7 @@ export default function PublicationsPreview() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-cbos-stone/50 pb-4">
           <div>
-            <span className="text-xs font-bold text-cbos-green uppercase tracking-widest font-mono">
+            <span className="text-xs font-bold text-cbos-blue uppercase tracking-widest font-mono">
               {isRtl ? 'المكتبة والبحوث الاقتصادية' : 'Sovereign Research & Publications Library'}
             </span>
             <h2 className="text-2xl md:text-3xl font-black text-cbos-ink font-display mt-1">
@@ -65,7 +65,7 @@ export default function PublicationsPreview() {
           </div>
           <Link
             href="/publications"
-            className="text-xs font-bold text-cbos-green hover:text-cbos-green-dark flex items-center gap-1.5 transition-colors"
+            className="text-xs font-bold text-cbos-blue hover:text-cbos-blue-hover flex items-center gap-1.5 transition-colors"
           >
             <span>{isRtl ? 'أرشيف الإصدارات والتقارير' : 'Explore All Publications'}</span>
             {isRtl ? <ArrowLeft className="w-3.5 h-3.5" /> : <ArrowRight className="w-3.5 h-3.5" />}
@@ -81,23 +81,23 @@ export default function PublicationsPreview() {
             >
               <div className="space-y-4">
                 {/* Cover Thumbnail */}
-                <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden bg-cbos-green-dark/10 border border-cbos-stone/40">
+                <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden bg-[#11253E]/10 border border-cbos-stone/40">
                   <Image
                     src={pub.image}
                     alt={isRtl ? pub.title.ar : pub.title.en}
                     fill
                     className="object-cover group-hover:opacity-95 transition-opacity duration-200"
                   />
-                  <div className="absolute top-2 right-2 rtl:right-auto rtl:left-2 bg-cbos-green-dark/90 text-cbos-gold px-2 py-0.5 rounded text-[10px] font-mono font-bold">
+                  <div className="absolute top-2 right-2 rtl:right-auto rtl:left-2 bg-[#0B1A2D]/90 text-cbos-gold px-2 py-0.5 rounded text-[10px] font-mono font-bold">
                     {pub.year}
                   </div>
                 </div>
 
                 <div className="space-y-1">
-                  <span className="text-[10px] text-cbos-green font-mono font-bold uppercase">
+                  <span className="text-[10px] text-cbos-blue font-mono font-bold uppercase">
                     {isRtl ? pub.type.ar : pub.type.en}
                   </span>
-                  <h4 className="text-sm font-bold text-cbos-ink group-hover:text-cbos-green transition-colors font-display line-clamp-2">
+                  <h4 className="text-sm font-bold text-cbos-ink group-hover:text-cbos-blue transition-colors font-display line-clamp-2">
                     {isRtl ? pub.title.ar : pub.title.en}
                   </h4>
                 </div>
@@ -109,7 +109,7 @@ export default function PublicationsPreview() {
                   href={pub.href}
                   className="px-2.5 py-1 rounded bg-cbos-ivory hover:bg-cbos-gold hover:text-cbos-ink text-cbos-ink text-[11px] font-bold flex items-center gap-1 transition-colors border border-cbos-stone"
                 >
-                  <Download className="w-3 h-3 text-cbos-green" />
+                  <Download className="w-3 h-3 text-cbos-blue" />
                   <span>{isRtl ? 'تحميل' : 'Download'}</span>
                 </Link>
               </div>

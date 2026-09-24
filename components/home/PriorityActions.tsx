@@ -25,7 +25,7 @@ export default function PriorityActions() {
       meta: { ar: 'سلاسل زمنية • تنزيل CSV / Excel', en: 'Time Series • CSV/Excel Export' },
       href: '/data',
       icon: LineChart,
-      accent: 'border-cbos-green/40 hover:border-cbos-green'
+      accent: 'border-cbos-blue/40 hover:border-cbos-blue'
     },
     {
       id: 'laws',
@@ -43,7 +43,7 @@ export default function PriorityActions() {
       meta: { ar: 'إصدارات رسمية مدققة • ملفات PDF', en: 'Audited Official Releases • PDF' },
       href: '/publications',
       icon: BookOpen,
-      accent: 'border-cbos-green/40 hover:border-cbos-green'
+      accent: 'border-cbos-blue/40 hover:border-cbos-blue'
     }
   ];
 
@@ -53,7 +53,7 @@ export default function PriorityActions() {
         
         <div className="flex items-center justify-between border-b border-cbos-stone/60 pb-3">
           <div>
-            <h3 className="text-xs font-bold text-cbos-green uppercase tracking-widest font-mono">
+            <h3 className="text-xs font-bold text-cbos-blue uppercase tracking-widest font-mono">
               {isRtl ? 'الخدمات والقواعد المؤسسية' : 'Core Institutional Gateways'}
             </h3>
             <h2 className="text-xl md:text-2xl font-black text-cbos-ink font-display mt-0.5">
@@ -73,7 +73,7 @@ export default function PriorityActions() {
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-lg bg-cbos-ivory-dark group-hover:bg-cbos-green group-hover:text-white transition-colors flex items-center justify-center text-cbos-green">
+                    <div className="w-10 h-10 rounded-lg bg-cbos-ivory-dark group-hover:bg-cbos-blue group-hover:text-white transition-colors flex items-center justify-center text-cbos-blue">
                       <IconComponent className="w-5 h-5" />
                     </div>
                     <span className="text-cbos-stone group-hover:text-cbos-gold group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all">
@@ -82,7 +82,7 @@ export default function PriorityActions() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <h4 className="text-base font-bold text-cbos-ink group-hover:text-cbos-green transition-colors font-display">
+                    <h4 className="text-base font-bold text-cbos-ink group-hover:text-cbos-blue transition-colors font-display">
                       {isRtl ? card.title.ar : card.title.en}
                     </h4>
                     <p className="text-xs text-slate-600 leading-relaxed font-sans">

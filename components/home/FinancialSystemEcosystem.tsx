@@ -25,7 +25,7 @@ export default function FinancialSystemEcosystem() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-cbos-stone/60 pb-4">
           <div>
-            <span className="text-xs font-bold text-cbos-green uppercase tracking-widest font-mono">
+            <span className="text-xs font-bold text-cbos-blue uppercase tracking-widest font-mono">
               {isRtl ? 'الهيكل المصرفي والمالي' : 'Regulated Financial Institutions'}
             </span>
             <h2 className="text-2xl md:text-3xl font-black text-cbos-ink font-display mt-1">
@@ -34,7 +34,7 @@ export default function FinancialSystemEcosystem() {
           </div>
           <Link
             href="/financial-system"
-            className="text-xs font-bold text-cbos-green hover:text-cbos-green-dark flex items-center gap-1.5 transition-colors"
+            className="text-xs font-bold text-cbos-blue hover:text-cbos-blue-hover flex items-center gap-1.5 transition-colors"
           >
             <span>{isRtl ? 'عرض السجل المصرفي الكامل' : 'View Full Registry'}</span>
             {isRtl ? <ArrowLeft className="w-3.5 h-3.5" /> : <ArrowRight className="w-3.5 h-3.5" />}
@@ -48,25 +48,25 @@ export default function FinancialSystemEcosystem() {
           <div className="flex items-center gap-2 overflow-x-auto w-full sm:w-auto text-xs font-semibold">
             <button
               onClick={() => setFilterType('all')}
-              className={`px-3 py-1.5 rounded-lg transition-all ${filterType === 'all' ? 'bg-cbos-green text-white shadow' : 'bg-white text-cbos-ink border border-cbos-stone'}`}
+              className={`px-3 py-1.5 rounded-lg transition-all ${filterType === 'all' ? 'bg-cbos-blue text-white shadow' : 'bg-white text-cbos-ink border border-cbos-stone'}`}
             >
               {isRtl ? 'الكل' : 'All Entities'}
             </button>
             <button
               onClick={() => setFilterType('commercial_bank')}
-              className={`px-3 py-1.5 rounded-lg transition-all ${filterType === 'commercial_bank' ? 'bg-cbos-green text-white shadow' : 'bg-white text-cbos-ink border border-cbos-stone'}`}
+              className={`px-3 py-1.5 rounded-lg transition-all ${filterType === 'commercial_bank' ? 'bg-cbos-blue text-white shadow' : 'bg-white text-cbos-ink border border-cbos-stone'}`}
             >
               {isRtl ? 'المصارف التجارية' : 'Commercial Banks'}
             </button>
             <button
               onClick={() => setFilterType('specialized_bank')}
-              className={`px-3 py-1.5 rounded-lg transition-all ${filterType === 'specialized_bank' ? 'bg-cbos-green text-white shadow' : 'bg-white text-cbos-ink border border-cbos-stone'}`}
+              className={`px-3 py-1.5 rounded-lg transition-all ${filterType === 'specialized_bank' ? 'bg-cbos-blue text-white shadow' : 'bg-white text-cbos-ink border border-cbos-stone'}`}
             >
               {isRtl ? 'المصارف المتخصصة' : 'Specialized Banks'}
             </button>
             <button
               onClick={() => setFilterType('payment_switch')}
-              className={`px-3 py-1.5 rounded-lg transition-all ${filterType === 'payment_switch' ? 'bg-cbos-green text-white shadow' : 'bg-white text-cbos-ink border border-cbos-stone'}`}
+              className={`px-3 py-1.5 rounded-lg transition-all ${filterType === 'payment_switch' ? 'bg-cbos-blue text-white shadow' : 'bg-white text-cbos-ink border border-cbos-stone'}`}
             >
               {isRtl ? 'أنظمة الدفع والمقسم' : 'Payment Switches'}
             </button>
@@ -91,11 +91,11 @@ export default function FinancialSystemEcosystem() {
           {filtered.map((inst) => (
             <div
               key={inst.id}
-              className="p-5 rounded-xl bg-white border border-cbos-stone hover:border-cbos-green hover:shadow-cbos-elevation transition-all flex flex-col justify-between space-y-4"
+              className="p-5 rounded-xl bg-white border border-cbos-stone hover:border-cbos-blue hover:shadow-cbos-elevation transition-all flex flex-col justify-between space-y-4"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <div className="w-8 h-8 rounded-lg bg-cbos-green/10 text-cbos-green flex items-center justify-center font-bold text-xs font-mono">
+                  <div className="w-8 h-8 rounded-lg bg-cbos-blue/10 text-cbos-blue flex items-center justify-center font-bold text-xs font-mono">
                     {inst.id.substring(0, 3)}
                   </div>
                   <span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold font-mono">
@@ -128,7 +128,7 @@ export default function FinancialSystemEcosystem() {
                     href={inst.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-cbos-green hover:text-cbos-gold font-bold flex items-center gap-1 text-[11px]"
+                    className="text-cbos-blue hover:text-cbos-gold font-bold flex items-center gap-1 text-[11px]"
                   >
                     <span>{isRtl ? 'البوابة' : 'Portal'}</span>
                     <ExternalLink className="w-3 h-3" />

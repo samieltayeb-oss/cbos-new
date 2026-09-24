@@ -10,52 +10,70 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Flat utility colors for comprehensive institutional coverage
-        'cbos-green': {
-          DEFAULT: '#075A3A',
-          950: '#032A1E',
-          900: '#033E2D',
-          850: '#054C36',
-          800: '#075A3A',
-          700: '#096E47',
-          600: '#0B8255',
-          500: '#109966',
-          300: '#8ACFB1',
-          200: '#C2E2D3',
-          100: '#DCEFE6',
-          50: '#EBF6F0',
-          dark: '#033E2D',
-          light: '#0A734B',
-          subtle: '#0F8B5C',
+        // Official CBOS Color System (from http://127.0.0.1:8080/ NIPS Core Platform)
+        'cbos-blue': {
+          DEFAULT: '#2F88C2',         /* CBOS Official Cerulean Top Bar */
+          hover: '#2574A8',
+          dark: '#1F6B9C',
+          light: '#5CA5D4',
         },
+        'cbos-navyDark': '#0B1A2D',   /* Deep sovereign dark background */
+        'cbos-navy': '#11253E',       /* Surface background */
+        'cbos-card': '#162D4C',       /* Card background */
+        'cbos-cardHover': '#1B375C',
+        'cbos-border': '#22446D',     /* Institutional border */
+        'cbos-borderLight': '#2D588C',
+        'cbos-slate': '#8F9CAE',      /* Muted metadata slate */
         'cbos-gold': {
-          DEFAULT: '#B99553',
-          700: '#8C6E33',
-          600: '#A58242',
-          500: '#B99553',
-          400: '#CBB075',
-          300: '#DDC99B',
+          DEFAULT: '#C58F2B',         /* CBOS Official Banknote Gold */
+          700: '#8E713A',
+          600: '#B27F25',
+          500: '#C58F2B',
+          400: '#D4A038',
+          300: '#DFAC46',
           200: '#EADFC1',
           100: '#F5EEDF',
           50: '#FAF6EE',
-          light: '#D4AF37',
-          hover: '#A58242',
-          subtle: 'rgba(185, 149, 83, 0.15)',
+          light: '#DFAC46',
+          hover: '#B27F25',
+          subtle: 'rgba(197, 143, 43, 0.15)',
+        },
+        'cbos-green': {
+          DEFAULT: '#3DA66E',         /* CBOS Official Green (Active/Settled) */
+          950: '#0B1A2D',             /* Deep Sovereign Navy */
+          900: '#11253E',             /* Navy Surface */
+          850: '#142945',
+          800: '#162D4C',             /* Navy Card */
+          700: '#22446D',             /* Navy Border */
+          600: '#2E8055',
+          500: '#3DA66E',
+          300: '#7DC89F',
+          200: '#B5E2CA',
+          100: '#DCF2E5',
+          50: '#F0FAF4',
+          dark: '#2E8055',
+          light: '#4DB97F',
+          subtle: '#62C993',
+        },
+        'cbos-red': {
+          DEFAULT: '#E95B4D',         /* CBOS Official Red (Alerts) */
+          dark: '#C83F32',
+          light: '#F08277',
         },
         'cbos-ink': {
-          DEFAULT: '#101713',
-          base: '#10231C',
-          dark: '#0A1813',
-          muted: '#44534D',
-          subtle: '#62736C',
-          surface: '#151E19',
-          card: '#1C2822',
-          border: '#273830',
+          DEFAULT: '#0B1A2D',
+          base: '#0B1A2D',
+          dark: '#071321',
+          muted: '#8F9CAE',
+          subtle: '#61748D',
+          surface: '#11253E',
+          card: '#162D4C',
+          border: '#22446D',
         },
         'cbos-ivory': {
-          DEFAULT: '#F6F4EE',
+          DEFAULT: '#FAF9F6',
           dark: '#ECE8DF',
-          light: '#FAF9F6',
+          light: '#FFFFFF',
         },
         sand: {
           50: '#FAF9F6',
@@ -70,47 +88,44 @@ const config: Config = {
           900: '#1F1D19',
         },
         ink: {
-          base: '#10231C',
-          muted: '#44534D',
-          light: '#62736C',
+          base: '#0B1A2D',
+          muted: '#8F9CAE',
+          light: '#61748D',
           subtle: '#808E88',
         },
-        // Nested legacy object for backwards compatibility
+        // Nested cbos object matching 8080 directly
         cbos: {
-          green: {
-            DEFAULT: '#075A3A',
-            950: '#032A1E',
-            dark: '#033E2D',
-            light: '#0A734B',
-            subtle: '#0F8B5C',
-          },
+          blue: '#2F88C2',
+          blueHover: '#2574A8',
+          navyDark: '#0B1A2D',
+          navy: '#11253E',
+          card: '#162D4C',
+          cardHover: '#1B375C',
+          border: '#22446D',
+          borderLight: '#2D588C',
+          gold: '#C58F2B',
+          goldLight: '#DFAC46',
+          goldHover: '#B27F25',
+          green: '#3DA66E',
+          greenDark: '#2E8055',
+          red: '#E95B4D',
+          slate: '#8F9CAE',
           ink: {
-            DEFAULT: '#101713',
-            base: '#10231C',
-            muted: '#44534D',
-            surface: '#151E19',
-            card: '#1C2822',
-            border: '#273830',
+            DEFAULT: '#0B1A2D',
+            base: '#0B1A2D',
+            muted: '#8F9CAE',
+            surface: '#11253E',
+            card: '#162D4C',
+            border: '#22446D',
           },
           ivory: {
-            DEFAULT: '#F6F4EE',
+            DEFAULT: '#FAF9F6',
             dark: '#ECE8DF',
-            light: '#FAF9F6',
-          },
-          gold: {
-            DEFAULT: '#B99553',
-            light: '#D4AF37',
-            hover: '#A58242',
-            subtle: 'rgba(185, 149, 83, 0.15)',
+            light: '#FFFFFF',
           },
           stone: {
             DEFAULT: '#D8D4C8',
             dark: '#A8A294',
-          },
-          sage: {
-            DEFAULT: '#DCE7DF',
-            light: '#EBF1EC',
-            dark: '#B8CEC0',
           },
           alert: {
             red: '#E95B4D',

@@ -114,13 +114,13 @@ export default function GlobalCommandSearch({ isOpen, onClose }: { isOpen: boole
   return (
     <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-start justify-center pt-16 md:pt-24 px-4 animate-fadeIn">
       <div 
-        className="w-full max-w-2xl bg-cbos-ink border border-cbos-gold rounded-xl shadow-2xl overflow-hidden flex flex-col"
+        className="w-full max-w-2xl bg-cbos-ink border border-[#2F88C2]/60 rounded-xl shadow-2xl overflow-hidden flex flex-col"
         onClick={e => e.stopPropagation()}
       >
         
         {/* Search Input Bar */}
         <div className="flex items-center px-4 py-3.5 border-b border-cbos-ink-border bg-cbos-ink-card gap-3">
-          <Search className="w-5 h-5 text-cbos-gold shrink-0" />
+          <Search className="w-5 h-5 text-sand-300 shrink-0" />
           <input
             ref={inputRef}
             type="text"
@@ -146,25 +146,25 @@ export default function GlobalCommandSearch({ isOpen, onClose }: { isOpen: boole
         <div className="flex items-center gap-2 px-4 py-2 bg-cbos-ink border-b border-cbos-ink-border text-xs overflow-x-auto">
           <button
             onClick={() => setActiveCategory('all')}
-            className={`px-2.5 py-1 rounded-full font-semibold transition-all ${activeCategory === 'all' ? 'bg-cbos-gold text-cbos-ink' : 'text-cbos-stone hover:text-white'}`}
+            className={`px-2.5 py-1 rounded-full font-semibold transition-all ${activeCategory === 'all' ? 'bg-[#2F88C2] text-white shadow-sm' : 'text-cbos-stone hover:text-white'}`}
           >
             {isRtl ? 'الكل' : 'All'}
           </button>
           <button
             onClick={() => setActiveCategory('documents')}
-            className={`px-2.5 py-1 rounded-full font-semibold transition-all ${activeCategory === 'documents' ? 'bg-cbos-gold text-cbos-ink' : 'text-cbos-stone hover:text-white'}`}
+            className={`px-2.5 py-1 rounded-full font-semibold transition-all ${activeCategory === 'documents' ? 'bg-[#2F88C2] text-white shadow-sm' : 'text-cbos-stone hover:text-white'}`}
           >
             {isRtl ? 'المنشورات واللوائح' : 'Documents & Circulars'}
           </button>
           <button
             onClick={() => setActiveCategory('banks')}
-            className={`px-2.5 py-1 rounded-full font-semibold transition-all ${activeCategory === 'banks' ? 'bg-cbos-gold text-cbos-ink' : 'text-cbos-stone hover:text-white'}`}
+            className={`px-2.5 py-1 rounded-full font-semibold transition-all ${activeCategory === 'banks' ? 'bg-[#2F88C2] text-white shadow-sm' : 'text-cbos-stone hover:text-white'}`}
           >
             {isRtl ? 'المصارف المرخصة' : 'Licensed Banks'}
           </button>
           <button
             onClick={() => setActiveCategory('news')}
-            className={`px-2.5 py-1 rounded-full font-semibold transition-all ${activeCategory === 'news' ? 'bg-cbos-gold text-cbos-ink' : 'text-cbos-stone hover:text-white'}`}
+            className={`px-2.5 py-1 rounded-full font-semibold transition-all ${activeCategory === 'news' ? 'bg-[#2F88C2] text-white shadow-sm' : 'text-cbos-stone hover:text-white'}`}
           >
             {isRtl ? 'الأخبار والإعلانات' : 'Notices & News'}
           </button>
@@ -175,7 +175,7 @@ export default function GlobalCommandSearch({ isOpen, onClose }: { isOpen: boole
           {query.trim().length <= 1 ? (
             <div className="text-center py-8 text-xs text-cbos-stone space-y-2">
               <p>{isRtl ? 'اكتب كلمة للبحث الفوري في كافة قواعد بيانات البنك المركزي' : 'Type a query to search across all Central Bank records'}</p>
-              <div className="flex justify-center gap-2 text-[11px] font-mono text-cbos-gold">
+              <div className="flex justify-center gap-2 text-[11px] font-mono text-[#C58F2B]">
                 <span>CIRC-2026</span> • <span>NIPS</span> • <span>الذهب</span> • <span>USD</span>
               </div>
             </div>
@@ -191,23 +191,23 @@ export default function GlobalCommandSearch({ isOpen, onClose }: { isOpen: boole
                   key={item.id}
                   href={item.href}
                   onClick={onClose}
-                  className="group flex items-center justify-between p-3 rounded-xl bg-cbos-ink-surface hover:bg-cbos-green-dark/40 border border-cbos-ink-border hover:border-cbos-gold transition-all"
+                  className="group flex items-center justify-between p-3 rounded-xl bg-cbos-ink-surface hover:bg-[#162D4C] border border-cbos-ink-border hover:border-[#2F88C2] transition-all"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-cbos-gold/15 text-cbos-gold flex items-center justify-center shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-[#2F88C2]/20 text-[#2F88C2] flex items-center justify-center shrink-0">
                       <IconComp className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="text-sm font-bold text-white group-hover:text-cbos-gold transition-colors">
+                      <div className="text-sm font-bold text-white group-hover:text-[#2F88C2] transition-colors">
                         {item.title}
                       </div>
                       <div className="text-[11px] text-cbos-stone flex items-center gap-2 mt-0.5">
-                        <span className="text-cbos-gold font-mono">{item.category}</span>
+                        <span className="text-sand-300 font-mono">{item.category}</span>
                         {item.meta && <span>• {item.meta}</span>}
                       </div>
                     </div>
                   </div>
-                  <span className="text-cbos-stone group-hover:text-cbos-gold transition-colors">
+                  <span className="text-cbos-stone group-hover:text-white transition-colors">
                     {isRtl ? <ArrowLeft className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
                   </span>
                 </Link>

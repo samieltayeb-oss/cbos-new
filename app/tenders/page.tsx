@@ -135,8 +135,8 @@ export default function TendersPage() {
     <div className="bg-sand-50 min-h-screen">
       {/* Header Banner */}
       <section 
-        className="text-white relative overflow-hidden py-16 lg:py-20 border-b border-[#075A3A]"
-        style={{ backgroundColor: '#032A1E' }}
+        className="text-white relative overflow-hidden py-16 lg:py-20 border-b border-[#22446D]"
+        style={{ backgroundColor: '#0B1A2D' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center gap-3 text-[#DDC99B] text-xs font-mono uppercase tracking-wider mb-4">
@@ -156,11 +156,11 @@ export default function TendersPage() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4 text-xs font-mono">
-            <div className="px-3.5 py-1.5 rounded-lg bg-[#075A3A]/60 border border-[#B99553]/40 flex items-center gap-2">
+            <div className="px-3.5 py-1.5 rounded-lg bg-[#2F88C2]/60 border border-[#B99553]/40 flex items-center gap-2">
               <span className="text-[#DDC99B]">{isRtl ? 'المقر المعتمد للتقديم:' : 'Submission Location:'}</span>
               <span className="font-bold text-white">{isRtl ? 'مكتب لجنة العطاءات — بورتسودان' : 'Procurement Board — Port Sudan'}</span>
             </div>
-            <div className="px-3.5 py-1.5 rounded-lg bg-[#075A3A]/60 border border-[#B99553]/40 flex items-center gap-2">
+            <div className="px-3.5 py-1.5 rounded-lg bg-[#2F88C2]/60 border border-[#B99553]/40 flex items-center gap-2">
               <span className="text-[#DDC99B]">{isRtl ? 'صندوق الشكاوى والاعتراضات:' : 'Dispute Desk:'}</span>
               <span className="font-bold text-white">tenders@cbos.gov.sd</span>
             </div>
@@ -240,7 +240,7 @@ export default function TendersPage() {
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-sand-200 pb-4">
                   <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs font-bold px-3 py-1 rounded bg-[#075A3A]/10 text-cbos-green-900 border border-cbos-green-200">
+                    <span className="font-mono text-xs font-bold px-3 py-1 rounded bg-[#2F88C2]/10 text-cbos-green-900 border border-cbos-green-200">
                       {tender.refNumber}
                     </span>
                     <span className="text-xs text-cbos-ink-muted font-mono">
@@ -293,7 +293,7 @@ export default function TendersPage() {
                   <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 w-full sm:w-auto">
                     <Link
                       href={`/tenders/${tender.id}`}
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-cbos-green-800/30 bg-white text-cbos-green-900 hover:bg-sand-100 transition-colors font-bold text-xs"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-[#22446D]/30 bg-white text-cbos-green-900 hover:bg-sand-100 transition-colors font-bold text-xs"
                     >
                       <FileText className="w-3.5 h-3.5 text-cbos-gold" />
                       <span>{isRtl ? 'تفاصيل العطاء والشروط' : 'Tender Dossier & Terms'}</span>
@@ -313,8 +313,8 @@ export default function TendersPage() {
         </div>
 
         {/* Guidelines & Terms of Submission */}
-        <div className="mt-12 bg-[#032A1E] text-white rounded-xl p-8 border border-cbos-green-800 space-y-6">
-          <div className="flex items-center gap-3 border-b border-cbos-green-800 pb-4">
+        <div className="mt-12 bg-[#0B1A2D] text-white rounded-xl p-8 border border-[#22446D] space-y-6">
+          <div className="flex items-center gap-3 border-b border-[#22446D] pb-4">
             <ShieldCheck className="w-6 h-6 text-[#B99553]" />
             <h2 className="text-lg font-bold font-display text-white">
               {isRtl ? 'الضوابط العامة للتقديم وشروط التأهيل' : 'Procurement Rules & Vendor Eligibility Guidelines'}

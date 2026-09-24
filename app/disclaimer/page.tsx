@@ -11,8 +11,8 @@ export default function DisclaimerPage() {
     <div className="bg-sand-50 min-h-screen">
       {/* Header Banner */}
       <section 
-        className="text-white relative overflow-hidden py-16 lg:py-20 border-b border-[#075A3A]"
-        style={{ backgroundColor: '#032A1E' }}
+        className="text-white relative overflow-hidden py-16 lg:py-20 border-b border-[#22446D]"
+        style={{ backgroundColor: '#0B1A2D' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center gap-3 text-[#DDC99B] text-xs font-mono uppercase tracking-wider mb-4">

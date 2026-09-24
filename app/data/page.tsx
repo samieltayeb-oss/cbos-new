@@ -179,7 +179,7 @@ export default function DataPortalPage() {
       {/* Sovereign High-Contrast Hero Banner */}
       <section 
         className="text-white relative overflow-hidden py-16 lg:py-24 border-b border-[#B99553]/40"
-        style={{ backgroundColor: '#032A1E' }}
+        style={{ backgroundColor: '#0B1A2D' }}
       >
         <div className="absolute inset-0 bg-guilloche opacity-20 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -257,7 +257,7 @@ export default function DataPortalPage() {
               placeholder={t({ ar: 'بحث في المؤشرات...', en: 'Search metrics...' })}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="ps-10 pe-4 py-2.5 text-sm bg-[#FAF9F6] border border-[#D8D4C8] rounded-lg focus:outline-none focus:border-[#075A3A] w-full sm:w-64 text-[#10231C]"
+              className="ps-10 pe-4 py-2.5 text-sm bg-[#FAF9F6] border border-[#D8D4C8] rounded-lg focus:outline-none focus:border-[#22446D] w-full sm:w-64 text-[#10231C]"
             />
           </div>
         </div>
@@ -267,7 +267,7 @@ export default function DataPortalPage() {
           {filteredMetrics.map((item) => (
             <div 
               key={item.id}
-              className="bg-white border border-[#D8D4C8] rounded-xl p-6 shadow-sm hover:border-[#075A3A] transition-all flex flex-col justify-between"
+              className="bg-white border border-[#D8D4C8] rounded-xl p-6 shadow-sm hover:border-[#22446D] transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
@@ -277,7 +277,7 @@ export default function DataPortalPage() {
                   >
                     {item.code}
                   </span>
-                  <span className="text-[13px] font-medium text-[#075A3A]">
+                  <span className="text-[13px] font-medium text-[#2F88C2]">
                     {t(item.categoryLabel)}
                   </span>
                 </div>
@@ -291,7 +291,7 @@ export default function DataPortalPage() {
                   <div className="flex items-baseline justify-between">
                     <span 
                       dir="ltr"
-                      className="text-3xl sm:text-[36px] font-mono font-bold text-[#032A1E] tabular-nums"
+                      className="text-3xl sm:text-[36px] font-mono font-bold text-[#0B1A2D] tabular-nums"
                     >
                       {item.value}
                     </span>
@@ -364,13 +364,13 @@ export default function DataPortalPage() {
 
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4 border-t border-[#ECE8DF]">
                 <div className="p-3 rounded-lg bg-[#FAF9F6] border border-[#D8D4C8]">
-                  <div className="font-mono text-base font-bold text-[#032A1E]">IMF e-GDDS</div>
+                  <div className="font-mono text-base font-bold text-[#0B1A2D]">IMF e-GDDS</div>
                   <div className="text-[11px] text-[#44534D] leading-tight mt-0.5">
                     {t({ ar: 'المعيار الدولي للنشر', en: 'Dissemination Standard' })}
                   </div>
                 </div>
                 <div className="p-3 rounded-lg bg-[#FAF9F6] border border-[#D8D4C8]">
-                  <div className="font-mono text-base font-bold text-[#032A1E]">100%</div>
+                  <div className="font-mono text-base font-bold text-[#0B1A2D]">100%</div>
                   <div className="text-[11px] text-[#44534D] leading-tight mt-0.5">
                     {t({ ar: 'تغطية القطاع المصرفي', en: 'Banking Sector Census' })}
                   </div>
@@ -435,7 +435,7 @@ export default function DataPortalPage() {
 
           <div 
             className="lg:col-span-4 text-white rounded-xl p-6 border border-[#B99553]/40 flex flex-col justify-between"
-            style={{ backgroundColor: '#032A1E' }}
+            style={{ backgroundColor: '#0B1A2D' }}
           >
             <div>
               <div className="flex items-center gap-2 text-[#DDC99B] text-xs font-mono uppercase font-bold tracking-wider mb-2">

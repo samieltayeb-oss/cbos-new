@@ -69,8 +69,8 @@ export default function ConsumerProtectionPage() {
     <div className="bg-sand-50 min-h-screen">
       {/* Header Banner */}
       <section 
-        className="text-white relative overflow-hidden py-16 lg:py-20 border-b border-[#075A3A]"
-        style={{ backgroundColor: '#032A1E' }}
+        className="text-white relative overflow-hidden py-16 lg:py-20 border-b border-[#22446D]"
+        style={{ backgroundColor: '#0B1A2D' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center gap-3 text-[#DDC99B] text-xs font-mono uppercase tracking-wider mb-4">
@@ -90,11 +90,11 @@ export default function ConsumerProtectionPage() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4 text-xs font-mono">
-            <div className="px-3.5 py-1.5 rounded-lg bg-[#075A3A]/60 border border-[#B99553]/40 flex items-center gap-2">
+            <div className="px-3.5 py-1.5 rounded-lg bg-[#2F88C2]/60 border border-[#B99553]/40 flex items-center gap-2">
               <span className="text-[#DDC99B]">{isRtl ? 'المهلة القانونية للرد:' : 'Bank Response SLA:'}</span>
               <span className="font-bold text-white">{isRtl ? '7 أيام عمل' : '7 Business Days'}</span>
             </div>
-            <div className="px-3.5 py-1.5 rounded-lg bg-[#075A3A]/60 border border-[#B99553]/40 flex items-center gap-2">
+            <div className="px-3.5 py-1.5 rounded-lg bg-[#2F88C2]/60 border border-[#B99553]/40 flex items-center gap-2">
               <span className="text-[#DDC99B]">{isRtl ? 'الرقم المجاني الموحد:' : 'Ombudsman Hotline:'}</span>
               <span className="font-bold text-white">+249 187 05000</span>
             </div>
@@ -120,7 +120,7 @@ export default function ConsumerProtectionPage() {
             {consumerRights.map((right, idx) => (
               <div key={idx} className="bg-white rounded-xl p-6 border border-sand-300 shadow-sm space-y-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#075A3A]/10 text-cbos-green-900 flex items-center justify-center font-mono font-bold text-xs">
+                  <div className="w-8 h-8 rounded-lg bg-[#2F88C2]/10 text-cbos-green-900 flex items-center justify-center font-mono font-bold text-xs">
                     0{idx + 1}
                   </div>
                   <h3 className="font-bold text-base text-cbos-ink font-sans">

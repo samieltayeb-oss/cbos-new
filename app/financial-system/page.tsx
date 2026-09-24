@@ -48,7 +48,7 @@ export default function FinancialSystemPage() {
       {/* Header Banner */}
       <section 
         className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-20 border-b border-cbos-gold/30"
-        style={{ backgroundColor: '#032A1E' }}
+        style={{ backgroundColor: '#0B1A2D' }}
       >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -92,7 +92,7 @@ export default function FinancialSystemPage() {
                 })}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full ps-12 pe-4 py-2.5 bg-sand-50 border border-sand-300 rounded-lg text-sm focus:outline-none focus:border-cbos-green-800 text-ink-base"
+                className="w-full ps-12 pe-4 py-2.5 bg-sand-50 border border-sand-300 rounded-lg text-sm focus:outline-none focus:border-[#22446D] text-ink-base"
               />
             </div>
 
@@ -209,7 +209,7 @@ export default function FinancialSystemPage() {
         {/* Prudential Standards Strip */}
         <div 
           className="bg-cbos-green-950 text-white rounded-xl p-8 sm:p-10 border border-cbos-gold/40 relative overflow-hidden"
-          style={{ backgroundColor: '#032A1E' }}
+          style={{ backgroundColor: '#0B1A2D' }}
         >
           <div className="absolute inset-0 bg-guilloche opacity-10 pointer-events-none" />
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">

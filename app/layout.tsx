@@ -42,8 +42,12 @@ export const metadata: Metadata = {
   keywords: ['بنك السودان المركزي', 'CBOS', 'Central Bank of Sudan', 'أسعار الصرف', 'السياسة النقدية', 'NIPS', 'الجنيه السوداني'],
   authors: [{ name: 'Central Bank of Sudan' }],
   icons: {
-    icon: '/favicon.ico',
-    apple: '/images/cbos/official/cbos-logo-white.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: '/apple-touch-icon.png',
+    shortcut: '/favicon.ico',
   },
   openGraph: {
     title: 'Central Bank of Sudan — Official Sovereign Platform',

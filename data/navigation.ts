@@ -28,6 +28,8 @@ export const primaryNavigation: NavGroup[] = [
           { id: 'gov-board', title: { ar: 'مجلس الإدارة واللجان', en: 'Board of Directors & Committees' }, href: '/leadership#board' },
           { id: 'gov-structure', title: { ar: 'الهيكل التنظيمي والإدارات', en: 'Organizational Structure' }, href: '/about' },
           { id: 'gov-sharia', title: { ar: 'الهيئة العليا للرقابة الشرعية', en: 'Higher Sharia Supervisory Board' }, href: '/about' },
+          { id: 'about-correspondents', title: { ar: 'مراسلو بنك السودان المركزي', en: 'Correspondent Banks' }, href: '/correspondents' },
+          { id: 'about-gallery', title: { ar: 'معرض الصور والتوثيق', en: 'Photo Gallery' }, href: '/gallery' },
         ]
       }
     ]

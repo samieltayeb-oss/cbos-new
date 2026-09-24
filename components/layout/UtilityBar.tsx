@@ -10,8 +10,8 @@ export default function UtilityBar({ onOpenSearch }: { onOpenSearch?: () => void
 
   return (
     <div 
-      className="text-white text-[12.5px] font-medium border-b border-[#075A3A]/60 py-2 px-4 md:px-8"
-      style={{ backgroundColor: '#032A1E' }}
+      className="text-white text-[12.5px] font-semibold border-b border-[#2574A8] py-1.5 px-4 md:px-8 shadow-sm"
+      style={{ backgroundColor: '#2F88C2' }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
@@ -20,7 +20,7 @@ export default function UtilityBar({ onOpenSearch }: { onOpenSearch?: () => void
           <div className="flex items-center gap-2 font-bold tracking-normal text-white">
             {/* Sovereign Sudanese Flag */}
             <div 
-              className="inline-flex items-center shadow-sm rounded-[2.5px] overflow-hidden border border-white/40 shrink-0 cursor-default"
+              className="inline-flex items-center shadow-sm rounded-[2.5px] overflow-hidden border border-white/50 shrink-0 cursor-default"
               title={isRtl ? 'علم جمهورية السودان' : 'Flag of the Republic of the Sudan'}
             >
               <svg 
@@ -35,11 +35,11 @@ export default function UtilityBar({ onOpenSearch }: { onOpenSearch?: () => void
                 <polygon points="0,0 200,150 0,300" fill="#007229" />
               </svg>
             </div>
-            <ShieldCheck className="w-3.5 h-3.5 text-[#B99553]" />
+            <ShieldCheck className="w-3.5 h-3.5 text-amber-200" />
             <span>{isRtl ? 'جمهورية السودان — بنك السودان المركزي' : 'Republic of the Sudan — Central Bank of Sudan'}</span>
           </div>
-          <span className="hidden lg:inline text-white/30">|</span>
-          <span className="hidden lg:inline text-[#DDC99B] text-xs font-normal">
+          <span className="hidden lg:inline text-white/40">|</span>
+          <span className="hidden lg:inline text-white/90 text-xs font-normal">
             {isRtl ? 'السلطة النقدية والرقابية السيادية' : 'Sovereign Monetary & Regulatory Authority'}
           </span>
         </div>
@@ -48,8 +48,8 @@ export default function UtilityBar({ onOpenSearch }: { onOpenSearch?: () => void
         <div className="flex items-center space-x-4 rtl:space-x-reverse text-[12.5px] font-medium">
           
           {/* Gregorian & Hijri Date */}
-          <div className="hidden md:flex items-center gap-1 text-[#E2DDD3]">
-            <Calendar className="w-3.5 h-3.5 text-[#B99553]" />
+          <div className="hidden md:flex items-center gap-1.5 text-white/95">
+            <Calendar className="w-3.5 h-3.5 text-amber-200" />
             <span>
               {isRtl 
                 ? 'الخميس 24 سبتمبر 2026 م — 12 ربيع الأول 1448 هـ'
@@ -57,36 +57,56 @@ export default function UtilityBar({ onOpenSearch }: { onOpenSearch?: () => void
             </span>
           </div>
 
-          <span className="h-3.5 w-px bg-white/20 hidden md:block" />
+          <span className="h-3.5 w-px bg-white/30 hidden md:block" />
 
-          {/* Quick Links */}
-          <Link href="/news" className="text-white hover:text-[#B99553] transition-colors flex items-center gap-1">
-            <FileText className="w-3.5 h-3.5 text-[#B99553]" />
+          {/* Quick Links matching cbos.gov.sd */}
+          <Link href="/correspondents" className="text-white hover:text-amber-200 transition-colors flex items-center gap-1">
+            <span>{isRtl ? 'المراسلين' : 'Correspondents'}</span>
+          </Link>
+
+          <span className="h-3.5 w-px bg-white/30 hidden lg:block" />
+
+          <Link href="/consumer-protection" className="text-white hover:text-amber-200 transition-colors hidden lg:flex items-center gap-1">
+            <span>{isRtl ? 'حماية المستهلك المالي' : 'Consumer Protection'}</span>
+          </Link>
+
+          <span className="h-3.5 w-px bg-white/30 hidden md:block" />
+
+          <Link href="/gallery" className="text-white hover:text-amber-200 transition-colors hidden md:flex items-center gap-1">
+            <span>{isRtl ? 'معرض الصور' : 'Gallery'}</span>
+          </Link>
+
+          <span className="h-3.5 w-px bg-white/30 hidden sm:block" />
+
+          <Link href="/tenders" className="text-white hover:text-amber-200 transition-colors hidden sm:flex items-center gap-1">
+            <FileText className="w-3.5 h-3.5 text-amber-200" />
             <span>{isRtl ? 'العطاءات' : 'Tenders'}</span>
           </Link>
 
-          <Link href="/contact" className="text-white hover:text-[#B99553] transition-colors flex items-center gap-1">
-            <PhoneCall className="w-3.5 h-3.5 text-[#B99553]" />
-            <span>{isRtl ? 'الاتصال' : 'Contact'}</span>
+          <span className="h-3.5 w-px bg-white/30" />
+
+          <Link href="/contact" className="text-white hover:text-amber-200 transition-colors flex items-center gap-1">
+            <PhoneCall className="w-3.5 h-3.5 text-amber-200" />
+            <span>{isRtl ? 'اتصل بنا' : 'Contact'}</span>
           </Link>
 
-          <span className="h-3.5 w-px bg-white/20" />
+          <span className="h-3.5 w-px bg-white/30" />
 
           {/* Global Search Shortcut Pill */}
           <button
             onClick={onOpenSearch}
-            className="flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-[#075A3A]/70 hover:bg-[#075A3A] hover:text-white transition-all text-white border border-[#B99553]/40 font-mono text-xs"
+            className="flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-black/20 hover:bg-black/35 hover:text-white transition-all text-white border border-white/30 font-mono text-xs"
             title={isRtl ? 'البحث الشامل (اضغط /)' : 'Global Search (Press /)'}
           >
-            <Search className="w-3 h-3 text-[#B99553]" />
+            <Search className="w-3 h-3 text-amber-200" />
             <span className="font-arabic">{isRtl ? 'بحث' : 'Search'}</span>
-            <kbd className="bg-black/40 px-1 py-0.2 rounded text-[10px] text-[#DDC99B] font-sans">/</kbd>
+            <kbd className="bg-black/30 px-1 py-0.2 rounded text-[10px] text-amber-200 font-sans">/</kbd>
           </button>
 
           {/* Language Switcher */}
           <button
             onClick={toggleLanguage}
-            className="flex items-center gap-1 px-3 py-1 rounded bg-[#B99553]/20 text-[#DDC99B] hover:bg-[#B99553] hover:text-[#101713] font-bold transition-all border border-[#B99553]/50 text-xs"
+            className="flex items-center gap-1 px-3 py-1 rounded bg-white/15 text-white hover:bg-white hover:text-[#0B1A2D] font-bold transition-all border border-white/40 text-xs shadow-sm"
           >
             <Globe className="w-3.5 h-3.5" />
             <span>{isRtl ? 'English' : 'العربية'}</span>

@@ -254,7 +254,7 @@ export default function DataExperience() {
             </button>
             <Link
               href="/data"
-              className="px-5 py-2.5 rounded-xl bg-cbos-green-900 hover:bg-cbos-green-800 text-white font-bold text-xs flex items-center gap-2 transition-all shadow-md hover:shadow-lg border border-[#075A3A]"
+              className="px-5 py-2.5 rounded-xl bg-cbos-blue hover:bg-cbos-blue-hover text-white font-bold text-xs flex items-center gap-2 transition-all shadow-md hover:shadow-lg border border-[#22446D]"
             >
               <span>{isRtl ? 'كتالوج البيانات المفتوحة' : 'Open Data Portal'}</span>
               {isRtl ? <ArrowLeft className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
@@ -264,52 +264,52 @@ export default function DataExperience() {
 
         {/* Master Sovereign Data Terminal */}
         <div 
-          className="rounded-xl border border-[#0F382A] border-t-2 border-t-[#B99553]/70 shadow-xl overflow-hidden relative"
-          style={{ backgroundColor: '#051E17' }}
+          className="rounded-xl border border-[#22446D] border-t-2 border-t-[#2F88C2] shadow-xl overflow-hidden relative"
+          style={{ backgroundColor: '#0B1A2D' }}
         >
           {/* Subtle Guilloche Security Curve Watermark */}
           <div className="absolute inset-0 pointer-events-none opacity-10">
             <svg className="w-full h-full object-cover" viewBox="0 0 1000 400" fill="none">
-              <path d="M-100,200 C300,50 600,350 1100,150" stroke="#B99553" strokeWidth="1.5" strokeDasharray="6 4" />
-              <circle cx="850" cy="200" r="180" stroke="#B99553" strokeWidth="0.8" opacity="0.4" />
+              <path d="M-100,200 C300,50 600,350 1100,150" stroke="#2F88C2" strokeWidth="1.5" strokeDasharray="6 4" />
+              <circle cx="850" cy="200" r="180" stroke="#C58F2B" strokeWidth="0.8" opacity="0.4" />
             </svg>
           </div>
 
           {/* 1. Terminal Status Top Bar */}
-          <div className="relative z-10 px-6 py-3.5 bg-[#031912] border-b border-[#0F382A] flex flex-wrap items-center justify-between gap-4">
+          <div className="relative z-10 px-6 py-3.5 bg-[#11253E] border-b border-[#22446D] flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 ring-2 ring-emerald-500/20" />
-              <span className="text-xs font-mono font-bold text-sand-100 uppercase tracking-wider">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#3DA66E] ring-2 ring-[#3DA66E]/20" />
+              <span className="text-xs font-mono font-bold text-white uppercase tracking-wider">
                 {isRtl ? 'النشرة الرسمية: السعر التأشيري المعتمد' : 'OFFICIAL FIXING BULLETIN • DAILY BENCHMARK'}
               </span>
-              <span className="hidden sm:inline text-xs text-[#0F382A]">•</span>
-              <span className="hidden sm:inline text-xs font-mono text-[#A89F91]">
+              <span className="hidden sm:inline text-xs text-[#22446D]">•</span>
+              <span className="hidden sm:inline text-xs font-mono text-[#8F9CAE]">
                 FIXING TIME: 12:00 CAT
               </span>
             </div>
 
-            <div className="flex items-center gap-3 text-xs font-mono text-[#DDC99B]">
-              <span className="hidden md:inline bg-[#041912] px-2.5 py-1 rounded border border-[#0F382A] text-[11px] text-[#A89F91]">
+            <div className="flex items-center gap-3 text-xs font-mono text-[#2F88C2]">
+              <span className="hidden md:inline bg-[#162D4C] px-2.5 py-1 rounded border border-[#22446D] text-[11px] text-[#8F9CAE]">
                 SERIES: {currentSeriesMeta.series_id}
               </span>
-              <span className="bg-[#075A3A]/40 text-emerald-200 px-2.5 py-1 rounded border border-[#0F5A3F]/50 text-[11px] font-bold">
+              <span className="bg-[#2F88C2]/20 text-[#2F88C2] px-2.5 py-1 rounded border border-[#2F88C2]/40 text-[11px] font-bold">
                 e-GDDS • ART 26 ACT 2002
               </span>
             </div>
           </div>
 
           {/* 2. Key Metrics Sovereign KPI Strip (4 Pillars) — FULLY DYNAMIC WITH INSTANT SCRUBBING */}
-          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x sm:divide-x-reverse divide-[#0F382A] border-b border-[#0F382A] bg-[#051E17] transition-all duration-200">
+          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x sm:divide-x-reverse divide-[#22446D] border-b border-[#22446D] bg-[#0B1A2D] transition-all duration-200">
             
             {/* KPI 1: Inspected / Latest Middle Rate */}
-            <div className={`p-5 space-y-1.5 transition-colors duration-200 ${isInspecting ? 'bg-[#08291E]' : ''}`}>
+            <div className={`p-5 space-y-1.5 transition-colors duration-200 ${isInspecting ? 'bg-[#162D4C]' : ''}`}>
               <div className="flex items-center justify-between">
-                <span className="text-[11px] font-mono text-[#8C9B94] uppercase tracking-wider block">
+                <span className="text-[11px] font-mono text-[#8F9CAE] uppercase tracking-wider block">
                   {isInspecting 
                     ? (isRtl ? 'السعر التأشيري المحدد' : 'Inspected Rate')
                     : (isRtl ? 'السعر التأشيري الوسيط' : 'Official Middle Rate')}
                 </span>
-                <span className={`text-[10px] font-mono px-2 py-0.5 rounded font-bold ${isInspecting ? 'bg-[#B99553]/25 text-[#DDC99B] border border-[#B99553]/50' : 'bg-[#075A3A]/40 text-emerald-300'}`}>
+                <span className={`text-[10px] font-mono px-2 py-0.5 rounded font-bold ${isInspecting ? 'bg-[#C58F2B]/20 text-[#DFAC46] border border-[#C58F2B]/50' : 'bg-[#2F88C2]/20 text-[#2F88C2] border border-[#2F88C2]/40'}`}>
                   {isInspecting ? activePt.date : (isRtl ? 'أحدث إقفال' : 'Latest')}
                 </span>
               </div>
@@ -318,76 +318,76 @@ export default function DataExperience() {
                 <span dir="ltr" className="text-2xl sm:text-3xl font-extrabold font-mono text-white tabular-nums transition-all">
                   {displayMiddle.toLocaleString('en-US', { minimumFractionDigits: precision, maximumFractionDigits: precision })}
                 </span>
-                <span className="text-xs font-mono font-bold text-[#DDC99B]">SDG</span>
+                <span className="text-xs font-mono font-bold text-[#2F88C2]">SDG</span>
               </div>
 
               <div className="flex items-center gap-1.5 text-xs font-mono">
                 <span className={`inline-flex items-center gap-0.5 px-2 py-0.5 rounded font-bold transition-colors ${
                   isPointPositive 
-                    ? 'bg-[#042A1D] text-emerald-300 border border-[#0F5A3F]' 
-                    : 'bg-[#2E0F16] text-rose-300 border border-[#5E1E2C]'
+                    ? 'bg-[#162D4C] text-[#3DA66E] border border-[#22446D]' 
+                    : 'bg-[#2E1619] text-[#E95B4D] border border-[#5A2229]'
                 }`}>
                   {isPointPositive ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
                   <span dir="ltr">
                     {isPointPositive ? `+${pointDelta.toFixed(2)}` : pointDelta.toFixed(2)} ({isPointPositive ? `+${pointDeltaPct}%` : `${pointDeltaPct}%`})
                   </span>
                 </span>
-                <span className="text-[#8C9B94] text-[11px]">
+                <span className="text-[#8F9CAE] text-[11px]">
                   {isInspecting ? (isRtl ? 'من بداية السلسلة' : 'From start') : timeframe}
                 </span>
               </div>
             </div>
 
             {/* KPI 2: Inspected Official Buy / Sell Spread */}
-            <div className={`p-5 space-y-1.5 transition-colors duration-200 ${isInspecting ? 'bg-[#08291E]' : ''}`}>
+            <div className={`p-5 space-y-1.5 transition-colors duration-200 ${isInspecting ? 'bg-[#162D4C]' : ''}`}>
               <div className="flex items-center justify-between">
-                <span className="text-[11px] font-mono text-[#8C9B94] uppercase tracking-wider block">
+                <span className="text-[11px] font-mono text-[#8F9CAE] uppercase tracking-wider block">
                   {isRtl ? 'نطاق الشراء / البيع' : 'Buy / Sell Range'}
                 </span>
-                <span className="text-[10px] font-mono text-[#8C9B94]">
+                <span className="text-[10px] font-mono text-[#8F9CAE]">
                   {selectedCurrency} / SDG
                 </span>
               </div>
 
               <div className="flex items-center justify-between text-xs font-mono pt-1">
                 <div>
-                  <span className="text-[#8C9B94] block text-[10px]">{isRtl ? 'شراء رسمي' : 'OFFICIAL BUY'}</span>
-                  <span dir="ltr" className="text-sm font-bold text-[#DDC99B] tabular-nums">
+                  <span className="text-[#8F9CAE] block text-[10px]">{isRtl ? 'شراء رسمي' : 'OFFICIAL BUY'}</span>
+                  <span dir="ltr" className="text-sm font-bold text-[#2F88C2] tabular-nums">
                     {displayBuy.toFixed(2)}
                   </span>
                 </div>
-                <div className="h-6 w-px bg-[#0F382A]" />
+                <div className="h-6 w-px bg-[#22446D]" />
                 <div className="text-right">
-                  <span className="text-[#8C9B94] block text-[10px]">{isRtl ? 'بيع رسمي' : 'OFFICIAL SELL'}</span>
+                  <span className="text-[#8F9CAE] block text-[10px]">{isRtl ? 'بيع رسمي' : 'OFFICIAL SELL'}</span>
                   <span dir="ltr" className="text-sm font-bold text-white tabular-nums">
                     {displaySell.toFixed(2)}
                   </span>
                 </div>
               </div>
 
-              <div className="text-[11px] font-mono text-[#8C9B94] pt-1 flex items-center justify-between">
+              <div className="text-[11px] font-mono text-[#8F9CAE] pt-1 flex items-center justify-between">
                 <span>{isRtl ? 'الهامش الرقابي:' : 'Regulatory Spread:'}</span>
                 <span dir="ltr" className="text-white font-bold">{displaySpread.toFixed(2)} SDG</span>
               </div>
             </div>
 
             {/* KPI 3: Commercial Bank Average */}
-            <div className={`p-5 space-y-1.5 transition-colors duration-200 ${isInspecting ? 'bg-[#08291E]' : ''}`}>
+            <div className={`p-5 space-y-1.5 transition-colors duration-200 ${isInspecting ? 'bg-[#162D4C]' : ''}`}>
               <div className="flex items-center justify-between">
-                <span className="text-[11px] font-mono text-[#8C9B94] uppercase tracking-wider block">
+                <span className="text-[11px] font-mono text-[#8F9CAE] uppercase tracking-wider block">
                   {isRtl ? 'متوسط المصارف التجارية' : 'Commercial Banking Avg'}
                 </span>
-                <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                <span className="w-2 h-2 rounded-full bg-[#3DA66E]" />
               </div>
 
               <div className="flex items-baseline gap-2">
-                <span dir="ltr" className="text-2xl sm:text-3xl font-extrabold font-mono text-[#DDC99B] tabular-nums">
+                <span dir="ltr" className="text-2xl sm:text-3xl font-extrabold font-mono text-[#3DA66E] tabular-nums">
                   {displayComm.toFixed(2)}
                 </span>
-                <span className="text-xs font-mono font-bold text-[#8C9B94]">SDG</span>
+                <span className="text-xs font-mono font-bold text-[#8F9CAE]">SDG</span>
               </div>
 
-              <p className="text-[11px] font-mono text-[#8C9B94] truncate">
+              <p className="text-[11px] font-mono text-[#8F9CAE] truncate">
                 {isInspecting 
                   ? (isRtl ? `تداول يوم ${activePt.date}` : `Interbank on ${activePt.date}`)
                   : (isRtl ? 'مؤشر سيولة السوق الموحد' : 'Interbank liquidity benchmark')}
@@ -396,23 +396,23 @@ export default function DataExperience() {
 
             {/* KPI 4: Period High / Low Range with Dynamic Pointer */}
             <div className="p-5 space-y-2">
-              <div className="flex items-center justify-between text-[11px] font-mono text-[#8C9B94] uppercase">
+              <div className="flex items-center justify-between text-[11px] font-mono text-[#8F9CAE] uppercase">
                 <span>{isRtl ? 'أدنى' : 'LOW'}</span>
                 <span className="text-white font-bold">{timeframe} RANGE</span>
                 <span>{isRtl ? 'أعلى' : 'HIGH'}</span>
               </div>
               <div className="flex items-center justify-between text-xs font-mono">
-                <span dir="ltr" className="text-[#8C9B94] font-bold tabular-nums">{minVal.toFixed(tickDecimals)}</span>
-                <span dir="ltr" className="text-emerald-400 font-bold tabular-nums">{maxVal.toFixed(tickDecimals)}</span>
+                <span dir="ltr" className="text-[#8F9CAE] font-bold tabular-nums">{minVal.toFixed(tickDecimals)}</span>
+                <span dir="ltr" className="text-[#3DA66E] font-bold tabular-nums">{maxVal.toFixed(tickDecimals)}</span>
               </div>
               {/* Dynamic Interactive Range Bar */}
-              <div className="relative w-full bg-[#031912] h-2 rounded-full overflow-hidden border border-[#0F382A] p-0.5">
+              <div className="relative w-full bg-[#11253E] h-2 rounded-full overflow-hidden border border-[#22446D] p-0.5">
                 <div 
-                  className="bg-gradient-to-r from-[#075A3A] to-[#B99553] h-full rounded-full transition-all duration-150"
+                  className="bg-gradient-to-r from-[#2F88C2] to-[#C58F2B] h-full rounded-full transition-all duration-150"
                   style={{ width: `${Math.min(Math.max(((displayMiddle - minVal) / rangeSpan) * 100, 4), 100)}%` }}
                 />
               </div>
-              <div className="flex items-center justify-between text-[10px] font-mono text-[#8C9B94]">
+              <div className="flex items-center justify-between text-[10px] font-mono text-[#8F9CAE]">
                 <span>{selectedCurrency} SPREAD</span>
                 <span dir="ltr" className="text-white font-bold">{rangeSpan.toFixed(tickDecimals)} SDG</span>
               </div>
@@ -421,7 +421,7 @@ export default function DataExperience() {
           </div>
 
           {/* 3. Interactive Controls Toolbar */}
-          <div className="relative z-10 p-4 sm:p-5 md:p-6 bg-[#031912] border-b border-[#0F382A] flex flex-wrap items-center justify-between gap-4">
+          <div className="relative z-10 p-4 sm:p-5 md:p-6 bg-[#11253E] border-b border-[#22446D] flex flex-wrap items-center justify-between gap-4">
             
             {/* Currency Pill Switcher */}
             <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 max-w-full">
@@ -433,8 +433,8 @@ export default function DataExperience() {
                     onClick={() => handleCurrencySelect(code)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all flex items-center gap-1 shrink-0 ${
                       isSelected
-                        ? 'bg-[#B99553] text-[#031912] border border-[#DDC99B]'
-                        : 'bg-[#051E17] text-[#A89F91] hover:text-white hover:bg-[#075A3A]/40 border border-[#0F382A]'
+                        ? 'bg-[#2F88C2] text-white border border-[#2F88C2]'
+                        : 'bg-[#162D4C] text-[#8F9CAE] hover:text-white hover:bg-[#1B375C] border border-[#22446D]'
                     }`}
                   >
                     <span>{code}</span>
@@ -447,11 +447,11 @@ export default function DataExperience() {
             <div className="flex flex-wrap items-center gap-3">
               
               {/* Display Mode Toggle */}
-              <div className="flex items-center rounded-lg bg-[#051E17] p-1 border border-[#0F382A] text-xs font-mono">
+              <div className="flex items-center rounded-lg bg-[#162D4C] p-1 border border-[#22446D] text-xs font-mono">
                 <button
                   onClick={() => setDisplayMode('middle')}
                   className={`px-2.5 py-1 rounded transition-colors ${
-                    displayMode === 'middle' ? 'bg-[#075A3A] text-white font-bold' : 'text-[#8C9B94] hover:text-white'
+                    displayMode === 'middle' ? 'bg-[#2F88C2] text-white font-bold' : 'text-[#8F9CAE] hover:text-white'
                   }`}
                 >
                   {isRtl ? 'التأشيري' : 'Official'}
@@ -459,7 +459,7 @@ export default function DataExperience() {
                 <button
                   onClick={() => setDisplayMode('banks')}
                   className={`px-2.5 py-1 rounded transition-colors ${
-                    displayMode === 'banks' ? 'bg-[#075A3A] text-white font-bold' : 'text-[#8C9B94] hover:text-white'
+                    displayMode === 'banks' ? 'bg-[#3DA66E] text-white font-bold' : 'text-[#8F9CAE] hover:text-white'
                   }`}
                 >
                   {isRtl ? 'المصارف' : 'Banks Avg'}
@@ -467,15 +467,15 @@ export default function DataExperience() {
               </div>
 
               {/* Timeframe Selector */}
-              <div className="flex items-center rounded-lg bg-[#051E17] p-1 border border-[#0F382A] text-xs font-mono">
+              <div className="flex items-center rounded-lg bg-[#162D4C] p-1 border border-[#22446D] text-xs font-mono">
                 {(['7D', '30D', '90D', '1Y'] as Timeframe[]).map((tf) => (
                   <button
                     key={tf}
                     onClick={() => handleTimeframeSelect(tf)}
                     className={`px-2.5 py-1 rounded transition-colors ${
                       timeframe === tf
-                        ? 'bg-[#B99553] text-[#031912] font-bold'
-                        : 'text-[#8C9B94] hover:text-white'
+                        ? 'bg-[#C58F2B] text-white font-bold'
+                        : 'text-[#8F9CAE] hover:text-white'
                     }`}
                   >
                     {tf}
@@ -487,7 +487,7 @@ export default function DataExperience() {
               {isInspecting && (
                 <button
                   onClick={() => setHoveredIndex(null)}
-                  className="px-2.5 py-1 rounded-lg bg-[#051E17] border border-[#B99553]/60 text-[#DDC99B] text-xs font-mono hover:bg-[#075A3A]/40 transition-colors"
+                  className="px-2.5 py-1 rounded-lg bg-[#162D4C] border border-[#C58F2B]/60 text-[#DFAC46] text-xs font-mono hover:bg-[#1B375C] transition-colors"
                 >
                   {isRtl ? 'العودة للمباشر ↺' : 'Reset to Latest ↺'}
                 </button>
@@ -503,26 +503,26 @@ export default function DataExperience() {
             {/* Active Crosshair HUD Tooltip */}
             <div className={`mb-4 flex flex-wrap items-center justify-between gap-4 p-3.5 rounded-xl border text-xs font-mono transition-all duration-150 ${
               isInspecting 
-                ? 'bg-[#08291E] border-[#B99553]/60 shadow-md' 
-                : 'bg-[#031912] border-[#0F382A]'
+                ? 'bg-[#162D4C] border-[#2F88C2] shadow-md' 
+                : 'bg-[#11253E] border-[#22446D]'
             }`}>
               <div className="flex flex-wrap items-center gap-4">
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-3.5 h-3.5 text-[#B99553]" />
-                  <span className="text-[#8C9B94]">{isRtl ? 'التاريخ:' : 'Date:'}</span>
+                  <Calendar className="w-3.5 h-3.5 text-[#2F88C2]" />
+                  <span className="text-[#8F9CAE]">{isRtl ? 'التاريخ:' : 'Date:'}</span>
                   <span className="text-white font-bold">{activePt.date}</span>
                 </div>
-                <div className="h-4 w-px bg-[#0F382A]" />
+                <div className="h-4 w-px bg-[#22446D]" />
                 <div className="flex items-center gap-2">
-                  <span className="text-[#8C9B94]">{isRtl ? 'السعر التأشيري:' : 'Official Rate:'}</span>
-                  <span dir="ltr" className="text-[#DDC99B] font-bold text-sm tabular-nums">
+                  <span className="text-[#8F9CAE]">{isRtl ? 'السعر التأشيري:' : 'Official Rate:'}</span>
+                  <span dir="ltr" className="text-[#2F88C2] font-bold text-sm tabular-nums">
                     {activePt.rate.toFixed(2)} SDG
                   </span>
                 </div>
-                <div className="h-4 w-px bg-[#0F382A]" />
+                <div className="h-4 w-px bg-[#22446D]" />
                 <div className="flex items-center gap-2">
-                  <span className="text-[#8C9B94]">{isRtl ? 'التغير:' : 'Change:'}</span>
-                  <span dir="ltr" className={`font-bold ${isPointPositive ? 'text-emerald-400' : 'text-rose-400'}`}>
+                  <span className="text-[#8F9CAE]">{isRtl ? 'التغير:' : 'Change:'}</span>
+                  <span dir="ltr" className={`font-bold ${isPointPositive ? 'text-[#3DA66E]' : 'text-[#E95B4D]'}`}>
                     {isPointPositive ? `+${pointDelta.toFixed(2)}` : pointDelta.toFixed(2)} ({isPointPositive ? `+${pointDeltaPct}%` : `${pointDeltaPct}%`})
                   </span>
                 </div>
@@ -530,15 +530,15 @@ export default function DataExperience() {
 
               {displayMode === 'banks' && (
                 <div className="flex items-center gap-2">
-                  <span className="text-[#8C9B94]">{isRtl ? 'متوسط المصارف:' : 'Commercial Bank Avg:'}</span>
-                  <span dir="ltr" className="text-[#4ECCA3] font-bold tabular-nums">
+                  <span className="text-[#8F9CAE]">{isRtl ? 'متوسط المصارف:' : 'Commercial Bank Avg:'}</span>
+                  <span dir="ltr" className="text-[#3DA66E] font-bold tabular-nums">
                     {activePt.commercial.toFixed(2)} SDG
                   </span>
                 </div>
               )}
 
-              <div className="text-[11px] text-[#8C9B94] hidden sm:flex items-center gap-1.5">
-                <Info className="w-3.5 h-3.5 text-[#B99553]" />
+              <div className="text-[11px] text-[#8F9CAE] hidden sm:flex items-center gap-1.5">
+                <Info className="w-3.5 h-3.5 text-[#C58F2B]" />
                 <span>{isRtl ? 'حرك المؤشر عبر الرسم البياني لفحص أسعار التثبيت اليومية' : 'Hover or scrub across chart to inspect daily official fixings'}</span>
               </div>
             </div>
@@ -557,15 +557,15 @@ export default function DataExperience() {
                 <defs>
                   {/* Subtle Sovereign Tonal Gradient Fill */}
                   <linearGradient id="sovereignAreaGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#B99553" stopOpacity="0.12" />
-                    <stop offset="60%" stopColor="#075A3A" stopOpacity="0.04" />
-                    <stop offset="100%" stopColor="#051E17" stopOpacity="0.0" />
+                    <stop offset="0%" stopColor="#2F88C2" stopOpacity="0.18" />
+                    <stop offset="60%" stopColor="#2F88C2" stopOpacity="0.04" />
+                    <stop offset="100%" stopColor="#0B1A2D" stopOpacity="0.0" />
                   </linearGradient>
 
                   {/* Commercial Banks Gradient */}
                   <linearGradient id="commGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#4ECCA3" stopOpacity="0.08" />
-                    <stop offset="100%" stopColor="#051E17" stopOpacity="0.0" />
+                    <stop offset="0%" stopColor="#3DA66E" stopOpacity="0.1" />
+                    <stop offset="100%" stopColor="#0B1A2D" stopOpacity="0.0" />
                   </linearGradient>
                 </defs>
 
@@ -577,14 +577,14 @@ export default function DataExperience() {
                       y1={tick.y} 
                       x2={svgWidth - padRight} 
                       y2={tick.y} 
-                      stroke="#0D3528" 
+                      stroke="#22446D" 
                       strokeWidth="1" 
                       strokeDasharray={i === 0 ? "none" : "4 4"} 
                     />
                     <text 
                       x={padLeft - 10} 
                       y={tick.y + 4} 
-                      fill="#8C9B94" 
+                      fill="#8F9CAE" 
                       fontSize="10" 
                       fontFamily="JetBrains Mono, monospace" 
                       textAnchor="end"
@@ -606,7 +606,7 @@ export default function DataExperience() {
                   <path
                     d={commCurvePath}
                     fill="none"
-                    stroke="#4ECCA3"
+                    stroke="#3DA66E"
                     strokeWidth="1.5"
                     strokeDasharray="4 3"
                     strokeLinecap="round"
@@ -618,7 +618,7 @@ export default function DataExperience() {
                 <path
                   d={curvePath}
                   fill="none"
-                  stroke="#DDC99B"
+                  stroke="#2F88C2"
                   strokeWidth="2.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -633,7 +633,7 @@ export default function DataExperience() {
                       y1={padTop} 
                       x2={activeX} 
                       y2={padTop + innerH} 
-                      stroke="#B99553" 
+                      stroke="#C58F2B" 
                       strokeWidth="1" 
                       strokeDasharray="3 3" 
                     />
@@ -642,7 +642,7 @@ export default function DataExperience() {
                       cy={activeY} 
                       r="8" 
                       fill="none" 
-                      stroke="#B99553" 
+                      stroke="#C58F2B" 
                       strokeWidth="1" 
                       strokeOpacity="0.5" 
                     />
@@ -650,8 +650,8 @@ export default function DataExperience() {
                       cx={activeX} 
                       cy={activeY} 
                       r="4" 
-                      fill="#DDC99B" 
-                      stroke="#051E17" 
+                      fill="#C58F2B" 
+                      stroke="#0B1A2D" 
                       strokeWidth="2" 
                     />
                   </g>
@@ -677,8 +677,8 @@ export default function DataExperience() {
                         cx={x} 
                         cy={y} 
                         r={isHovered ? 4.5 : 2.5} 
-                        fill={isHovered ? "#B99553" : "#051E17"} 
-                        stroke={isHovered ? "#051E17" : "#B99553"} 
+                        fill={isHovered ? "#C58F2B" : "#0B1A2D"} 
+                        stroke={isHovered ? "#0B1A2D" : "#2F88C2"} 
                         strokeWidth={isHovered ? "2" : "1.5"} 
                       />
 
@@ -687,7 +687,7 @@ export default function DataExperience() {
                         <text 
                           x={x} 
                           y={svgHeight - 15} 
-                          fill={isHovered ? "#DDC99B" : "#8C9B94"} 
+                          fill={isHovered ? "#2F88C2" : "#8F9CAE"} 
                           fontSize="10" 
                           fontFamily="JetBrains Mono, monospace" 
                           fontWeight={isHovered ? "bold" : "normal"}
@@ -703,22 +703,22 @@ export default function DataExperience() {
             </div>
 
             {/* Chart Legend & Legend Indicators */}
-            <div className="mt-4 pt-4 border-t border-[#0F382A] flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-[#8C9B94]">
+            <div className="mt-4 pt-4 border-t border-[#22446D] flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-[#8F9CAE]">
               <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
-                  <span className="w-3.5 h-1 bg-[#DDC99B] rounded-full inline-block" />
+                  <span className="w-3.5 h-1 bg-[#2F88C2] rounded-full inline-block" />
                   <span className="text-white">{isRtl ? 'السعر التأشيري الرسمي (CBOS Fixing)' : 'Official Fixing Benchmark'}</span>
                 </div>
                 {displayMode === 'banks' && (
                   <div className="flex items-center gap-2">
-                    <span className="w-3.5 h-1 bg-[#4ECCA3] rounded-full inline-block border-dashed" />
-                    <span className="text-[#4ECCA3]">{isRtl ? 'متوسط المصارف التجارية' : 'Commercial Banks Avg'}</span>
+                    <span className="w-3.5 h-1 bg-[#3DA66E] rounded-full inline-block border-dashed" />
+                    <span className="text-[#3DA66E]">{isRtl ? 'متوسط المصارف التجارية' : 'Commercial Banks Avg'}</span>
                   </div>
                 )}
               </div>
 
-              <div className="flex items-center gap-2 text-[11px] text-[#A89F91]">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#B99553]" />
+              <div className="flex items-center gap-2 text-[11px] text-[#8F9CAE]">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#C58F2B]" />
                 <span>{isRtl ? 'بيانات معتمدة لأغراض التقييم المحاسبي والجمركي' : 'Certified for Accounting & Customs Valuation'}</span>
               </div>
             </div>
@@ -726,17 +726,17 @@ export default function DataExperience() {
           </div>
 
           {/* 5. Terminal Footer & Regulatory Attribution */}
-          <div className="relative z-10 px-6 py-4 bg-[#031912] border-t border-[#0F382A] flex flex-col sm:flex-row items-center justify-between text-xs text-[#8C9B94] gap-3">
+          <div className="relative z-10 px-6 py-4 bg-[#11253E] border-t border-[#22446D] flex flex-col sm:flex-row items-center justify-between text-xs text-[#8F9CAE] gap-3">
             <div className="flex flex-col gap-1 max-w-xl">
               <div className="flex items-center gap-2">
-                <Info className="w-4 h-4 text-[#B99553] shrink-0" />
+                <Info className="w-4 h-4 text-[#2F88C2] shrink-0" />
                 <span className="font-bold text-white">
                   {isRtl
                     ? 'المصدر: الإدارة العامة للأسواق المالية وإدارة النقد الأجنبي — بنك السودان المركزي'
                     : 'Source: Financial Markets & Foreign Exchange Directorate — Central Bank of Sudan'}
                 </span>
               </div>
-              <p className="text-[11px] text-[#A89F91] leading-relaxed ps-6">
+              <p className="text-[11px] text-[#8F9CAE] leading-relaxed ps-6">
                 {t(currentSeriesMeta.methodology)}
               </p>
             </div>
@@ -744,13 +744,13 @@ export default function DataExperience() {
             <div className="flex items-center gap-4 text-[11px] font-mono">
               <Link 
                 href="/exchange-rates" 
-                className="text-[#DDC99B] hover:text-white transition-colors flex items-center gap-1"
+                className="text-[#2F88C2] hover:text-white transition-colors flex items-center gap-1"
               >
                 <span>{isRtl ? 'جدول كافة العملات الأجنبية' : 'All Currencies Table'}</span>
                 <ExternalLink className="w-3 h-3" />
               </Link>
               <span>•</span>
-              <span className="text-[#8C9B94]">e-GDDS Compliant Series</span>
+              <span className="text-[#8F9CAE]">e-GDDS Compliant Series</span>
             </div>
           </div>
 

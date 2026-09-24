@@ -93,7 +93,7 @@ export default function MonetaryPolicyPage() {
       {/* Header Banner */}
       <section 
         className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-24 border-b border-cbos-gold/30"
-        style={{ backgroundColor: '#032A1E' }}
+        style={{ backgroundColor: '#0B1A2D' }}
       >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -212,7 +212,7 @@ export default function MonetaryPolicyPage() {
                     type="number"
                     value={depositAmount}
                     onChange={(e) => setDepositAmount(Number(e.target.value) || 0)}
-                    className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-base font-mono font-bold text-cbos-ink focus:outline-none focus:border-cbos-green-800"
+                    className="w-full bg-sand-50 border border-sand-300 rounded-lg px-4 py-2.5 text-base font-mono font-bold text-cbos-ink focus:outline-none focus:border-[#22446D]"
                   />
                   <span className="absolute end-3 top-2.5 text-xs font-mono font-bold text-cbos-ink-muted">
                     SDG
@@ -236,16 +236,16 @@ export default function MonetaryPolicyPage() {
               {/* Calculation Output Card */}
               <div 
                 className="bg-cbos-green-950 text-white rounded-xl p-5 space-y-4 mt-6"
-                style={{ backgroundColor: '#032A1E' }}
+                style={{ backgroundColor: '#0B1A2D' }}
               >
-                <div className="flex items-center justify-between border-b border-cbos-green-800 pb-3">
+                <div className="flex items-center justify-between border-b border-[#22446D] pb-3">
                   <span className="text-xs text-sand-300">
                     {t({ ar: 'نسبة الاحتياطي القانوني المطبقة', en: 'Statutory Reserve Ratio' })}
                   </span>
                   <span className="text-base font-mono font-bold text-cbos-gold">18.00%</span>
                 </div>
 
-                <div className="flex items-center justify-between border-b border-cbos-green-800 pb-3">
+                <div className="flex items-center justify-between border-b border-[#22446D] pb-3">
                   <div>
                     <div className="text-xs text-sand-300">
                       {t({ ar: 'الاحتياطي الواجب إيداعه بالمركزي', en: 'Mandatory Central Bank Reserve' })}

@@ -104,8 +104,8 @@ export default function AboutPage() {
     <div className="bg-sand-50 min-h-screen">
       {/* Sovereign Header Banner */}
       <section 
-        className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-24 border-b border-cbos-gold/30"
-        style={{ backgroundColor: '#032A1E' }}
+        className="bg-cbos-navyDark text-white relative overflow-hidden py-16 lg:py-24 border-b border-[#22446D]"
+        style={{ backgroundColor: '#0B1A2D' }}
       >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -279,9 +279,9 @@ export default function AboutPage() {
             {/* Quick Fast Facts Card */}
             <div 
               className="bg-cbos-green-950 text-white rounded-xl p-6 border border-cbos-gold/30"
-              style={{ backgroundColor: '#032A1E' }}
+              style={{ backgroundColor: '#0B1A2D' }}
             >
-              <h3 className="font-bold text-lg text-cbos-gold mb-4 border-b border-cbos-green-800 pb-3 flex items-center gap-2">
+              <h3 className="font-bold text-lg text-cbos-gold mb-4 border-b border-[#22446D] pb-3 flex items-center gap-2">
                 <Award className="w-5 h-5 text-cbos-gold" />
                 <span>{t({ ar: 'حقائق رئيسية', en: 'Institutional Facts' })}</span>
               </h3>

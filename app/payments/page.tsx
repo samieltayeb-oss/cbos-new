@@ -87,7 +87,7 @@ export default function PaymentsPage() {
       {/* Header Banner */}
       <section 
         className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-20 border-b border-cbos-gold/30"
-        style={{ backgroundColor: '#032A1E' }}
+        style={{ backgroundColor: '#0B1A2D' }}
       >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -293,7 +293,7 @@ export default function PaymentsPage() {
         {/* Regulatory FinTech Sandbox Application Strip */}
         <div 
           className="bg-cbos-green-950 text-white rounded-xl p-8 sm:p-10 border border-cbos-gold/40 relative overflow-hidden"
-          style={{ backgroundColor: '#032A1E' }}
+          style={{ backgroundColor: '#0B1A2D' }}
         >
           <div className="absolute inset-0 bg-guilloche opacity-10 pointer-events-none" />
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">

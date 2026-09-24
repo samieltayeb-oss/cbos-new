@@ -29,7 +29,7 @@ export default function LeadershipPage() {
       {/* Header Banner */}
       <section 
         className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-24 border-b border-cbos-gold/30"
-        style={{ backgroundColor: '#032A1E' }}
+        style={{ backgroundColor: '#0B1A2D' }}
       >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -204,7 +204,7 @@ export default function LeadershipPage() {
         {/* High Sharia Supervisory Board Spotlight */}
         <div 
           className="bg-cbos-green-950 text-white rounded-xl p-8 sm:p-10 border border-cbos-gold/40 relative overflow-hidden"
-          style={{ backgroundColor: '#032A1E' }}
+          style={{ backgroundColor: '#0B1A2D' }}
         >
           <div className="absolute inset-0 bg-guilloche opacity-10 pointer-events-none" />
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -228,7 +228,7 @@ export default function LeadershipPage() {
             </div>
 
             <div className="lg:col-span-4 bg-cbos-green-900/80 border border-cbos-gold/30 rounded-xl p-5 space-y-3">
-              <h3 className="font-bold text-cbos-gold text-sm border-b border-cbos-green-800 pb-2">
+              <h3 className="font-bold text-cbos-gold text-sm border-b border-[#22446D] pb-2">
                 {t({ ar: 'اختصاصات الهيئة الشرعية', en: 'Statutory Jurisdictions' })}
               </h3>
               <ul className="text-xs text-sand-200 space-y-2">

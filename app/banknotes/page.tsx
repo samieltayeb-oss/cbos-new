@@ -41,7 +41,7 @@ export default function BanknotesPage() {
       {/* Header Banner */}
       <section 
         className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-20 border-b border-cbos-gold/30"
-        style={{ backgroundColor: '#032A1E' }}
+        style={{ backgroundColor: '#0B1A2D' }}
       >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -169,10 +169,10 @@ export default function BanknotesPage() {
           {/* Feature Inspector Panel */}
           <div 
             className="lg:col-span-4 bg-cbos-green-950 text-white rounded-xl p-6 sm:p-8 border border-cbos-gold/40 flex flex-col justify-between shadow-lg"
-            style={{ backgroundColor: '#032A1E' }}
+            style={{ backgroundColor: '#0B1A2D' }}
           >
             <div>
-              <div className="flex items-center gap-2 text-cbos-gold text-xs font-mono uppercase tracking-wider mb-4 border-b border-cbos-green-800 pb-3">
+              <div className="flex items-center gap-2 text-cbos-gold text-xs font-mono uppercase tracking-wider mb-4 border-b border-[#22446D] pb-3">
                 <ShieldCheck className="w-4 h-4" />
                 <span>{t({ ar: 'فاحص العلامات الأمنية', en: 'Security Feature Inspector' })}</span>
               </div>
@@ -231,7 +231,7 @@ export default function BanknotesPage() {
               )}
             </div>
 
-            <div className="pt-6 border-t border-cbos-green-800 text-xs text-sand-400 font-mono">
+            <div className="pt-6 border-t border-[#22446D] text-xs text-sand-400 font-mono">
               CURRENCY ISSUANCE & RECOVERY DIRECTIVE
             </div>
           </div>

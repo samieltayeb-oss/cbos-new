@@ -62,8 +62,8 @@ export default function NewsDetailClient({ item, related }: Props) {
       
       {/* 1. Institutional Breadcrumb & Header Masthead */}
       <div 
-        className="text-white py-10 md:py-14 border-b border-[#075A3A] relative overflow-hidden"
-        style={{ backgroundColor: '#032A1E' }}
+        className="text-white py-10 md:py-14 border-b border-[#22446D] relative overflow-hidden"
+        style={{ backgroundColor: '#0B1A2D' }}
       >
         {/* Subtle Watermark Guilloche */}
         <div className="absolute inset-0 pointer-events-none opacity-10">
@@ -91,11 +91,11 @@ export default function NewsDetailClient({ item, related }: Props) {
 
           {/* Reference & Category Meta Row */}
           <div className="flex flex-wrap items-center gap-3 pt-2">
-            <span className="px-3 py-1 rounded-lg bg-[#075A3A]/70 text-[#DDC99B] border border-[#B99553]/50 text-xs font-mono font-bold">
+            <span className="px-3 py-1 rounded-lg bg-[#2F88C2]/70 text-[#DDC99B] border border-[#B99553]/50 text-xs font-mono font-bold">
               {getCategoryLabel(item.category)}
             </span>
             {item.referenceNumber && (
-              <span className="px-3 py-1 rounded-lg bg-black/40 text-white border border-[#0F382A] text-xs font-mono">
+              <span className="px-3 py-1 rounded-lg bg-black/40 text-white border border-[#22446D] text-xs font-mono">
                 REF: {item.referenceNumber}
               </span>
             )}
@@ -147,7 +147,7 @@ export default function NewsDetailClient({ item, related }: Props) {
 
             <button
               onClick={handlePrint}
-              className="px-4 py-1.5 rounded-lg bg-[#032A1E] text-white hover:bg-[#075A3A] transition-all flex items-center gap-1.5 font-bold border border-[#0F382A] shadow-sm"
+              className="px-4 py-1.5 rounded-lg bg-[#0B1A2D] text-white hover:bg-[#2F88C2] transition-all flex items-center gap-1.5 font-bold border border-[#22446D] shadow-sm"
               title="Print official document"
             >
               <Printer className="w-3.5 h-3.5 text-[#B99553]" />
@@ -166,9 +166,9 @@ export default function NewsDetailClient({ item, related }: Props) {
           <article className="lg:col-span-8 bg-white rounded-xl border border-sand-300 p-6 sm:p-10 md:p-12 shadow-sm space-y-8 relative overflow-hidden">
             
             {/* Print-Only Official Sovereign Letterhead */}
-            <div className="hidden print:block border-b-2 border-[#032A1E] pb-6 mb-8 text-center space-y-2">
-              <div className="font-bold text-lg text-[#032A1E] font-arabic">جمهورية السودان — بنك السودان المركزي</div>
-              <div className="text-xs text-[#075A3A] font-mono">REPUBLIC OF THE SUDAN — CENTRAL BANK OF SUDAN</div>
+            <div className="hidden print:block border-b-2 border-[#22446D] pb-6 mb-8 text-center space-y-2">
+              <div className="font-bold text-lg text-[#0B1A2D] font-arabic">جمهورية السودان — بنك السودان المركزي</div>
+              <div className="text-xs text-[#2F88C2] font-mono">REPUBLIC OF THE SUDAN — CENTRAL BANK OF SUDAN</div>
               <div className="text-[11px] text-slate-500 font-mono">STATUTORY MONETARY & REGULATORY DIRECTIVE</div>
               <div className="text-xs font-mono font-bold text-slate-800 pt-2">
                 REF: {item.referenceNumber || item.id} • DATE: {item.date}
@@ -187,7 +187,7 @@ export default function NewsDetailClient({ item, related }: Props) {
             </div>
 
             {/* Lead Excerpt Summary */}
-            <div className="p-4 sm:p-5 rounded-lg bg-sand-50/80 border-s-4 border-[#075A3A] text-sm md:text-base font-medium text-cbos-ink leading-relaxed font-arabic">
+            <div className="p-4 sm:p-5 rounded-lg bg-sand-50/80 border-s-4 border-[#22446D] text-sm md:text-base font-medium text-cbos-ink leading-relaxed font-arabic">
               {isRtl ? item.excerpt.ar : item.excerpt.en}
             </div>
 
@@ -230,13 +230,13 @@ export default function NewsDetailClient({ item, related }: Props) {
                 <div className="text-sm font-bold text-cbos-ink font-arabic">
                   {isRtl ? 'بنك السودان المركزي — المقر المؤقت، بورتسودان' : 'Central Bank of Sudan — Interim HQ, Port Sudan'}
                 </div>
-                <div className="text-xs font-mono text-[#075A3A]">
+                <div className="text-xs font-mono text-[#2F88C2]">
                   STATUTORY SERIES • {item.id}
                 </div>
               </div>
 
               <div className="p-3 rounded-lg border border-sand-300 bg-sand-50/60 text-center font-mono text-[11px] text-slate-600 space-y-1 shrink-0">
-                <div className="text-[#075A3A] font-bold">DIGITALLY VERIFIED</div>
+                <div className="text-[#2F88C2] font-bold">DIGITALLY VERIFIED</div>
                 <div className="text-[10px] text-slate-400">SHA-256: 48e9...c01f</div>
               </div>
             </div>
@@ -270,7 +270,7 @@ export default function NewsDetailClient({ item, related }: Props) {
                 {item.referenceNumber && (
                   <div>
                     <dt className="text-slate-500">{isRtl ? 'رقم القيد الرسمي:' : 'Official Reference:'}</dt>
-                    <dd className="font-bold text-[#075A3A] pt-0.5">{item.referenceNumber}</dd>
+                    <dd className="font-bold text-[#2F88C2] pt-0.5">{item.referenceNumber}</dd>
                   </div>
                 )}
                 <div>
@@ -293,7 +293,7 @@ export default function NewsDetailClient({ item, related }: Props) {
             {/* Related Announcements */}
             <div className="bg-white rounded-xl border border-sand-300 p-6 shadow-sm space-y-4">
               <div className="flex items-center gap-2 text-xs font-bold text-cbos-ink font-mono uppercase border-b border-sand-200 pb-2">
-                <FileText className="w-4 h-4 text-[#075A3A]" />
+                <FileText className="w-4 h-4 text-[#2F88C2]" />
                 <span>{isRtl ? 'منشورات ذات صلة' : 'Related Publications'}</span>
               </div>
 
@@ -304,7 +304,7 @@ export default function NewsDetailClient({ item, related }: Props) {
                     href={`/news/${rel.slug || rel.id}`}
                     className="block p-3 rounded-lg border border-sand-200 hover:border-cbos-gold hover:bg-sand-50/50 transition-all space-y-1 group"
                   >
-                    <div className="text-[11px] font-mono text-[#075A3A] font-bold">
+                    <div className="text-[11px] font-mono text-[#2F88C2] font-bold">
                       {rel.referenceNumber || rel.id}
                     </div>
                     <div className="text-xs font-bold text-cbos-ink group-hover:text-cbos-green-800 transition-colors font-arabic line-clamp-2">

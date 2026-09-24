@@ -49,7 +49,7 @@ export default function NewsPage() {
       {/* Header Banner */}
       <section 
         className="bg-cbos-green-950 text-white relative overflow-hidden py-16 lg:py-20 border-b border-cbos-gold/30"
-        style={{ backgroundColor: '#032A1E' }}
+        style={{ backgroundColor: '#0B1A2D' }}
       >
         <div className="absolute inset-0 bg-guilloche opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -151,7 +151,7 @@ export default function NewsPage() {
                 placeholder={t({ ar: 'بحث في الأخبار...', en: 'Search news...' })}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full ps-9 pe-4 py-2 bg-sand-50 border border-sand-300 rounded-lg text-xs focus:outline-none focus:border-cbos-green-800 text-cbos-ink"
+                className="w-full ps-9 pe-4 py-2 bg-sand-50 border border-sand-300 rounded-lg text-xs focus:outline-none focus:border-[#22446D] text-cbos-ink"
               />
             </div>
           </div>
