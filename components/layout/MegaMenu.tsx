@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/lib/languageContext';
 import { NavGroup } from '@/types';
-import { ArrowLeft, ArrowRight, FileText, ChevronRight, ChevronLeft } from 'lucide-react';
+import { ArrowLeft, ArrowRight, FileText, ChevronRight, ChevronLeft, ExternalLink } from 'lucide-react';
 
 interface MegaMenuProps {
   group: NavGroup;
@@ -23,39 +23,41 @@ export default function MegaMenu({ group, isOpen, onClose }: MegaMenuProps) {
       style={{ backgroundColor: '#0B1A2D' }}
       onMouseLeave={onClose}
     >
-      <div className="max-w-7xl mx-auto px-6 py-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-10">
         
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-12 items-start">
           
-          {/* Main Navigation Links (Cols 1, 2 & 3) */}
-          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Main Navigation Categories (Cols 1-8/9) with Generous Breathing Room */}
+          <div className="lg:col-span-8 xl:col-span-9 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {group.categories.map((cat, idx) => (
-              <div key={idx} className="space-y-4">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-[#2F88C2] border-b border-[#22446D] pb-2 flex items-center gap-1.5 font-mono">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#2F88C2] inline-block" />
+              <div key={idx} className="space-y-5">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-[#2F88C2] border-b border-[#22446D] pb-3 flex items-center gap-2 font-sans">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2F88C2] inline-block shrink-0" />
                   <span>{t(cat.title)}</span>
                 </h3>
                 
-                <ul className="space-y-3.5">
+                <ul className="space-y-4">
                   {cat.items.map((item) => (
                     <li key={item.id}>
                       <Link
                         href={item.href}
                         onClick={onClose}
-                        className="group flex items-start gap-2.5 text-[14.5px] text-white/90 hover:text-white transition-colors"
+                        className="group block p-2 -mx-2 rounded-lg hover:bg-white/[0.04] transition-all"
                       >
-                        <span className="text-[#2F88C2] group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 transition-transform mt-1">
-                          {isRtl ? <ChevronLeft className="w-3.5 h-3.5" /> : <ChevronRight className="w-3.5 h-3.5" />}
-                        </span>
-                        <div>
-                          <div className="font-semibold text-white group-hover:text-[#DFAC46] transition-colors">
-                            {t(item.title)}
-                          </div>
-                          {item.description && (
-                            <div className="text-[13px] text-[#8F9CAE] mt-0.5 leading-normal">
-                              {t(item.description)}
+                        <div className="flex items-start gap-2.5">
+                          <span className="text-[#2F88C2] group-hover:text-[#DFAC46] group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 transition-all mt-0.5 shrink-0">
+                            {isRtl ? <ChevronLeft className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
+                          </span>
+                          <div>
+                            <div className="font-semibold text-[14.5px] text-white/95 group-hover:text-[#DFAC46] transition-colors font-sans">
+                              {t(item.title)}
                             </div>
-                          )}
+                            {item.description && (
+                              <div className="text-[13px] text-[#8F9CAE] mt-0.5 leading-relaxed font-sans">
+                                {t(item.description)}
+                              </div>
+                            )}
+                          </div>
                         </div>
                       </Link>
                     </li>
@@ -65,52 +67,58 @@ export default function MegaMenu({ group, isOpen, onClose }: MegaMenuProps) {
             ))}
           </div>
 
-          {/* Featured Sovereign Document / Direct Action (Col 4) */}
-          <div className="bg-[#162D4C] border border-[#22446D] rounded-xl p-5 flex flex-col justify-between">
+          {/* Featured Sovereign Document / Institutional Context (Cols 9/10-12) */}
+          <div className="lg:col-span-4 xl:col-span-3 bg-[#11253E] border border-[#22446D] rounded-xl p-6 flex flex-col justify-between shadow-lg">
             {group.featuredDocument ? (
-              <div className="space-y-3">
-                <div className="flex items-center justify-between text-xs text-[#DFAC46] font-mono">
-                  <span className="font-bold">{isRtl ? 'وثيقة رسمية مميزة' : 'Featured Publication'}</span>
-                  <span dir="ltr">{group.featuredDocument.refNumber}</span>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="font-bold text-[#DFAC46] font-sans">
+                    {isRtl ? 'وثيقة رسمية مميزة' : 'Featured Publication'}
+                  </span>
+                  <span dir="ltr" className="text-[#8F9CAE] font-mono text-[11px]">
+                    {group.featuredDocument.refNumber}
+                  </span>
                 </div>
                 
-                <div className="w-8 h-8 rounded-lg bg-[#2F88C2]/20 flex items-center justify-center text-[#2F88C2]">
-                  <FileText className="w-4 h-4" />
+                <div className="w-10 h-10 rounded-lg bg-[#2F88C2]/15 border border-[#2F88C2]/30 flex items-center justify-center text-[#2F88C2]">
+                  <FileText className="w-5 h-5" />
                 </div>
                 
-                <h4 className="text-[15px] font-bold text-white line-clamp-2 leading-snug">
+                <h4 className="text-[15px] font-bold text-white font-display leading-snug line-clamp-2">
                   {t(group.featuredDocument.title)}
                 </h4>
                 
-                <p className="text-[13px] text-[#8F9CAE] leading-relaxed">
+                <p className="text-[13px] text-[#8F9CAE] leading-relaxed font-sans">
                   {isRtl 
-                    ? 'إصدار رسمي معتمد متوفر للاطلاع المباشر والتحميل الرقمي بصيغة PDF.'
-                    : 'Official institutional release available for instant reading and digital download.'}
+                    ? 'إصدار رسمي معتمد متوفر للاطلاع المباشر والتحميل الرقمي المعتمد.'
+                    : 'Official institutional release available for instant digital access and review.'}
                 </p>
                 
                 <Link
                   href={group.featuredDocument.href}
                   onClick={onClose}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#DFAC46] hover:text-white transition-colors mt-2"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#DFAC46] hover:text-white transition-colors pt-1 font-sans"
                 >
                   <span>{isRtl ? 'عرض الوثيقة الكاملة' : 'View Full Document'}</span>
                   {isRtl ? <ArrowLeft className="w-3.5 h-3.5" /> : <ArrowRight className="w-3.5 h-3.5" />}
                 </Link>
               </div>
             ) : (
-              <div className="space-y-3">
-                <div className="text-xs text-[#DFAC46] font-mono font-bold">
-                  {isRtl ? 'الخدمات الإلكترونية' : 'Digital Services'}
+              <div className="space-y-4">
+                <div className="text-xs text-[#DFAC46] font-bold font-sans">
+                  {isRtl ? 'الخدمات والقواعد المؤسسية' : 'Institutional Services'}
                 </div>
-                <p className="text-[13px] text-[#8F9CAE] leading-relaxed">
+                
+                <p className="text-[13px] text-[#8F9CAE] leading-relaxed font-sans">
                   {isRtl 
-                    ? 'الوصول المباشر إلى قواعد بيانات ونظم البنك المركزي.'
-                    : 'Direct access to Central Bank registries and sovereign databases.'}
+                    ? 'الوصول المباشر إلى المنشورات الرقابية، البيانات الإحصائية، ونظم الدفع القومية.'
+                    : 'Direct access to regulatory circulars, statistical bulletins, and national payment rails.'}
                 </p>
+                
                 <Link
                   href={group.href}
                   onClick={onClose}
-                  className="inline-flex items-center gap-1 text-xs font-bold text-[#DFAC46] hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#DFAC46] hover:text-white transition-colors pt-2 font-sans"
                 >
                   <span>{isRtl ? 'استعراض القسم بالكامل' : 'Explore All Section'}</span>
                   {isRtl ? <ArrowLeft className="w-3.5 h-3.5" /> : <ArrowRight className="w-3.5 h-3.5" />}
@@ -118,9 +126,9 @@ export default function MegaMenu({ group, isOpen, onClose }: MegaMenuProps) {
               </div>
             )}
 
-            <div className="pt-4 border-t border-[#22446D] text-[11px] text-[#8F9CAE] font-mono flex items-center justify-between">
-              <span>CBOS Sovereign Portal</span>
-              <span className="text-[#2F88C2] font-bold">2026</span>
+            <div className="pt-5 mt-4 border-t border-[#22446D] text-[11px] text-[#8F9CAE] font-sans flex items-center justify-between">
+              <span>{isRtl ? 'بوابة بنك السودان المركزي' : 'CBOS Sovereign Portal'}</span>
+              <span className="text-[#2F88C2] font-mono font-bold">2026</span>
             </div>
 
           </div>

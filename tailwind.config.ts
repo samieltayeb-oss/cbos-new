@@ -135,13 +135,13 @@ const config: Config = {
         }
       },
       fontFamily: {
-        sans: ['var(--font-tajawal)', 'var(--font-cairo)', 'var(--font-inter)', 'Segoe UI', 'Tahoma', 'sans-serif'],
+        sans: ['var(--font-tajawal)', 'var(--font-inter)', 'Segoe UI', 'Tahoma', 'sans-serif'],
         display: ['var(--font-cairo)', 'var(--font-tajawal)', 'sans-serif'],
         cairo: ['var(--font-cairo)', 'sans-serif'],
         tajawal: ['var(--font-tajawal)', 'sans-serif'],
-        arabic: ['var(--font-tajawal)', 'var(--font-cairo)', 'sans-serif'],
+        arabic: ['var(--font-cairo)', 'var(--font-tajawal)', 'sans-serif'],
         latin: ['var(--font-inter)', 'Segoe UI', 'Roboto', 'sans-serif'],
-        mono: ['var(--font-mono)', 'var(--font-tajawal)', 'Consolas', 'Courier New', 'monospace'],
+        mono: ['var(--font-mono)', 'Consolas', 'Courier New', 'monospace'],
       },
       fontSize: {
         'display-xl': ['clamp(2.5rem, 4.5vw, 4.75rem)', { lineHeight: '1.15', fontWeight: '800' }],
